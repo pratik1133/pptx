@@ -1,0 +1,6 @@
+{
+  "company_path": "../companies/abc.json",
+  "metadata_path": "../metadata/abc_metadata.json",
+  "financial_model_path": "../financial_models/abc_model.json",
+  "approved_report_path": "../approved_reports/abc.md"
+}
