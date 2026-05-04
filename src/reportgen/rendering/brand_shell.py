@@ -74,6 +74,44 @@ def _add_text_in_rect(
     return box
 
 
+def _format_date_ddmmyyyy(report_date: str) -> str:
+    """Convert date string to DD/MM/YYYY format.
+
+    Accepts ISO format (YYYY-MM-DD) or already formatted dates.
+    """
+    try:
+        from datetime import date as dt_date, datetime
+
+        if isinstance(report_date, dt_date):
+            return report_date.strftime("%d/%m/%Y")
+        parsed = datetime.strptime(str(report_date).strip(), "%Y-%m-%d")
+        return parsed.strftime("%d/%m/%Y")
+    except (ValueError, TypeError):
+        return str(report_date)
+
+
+def _format_market_cap(market_cap) -> str:
+    """Format market cap for display (e.g., ₹49,079 Cr)."""
+    try:
+        val = float(market_cap)
+        if val >= 100:
+            return f"₹{val:,.0f} Cr"
+        return f"₹{val:,.1f} Cr"
+    except (ValueError, TypeError):
+        return ""
+
+
+def _format_currency_compact(value) -> str:
+    """Format currency value compactly (e.g., ₹822.90)."""
+    try:
+        val = float(value)
+        if val == int(val):
+            return f"₹{val:,.0f}"
+        return f"₹{val:,.2f}"
+    except (ValueError, TypeError):
+        return str(value)
+
+
 def apply_interior_shell(
     slide: Any,
     theme: BrandTheme,
@@ -84,14 +122,23 @@ def apply_interior_shell(
     ticker: str,
     analyst: str,
     report_date: str,
+    company_name: str = "",
+    section_title: str = "",
+    cmp: str = "",
+    target_price: str = "",
+    upside_pct: str = "",
+    market_cap: str = "",
+    rating: str = "",
 ) -> None:
     apply_background(slide, theme, runtime)
     canvas_w = theme.canvas.width_in
     canvas_h = theme.canvas.height_in
     shell = theme.shell
 
+    # ── Navy header bar ──
     _add_filled_rect(slide, runtime, 0, 0, canvas_w, shell.header_height_in, theme.palette.primary)
 
+    # Logo
     logo_path = Path(theme.logo_path) if theme.logo_path else None
     logo_inset = shell.side_margin_in
     if logo_path and logo_path.exists():
@@ -120,41 +167,150 @@ def apply_interior_shell(
         except Exception:
             pass
 
+    # ── Left: Firm name (accent color, bold) ──
+    firm_label_left = shell.side_margin_in
+    if logo_path and logo_path.exists():
+        firm_label_left = shell.side_margin_in + 1.9
     _add_text_in_rect(
         slide,
         runtime,
-        canvas_w - 4.0 - shell.side_margin_in,
+        firm_label_left,
         0,
-        4.0,
+        2.0,
         shell.header_height_in,
-        f"{ticker}  |  {analyst}  |  {report_date}",
+        theme.firm_name,
         theme.header_font.family,
-        theme.header_font.size_pt,
-        theme.header_font.bold,
-        theme.header_font.color_hex,
-        runtime.PP_ALIGN.RIGHT,
+        9,
+        True,
+        theme.palette.accent,
+        runtime.PP_ALIGN.LEFT,
     )
 
-    divider_top = shell.title_top_in + shell.title_height_in + 0.05
+    # ── Center: Company Name — Section Title ──
+    center_text = company_name
+    if section_title:
+        center_text = f"{company_name} — {section_title}"
+    center_left = firm_label_left + 2.1
+    center_width = canvas_w - center_left - 5.5
+    if center_width > 0:
+        _add_text_in_rect(
+            slide,
+            runtime,
+            center_left,
+            0,
+            center_width,
+            shell.header_height_in,
+            center_text,
+            theme.title_font.family,
+            10,
+            True,
+            "#FFFFFF",
+            runtime.PP_ALIGN.LEFT,
+        )
+
+    # ── Right: Stats pills (CMP | TP | Upside | Mkt Cap | Rating) ──
+    stats_parts = []
+    if cmp:
+        stats_parts.append(f"CMP {_format_currency_compact(cmp)}")
+    if target_price:
+        stats_parts.append(f"TP {_format_currency_compact(target_price)}")
+    if upside_pct:
+        try:
+            up = float(upside_pct)
+            stats_parts.append(f"UPSIDE {'+' if up > 0 else ''}{up:.0f}%")
+        except (ValueError, TypeError):
+            stats_parts.append(f"UPSIDE {upside_pct}")
+    if market_cap:
+        stats_parts.append(f"MKT CAP {_format_market_cap(market_cap)}")
+
+    stats_text = "  |  ".join(stats_parts)
+    stats_right_width = 5.0
+    stats_right_left = canvas_w - stats_right_width - shell.side_margin_in - 0.7
+
+    if stats_parts:
+        _add_text_in_rect(
+            slide,
+            runtime,
+            stats_right_left,
+            0,
+            stats_right_width,
+            shell.header_height_in,
+            stats_text,
+            theme.header_font.family,
+            8,
+            False,
+            "#FFFFFF",
+            runtime.PP_ALIGN.RIGHT,
+        )
+
+    # ── Rating badge (inline, right edge) ──
+    if rating:
+        badge_w = 0.55
+        badge_h = 0.22
+        badge_left = canvas_w - badge_w - shell.side_margin_in
+        badge_top = (shell.header_height_in - badge_h) / 2
+        rating_key = rating.upper().strip()
+        badge_bg = getattr(theme.rating_colors, rating_key, theme.palette.accent)
+        badge = slide.shapes.add_shape(
+            runtime.MSO_AUTO_SHAPE_TYPE.ROUNDED_RECTANGLE,
+            runtime.Inches(badge_left),
+            runtime.Inches(badge_top),
+            runtime.Inches(badge_w),
+            runtime.Inches(badge_h),
+        )
+        badge.fill.solid()
+        badge.fill.fore_color.rgb = _hex_to_rgb(runtime, badge_bg)
+        badge.line.fill.background()
+        tf = badge.text_frame
+        tf.margin_left = runtime.Inches(0.02)
+        tf.margin_right = runtime.Inches(0.02)
+        tf.margin_top = runtime.Inches(0.01)
+        tf.margin_bottom = runtime.Inches(0.01)
+        p = tf.paragraphs[0]
+        p.alignment = runtime.PP_ALIGN.CENTER
+        r = p.add_run()
+        r.text = rating_key
+        r.font.name = theme.header_font.family
+        r.font.size = runtime.Pt(8)
+        r.font.bold = True
+        r.font.color.rgb = _hex_to_rgb(runtime, "#FFFFFF")
+
+    # ── Orange accent divider below header ──
+    divider_top = shell.header_height_in
+    _add_filled_rect(
+        slide,
+        runtime,
+        0,
+        divider_top,
+        canvas_w,
+        0.04,
+        theme.palette.accent,
+    )
+
+    # ── Section title with number badge ──
+    divider_after_title = shell.title_top_in + shell.title_height_in + 0.05
     _add_filled_rect(
         slide,
         runtime,
         shell.side_margin_in,
-        divider_top,
+        divider_after_title,
         canvas_w - 2 * shell.side_margin_in,
         shell.divider_thickness_pt / 72.0,
         theme.palette.accent,
     )
 
+    # ── Footer ──
     footer_top = canvas_h - shell.footer_height_in
     _add_filled_rect(slide, runtime, 0, footer_top, canvas_w, shell.footer_height_in, theme.palette.primary)
 
+    # Footer left: SEBI info
+    formatted_date = _format_date_ddmmyyyy(report_date)
     _add_text_in_rect(
         slide,
         runtime,
         shell.side_margin_in,
         footer_top,
-        canvas_w - 2 * shell.side_margin_in - 1.5,
+        canvas_w * 0.3,
         shell.footer_height_in,
         theme.footer_line,
         theme.footer_font.family,
@@ -164,14 +320,32 @@ def apply_interior_shell(
         runtime.PP_ALIGN.LEFT,
     )
 
+    # Footer center: Company name — Equity Research
+    footer_center_text = f"{company_name} — Equity Research" if company_name else theme.firm_name
     _add_text_in_rect(
         slide,
         runtime,
-        canvas_w - 1.5 - shell.side_margin_in,
+        canvas_w * 0.3,
         footer_top,
-        1.5,
+        canvas_w * 0.4,
         shell.footer_height_in,
-        f"Page {page_number} of {total_pages}",
+        footer_center_text,
+        theme.footer_font.family,
+        theme.footer_font.size_pt,
+        True,
+        theme.palette.accent,
+        runtime.PP_ALIGN.CENTER,
+    )
+
+    # Footer right: Date + Page
+    _add_text_in_rect(
+        slide,
+        runtime,
+        canvas_w - 2.0 - shell.side_margin_in,
+        footer_top,
+        2.0,
+        shell.footer_height_in,
+        f"{formatted_date}  |  Page {page_number} of {total_pages}",
         theme.footer_font.family,
         theme.footer_font.size_pt,
         theme.footer_font.bold,

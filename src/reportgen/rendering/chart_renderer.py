@@ -229,9 +229,15 @@ CHART_DRAWERS = {
 
 
 def _build_chart_image(block: ChartBlock, resolver: RenderDataResolver, theme: BrandTheme) -> BytesIO:
-    categories = resolver.resolve_period_labels(block.category_source)
     series_data = [resolver.resolve_series(series.source_key) for series in block.series]
     colors = _palette(theme)
+
+    # For donut charts, categories come from the series itself (e.g. segment names),
+    # not from period_labels which would have a different length.
+    if block.chart_type == "donut" and series_data:
+        categories = list(series_data[0].periods)
+    else:
+        categories = resolver.resolve_period_labels(block.category_source)
 
     fig, ax = plt.subplots(figsize=(6.4, 3.6), dpi=160)
     _apply_theme(ax, fig, theme)

@@ -1,0 +1,8 @@
+ts=2026-05-04T07:39:49.612880+00:00 level=INFO msg=pipeline_started run_id=d8fa5db395be ticker=MOFSL
+ts=2026-05-04T07:39:49.613447+00:00 level=INFO msg=render_mode detail=html
+ts=2026-05-04T07:39:49.613447+00:00 level=WARN msg=qa_warning detail=Slide s6 bullet item in 'highlights_items' is long and may wrap heavily.
+ts=2026-05-04T07:39:49.613447+00:00 level=WARN msg=qa_warning detail=Slide s6 bullet item in 'highlights_items' is long and may wrap heavily.
+ts=2026-05-04T07:39:49.613447+00:00 level=WARN msg=qa_warning detail=Slide s6 bullet item in 'highlights_items' is long and may wrap heavily.
+ts=2026-05-04T07:39:49.613447+00:00 level=WARN msg=qa_warning detail=Slide s6 bullet item in 'highlights_items' is long and may wrap heavily.
+ts=2026-05-04T07:39:49.613447+00:00 level=WARN msg=qa_warning detail=Slide s20 text block 'disclaimer_text' is very long.
+ts=2026-05-04T07:39:49.613447+00:00 level=INFO msg=pipeline_finished status=complete

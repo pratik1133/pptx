@@ -141,6 +141,8 @@ def validate_slide_plan(plan: SlidePlan, bundle: NormalizedInputBundle) -> None:
                 valid_series_sources = set(bundle.data_references.series_source_keys) | set(
                     bundle.data_references.quarterly_series_source_keys
                 )
+                if bundle.data_references.has_segments:
+                    valid_series_sources.update({"segments.revenue_share", "segments.ebitda_share"})
                 for source_key in block.series_source_keys:
                     if source_key not in valid_series_sources:
                         errors.append(

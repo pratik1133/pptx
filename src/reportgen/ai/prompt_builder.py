@@ -88,7 +88,7 @@ def _format_special_tables(refs) -> str:
         rows.append("- `peers` — columns: name, ticker, market_cap, pe, ev_ebitda, pb, roe, revenue_growth")
     if refs.has_segments:
         rows.append("- `segments` — columns: name, revenue_share, ebitda_share, growth, aum_label, aum_value, description")
-        rows.append("- `segments.revenue_share`, `segments.ebitda_share` — chart series (NOT chart category sources)")
+        rows.append("- `segments.revenue_share`, `segments.ebitda_share` — donut chart series ONLY (NOT valid for bar/line/combo charts; NOT chart category sources)")
     if refs.has_valuation_bands:
         rows.append("- `valuation_bands` — columns: method, low, base, high, weight, notes")
     if refs.has_scenarios:

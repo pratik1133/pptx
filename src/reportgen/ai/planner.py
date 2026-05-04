@@ -491,6 +491,44 @@ def build_mock_slide_plan(bundle: NormalizedInputBundle) -> SlidePlan:
     )
 
 
+def _augment_errors_with_hints(errors: list[str]) -> list[str]:
+    """Add actionable repair hints to validator error messages."""
+    augmented: list[str] = []
+    has_orphan = False
+    has_unknown_source = False
+    has_invalid_series = False
+
+    for err in errors:
+        augmented.append(err)
+        if "orphan numeric tokens" in err:
+            has_orphan = True
+        if "unknown source" in err:
+            has_unknown_source = True
+        if "not a valid series key" in err:
+            has_invalid_series = True
+
+    hints: list[str] = []
+    if has_orphan:
+        hints.append(
+            "REPAIR HINT — orphan numbers: Rewrite ALL text/bullet prose to remove every number "
+            "with a unit (%, x, Cr, lakh, bps, INR/₹/$/€/£ amounts). Replace with qualitative "
+            "language: 'revenue grew strongly' not 'revenue grew 37%'. Surface figures via "
+            "metric blocks with source_key references instead."
+        )
+    if has_unknown_source:
+        hints.append(
+            "REPAIR HINT — unknown source: That data table/key is NOT in this bundle. "
+            "Remove the block entirely or replace with a text/bullet block."
+        )
+    if has_invalid_series:
+        hints.append(
+            "REPAIR HINT — invalid series: Chart series_source_keys must come from the "
+            "'Annual series' or 'Quarterly series' catalogs. Segment keys (segments.revenue_share) "
+            "are only valid for donut charts."
+        )
+    return hints + augmented
+
+
 def plan_slides_with_client(
     bundle: NormalizedInputBundle,
     client: PlanningModelClient,
@@ -525,7 +563,7 @@ def plan_slides_with_client(
         try:
             validate_slide_plan(outcome.plan, bundle)
         except InputValidationError as exc:
-            last_errors = list(exc.errors)
+            last_errors = _augment_errors_with_hints(list(exc.errors))
             last_attempt_json = raw_response
             continue
 

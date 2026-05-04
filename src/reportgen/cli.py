@@ -10,7 +10,7 @@ from reportgen.config import settings
 from reportgen.export.pdf_converter import PdfConversionUnavailableError, resolve_pdf_converter
 from reportgen.ingestion.errors import InputValidationError
 from reportgen.ingestion.loaders import load_normalized_input_bundle
-from reportgen.orchestration.pipeline import run_local_pipeline
+from reportgen.orchestration.pipeline import run_html_pipeline, run_local_pipeline
 from reportgen.planning.report_builder import build_report_spec
 from reportgen.rendering.engine import PresentationRenderer, load_report_spec
 
@@ -164,6 +164,37 @@ def run_pipeline(
     console.print(f"[bold]Status:[/bold] {result.manifest.status}")
     console.print(f"[bold]PPTX:[/bold] {result.pptx_path}")
     if result.pdf_path is not None:
+        console.print(f"[bold]PDF:[/bold] {result.pdf_path}")
+    elif result.manifest.notes:
+        for note in result.manifest.notes:
+            console.print(f"[yellow]- {note}[/yellow]")
+
+
+@app.command("run-html-pipeline")
+def run_html_pipeline_cmd(
+    bundle: Path = typer.Option(..., exists=True, readable=True, help="Path to input bundle JSON."),
+    out_root: Path = typer.Option(settings.output_root, help="Root directory for packaged run outputs."),
+    mock: bool = typer.Option(False, "--mock", help="Use deterministic mock planner instead of OpenRouter."),
+) -> None:
+    """Run the HTML→PDF pipeline (beautiful report, no PPTX)."""
+
+    try:
+        result = run_html_pipeline(bundle, out_root, use_mock=mock)
+    except InputValidationError as exc:
+        console.print("[bold red]E_INPUT: Pipeline rejected the input bundle or slide plan.[/bold red]")
+        for err in exc.errors:
+            console.print(f"[red]- {err}[/red]")
+        raise typer.Exit(code=2) from exc
+    except RuntimeError as exc:
+        console.print(f"[bold red]E_RENDER: HTML rendering failed.[/bold red]")
+        console.print(f"[red]{exc}[/red]")
+        raise typer.Exit(code=3) from exc
+
+    console.print(f"[bold green]Run folder created:[/bold green] {result.run_root}")
+    console.print(f"[bold]Status:[/bold] {result.manifest.status}")
+    if result.html_path:
+        console.print(f"[bold]HTML:[/bold] {result.html_path}")
+    if result.pdf_path:
         console.print(f"[bold]PDF:[/bold] {result.pdf_path}")
     elif result.manifest.notes:
         for note in result.manifest.notes:

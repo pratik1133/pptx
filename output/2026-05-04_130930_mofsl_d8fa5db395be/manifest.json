@@ -1,0 +1,69 @@
+{
+  "run_id": "d8fa5db395be",
+  "created_at": "2026-05-04T07:39:30.959989Z",
+  "company_ticker": "MOFSL",
+  "status": "complete",
+  "artifacts": [
+    {
+      "label": "company",
+      "path": "inputs\\company.json",
+      "sha256": "3792e2d84340ebd30ab1523a8dd5927b3f54d503dcf28a134f7fdec08e1c0504",
+      "size_bytes": 750
+    },
+    {
+      "label": "metadata",
+      "path": "inputs\\metadata.json",
+      "sha256": "757a8ee303257b7814148f7ab276603c8055e06bcf4512c3241a7c2b8c20b9c6",
+      "size_bytes": 236
+    },
+    {
+      "label": "financial_model",
+      "path": "inputs\\financial_model.json",
+      "sha256": "ff52992f4fca4f4c992b3c1dc29767d315e72bd1ac3f7937927cc4429b0f91df",
+      "size_bytes": 15347
+    },
+    {
+      "label": "approved_report",
+      "path": "inputs\\approved_report.md",
+      "sha256": "5c0c75763afc79294ce3ee5b6de28d49fd0e09d6ed0bac655fe53ab274d354e9",
+      "size_bytes": 2685
+    },
+    {
+      "label": "slide_plan",
+      "path": "intermediates\\slide_plan.json",
+      "sha256": "815ccee87628eb475e28cc09aaa3ff1f5fbcd5113bb8b8d0a46d7b6ac01c2df3",
+      "size_bytes": 22901
+    },
+    {
+      "label": "report_spec",
+      "path": "intermediates\\report.json",
+      "sha256": "5cfca11a75a997b21e3d6fd71a2c55bd98b5ec861ac264c3768aa067a85f8a59",
+      "size_bytes": 23706
+    },
+    {
+      "label": "html",
+      "path": "artifacts\\report.html",
+      "sha256": "ff7dd766dadf14a64f9020d44418b28ec161c2f831e3d9a38dffe75922569fd6",
+      "size_bytes": 98222
+    },
+    {
+      "label": "pdf",
+      "path": "artifacts\\report.pdf",
+      "sha256": "bb2112274f4f3d60aa631a2d420b1bda2c4b8068033ea1d9cbab2de78c75e626",
+      "size_bytes": 2398943
+    },
+    {
+      "label": "run_log",
+      "path": "logs\\run.log",
+      "sha256": "875defe793dc1ae055768ae9cbbbe8590e887a4200d85eba3c739043baf1a572",
+      "size_bytes": 957
+    }
+  ],
+  "notes": [
+    "Slide s6 bullet item in 'highlights_items' is long and may wrap heavily.",
+    "Slide s6 bullet item in 'highlights_items' is long and may wrap heavily.",
+    "Slide s6 bullet item in 'highlights_items' is long and may wrap heavily.",
+    "Slide s6 bullet item in 'highlights_items' is long and may wrap heavily.",
+    "Slide s20 text block 'disclaimer_text' is very long."
+  ]
+}

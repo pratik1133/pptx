@@ -7,6 +7,7 @@ from typing import Any
 from reportgen.config import settings
 from reportgen.rendering.brand_shell import apply_interior_shell
 from reportgen.rendering.chart_renderer import render_chart_block
+from reportgen.rendering.components.section_header import render_section_header
 from reportgen.rendering.data_resolver import RenderDataResolver
 from reportgen.rendering.layout_registry import LayoutDefinition, get_layout_definition
 from reportgen.rendering.metrics_renderer import render_metrics_block
@@ -70,6 +71,19 @@ class PresentationRenderer:
             render_cover_slide(slide, slide_spec, report_spec, self.theme, runtime)
             return
 
+        # Compute upside percentage for display
+        upside_str = ""
+        if report_spec.metadata.upside_pct is not None:
+            upside_str = str(report_spec.metadata.upside_pct)
+        elif report_spec.metadata.target_price and report_spec.metadata.cmp:
+            try:
+                cmp_val = float(report_spec.metadata.cmp)
+                tp_val = float(report_spec.metadata.target_price)
+                if cmp_val > 0:
+                    upside_str = f"{((tp_val - cmp_val) / cmp_val) * 100:.0f}"
+            except (ValueError, TypeError):
+                pass
+
         apply_interior_shell(
             slide,
             self.theme,
@@ -79,19 +93,26 @@ class PresentationRenderer:
             ticker=report_spec.company.ticker,
             analyst=report_spec.metadata.analyst or "",
             report_date=str(report_spec.metadata.report_date),
+            company_name=report_spec.company.name,
+            section_title=slide_spec.title,
+            cmp=str(report_spec.metadata.cmp),
+            target_price=str(report_spec.metadata.target_price),
+            upside_pct=upside_str,
+            market_cap=str(report_spec.metadata.market_cap) if report_spec.metadata.market_cap else "",
+            rating=report_spec.metadata.rating or "",
         )
 
         layout_definition = get_layout_definition(slide_spec.layout)
 
         title_box = self._placeholder(layout_definition, "title")
         if title_box:
-            add_textbox(
+            render_section_header(
                 slide,
                 title_box,
                 slide_spec.title,
-                self.theme.title_font,
+                page_number,
+                self.theme,
                 runtime,
-                theme=self.theme,
             )
 
         if slide_spec.subtitle:
@@ -139,7 +160,7 @@ class PresentationRenderer:
                     )
                     for series_ref in block.series:
                         series = resolver.resolve_series(series_ref.source_key)
-                        for period, value in zip(series.periods, series.values, strict=True):
+                        for period, value in zip(series.periods, series.values):
                             self.manifest.add(
                                 slide_id=slide_spec.slide_id,
                                 block_key=block.key,

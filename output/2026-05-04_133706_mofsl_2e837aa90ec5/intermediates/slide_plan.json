@@ -1,0 +1,529 @@
+{
+  "schema_version": "1.0.0",
+  "company_ticker": "MOFSL",
+  "generated_at": "2026-05-04T12:00:00Z",
+  "slides": [
+    {
+      "slide_id": "s1",
+      "layout": "cover_slide",
+      "title": "Motilal Oswal Financial Services Initiation Note",
+      "subtitle": "Motilal Oswal Financial Services Ltd – BUY",
+      "rationale": "Introduce report with rating, market price and target",
+      "blocks": [
+        {
+          "type": "metrics",
+          "key": "cover_metrics",
+          "items": [
+            {
+              "label": "Rating",
+              "source_key": "metadata.rating",
+              "display_hint": null
+            },
+            {
+              "label": "Current Market Price",
+              "source_key": "metadata.cmp",
+              "display_hint": null
+            },
+            {
+              "label": "Target Price",
+              "source_key": "metadata.target_price",
+              "display_hint": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s2",
+      "layout": "investment_thesis",
+      "title": "Investment Thesis",
+      "subtitle": "",
+      "rationale": "Summarise core re‑rating theme and supporting evidence",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "thesis_text",
+          "content": "We initiate a BUY view based on a decisive shift from cyclical broking revenue to an annuity‑driven earnings mix. The growing share of recurring revenue reduces volatility and aligns the franchise with higher‑multiple investors. Recent credit upgrade underscores balance‑sheet strength, while fee‑based businesses demonstrate robust scaling."
+        },
+        {
+          "type": "bullets",
+          "key": "thesis_bullets",
+          "items": [
+            "Recurring revenue mix deepens, lowering earnings cyclicality",
+            "Fee‑based assets under management expand on a compounding trajectory",
+            "Operating leverage improves as fixed cost base supports margin growth",
+            "AA+ credit rating validates resilient capital structure",
+            "Probability‑weighted valuation captures upside across regulatory scenarios"
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s3",
+      "layout": "company_snapshot",
+      "title": "Company Snapshot",
+      "subtitle": "",
+      "rationale": "Provide at‑a‑glance overview and key metrics",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "snapshot_text",
+          "content": "Motilal Oswal Financial Services delivers integrated capital‑markets, wealth, housing finance and alternative‑investment solutions across India. Revenue is generated from brokerage, investment banking, asset‑management fees and wealth‑management advisory, with an increasing tilt toward fee‑based income."
+        },
+        {
+          "type": "metrics",
+          "key": "snapshot_metrics",
+          "items": [
+            {
+              "label": "Current Market Price",
+              "source_key": "metadata.cmp",
+              "display_hint": null
+            },
+            {
+              "label": "Target Price",
+              "source_key": "metadata.target_price",
+              "display_hint": null
+            },
+            {
+              "label": "ARR as % of Revenue",
+              "source_key": "financial_metrics.arr_pct_of_revenue",
+              "display_hint": null
+            },
+            {
+              "label": "Fee‑Based % of Revenue",
+              "source_key": "financial_metrics.fee_based_pct_of_revenue",
+              "display_hint": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s4",
+      "layout": "industry_overview",
+      "title": "Industry Overview",
+      "subtitle": "",
+      "rationale": "Contextualise sector dynamics and tailwinds",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "industry_text",
+          "content": "India’s financial‑services sector acts as a shock absorber for broader economic growth. The wealth market is expanding rapidly, with high‑net‑worth households expected to surge, creating a sizable addressable base for asset‑management and private‑wealth services. Mutual‑fund penetration remains low, indicating ample room for fee‑based growth, while NBFCs are scaling profitably."
+        },
+        {
+          "type": "bullets",
+          "key": "industry_tailwinds",
+          "items": [
+            "Wealth‑creation trends boost demand for asset‑management and advisory services",
+            "Low mutual‑fund penetration signals latent fee‑based revenue opportunity",
+            "NBFC profitability rising on credit‑market expansion",
+            "Regulatory clarity on derivatives trading expected to stabilise broking margins",
+            "Digital adoption accelerates distribution efficiency across franchise"
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s5",
+      "layout": "key_highlights",
+      "title": "Key Highlights",
+      "subtitle": "",
+      "rationale": "Anchor thematic pillars for the investment case",
+      "blocks": [
+        {
+          "type": "bullets",
+          "key": "highlights",
+          "items": [
+            "ARR Share: Recurring revenue now dominates the earnings mix",
+            "AUM Growth: Asset base expanding at a compounding rate",
+            "Credit Quality: AA+ rating reinforces balance‑sheet resilience",
+            "Valuation Gap: Market price offers material discount to consensus target",
+            "Governance: Monitoring required for ongoing SEBI matters",
+            "SAARTHI Score: Strong 72/100 reflecting robust business fundamentals"
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s6",
+      "layout": "segment_mix",
+      "title": "Revenue & EBITDA Mix by Segment",
+      "subtitle": "",
+      "rationale": "Show revenue contribution and profitability across business lines",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "segment_mix_text",
+          "content": "The franchise is diversifying, with asset‑management and private‑wealth segments contributing an increasing share of revenue and EBITDA, while traditional broking remains a smaller, more cyclical component."
+        },
+        {
+          "type": "chart",
+          "key": "segment_revenue_chart",
+          "chart_type": "donut",
+          "title": "Revenue Share by Segment",
+          "category_source": "period_labels",
+          "series_source_keys": [
+            "segments.revenue_share"
+          ]
+        },
+        {
+          "type": "table",
+          "key": "segment_table",
+          "title": "Segment Details",
+          "source_key": "segments",
+          "columns": [
+            {
+              "key": "name",
+              "label": "Segment"
+            },
+            {
+              "key": "revenue_share",
+              "label": "Revenue Share"
+            },
+            {
+              "key": "ebitda_share",
+              "label": "EBITDA Share"
+            },
+            {
+              "key": "growth",
+              "label": "Growth"
+            },
+            {
+              "key": "aum_label",
+              "label": "AUM"
+            },
+            {
+              "key": "description",
+              "label": "Notes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s7",
+      "layout": "price_performance",
+      "title": "Share Price Performance",
+      "subtitle": "",
+      "rationale": "Illustrate historical price movement relative to index",
+      "blocks": [
+        {
+          "type": "chart",
+          "key": "price_chart",
+          "chart_type": "line",
+          "title": "MOFSL Share vs Nifty 50",
+          "category_source": "period_labels",
+          "series_source_keys": [
+            "series.EPS"
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s8",
+      "layout": "ratio_summary",
+      "title": "Key Ratios",
+      "subtitle": "",
+      "rationale": "Present profitability, return and valuation multiples across periods",
+      "blocks": [
+        {
+          "type": "table",
+          "key": "ratios_table",
+          "title": "Financial Ratios",
+          "source_key": "ratio_summary",
+          "columns": [
+            {
+              "key": "ratio",
+              "label": "Ratio"
+            },
+            {
+              "key": "unit",
+              "label": "Unit"
+            },
+            {
+              "key": "FY22A",
+              "label": "FY22A"
+            },
+            {
+              "key": "FY23A",
+              "label": "FY23A"
+            },
+            {
+              "key": "FY24A",
+              "label": "FY24A"
+            },
+            {
+              "key": "FY25A",
+              "label": "FY25A"
+            },
+            {
+              "key": "FY26E",
+              "label": "FY26E"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s9",
+      "layout": "valuation_table",
+      "title": "Valuation – Methods Summary",
+      "subtitle": "",
+      "rationale": "Show valuation ranges from multiple methodologies",
+      "blocks": [
+        {
+          "type": "table",
+          "key": "valuation_methods",
+          "title": "Valuation Bands",
+          "source_key": "valuation_bands",
+          "columns": [
+            {
+              "key": "method",
+              "label": "Method"
+            },
+            {
+              "key": "low",
+              "label": "Low"
+            },
+            {
+              "key": "base",
+              "label": "Base"
+            },
+            {
+              "key": "high",
+              "label": "High"
+            },
+            {
+              "key": "weight",
+              "label": "Weight"
+            },
+            {
+              "key": "notes",
+              "label": "Notes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s10",
+      "layout": "dcf_summary",
+      "title": "DCF Summary",
+      "subtitle": "",
+      "rationale": "Display core DCF assumptions and key output",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "dcf_text",
+          "content": "The discounted cash‑flow model incorporates a weighted‑average cost of capital reflective of the company's capital structure and growth profile. Terminal growth assumptions align with long‑term GDP expansion, and cash‑flow forecasts integrate the shifting revenue mix."
+        },
+        {
+          "type": "metrics",
+          "key": "dcf_metrics",
+          "items": [
+            {
+              "label": "WACC",
+              "source_key": "financial_metrics.roce_fy26e_pct",
+              "display_hint": null
+            },
+            {
+              "label": "Terminal Growth Rate",
+              "source_key": "financial_metrics.ev_ebitda_fy26e_x",
+              "display_hint": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s11",
+      "layout": "saarthi_scorecard",
+      "title": "SAARTHI Score 72/100",
+      "subtitle": "",
+      "rationale": "Present proprietary quality score and underlying dimensions",
+      "blocks": [
+        {
+          "type": "metrics",
+          "key": "saarthi_metrics",
+          "items": [
+            {
+              "label": "Overall Score",
+              "source_key": "financial_metrics.probability_weighted_target",
+              "display_hint": null
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "key": "saarthi_table",
+          "title": "Scorecard Dimensions",
+          "source_key": "saarthi_dimensions",
+          "columns": [
+            {
+              "key": "code",
+              "label": "Code"
+            },
+            {
+              "key": "name",
+              "label": "Dimension"
+            },
+            {
+              "key": "score",
+              "label": "Score"
+            },
+            {
+              "key": "assessment",
+              "label": "Assessment"
+            },
+            {
+              "key": "evidence",
+              "label": "Evidence"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s12",
+      "layout": "management_profile",
+      "title": "Management Team",
+      "subtitle": "",
+      "rationale": "Introduce senior leadership",
+      "blocks": [
+        {
+          "type": "table",
+          "key": "management_table",
+          "title": "Key Executives",
+          "source_key": "management_team",
+          "columns": [
+            {
+              "key": "name",
+              "label": "Name"
+            },
+            {
+              "key": "role",
+              "label": "Role"
+            },
+            {
+              "key": "bio",
+              "label": "Profile"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s13",
+      "layout": "forensic_assessment",
+      "title": "Forensic – Monitor Closely",
+      "subtitle": "",
+      "rationale": "Highlight governance and regulatory matters requiring watch",
+      "blocks": [
+        {
+          "type": "table",
+          "key": "forensic_table",
+          "title": "Regulatory & Governance Issues",
+          "source_key": "forensic_violations",
+          "columns": [
+            {
+              "key": "title",
+              "label": "Issue"
+            },
+            {
+              "key": "description",
+              "label": "Details"
+            },
+            {
+              "key": "severity",
+              "label": "Severity"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s14",
+      "layout": "trading_strategy",
+      "title": "Trading Strategy",
+      "subtitle": "",
+      "rationale": "Outline entry, review and exit considerations",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "trading_text",
+          "content": "Given the valuation discount and upside potential, a strategic entry near current levels is warranted. Review earnings trajectory and regulatory updates quarterly. Consider partial profit‑taking as price approaches consensus target, maintaining exposure for the long‑run fee‑based earnings upside."
+        },
+        {
+          "type": "bullets",
+          "key": "trading_bullets",
+          "items": [
+            "Enter near current market price to capture valuation gap",
+            "Reassess after each quarterly earnings release",
+            "Scale out incrementally as price nears consensus target",
+            "Maintain exposure for fee‑based earnings upside beyond target"
+          ]
+        },
+        {
+          "type": "metrics",
+          "key": "trading_metrics",
+          "items": [
+            {
+              "label": "Upside vs CMP",
+              "source_key": "metadata.upside_pct",
+              "display_hint": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s15",
+      "layout": "risks_and_catalysts",
+      "title": "Risks and Catalysts",
+      "subtitle": "",
+      "rationale": "Summarise key monitoring points",
+      "blocks": [
+        {
+          "type": "bullets",
+          "key": "risk_catalyst_bullets",
+          "items": [
+            "Regulatory changes to F&O trading could compress broking margins",
+            "Quarterly earnings volatility may intensify if cyclical revenue falls",
+            "Competitive pressure from discount brokers and fintech platforms",
+            "Ongoing SEBI matters require close oversight",
+            "Mark‑to‑market fluctuations on proprietary book could impact earnings",
+            "Housing‑finance asset quality could deteriorate in stressed credit cycles"
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s16",
+      "layout": "disclaimer",
+      "title": "Disclaimer",
+      "subtitle": "",
+      "rationale": "Provide mandatory regulatory disclaimer",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "disclaimer_text",
+          "content": "The information contained herein is for informational purposes only and does not constitute an offer to sell or a solicitation of an offer to buy any securities. All opinions are those of the analyst and are subject to change without notice. This report has been prepared for internal use by Tikona Capital and is not for distribution to any third party without prior written consent. Investors should consult their own advisors before making any investment decisions. Past performance is not indicative of future results. The firm disclaims any liability for any loss incurred by any person acting or refraining from acting on the basis of this report."
+        }
+      ]
+    },
+    {
+      "slide_id": "s17",
+      "layout": "analyst_certification",
+      "title": "Analyst Certification",
+      "subtitle": "",
+      "rationale": "Certify research compliance and analyst declaration",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "certification_text",
+          "content": "I, Pratik Gupta, certify that I have no personal or professional relationship with Motilal Oswal Financial Services Ltd or any of its officers that could affect my objectivity. The content of this report reflects my independent analysis and is in compliance with SEBI regulations and Tikona Capital's internal policies."
+        }
+      ]
+    }
+  ]
+}

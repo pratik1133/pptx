@@ -7,6 +7,7 @@ from uuid import uuid4
 
 from reportgen.ai.planner import plan_slides
 from reportgen.ai.serializers import dump_slide_plan_json
+from reportgen.export.html_pdf_converter import PlaywrightPdfConverter
 from reportgen.export.pdf_converter import PdfConversionUnavailableError, resolve_pdf_converter
 from reportgen.ingestion.loaders import load_normalized_input_bundle
 from reportgen.logging import format_log_event
@@ -19,6 +20,7 @@ from reportgen.planning.report_builder import build_report_spec
 from reportgen.qa.render_checks import validate_rendered_pptx
 from reportgen.qa.validators import validate_report_content
 from reportgen.rendering.engine import PresentationRenderer
+from reportgen.rendering.html_engine import HtmlReportRenderer
 from reportgen.storage.filesystem_store import FilesystemRunStore
 from reportgen.storage.manifest import RunManifest, new_manifest
 
@@ -28,7 +30,8 @@ class PipelineRunResult:
     run_root: Path
     manifest: RunManifest
     pdf_path: Path | None
-    pptx_path: Path
+    pptx_path: Path | None = None
+    html_path: Path | None = None
 
 
 def run_local_pipeline(
@@ -124,3 +127,79 @@ def run_local_pipeline(
     store.write_manifest(manifest)
 
     return PipelineRunResult(run_root=run_root, manifest=manifest, pdf_path=pdf_path, pptx_path=pptx_path)
+
+
+def run_html_pipeline(
+    bundle_path: Path,
+    output_root: Path,
+    *,
+    use_mock: bool = False,
+) -> PipelineRunResult:
+    """End-to-end pipeline that renders to HTML + PDF (no PPTX)."""
+    normalized = load_normalized_input_bundle(bundle_path)
+    plan = plan_slides(normalized, use_mock=use_mock)
+    report_spec = build_report_spec(normalized, plan)
+
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H%M%S")
+    run_id = uuid4().hex[:12]
+    run_root = output_root / f"{timestamp}_{normalized.normalized_ticker.lower()}_{run_id}"
+    store = FilesystemRunStore(run_root)
+    store.ensure_structure()
+
+    manifest = new_manifest(run_id=run_id, company_ticker=normalized.normalized_ticker, status=PIPELINE_STATUS_READY)
+
+    # Copy inputs
+    company_copy = store.copy_into(normalized.source.company_path, "inputs/company.json")
+    metadata_copy = store.copy_into(normalized.source.metadata_path, "inputs/metadata.json")
+    model_copy = store.copy_into(normalized.source.financial_model_path, "inputs/financial_model.json")
+    report_copy = store.copy_into(normalized.source.approved_report_path, "inputs/approved_report.md")
+    for label, path in (
+        ("company", company_copy),
+        ("metadata", metadata_copy),
+        ("financial_model", model_copy),
+        ("approved_report", report_copy),
+    ):
+        store.add_artifact(manifest, label, path)
+
+    slide_plan_path = store.write_text("intermediates/slide_plan.json", dump_slide_plan_json(plan))
+    report_spec_path = store.write_text(
+        "intermediates/report.json", report_spec.model_dump_json(indent=2)
+    )
+    store.add_artifact(manifest, "slide_plan", slide_plan_path)
+    store.add_artifact(manifest, "report_spec", report_spec_path)
+
+    # Render HTML
+    html_renderer = HtmlReportRenderer()
+    html_path = html_renderer.render_to_path(report_spec, run_root / "artifacts" / "report.html")
+    store.add_artifact(manifest, "html", html_path)
+
+    # Content checks
+    content_checks = validate_report_content(report_spec)
+    manifest.notes.extend(content_checks.warnings)
+
+    # Convert HTML -> PDF via Playwright
+    pdf_path: Path | None = None
+    try:
+        converter = PlaywrightPdfConverter()
+        pdf_path = converter.convert_file(html_path, run_root / "artifacts" / "report.pdf")
+        store.add_artifact(manifest, "pdf", pdf_path)
+        manifest.status = PIPELINE_STATUS_COMPLETE
+    except Exception as exc:
+        manifest.status = PIPELINE_STATUS_PDF_SKIPPED
+        manifest.notes.append(f"PDF conversion failed: {exc}")
+
+    log_path = store.write_text(
+        "logs/run.log",
+        "\n".join(
+            [
+                format_log_event("INFO", "pipeline_started", run_id=manifest.run_id, ticker=manifest.company_ticker),
+                format_log_event("INFO", "render_mode", detail="html"),
+                *(format_log_event("WARN", "qa_warning", detail=note) for note in manifest.notes),
+                format_log_event("INFO", "pipeline_finished", status=manifest.status),
+            ]
+        ),
+    )
+    store.add_artifact(manifest, "run_log", log_path)
+    store.write_manifest(manifest)
+
+    return PipelineRunResult(run_root=run_root, manifest=manifest, pdf_path=pdf_path, html_path=html_path)

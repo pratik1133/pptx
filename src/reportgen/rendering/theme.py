@@ -26,6 +26,12 @@ class ThemePalette(BaseModel):
     muted_text: str = Field(pattern=HEX_PATTERN)
     background: str = Field(pattern=HEX_PATTERN)
     divider: str = Field(default="#3A5BA0", pattern=HEX_PATTERN)
+    light_grey: str = Field(default="#F4F6F9", pattern=HEX_PATTERN)
+    green: str = Field(default="#1A7A4A", pattern=HEX_PATTERN)
+    red: str = Field(default="#B91C1C", pattern=HEX_PATTERN)
+    teal: str = Field(default="#0E7490", pattern=HEX_PATTERN)
+    section_bg: str = Field(default="#E8EEF8", pattern=HEX_PATTERN)
+    highlight_row: str = Field(default="#FFF3E0", pattern=HEX_PATTERN)
 
 
 class RatingColors(BaseModel):
@@ -62,6 +68,7 @@ class BrandTheme(BaseModel):
 
     name: NonEmptyString
     firm_name: NonEmptyString = "Tikona Capital"
+    firm_tagline: str = "Institutional Equity Research"
     footer_line: str = ""
     logo_path: str = ""
     canvas: CanvasSpec = Field(default_factory=CanvasSpec)
@@ -75,6 +82,12 @@ class BrandTheme(BaseModel):
     footer_font: FontToken
     header_font: FontToken
     rating_badge_font: FontToken
+    tagline_font: FontToken = Field(
+        default_factory=lambda: FontToken(family="Calibri", size_pt=14, bold=True, color_hex="#1F4690")
+    )
+    section_number_font: FontToken = Field(
+        default_factory=lambda: FontToken(family="Calibri", size_pt=10, bold=True, color_hex="#FFA500")
+    )
     shell: ShellSpec = Field(default_factory=ShellSpec)
 
 
@@ -83,6 +96,7 @@ DEFAULT_THEME = BrandTheme(
     firm_name="Tikona Capital",
     footer_line="Tikona Capital | SEBI Registration No.: INH000069807",
     logo_path="assets/branding/logo.png",
+    firm_tagline="Institutional Equity Research",
     palette=ThemePalette(
         primary="#1F4690",
         secondary="#3A5BA0",
@@ -93,6 +107,12 @@ DEFAULT_THEME = BrandTheme(
         muted_text="#5A6573",
         background="#FFFFFF",
         divider="#3A5BA0",
+        light_grey="#F4F6F9",
+        green="#1A7A4A",
+        red="#B91C1C",
+        teal="#0E7490",
+        section_bg="#E8EEF8",
+        highlight_row="#FFF3E0",
     ),
     rating_colors=RatingColors(
         BUY="#1B7F3A",
