@@ -9,7 +9,7 @@ class PptxRuntime:
             from pptx import Presentation  # type: ignore
             from pptx.dml.color import RGBColor  # type: ignore
             from pptx.enum.shapes import MSO_AUTO_SHAPE_TYPE  # type: ignore
-            from pptx.enum.text import PP_ALIGN  # type: ignore
+            from pptx.enum.text import MSO_ANCHOR, PP_ALIGN  # type: ignore
             from pptx.util import Inches, Pt  # type: ignore
         except ImportError as exc:  # pragma: no cover - environment dependent
             raise RuntimeError(
@@ -19,6 +19,7 @@ class PptxRuntime:
         self.Presentation = Presentation
         self.RGBColor = RGBColor
         self.MSO_AUTO_SHAPE_TYPE = MSO_AUTO_SHAPE_TYPE
+        self.MSO_ANCHOR = MSO_ANCHOR
         self.PP_ALIGN = PP_ALIGN
         self.Inches = Inches
         self.Pt = Pt

@@ -76,12 +76,18 @@ def resolve_pdf_converter() -> PdfConverter:
             raise PdfConversionUnavailableError("LibreOffice executable was not found.")
 
     if mode in {"auto", "powerpoint"}:
-        executable = settings.powerpoint_path or _which("powerpnt")
-        if executable is not None or mode == "powerpoint":
+        # On Windows the PowerPoint COM bridge works even when powerpnt.exe is not in PATH.
+        try:
+            import win32com.client  # noqa: F401  type: ignore
             return PowerPointPdfConverter()
+        except ImportError:
+            if mode == "powerpoint":
+                raise PdfConversionUnavailableError(
+                    "PowerPoint COM bridge requires pywin32. Install with `pip install pywin32`."
+                )
 
     raise PdfConversionUnavailableError(
-        "No supported PDF conversion backend is available. Configure LibreOffice or PowerPoint."
+        "No supported PDF conversion backend is available. Install LibreOffice or run on Windows with PowerPoint + pywin32."
     )
 
 

@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m pytest tests/unit/test_theme_loader.py tests/unit/test_brand_shell.py -x)",
+      "Bash(python -m reportgen.cli --help)",
+      "Bash(python -c ' *)",
+      "Bash(python -m pytest tests/)",
+      "Bash(pip install *)",
+      "Bash(reportgen --help)",
+      "Bash(reportgen validate-input *)",
+      "Bash(python -c \"import json; p=json.load\\(open\\('c:/Users/pratik/pptx/output/2026-05-04_064116_mofsl_ffc8dd7ba241/intermediates/slide_plan.json'\\)\\); s=p['slides'][5]; print\\(json.dumps\\(s, indent=2\\)\\)\")",
+      "Bash(python -c \"import json; p=json.load\\(open\\('c:/Users/pratik/pptx/output/2026-05-04_064852_mofsl_d4ab92bc4975/intermediates/slide_plan.json'\\)\\); print\\('s6:'\\); print\\(json.dumps\\(p['slides'][5], indent=2\\)\\); print\\(\\); print\\('s12:'\\); print\\(json.dumps\\(p['slides'][11], indent=2\\)\\)\")",
+      "Bash(python -m pytest)",
+      "Bash(python -m pytest --tb=line -q)",
+      "Bash(git stash *)",
+      "Bash(python -m pytest tests/test_pipeline.py::test_run_local_pipeline_packages_outputs --tb=line)",
+      "Bash(python -m pytest tests/test_pipeline.py::test_run_local_pipeline_packages_outputs --tb=short)",
+      "Bash(python -m pytest tests/unit/test_phase13_chart_quality.py --tb=short)",
+      "Bash(python -m pytest tests/unit/test_phase14_compliance_pdf.py --tb=short)",
+      "Bash(python -m pytest tests/test_slide_planning.py tests/test_pipeline.py tests/test_regression.py tests/unit/test_phase10_content_depth.py tests/unit/test_phase11_real_planner.py tests/unit/test_phase12_numeric_integrity.py --tb=short)",
+      "Bash(python -m pytest tests/test_pipeline.py tests/test_regression.py --tb=short)",
+      "Bash(python -m pytest tests/unit/test_phase14_compliance_pdf.py tests/unit/test_phase13_chart_quality.py tests/test_renderer.py --tb=short)",
+      "Bash(python -c \"import openai; print\\(openai.__version__\\)\")"
+    ]
+  }
+}

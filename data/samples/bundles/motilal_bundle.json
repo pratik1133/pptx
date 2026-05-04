@@ -1,0 +1,6 @@
+{
+  "company_path": "../companies/motilal.json",
+  "metadata_path": "../metadata/motilal_metadata.json",
+  "financial_model_path": "../financial_models/motilal_model.json",
+  "approved_report_path": "../approved_reports/motilal.md"
+}

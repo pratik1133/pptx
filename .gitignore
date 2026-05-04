@@ -8,3 +8,8 @@ __pycache__/
 *.pptx
 *.pdf
 output/
+# Environment variables
+.env
+.env.local
+.env.production
+.env.*.local

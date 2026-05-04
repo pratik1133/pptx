@@ -4,14 +4,19 @@ import json
 from pathlib import Path
 from typing import Any
 
+from reportgen.config import settings
+from reportgen.rendering.brand_shell import apply_interior_shell
 from reportgen.rendering.chart_renderer import render_chart_block
 from reportgen.rendering.data_resolver import RenderDataResolver
 from reportgen.rendering.layout_registry import LayoutDefinition, get_layout_definition
 from reportgen.rendering.metrics_renderer import render_metrics_block
 from reportgen.rendering.pptx_runtime import load_pptx_runtime
+from reportgen.rendering.render_manifest import RenderManifest
+from reportgen.rendering.slides.cover_slide import render_cover_slide
 from reportgen.rendering.table_renderer import render_table_block
 from reportgen.rendering.text_renderer import add_bullet_list, add_textbox
 from reportgen.rendering.theme import DEFAULT_THEME, BrandTheme
+from reportgen.rendering.theme_loader import load_brand_theme
 from reportgen.schemas.blocks import BulletBlock, MetricsBlock, TextBlock
 from reportgen.schemas.charts import ChartBlock
 from reportgen.schemas.report import ReportSpec
@@ -21,17 +26,28 @@ from reportgen.schemas.tables import TableBlock
 
 class PresentationRenderer:
     def __init__(self, theme: BrandTheme | None = None) -> None:
-        self.theme = theme or DEFAULT_THEME
+        self.theme = theme or load_brand_theme(settings.theme_path) or DEFAULT_THEME
+        self.manifest = RenderManifest()
 
     def render_to_path(self, report_spec: ReportSpec, out_path: Path) -> Path:
         runtime = load_pptx_runtime()
         presentation = runtime.Presentation()
-        presentation.slide_width = runtime.Inches(10)
-        presentation.slide_height = runtime.Inches(7.5)
+        presentation.slide_width = runtime.Inches(self.theme.canvas.width_in)
+        presentation.slide_height = runtime.Inches(self.theme.canvas.height_in)
         resolver = RenderDataResolver(report_spec)
+        self.manifest = RenderManifest()
 
-        for slide_spec in report_spec.slides:
-            self._render_slide(presentation, slide_spec, runtime, resolver)
+        total = len(report_spec.slides)
+        for index, slide_spec in enumerate(report_spec.slides, start=1):
+            self._render_slide(
+                presentation,
+                slide_spec,
+                report_spec,
+                runtime,
+                resolver,
+                page_number=index,
+                total_pages=total,
+            )
 
         out_path.parent.mkdir(parents=True, exist_ok=True)
         presentation.save(out_path)
@@ -41,11 +57,30 @@ class PresentationRenderer:
         self,
         presentation: Any,
         slide_spec: SlideSpec,
+        report_spec: ReportSpec,
         runtime: Any,
         resolver: RenderDataResolver,
+        *,
+        page_number: int,
+        total_pages: int,
     ) -> None:
         slide = presentation.slides.add_slide(presentation.slide_layouts[6])
-        self._apply_background(slide, runtime)
+
+        if slide_spec.layout == "cover_slide":
+            render_cover_slide(slide, slide_spec, report_spec, self.theme, runtime)
+            return
+
+        apply_interior_shell(
+            slide,
+            self.theme,
+            runtime,
+            page_number=page_number,
+            total_pages=total_pages,
+            ticker=report_spec.company.ticker,
+            analyst=report_spec.metadata.analyst or "",
+            report_date=str(report_spec.metadata.report_date),
+        )
+
         layout_definition = get_layout_definition(slide_spec.layout)
 
         title_box = self._placeholder(layout_definition, "title")
@@ -71,10 +106,8 @@ class PresentationRenderer:
                     theme=self.theme,
                 )
 
-        counters: dict[str, int] = {}
         for block in slide_spec.blocks:
             block_type = getattr(block, "type", "")
-            counters[block_type] = counters.get(block_type, 0) + 1
             placeholder = self._placeholder(layout_definition, block_type)
             if not placeholder:
                 continue
@@ -85,24 +118,59 @@ class PresentationRenderer:
                 add_bullet_list(slide, placeholder, list(block.items), self.theme.body_font, runtime, theme=self.theme)
             elif isinstance(block, MetricsBlock):
                 render_metrics_block(slide, placeholder, block, runtime, theme=self.theme)
+                for item in block.items:
+                    self.manifest.add(
+                        slide_id=slide_spec.slide_id,
+                        block_key=block.key,
+                        source_key=item.source or item.label,
+                        resolved_value=item.value,
+                        kind="metric",
+                    )
             elif isinstance(block, ChartBlock):
                 render_chart_block(slide, placeholder, block, resolver, runtime, theme=self.theme)
+                try:
+                    categories = resolver.resolve_period_labels(block.category_source)
+                    self.manifest.add(
+                        slide_id=slide_spec.slide_id,
+                        block_key=block.key,
+                        source_key=block.category_source,
+                        resolved_value=", ".join(categories),
+                        kind="chart_category",
+                    )
+                    for series_ref in block.series:
+                        series = resolver.resolve_series(series_ref.source_key)
+                        for period, value in zip(series.periods, series.values, strict=True):
+                            self.manifest.add(
+                                slide_id=slide_spec.slide_id,
+                                block_key=block.key,
+                                source_key=f"{series_ref.source_key}@{period}",
+                                resolved_value=str(value),
+                                kind="chart_series",
+                            )
+                except KeyError:
+                    pass
             elif isinstance(block, TableBlock):
                 render_table_block(slide, placeholder, block, resolver, runtime, theme=self.theme)
-
-    def _apply_background(self, slide: Any, runtime: Any) -> None:
-        background = slide.background
-        fill = background.fill
-        fill.solid()
-        fill.fore_color.rgb = runtime.RGBColor.from_string(
-            self.theme.palette.background.removeprefix("#")
-        )
+                try:
+                    rows = resolver.resolve_table_rows(block.source_key)
+                    for row_index, row in enumerate(rows):
+                        for column in block.columns:
+                            self.manifest.add(
+                                slide_id=slide_spec.slide_id,
+                                block_key=block.key,
+                                source_key=f"{block.source_key}[{row_index}].{column.key}",
+                                resolved_value=str(row.get(column.key, "")),
+                                kind="table_cell",
+                            )
+                except KeyError:
+                    pass
 
     def _placeholder(self, layout_definition: LayoutDefinition, name: str):
         for placeholder in layout_definition.placeholders:
             if placeholder.name == name:
                 return placeholder.box
         return None
+
 
 def load_report_spec(path: Path) -> ReportSpec:
     return ReportSpec.model_validate(json.loads(path.read_text(encoding="utf-8")))

@@ -1,6 +1,11 @@
-from decimal import Decimal, ROUND_HALF_UP
+from decimal import Decimal
 from uuid import uuid4
 
+from reportgen.rendering.number_format import (
+    format_currency,
+    format_number,
+    format_percent,
+)
 from reportgen.schemas.blocks import BulletBlock, MetricItem, MetricsBlock, TextBlock
 from reportgen.schemas.bundle import NormalizedInputBundle
 from reportgen.schemas.charts import ChartBlock, ChartSeriesRef
@@ -19,13 +24,6 @@ from reportgen.schemas.slides import SlideSpec
 from reportgen.schemas.tables import TableBlock, TableColumn
 
 
-def _format_number(value: Decimal, currency: str | None = None, suffix: str = "") -> str:
-    quantized = value.quantize(Decimal("0.1"), rounding=ROUND_HALF_UP)
-    if currency:
-        return f"{currency} {quantized}{suffix}"
-    return f"{quantized}{suffix}"
-
-
 def resolve_source_value(bundle: NormalizedInputBundle, source_key: str) -> str:
     metadata = bundle.source.metadata
     company = bundle.source.company
@@ -35,19 +33,19 @@ def resolve_source_value(bundle: NormalizedInputBundle, source_key: str) -> str:
         "company.ticker": company.ticker,
         "company.sector": company.sector,
         "metadata.rating": metadata.rating.upper(),
-        "metadata.cmp": _format_number(metadata.cmp, metadata.currency.upper()),
-        "metadata.target_price": _format_number(metadata.target_price, metadata.currency.upper()),
+        "metadata.cmp": format_currency(metadata.cmp, metadata.currency),
+        "metadata.target_price": format_currency(metadata.target_price, metadata.currency),
         "metadata.analyst": metadata.analyst,
     }
 
     if metadata.upside_pct is not None:
-        source_map["metadata.upside_pct"] = _format_number(metadata.upside_pct, suffix="%")
+        source_map["metadata.upside_pct"] = format_percent(metadata.upside_pct)
 
     if source_key.startswith("financial_metrics."):
         metric_key = source_key.removeprefix("financial_metrics.")
         metric_value = bundle.source.financial_model.metrics[metric_key]
         if isinstance(metric_value, Decimal):
-            return _format_number(metric_value)
+            return format_number(metric_value)
         return str(metric_value)
 
     if source_key in source_map:

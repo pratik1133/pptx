@@ -80,8 +80,5 @@ def validate_loaded_bundle(loaded: LoadedInputBundle) -> None:
     if loaded.metadata.target_price < loaded.metadata.cmp and loaded.metadata.rating.upper() == "BUY":
         errors.append("BUY rating should not have a target price below current market price.")
 
-    if not loaded.company.peer_list:
-        errors.append("Company profile should contain at least one peer for research comparables.")
-
     if errors:
         raise InputValidationError(errors)

@@ -1,0 +1,9 @@
+pydantic<3.0,>=2.7
+pydantic-settings<3.0,>=2.2
+python-pptx<1.0,>=0.6.23
+typer<1.0,>=0.12
+rich<14.0,>=13.7
+
+[dev]
+pytest<9.0,>=8.2
+ruff<1.0,>=0.4

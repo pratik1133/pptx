@@ -1,0 +1,54 @@
+{
+  "name": "tikona_capital",
+  "firm_name": "Tikona Capital",
+  "footer_line": "Tikona Capital | SEBI Registration No.: INH000069807",
+  "logo_path": "assets/branding/logo.png",
+  "canvas": {
+    "aspect_ratio": "16:9",
+    "width_in": 13.333,
+    "height_in": 7.5
+  },
+  "palette": {
+    "primary": "#1F4690",
+    "secondary": "#3A5BA0",
+    "accent": "#FFA500",
+    "soft": "#FFE5B4",
+    "text": "#111111",
+    "text_on_primary": "#FFFFFF",
+    "muted_text": "#5A6573",
+    "background": "#FFFFFF",
+    "divider": "#3A5BA0"
+  },
+  "rating_colors": {
+    "BUY": "#1B7F3A",
+    "HOLD": "#FFA500",
+    "SELL": "#B3261E",
+    "REDUCE": "#D97706"
+  },
+  "chart_palette": [
+    "#1F4690",
+    "#FFA500",
+    "#3A5BA0",
+    "#1B7F3A",
+    "#B3261E",
+    "#FFE5B4"
+  ],
+  "fonts": {
+    "title": { "family": "Calibri", "size_pt": 26, "bold": true, "color_hex": "#1F4690" },
+    "subtitle": { "family": "Calibri", "size_pt": 13, "bold": false, "color_hex": "#5A6573" },
+    "body": { "family": "Calibri", "size_pt": 12, "bold": false, "color_hex": "#111111" },
+    "metric": { "family": "Calibri", "size_pt": 14, "bold": true, "color_hex": "#1F4690" },
+    "footer": { "family": "Calibri", "size_pt": 9, "bold": false, "color_hex": "#FFFFFF" },
+    "header": { "family": "Calibri", "size_pt": 11, "bold": true, "color_hex": "#FFFFFF" },
+    "rating_badge": { "family": "Calibri", "size_pt": 12, "bold": true, "color_hex": "#FFFFFF" }
+  },
+  "shell": {
+    "header_height_in": 0.45,
+    "footer_height_in": 0.35,
+    "side_margin_in": 0.5,
+    "title_top_in": 0.6,
+    "title_height_in": 0.55,
+    "divider_thickness_pt": 1.5,
+    "logo_height_in": 0.32
+  }
+}

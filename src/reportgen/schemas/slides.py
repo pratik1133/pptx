@@ -18,6 +18,20 @@ SlideLayout = Literal[
     "valuation_summary",
     "risks_and_catalysts",
     "disclaimer",
+    "peer_comparison",
+    "valuation_table",
+    "quarterly_summary",
+    "ratio_summary",
+    "dcf_summary",
+    "segment_mix",
+    "price_performance",
+    "industry_overview",
+    "saarthi_scorecard",
+    "management_profile",
+    "forensic_assessment",
+    "trading_strategy",
+    "key_highlights",
+    "analyst_certification",
 ]
 
 SlideBlock = TextBlock | BulletBlock | MetricsBlock | ChartBlock | TableBlock

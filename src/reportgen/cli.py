@@ -4,7 +4,7 @@ import typer
 from rich.console import Console
 from rich.table import Table
 
-from reportgen.ai.planner import plan_slides_mock
+from reportgen.ai.planner import plan_slides, plan_slides_mock
 from reportgen.ai.serializers import dump_slide_plan_json
 from reportgen.config import settings
 from reportgen.export.pdf_converter import PdfConversionUnavailableError, resolve_pdf_converter
@@ -52,15 +52,16 @@ def validate_input(bundle: Path = typer.Option(..., exists=True, readable=True, 
 
 
 @app.command("plan-slides")
-def plan_slides(
+def plan_slides_command(
     bundle: Path = typer.Option(..., exists=True, readable=True, help="Path to input bundle JSON."),
     out: Path = typer.Option(..., help="Path to write the slide plan JSON."),
+    mock: bool = typer.Option(False, "--mock", help="Use deterministic mock planner instead of Anthropic."),
 ) -> None:
-    """Generate a validated slide plan using the deterministic local planner scaffold."""
+    """Generate a validated slide plan. Defaults to the real Anthropic planner; falls back to mock without an API key."""
 
     try:
         normalized = load_normalized_input_bundle(bundle)
-        plan = plan_slides_mock(normalized)
+        plan = plan_slides(normalized, use_mock=mock)
     except InputValidationError as exc:
         console.print("[bold red]Slide planning failed.[/bold red]")
         for error in exc.errors:
@@ -76,12 +77,13 @@ def plan_slides(
 def build_report_spec_command(
     bundle: Path = typer.Option(..., exists=True, readable=True, help="Path to input bundle JSON."),
     out: Path = typer.Option(..., help="Path to write the report spec JSON."),
+    mock: bool = typer.Option(False, "--mock", help="Use deterministic mock planner."),
 ) -> None:
-    """Build a render-ready report spec from the validated local planning scaffold."""
+    """Build a render-ready report spec from the slide plan."""
 
     try:
         normalized = load_normalized_input_bundle(bundle)
-        plan = plan_slides_mock(normalized)
+        plan = plan_slides(normalized, use_mock=mock)
         report_spec = build_report_spec(normalized, plan)
     except InputValidationError as exc:
         console.print("[bold red]Report spec build failed.[/bold red]")
@@ -135,15 +137,28 @@ def export_pdf(
 def run_pipeline(
     bundle: Path = typer.Option(..., exists=True, readable=True, help="Path to input bundle JSON."),
     out_root: Path = typer.Option(settings.output_root, help="Root directory for packaged run outputs."),
+    mock: bool = typer.Option(False, "--mock", help="Use deterministic mock planner instead of Anthropic."),
 ) -> None:
-    """Run the local end-to-end pipeline and package outputs into a run folder."""
+    """Run the end-to-end pipeline and package outputs into a run folder."""
 
     try:
-        result = run_local_pipeline(bundle, out_root)
-    except (InputValidationError, RuntimeError) as exc:
-        console.print("[bold red]Pipeline run failed.[/bold red]")
-        console.print(f"[red]{exc}[/red]")
-        raise typer.Exit(code=1) from exc
+        result = run_local_pipeline(bundle, out_root, use_mock=mock)
+    except InputValidationError as exc:
+        console.print("[bold red]E_INPUT: Pipeline rejected the input bundle or slide plan.[/bold red]")
+        for err in exc.errors:
+            console.print(f"[red]- {err}[/red]")
+        raise typer.Exit(code=2) from exc
+    except RuntimeError as exc:
+        message = str(exc)
+        if "Anthropic" in message or "LLM" in message:
+            code, label = "E_PLAN", "Slide planning failed"
+        elif "PDF" in message or "PowerPoint" in message or "LibreOffice" in message:
+            code, label = "E_PDF", "PDF export failed"
+        else:
+            code, label = "E_RENDER", "Rendering failed"
+        console.print(f"[bold red]{code}: {label}.[/bold red]")
+        console.print(f"[red]{message}[/red]")
+        raise typer.Exit(code=3) from exc
 
     console.print(f"[bold green]Run folder created:[/bold green] {result.run_root}")
     console.print(f"[bold]Status:[/bold] {result.manifest.status}")

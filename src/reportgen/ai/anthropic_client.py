@@ -29,7 +29,7 @@ class AnthropicPlanningClient:
         client = Anthropic(api_key=self.api_key)
         response = client.messages.create(
             model=self.model_name,
-            max_tokens=4000,
+            max_tokens=16000,
             system=system_prompt,
             messages=[{"role": "user", "content": user_prompt}],
         )

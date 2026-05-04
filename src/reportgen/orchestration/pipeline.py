@@ -5,7 +5,7 @@ from datetime import datetime
 from pathlib import Path
 from uuid import uuid4
 
-from reportgen.ai.planner import plan_slides_mock
+from reportgen.ai.planner import plan_slides
 from reportgen.ai.serializers import dump_slide_plan_json
 from reportgen.export.pdf_converter import PdfConversionUnavailableError, resolve_pdf_converter
 from reportgen.ingestion.loaders import load_normalized_input_bundle
@@ -31,9 +31,14 @@ class PipelineRunResult:
     pptx_path: Path
 
 
-def run_local_pipeline(bundle_path: Path, output_root: Path) -> PipelineRunResult:
+def run_local_pipeline(
+    bundle_path: Path,
+    output_root: Path,
+    *,
+    use_mock: bool = False,
+) -> PipelineRunResult:
     normalized = load_normalized_input_bundle(bundle_path)
-    plan = plan_slides_mock(normalized)
+    plan = plan_slides(normalized, use_mock=use_mock)
     report_spec = build_report_spec(normalized, plan)
 
     timestamp = datetime.now().strftime("%Y-%m-%d_%H%M%S")
@@ -66,6 +71,11 @@ def run_local_pipeline(bundle_path: Path, output_root: Path) -> PipelineRunResul
     renderer = PresentationRenderer()
     pptx_path = renderer.render_to_path(report_spec, run_root / "artifacts" / "report.pptx")
     store.add_artifact(manifest, "pptx", pptx_path)
+
+    render_manifest_path = store.write_text(
+        "intermediates/render_manifest.json", renderer.manifest.to_json()
+    )
+    store.add_artifact(manifest, "render_manifest", render_manifest_path)
 
     content_checks = validate_report_content(report_spec)
     manifest.notes.extend(content_checks.warnings)

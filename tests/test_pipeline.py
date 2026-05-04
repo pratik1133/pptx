@@ -5,7 +5,11 @@ from reportgen.orchestration.pipeline import run_local_pipeline
 
 
 def test_run_local_pipeline_packages_outputs() -> None:
-    result = run_local_pipeline(Path("data/samples/bundles/abc_bundle.json"), settings.output_root)
+    result = run_local_pipeline(
+        Path("data/samples/bundles/abc_bundle.json"),
+        settings.output_root,
+        use_mock=True,
+    )
 
     assert result.run_root.exists()
     assert (result.run_root / "manifest.json").exists()

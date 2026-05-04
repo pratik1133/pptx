@@ -1,0 +1,24 @@
+{
+  "slide_id": "s2",
+  "layout": "investment_thesis",
+  "title": "Investment Thesis",
+  "rationale": "Lead with the core re-rating story before getting into financials.",
+  "blocks": [
+    {
+      "type": "text",
+      "key": "thesis_summary",
+      "content": "We initiate with a BUY view. The franchise is migrating from cyclical broking revenue to an annuity-driven mix. ARR is now 65% of net revenues, structurally improving the quality of earnings. The market has not yet priced this shift, leaving a 37% upside to consensus."
+    },
+    {
+      "type": "bullets",
+      "key": "thesis_points",
+      "items": [
+        "Annuity revenue mix shift de-risks the earnings base across cycles.",
+        "AUM compounding above 30% YoY with category-leading benchmark outperformance.",
+        "Operating leverage from a largely fixed cost base supports margin expansion.",
+        "AA+ credit upgrade endorses balance-sheet strength and reinvestment capacity.",
+        "Probability-weighted target reflects a balanced view across regulatory scenarios."
+      ]
+    }
+  ]
+}

@@ -46,7 +46,23 @@ class DataReferenceCatalog(BaseModel):
     metric_source_keys: list[NonEmptyString] = Field(default_factory=list)
     series_names: list[NonEmptyString] = Field(default_factory=list)
     series_source_keys: list[NonEmptyString] = Field(default_factory=list)
+    quarterly_series_source_keys: list[NonEmptyString] = Field(default_factory=list)
+    ratio_source_keys: list[NonEmptyString] = Field(default_factory=list)
     period_labels: list[NonEmptyString] = Field(default_factory=list)
+    has_peers: bool = False
+    has_quarterly: bool = False
+    has_segments: bool = False
+    has_valuation_bands: bool = False
+    has_scenarios: bool = False
+    has_ratios: bool = False
+    has_saarthi: bool = False
+    has_management: bool = False
+    has_forensic: bool = False
+    has_key_highlights: bool = False
+    has_competitive_advantages: bool = False
+    has_industry_tailwinds: bool = False
+    has_industry_risks: bool = False
+    has_trading_strategy: bool = False
 
 
 class NormalizedInputBundle(BaseModel):

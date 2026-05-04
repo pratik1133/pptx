@@ -39,13 +39,16 @@ def _extract_sections(markdown: str) -> list[ReportSection]:
 
 
 def normalize_loaded_bundle(loaded: LoadedInputBundle) -> NormalizedInputBundle:
-    metric_keys = sorted(loaded.financial_model.metrics.keys())
+    fm = loaded.financial_model
+    metric_keys = sorted(fm.metrics.keys())
     metric_source_keys = [f"financial_metrics.{key}" for key in metric_keys]
-    series_names = [series.name for series in loaded.financial_model.series]
+    series_names = [series.name for series in fm.series]
     series_source_keys = [f"series.{name}" for name in series_names]
+    quarterly_series_source_keys = [f"quarterly_series.{s.name}" for s in fm.quarterly_series]
+    ratio_source_keys = [f"ratios.{r.name}" for r in fm.ratios]
     period_labels: list[str] = []
-    if loaded.financial_model.series:
-        period_labels = list(loaded.financial_model.series[0].periods)
+    if fm.series:
+        period_labels = list(fm.series[0].periods)
 
     headline_metrics = {
         "cmp": f"{loaded.metadata.currency.upper()} {_format_decimal(loaded.metadata.cmp)}",
@@ -70,6 +73,22 @@ def normalize_loaded_bundle(loaded: LoadedInputBundle) -> NormalizedInputBundle:
             metric_source_keys=metric_source_keys,
             series_names=series_names,
             series_source_keys=series_source_keys,
+            quarterly_series_source_keys=quarterly_series_source_keys,
+            ratio_source_keys=ratio_source_keys,
             period_labels=period_labels,
+            has_peers=bool(fm.peers),
+            has_quarterly=bool(fm.quarterly_series),
+            has_segments=bool(fm.segments),
+            has_valuation_bands=bool(fm.valuation_bands),
+            has_scenarios=bool(fm.scenarios),
+            has_ratios=bool(fm.ratios),
+            has_saarthi=fm.saarthi is not None,
+            has_management=bool(fm.management_team),
+            has_forensic=fm.forensic is not None,
+            has_key_highlights=bool(fm.key_highlights),
+            has_competitive_advantages=bool(fm.competitive_advantages),
+            has_industry_tailwinds=bool(fm.industry_tailwinds),
+            has_industry_risks=bool(fm.industry_risks),
+            has_trading_strategy=fm.trading_strategy is not None,
         ),
     )

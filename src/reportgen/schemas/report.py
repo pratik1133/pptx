@@ -17,7 +17,7 @@ class InputReferences(BaseModel):
 class ReportSpec(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
-    schema_version: str = "1.0.0"
+    schema_version: str = "1.1.0"
     report_id: UUID
     run_id: UUID
     company: CompanyProfile
