@@ -1,0 +1,202 @@
+{
+  "schema_version": "1.0.0",
+  "report_id": "4fd97500-8925-4b5f-9837-b09e8fac69f9",
+  "run_id": "61e9e543-0d74-4785-8b9f-58062cea46f6",
+  "company": {
+    "name": "XYZ Finance Ltd",
+    "ticker": "XYZ",
+    "exchange": "NSE",
+    "sector": "Financial Services",
+    "industry": "NBFC",
+    "isin": "INE111XYZ999",
+    "country": "India",
+    "description": "XYZ Finance Ltd is a diversified NBFC with a growing secured retail loan franchise and improving return ratios.",
+    "peer_list": [
+      "Alpha Finance",
+      "Prime Credit",
+      "SecureCap"
+    ]
+  },
+  "metadata": {
+    "rating": "BUY",
+    "currency": "INR",
+    "cmp": "178",
+    "target_price": "225",
+    "upside_pct": "26.4",
+    "market_cap": "92000000000",
+    "analyst": "Amit Rao",
+    "report_date": "2026-04-28",
+    "report_type": "Update"
+  },
+  "inputs": {
+    "financial_model_ref": "C:\\Users\\pratik\\pptx\\data\\samples\\financial_models\\xyz_model.json",
+    "approved_content_ref": "C:\\Users\\pratik\\pptx\\data\\samples\\approved_reports\\xyz.md"
+  },
+  "slides": [
+    {
+      "slide_id": "s1",
+      "layout": "cover_slide",
+      "title": "XYZ Finance Ltd Update Note",
+      "subtitle": "XYZ Finance Ltd | BUY",
+      "blocks": [
+        {
+          "type": "metrics",
+          "key": "headline_metrics",
+          "items": [
+            {
+              "label": "Rating",
+              "value": "BUY",
+              "source": "metadata.rating"
+            },
+            {
+              "label": "CMP",
+              "value": "INR 178.0",
+              "source": "metadata.cmp"
+            },
+            {
+              "label": "TP",
+              "value": "INR 225.0",
+              "source": "metadata.target_price"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s2",
+      "layout": "investment_thesis",
+      "title": "Investment Thesis",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "summary",
+          "content": "XYZ Finance is delivering consistent secured-loan growth while preserving balance-sheet discipline and improving profitability."
+        },
+        {
+          "type": "bullets",
+          "key": "key_points",
+          "items": [
+            "XYZ Finance is delivering consistent secured-loan growth while preserving balance-sheet discipline and improving profitability.",
+            "- Branch productivity is improving across newer cohorts.",
+            "- Competitive intensity could pressure spreads."
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s3",
+      "layout": "company_snapshot",
+      "title": "XYZ Finance Ltd At A Glance",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "business_summary",
+          "content": "XYZ Finance Ltd is a diversified NBFC with a growing secured retail loan franchise and improving return ratios."
+        },
+        {
+          "type": "metrics",
+          "key": "snapshot_metrics",
+          "items": [
+            {
+              "label": "CMP",
+              "value": "INR 178.0",
+              "source": "metadata.cmp"
+            },
+            {
+              "label": "TP",
+              "value": "INR 225.0",
+              "source": "metadata.target_price"
+            },
+            {
+              "label": "Upside",
+              "value": "26.4%",
+              "source": "metadata.upside_pct"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s4",
+      "layout": "text_plus_chart",
+      "title": "Financial Trend Overview",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "trend_summary",
+          "content": "Revenue and profitability trends should be grounded in deterministic model outputs."
+        },
+        {
+          "type": "chart",
+          "key": "trend_chart",
+          "chart_type": "bar",
+          "title": "Revenue Trend",
+          "category_source": "period_labels",
+          "series": [
+            {
+              "label": "AUM",
+              "source_key": "series.AUM"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s5",
+      "layout": "full_table",
+      "title": "Revenue Summary Table",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "table",
+          "key": "revenue_table",
+          "title": "Revenue By Period",
+          "source_key": "series.AUM",
+          "columns": [
+            {
+              "key": "period",
+              "label": "Period"
+            },
+            {
+              "key": "value",
+              "label": "Value"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s6",
+      "layout": "risks_and_catalysts",
+      "title": "Risks And Catalysts",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "bullets",
+          "key": "risk_points",
+          "items": [
+            "- Competitive intensity could pressure spreads.",
+            "- Asset-quality normalization may take longer than expected.",
+            "- Execution slippage in new geographies may slow disbursement momentum."
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s7",
+      "layout": "disclaimer",
+      "title": "Disclaimer",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "disclaimer_text",
+          "content": "For internal research workflow validation only. Final legal disclaimer copy will be supplied from approved assets."
+        }
+      ]
+    }
+  ]
+}

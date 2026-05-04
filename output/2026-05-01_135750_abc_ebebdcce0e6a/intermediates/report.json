@@ -1,0 +1,202 @@
+{
+  "schema_version": "1.0.0",
+  "report_id": "4b9ebbd7-f612-4c67-a3f1-051cf70040a8",
+  "run_id": "b5c6ee30-d390-49ae-9360-618f03b72b62",
+  "company": {
+    "name": "ABC Ltd",
+    "ticker": "ABC",
+    "exchange": "NSE",
+    "sector": "Chemicals",
+    "industry": "Specialty Chemicals",
+    "isin": "INE000ABC123",
+    "country": "India",
+    "description": "ABC Ltd is a specialty chemicals manufacturer focused on export-led growth and margin expansion.",
+    "peer_list": [
+      "PeerChem Ltd",
+      "InduChem Corp",
+      "GlobalChem India"
+    ]
+  },
+  "metadata": {
+    "rating": "BUY",
+    "currency": "INR",
+    "cmp": "420",
+    "target_price": "515",
+    "upside_pct": "22.6",
+    "market_cap": "185000000000",
+    "analyst": "Jane Doe",
+    "report_date": "2026-04-28",
+    "report_type": "Initiation"
+  },
+  "inputs": {
+    "financial_model_ref": "C:\\Users\\pratik\\pptx\\data\\samples\\financial_models\\abc_model.json",
+    "approved_content_ref": "C:\\Users\\pratik\\pptx\\data\\samples\\approved_reports\\abc.md"
+  },
+  "slides": [
+    {
+      "slide_id": "s1",
+      "layout": "cover_slide",
+      "title": "ABC Ltd Initiation Note",
+      "subtitle": "ABC Ltd | BUY",
+      "blocks": [
+        {
+          "type": "metrics",
+          "key": "headline_metrics",
+          "items": [
+            {
+              "label": "Rating",
+              "value": "BUY",
+              "source": "metadata.rating"
+            },
+            {
+              "label": "CMP",
+              "value": "INR 420.0",
+              "source": "metadata.cmp"
+            },
+            {
+              "label": "TP",
+              "value": "INR 515.0",
+              "source": "metadata.target_price"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s2",
+      "layout": "investment_thesis",
+      "title": "Investment Thesis",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "summary",
+          "content": "ABC Ltd is emerging as a scaled specialty chemicals platform with improving mix, stronger export penetration, and disciplined capacity expansion."
+        },
+        {
+          "type": "bullets",
+          "key": "key_points",
+          "items": [
+            "ABC Ltd is emerging as a scaled specialty chemicals platform with improving mix, stronger export penetration, and disciplined capacity expansion.",
+            "- Demand visibility remains healthy across key end markets.",
+            "- Raw material volatility could pressure gross margins."
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s3",
+      "layout": "company_snapshot",
+      "title": "ABC Ltd At A Glance",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "business_summary",
+          "content": "ABC Ltd is a specialty chemicals manufacturer focused on export-led growth and margin expansion."
+        },
+        {
+          "type": "metrics",
+          "key": "snapshot_metrics",
+          "items": [
+            {
+              "label": "CMP",
+              "value": "INR 420.0",
+              "source": "metadata.cmp"
+            },
+            {
+              "label": "TP",
+              "value": "INR 515.0",
+              "source": "metadata.target_price"
+            },
+            {
+              "label": "Upside",
+              "value": "22.6%",
+              "source": "metadata.upside_pct"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s4",
+      "layout": "text_plus_chart",
+      "title": "Financial Trend Overview",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "trend_summary",
+          "content": "Revenue and profitability trends should be grounded in deterministic model outputs."
+        },
+        {
+          "type": "chart",
+          "key": "trend_chart",
+          "chart_type": "bar",
+          "title": "Revenue Trend",
+          "category_source": "period_labels",
+          "series": [
+            {
+              "label": "Revenue",
+              "source_key": "series.Revenue"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s5",
+      "layout": "full_table",
+      "title": "Revenue Summary Table",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "table",
+          "key": "revenue_table",
+          "title": "Revenue By Period",
+          "source_key": "series.Revenue",
+          "columns": [
+            {
+              "key": "period",
+              "label": "Period"
+            },
+            {
+              "key": "value",
+              "label": "Value"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s6",
+      "layout": "risks_and_catalysts",
+      "title": "Risks And Catalysts",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "bullets",
+          "key": "risk_points",
+          "items": [
+            "- Raw material volatility could pressure gross margins.",
+            "- Delays in utilization ramp-up may push out earnings conversion.",
+            "- Export demand softness could affect near-term growth."
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s7",
+      "layout": "disclaimer",
+      "title": "Disclaimer",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "disclaimer_text",
+          "content": "For internal research workflow validation only. Final legal disclaimer copy will be supplied from approved assets."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+ts=2026-05-04T02:31:40.386361+00:00 level=INFO msg=pipeline_started run_id=485aa43775c1 ticker=MOFSL
+ts=2026-05-04T02:31:40.386389+00:00 level=WARN msg=qa_warning detail=Slide s5 bullet item in 'highlights' is long and may wrap heavily.
+ts=2026-05-04T02:31:40.386393+00:00 level=WARN msg=qa_warning detail=Slide s5 bullet item in 'highlights' is long and may wrap heavily.
+ts=2026-05-04T02:31:40.386397+00:00 level=WARN msg=qa_warning detail=Slide s5 bullet item in 'highlights' is long and may wrap heavily.
+ts=2026-05-04T02:31:40.386401+00:00 level=WARN msg=qa_warning detail=Slide s5 bullet item in 'highlights' is long and may wrap heavily.
+ts=2026-05-04T02:31:40.386405+00:00 level=WARN msg=qa_warning detail=Slide s5 bullet item in 'highlights' is long and may wrap heavily.
+ts=2026-05-04T02:31:40.386409+00:00 level=WARN msg=qa_warning detail=Slide s17 bullet item in 'risks' is long and may wrap heavily.
+ts=2026-05-04T02:31:40.386413+00:00 level=WARN msg=qa_warning detail=Slide s17 bullet item in 'risks' is long and may wrap heavily.
+ts=2026-05-04T02:31:40.386416+00:00 level=WARN msg=qa_warning detail=Slide s17 bullet item in 'risks' is long and may wrap heavily.
+ts=2026-05-04T02:31:40.386420+00:00 level=WARN msg=qa_warning detail=Slide s17 bullet item in 'risks' is long and may wrap heavily.
+ts=2026-05-04T02:31:40.386425+00:00 level=WARN msg=qa_warning detail=Slide s18 bullet item in 'trading_parameters' is long and may wrap heavily.
+ts=2026-05-04T02:31:40.386429+00:00 level=WARN msg=qa_warning detail=Slide s18 bullet item in 'trading_parameters' is long and may wrap heavily.
+ts=2026-05-04T02:31:40.386432+00:00 level=WARN msg=qa_warning detail=Slide s18 bullet item in 'trading_parameters' is long and may wrap heavily.
+ts=2026-05-04T02:31:40.386436+00:00 level=WARN msg=qa_warning detail=Slide s20 bullet item in 'catalysts_list' is long and may wrap heavily.
+ts=2026-05-04T02:31:40.386440+00:00 level=WARN msg=qa_warning detail=Slide s20 bullet item in 'catalysts_list' is long and may wrap heavily.
+ts=2026-05-04T02:31:40.386443+00:00 level=WARN msg=qa_warning detail=Slide s21 text block 'disclaimer_text' is very long.
+ts=2026-05-04T02:31:40.386447+00:00 level=WARN msg=qa_warning detail=No supported PDF conversion backend is available. Configure LibreOffice or PowerPoint.
+ts=2026-05-04T02:31:40.386452+00:00 level=INFO msg=pipeline_finished status=pdf_skipped

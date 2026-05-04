@@ -1,0 +1,178 @@
+{
+  "schema_version": "1.0.0",
+  "company_ticker": "XYZ",
+  "generated_at": "2026-05-01T08:40:49.313006Z",
+  "slides": [
+    {
+      "slide_id": "s1",
+      "layout": "cover_slide",
+      "title": "XYZ Finance Ltd Update Note",
+      "subtitle": "XYZ Finance Ltd | BUY",
+      "rationale": "Introduce the company and headline recommendation.",
+      "blocks": [
+        {
+          "type": "metrics",
+          "key": "headline_metrics",
+          "items": [
+            {
+              "label": "Rating",
+              "source_key": "metadata.rating",
+              "display_hint": null
+            },
+            {
+              "label": "CMP",
+              "source_key": "metadata.cmp",
+              "display_hint": null
+            },
+            {
+              "label": "TP",
+              "source_key": "metadata.target_price",
+              "display_hint": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s2",
+      "layout": "investment_thesis",
+      "title": "Investment Thesis",
+      "subtitle": null,
+      "rationale": "Lead with the core investment case.",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "summary",
+          "content": "XYZ Finance is delivering consistent secured-loan growth while preserving balance-sheet discipline and improving profitability."
+        },
+        {
+          "type": "bullets",
+          "key": "key_points",
+          "items": [
+            "XYZ Finance is delivering consistent secured-loan growth while preserving balance-sheet discipline and improving profitability.",
+            "Branch productivity is improving across newer cohorts.",
+            "The secured mix is supporting credit-cost stability.",
+            "Funding access remains adequate for the next growth phase.",
+            "Competitive intensity could pressure spreads."
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s3",
+      "layout": "company_snapshot",
+      "title": "XYZ Finance Ltd At A Glance",
+      "subtitle": null,
+      "rationale": "Provide company context and headline metrics.",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "business_summary",
+          "content": "XYZ Finance Ltd is a diversified NBFC with a growing secured retail loan franchise and improving return ratios."
+        },
+        {
+          "type": "metrics",
+          "key": "snapshot_metrics",
+          "items": [
+            {
+              "label": "CMP",
+              "source_key": "metadata.cmp",
+              "display_hint": null
+            },
+            {
+              "label": "TP",
+              "source_key": "metadata.target_price",
+              "display_hint": null
+            },
+            {
+              "label": "Upside",
+              "source_key": "metadata.upside_pct",
+              "display_hint": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s4",
+      "layout": "text_plus_chart",
+      "title": "Financial Trend Overview",
+      "subtitle": null,
+      "rationale": "Connect narrative to deterministic historical and forecast series.",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "trend_summary",
+          "content": "Revenue and profitability trends are grounded in deterministic model outputs."
+        },
+        {
+          "type": "chart",
+          "key": "trend_chart",
+          "chart_type": "bar",
+          "title": "Revenue Trend",
+          "category_source": "period_labels",
+          "series_source_keys": [
+            "series.AUM"
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s5",
+      "layout": "full_table",
+      "title": "Revenue Summary Table",
+      "subtitle": null,
+      "rationale": "Deterministic tabular view of the main financial series.",
+      "blocks": [
+        {
+          "type": "table",
+          "key": "revenue_table",
+          "title": "Revenue By Period",
+          "source_key": "series.AUM",
+          "columns": [
+            {
+              "key": "period",
+              "label": "Period"
+            },
+            {
+              "key": "value",
+              "label": "Value"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s6",
+      "layout": "risks_and_catalysts",
+      "title": "Risks And Catalysts",
+      "subtitle": null,
+      "rationale": "Capture key monitoring points.",
+      "blocks": [
+        {
+          "type": "bullets",
+          "key": "risk_points",
+          "items": [
+            "Competitive intensity could pressure spreads.",
+            "Asset-quality normalization may take longer than expected.",
+            "Execution slippage in new geographies may slow disbursement momentum."
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s7",
+      "layout": "disclaimer",
+      "title": "Disclaimer",
+      "subtitle": null,
+      "rationale": "Mandatory compliance slide.",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "disclaimer_text",
+          "content": "For internal research workflow validation only. Final legal disclaimer copy will be supplied from approved assets."
+        }
+      ]
+    }
+  ]
+}

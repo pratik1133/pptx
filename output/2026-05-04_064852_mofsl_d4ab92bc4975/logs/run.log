@@ -1,0 +1,5 @@
+ts=2026-05-04T01:18:54.897657+00:00 level=INFO msg=pipeline_started run_id=d4ab92bc4975 ticker=MOFSL
+ts=2026-05-04T01:18:54.897720+00:00 level=WARN msg=qa_warning detail=Slide s12 metrics block 'valuation_metrics' is dense.
+ts=2026-05-04T01:18:54.897741+00:00 level=WARN msg=qa_warning detail=Slide s6 is missing a rendered table.
+ts=2026-05-04T01:18:54.897758+00:00 level=ERROR msg=render_check_failed detail=Slide s6 is missing a rendered table.
+ts=2026-05-04T01:18:54.897771+00:00 level=INFO msg=pipeline_finished status=render_failed

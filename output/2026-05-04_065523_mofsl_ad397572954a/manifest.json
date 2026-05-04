@@ -1,0 +1,59 @@
+{
+  "run_id": "ad397572954a",
+  "created_at": "2026-05-04T01:25:23.943034Z",
+  "company_ticker": "MOFSL",
+  "status": "pdf_skipped",
+  "artifacts": [
+    {
+      "label": "company",
+      "path": "inputs\\company.json",
+      "sha256": "ac3b61cb5cc974e8bbeb457ec3219b24a9fee4be09a45e9426efc270d86b1367",
+      "size_bytes": 739
+    },
+    {
+      "label": "metadata",
+      "path": "inputs\\metadata.json",
+      "sha256": "c22b560b55109d7899c83bfa1a68a55deb7d1306e8a75d705065d8b5ee531214",
+      "size_bytes": 225
+    },
+    {
+      "label": "financial_model",
+      "path": "inputs\\financial_model.json",
+      "sha256": "8a2d3f80f1999162b367b2a6621d8bbaedace2bf52a26d4cbe945ff0d91d49cc",
+      "size_bytes": 15166
+    },
+    {
+      "label": "approved_report",
+      "path": "inputs\\approved_report.md",
+      "sha256": "9452fd6239d647312e0635051abf45bf646dadf6394709d812b40dd60c02615c",
+      "size_bytes": 2649
+    },
+    {
+      "label": "slide_plan",
+      "path": "intermediates\\slide_plan.json",
+      "sha256": "997a622cf9b09554ead8cfc0f4eb7b031487cb5d1b5e31f12862374d28d3f0dd",
+      "size_bytes": 31181
+    },
+    {
+      "label": "report_spec",
+      "path": "intermediates\\report.json",
+      "sha256": "02d02600d7430a5853c6bc41adf353c4b2c2f61c3185eb654d99211c4626373f",
+      "size_bytes": 30008
+    },
+    {
+      "label": "pptx",
+      "path": "artifacts\\report.pptx",
+      "sha256": "81fdf38876050b72a37925fed6de81e6de145f4dec93754d4dd3c7062573526b",
+      "size_bytes": 230671
+    },
+    {
+      "label": "run_log",
+      "path": "logs\\run.log",
+      "sha256": "9fcf29ff6d498c18751fbc9d3da009046d26e6198358d1e92d9e3ec0fe6b7fb0",
+      "size_bytes": 346
+    }
+  ],
+  "notes": [
+    "No supported PDF conversion backend is available. Configure LibreOffice or PowerPoint."
+  ]
+}

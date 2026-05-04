@@ -1,0 +1,11 @@
+{
+  "name": "ABC Ltd",
+  "ticker": "ABC",
+  "exchange": "NSE",
+  "sector": "Chemicals",
+  "industry": "Specialty Chemicals",
+  "isin": "INE000ABC123",
+  "country": "India",
+  "description": "ABC Ltd is a specialty chemicals manufacturer focused on export-led growth and margin expansion.",
+  "peer_list": ["PeerChem Ltd", "InduChem Corp", "GlobalChem India"]
+}

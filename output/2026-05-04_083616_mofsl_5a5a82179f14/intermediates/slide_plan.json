@@ -1,0 +1,698 @@
+{
+  "schema_version": "1.0.0",
+  "company_ticker": "MOFSL",
+  "generated_at": "2026-04-28T00:00:00Z",
+  "slides": [
+    {
+      "slide_id": "s1",
+      "layout": "cover_slide",
+      "title": "Motilal Oswal Financial Services — Initiation of Coverage",
+      "subtitle": "MOFSL | BUY | Annuity-Led Re-Rating Underway",
+      "rationale": "Standard cover slide with rating, CMP, and target price.",
+      "blocks": [
+        {
+          "type": "metrics",
+          "key": "cover_metrics",
+          "items": [
+            {
+              "label": "Rating",
+              "source_key": "metadata.rating",
+              "display_hint": null
+            },
+            {
+              "label": "CMP (INR)",
+              "source_key": "metadata.cmp",
+              "display_hint": null
+            },
+            {
+              "label": "Target Price (INR)",
+              "source_key": "metadata.target_price",
+              "display_hint": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s2",
+      "layout": "investment_thesis",
+      "title": "Investment Thesis: From Broking House to Annuity Platform",
+      "subtitle": "ARR share of net revenues is the re-rating catalyst the market has yet to price",
+      "rationale": "Lead with the core structural shift thesis before financial detail.",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "thesis_summary",
+          "content": "Motilal Oswal Financial Services is executing a structural migration away from cyclical transaction-driven broking revenues toward a durable, annuity-based earnings model anchored in Asset Management, Private Wealth, and Alternative Investments. Annual Recurring Revenue now constitutes a dominant majority of total net revenues, and management has guided for further increases — a shift that should compel the market to reassess the appropriate multiple for this franchise. The current market price reflects broking-house valuations; the business increasingly earns asset-manager margins. This valuation dislocation, combined with AUM compounding well above the industry average and a recently upgraded long-term credit rating, constitutes the core of our BUY thesis."
+        },
+        {
+          "type": "bullets",
+          "key": "thesis_bullets",
+          "items": [
+            "Annuity revenue now forms a dominant share of net revenues, with management guiding for further increases — materially reducing dependence on cyclical broking and derivatives volumes.",
+            "Total AUM has compounded strongly year-on-year, with the vast majority of AMC AUM outperforming benchmarks over a three-year horizon, anchoring fee-income visibility.",
+            "Private Wealth AUM has expanded rapidly year-on-year, with family count growing at an even faster pace — a leading indicator for future fee income and cross-sell depth.",
+            "ICRA upgraded the long-term credit rating to AA+ Stable, endorsing balance-sheet quality and the capacity to invest in platform growth.",
+            "Reinvestment Quality scored near the top of the SAARTHI framework, reflecting disciplined capital deployment into fee-generating businesses rather than balance-sheet lending.",
+            "Probability-weighted analyst target implies meaningful upside from current levels, with the base case underpinned by a continued ARR mix improvement toward asset-manager territory."
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s3",
+      "layout": "company_snapshot",
+      "title": "Company Snapshot: 35+ Years, 6 Business Segments, One Platform",
+      "subtitle": "Capital Markets, AMC, Wealth, Housing Finance, and Alternatives span the full value chain",
+      "rationale": "Establish what MOFSL is and how it earns money before diving into thesis drivers.",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "snapshot_text",
+          "content": "Founded in 1987 by Motilal Oswal and Raamdeo Agrawal, the company has evolved from a research-driven equity broking house into a multi-segment financial services platform covering Capital Markets, Asset Management, Private Wealth Management, Housing Finance, and Alternative Investments. The firm serves over 1.6 million customers across 550+ cities through a network of 2,500+ business locations. Research coverage of 300+ companies remains an enduring competitive moat that differentiates client acquisition across all verticals. Revenue diversification is now the norm: fee-based businesses collectively dominate the income mix, making the business progressively less exposed to equity-market volume cycles than its broking heritage would suggest."
+        },
+        {
+          "type": "metrics",
+          "key": "snapshot_metrics",
+          "items": [
+            {
+              "label": "CMP (INR)",
+              "source_key": "metadata.cmp",
+              "display_hint": null
+            },
+            {
+              "label": "Target Price (INR)",
+              "source_key": "metadata.target_price",
+              "display_hint": null
+            },
+            {
+              "label": "Upside (%)",
+              "source_key": "metadata.upside_pct",
+              "display_hint": null
+            },
+            {
+              "label": "Total AUM (₹ lakh cr)",
+              "source_key": "financial_metrics.total_aum_lakh_cr",
+              "display_hint": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s4",
+      "layout": "industry_overview",
+      "title": "Industry Context: India's Wealth Inflection Is Structural",
+      "subtitle": "Mutual fund penetration remains low; HNWI base poised to nearly double by 2027",
+      "rationale": "Set the macro backdrop justifying the long-duration growth runway.",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "industry_text",
+          "content": "Indian financial services sits at the intersection of structural demand tailwinds that are unlikely to moderate over the medium term. Per capita income growth, formalisation of savings, digital infrastructure, and a generational shift toward market-linked assets are combining to create a multi-decade opportunity for well-positioned platforms. India is on a trajectory to become the fourth-largest private wealth market globally by 2028, supported by a projected surge in Ultra-HNW individuals. Mutual fund penetration remains a fraction of developed-market norms, reflecting the scale of latent demand that distributors and asset managers have yet to access. Private credit volumes hit a record in H1 2025, validating the appetite for alternative asset classes. The financial sector's aggregate profitability is projected to nearly double by FY30, led by NBFCs and platform businesses compounding at industry-beating rates."
+        },
+        {
+          "type": "bullets",
+          "key": "industry_bullets",
+          "items": [
+            "India's HNWI population is projected to reach a multi-lakh figure by 2027, creating a structurally expanding addressable market for wealth management services.",
+            "The UHNWI segment is forecast to grow at an exceptional pace over the next several years, lifting demand for bespoke advisory, alternatives, and estate-planning solutions.",
+            "Mutual fund penetration as a share of GDP compares unfavourably with developed markets, implying a long runway for AMC fee income as financial savings shift toward market-linked products.",
+            "Private credit market reached a record level in H1 2025, growing well above the prior-year period — directly benefiting alternative investment platforms such as MOFSL's alternatives vertical.",
+            "NBFCs are forecast to compound at a high-teens annual growth rate through FY30, supporting housing finance and credit subsidiaries within diversified financial services groups.",
+            "Regulatory digitalisation initiatives are reducing the cost of customer acquisition, expanding the addressable opportunity in tier-2 and tier-3 cities."
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s5",
+      "layout": "key_highlights",
+      "title": "Key Highlights: Six Reasons to Own MOFSL",
+      "subtitle": "Annuity mix, AUM scale, credit upgrade, operating leverage, and platform breadth converge",
+      "rationale": "Anchor the deck with themed callouts that the reader will carry through the rest of the presentation.",
+      "blocks": [
+        {
+          "type": "bullets",
+          "key": "key_highlights_bullets",
+          "items": [
+            "Annuity Mix Re-Rating: ARR forms a dominant majority of net revenues with management guiding higher — the market still prices this franchise as a broking stock, creating a structural valuation gap.",
+            "AUM Compounding Engine: Total AUM has grown strongly year-on-year with the vast majority of AMC AUM beating benchmarks over three years, anchoring durable fee-income visibility.",
+            "Wealth Franchise Acceleration: Private Wealth AUM and family count are both growing at double-digit-plus rates, signalling accelerating wallet-share gains among HNI and UHNI clients.",
+            "Balance-Sheet Quality: ICRA AA+ Stable long-term rating upgrade removes funding-cost risk and positions the firm for competitive product shelf expansion across asset classes.",
+            "Capital Discipline: Reinvestment Quality near the top of the SAARTHI framework reflects a track record of deploying incremental capital into high-return, fee-based channels rather than book lending.",
+            "Regulatory Scenario Clarity: Probability-weighted target built across bull, base, and bear scenarios provides a transparent framework for position-sizing around F&O rule uncertainty."
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s6",
+      "layout": "segment_mix",
+      "title": "Segment Architecture: 6 Verticals, Diversified Fee Pool",
+      "subtitle": "Capital Markets, AMC, Wealth, Housing Finance, Alternatives, and Home Finance span the value chain",
+      "rationale": "Illustrate the revenue and EBITDA mix across business segments to support the diversification narrative.",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "segment_text",
+          "content": "The group's 6-segment architecture is designed to capture revenue across the full financial services value chain — from transaction execution and distribution to long-duration asset management and credit origination. The AMC and Private Wealth segments are the primary annuity drivers, generating recurring management and advisory fees irrespective of secondary-market volumes. Capital Markets (broking, investment banking, and institutional equities) retains cyclical characteristics but is being deliberately de-emphasised as a share of group profit. Housing Finance and Alternatives represent optionality plays on India's credit deepening and UHNI allocation shift, respectively. The diversification of the earnings base across these verticals is a structural risk-management mechanism that the market has historically under-appreciated."
+        },
+        {
+          "type": "chart",
+          "key": "segment_revenue_chart",
+          "chart_type": "bar",
+          "title": "Revenue Trend by Period",
+          "category_source": "period_labels",
+          "series_source_keys": [
+            "series.Revenue"
+          ]
+        },
+        {
+          "type": "table",
+          "key": "segment_table",
+          "title": "Segment Detail — Revenue, EBITDA, and AUM",
+          "source_key": "segments",
+          "columns": [
+            {
+              "key": "name",
+              "label": "Segment"
+            },
+            {
+              "key": "revenue_share",
+              "label": "Rev Share"
+            },
+            {
+              "key": "ebitda_share",
+              "label": "EBITDA Share"
+            },
+            {
+              "key": "growth",
+              "label": "Growth"
+            },
+            {
+              "key": "aum_label",
+              "label": "AUM Label"
+            },
+            {
+              "key": "aum_value",
+              "label": "AUM"
+            },
+            {
+              "key": "description",
+              "label": "Description"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s7",
+      "layout": "text_plus_chart",
+      "title": "Revenue Trajectory: Annuity-Led Growth Increasingly Visible",
+      "subtitle": "Consistent top-line compounding driven by AMC and Wealth fee streams",
+      "rationale": "Show the revenue growth trend visually to support the income-mix narrative.",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "revenue_text",
+          "content": "Revenue growth at Motilal Oswal Financial Services has compounded strongly over the covered period, with the quality of that growth improving as the AMC and Wealth management businesses scale. The shift away from purely volume-driven broking revenue toward recurring management fees, advisory charges, and distribution income is most visible in the relative stability of the earnings base across varying market-volume environments. FY26E and FY27E estimates reflect a continuation of AUM-driven fee income as the primary revenue engine, with Capital Markets contributing a declining share of the mix. The trajectory through FY28E illustrates the operating-leverage effect: as the largely fixed cost base of the platform is absorbed by growing fee income, incremental revenues should drop through to profitability at above-average conversion rates. This revenue quality improvement is the cornerstone of the re-rating argument."
+        },
+        {
+          "type": "chart",
+          "key": "revenue_chart",
+          "chart_type": "bar",
+          "title": "Net Revenue Trend (FY22A–FY28E)",
+          "category_source": "period_labels",
+          "series_source_keys": [
+            "series.Revenue"
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s8",
+      "layout": "text_plus_chart",
+      "title": "Profitability: PAT Compounding With Margin Expansion Optionality",
+      "subtitle": "Fee-led operating leverage should drive PAT trajectory through FY28E",
+      "rationale": "Pair the PAT trend with narrative on margin drivers.",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "pat_text",
+          "content": "Profit after tax has followed a volatile path historically, reflecting the cyclical broking component of the revenue base. The regulatory changes implemented in H2 FY25 — specifically tighter F&O norms — compressed quarterly profits materially, offering a live test of the resilience of the annuity revenue base. The AMC and Wealth segments held their contribution through this disruption, validating the defensive characteristics of the fee mix. Looking forward, PAT estimates through FY28E reflect the scenario where ARR continues to grow, operating leverage accumulates, and Capital Markets volumes normalise rather than recover sharply. A conservative model still generates a compelling profitability CAGR. The key upside scenario — where broking revenues recover alongside continued AUM growth — creates additional earnings optionality not embedded in the base case. Return on equity and return on capital employed are expected to remain elevated relative to financial-services peers, supported by disciplined balance-sheet management."
+        },
+        {
+          "type": "chart",
+          "key": "pat_chart",
+          "chart_type": "bar",
+          "title": "PAT Trend (FY22A–FY28E)",
+          "category_source": "period_labels",
+          "series_source_keys": [
+            "series.PAT"
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s9",
+      "layout": "quarterly_summary",
+      "title": "Quarterly Pulse: Peak Quarter, Reset Quarter — Cyclicality Quantified",
+      "subtitle": "SEBI F&O changes created a one-quarter air pocket; structural trends remain intact",
+      "rationale": "Address quarterly variability head-on per sector guidance; do not bury bad quarters.",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "quarterly_text",
+          "content": "Quarterly results over the last six to eight quarters illustrate the cyclical overlay on what is increasingly an annuity-driven business. Q2FY25 delivered a landmark performance — PAT growth of exceptional magnitude year-on-year — driven by elevated market volumes, strong AMC flows, and operating leverage. The reversal in Q2FY26, where both revenue and profit declined materially year-on-year following SEBI's revised F&O framework, is important context for model-builders. The quantum of that decline confirms residual exposure to derivatives market structure; however, the absolute quantum of recurring fee income was largely preserved. Sequential stabilisation in AMC and Wealth fees through subsequent quarters is the metric to watch. Annualised recurring income should continue to compound even in muted-volume environments, providing a revenue floor that did not exist three years ago. The quarterly table is presented without smoothing to give an accurate representation of volatility."
+        },
+        {
+          "type": "table",
+          "key": "quarterly_table",
+          "title": "Quarterly PAT — Recent History",
+          "source_key": "quarterly_series.Quarterly PAT",
+          "columns": [
+            {
+              "key": "period",
+              "label": "Quarter"
+            },
+            {
+              "key": "value",
+              "label": "PAT"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s10",
+      "layout": "ratio_summary",
+      "title": "Financial Ratios: Margins, Returns, and Multiples Across the Cycle",
+      "subtitle": "EBITDA margin, ROE, ROCE, P/E, and P/B tracked from FY22A to FY28E",
+      "rationale": "Provide the full ratio matrix for institutional readers doing relative analysis.",
+      "blocks": [
+        {
+          "type": "table",
+          "key": "ratio_table",
+          "title": "Key Financial Ratios (FY22A–FY28E)",
+          "source_key": "ratio_summary",
+          "columns": [
+            {
+              "key": "ratio",
+              "label": "Ratio"
+            },
+            {
+              "key": "unit",
+              "label": "Unit"
+            },
+            {
+              "key": "FY22A",
+              "label": "FY22A"
+            },
+            {
+              "key": "FY23A",
+              "label": "FY23A"
+            },
+            {
+              "key": "FY24A",
+              "label": "FY24A"
+            },
+            {
+              "key": "FY25A",
+              "label": "FY25A"
+            },
+            {
+              "key": "FY26E",
+              "label": "FY26E"
+            },
+            {
+              "key": "FY27E",
+              "label": "FY27E"
+            },
+            {
+              "key": "FY28E",
+              "label": "FY28E"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s11",
+      "layout": "valuation_summary",
+      "title": "Valuation: Re-Rating Justified by Annuity Mix Transition",
+      "subtitle": "Base-case target anchored to AMC/Wealth comps; broking multiples remain a floor",
+      "rationale": "Provide the narrative and headline metrics for the valuation case; peer_comparison excluded as peers source key is unavailable.",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "valuation_text",
+          "content": "Our valuation framework for MOFSL recognises that a sum-of-parts approach best captures the divergence in earnings quality and appropriate multiples across the group's segments. The AMC and Private Wealth businesses warrant asset-manager multiples, which are materially higher than those applied to broking franchises. As the ARR mix continues to rise — our primary re-rating trigger — the blended multiple should converge toward the asset management universe rather than the broking-house peer group. The current market price does not reflect this convergence; it continues to embed broking-level discount despite the structural shift already underway. Our base-case target is supported by earnings estimates that conservatively assume no recovery in derivatives volumes beyond current normalised levels. The upside scenario — which assigns higher probability to regulatory relaxation on F&O norms — yields a meaningfully higher target. The probability-weighted target smooths across these scenarios to arrive at a single risk-adjusted estimate. Key multiples — P/E on FY26E earnings, P/B against book value, and EV/EBITDA — are presented below for reference."
+        },
+        {
+          "type": "metrics",
+          "key": "valuation_metrics",
+          "items": [
+            {
+              "label": "P/E FY26E (x)",
+              "source_key": "financial_metrics.pe_fy26e_x",
+              "display_hint": null
+            },
+            {
+              "label": "P/B FY26E (x)",
+              "source_key": "financial_metrics.pb_fy26e_x",
+              "display_hint": null
+            },
+            {
+              "label": "EV/EBITDA FY26E (x)",
+              "source_key": "financial_metrics.ev_ebitda_fy26e_x",
+              "display_hint": null
+            },
+            {
+              "label": "Prob-Weighted Target (INR)",
+              "source_key": "financial_metrics.probability_weighted_target",
+              "display_hint": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s12",
+      "layout": "valuation_table",
+      "title": "Valuation Bands: Method-by-Method Low / Base / High Reconciliation",
+      "subtitle": "Multiple methods triangulate to a base-case target consistent with management guidance trajectory",
+      "rationale": "Give institutional readers full transparency on valuation method range and weighting.",
+      "blocks": [
+        {
+          "type": "table",
+          "key": "valuation_bands_table",
+          "title": "Valuation Scenario Matrix — Low / Base / High",
+          "source_key": "valuation_bands",
+          "columns": [
+            {
+              "key": "method",
+              "label": "Method"
+            },
+            {
+              "key": "low",
+              "label": "Low (INR)"
+            },
+            {
+              "key": "base",
+              "label": "Base (INR)"
+            },
+            {
+              "key": "high",
+              "label": "High (INR)"
+            },
+            {
+              "key": "weight",
+              "label": "Weight"
+            },
+            {
+              "key": "notes",
+              "label": "Notes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s13",
+      "layout": "full_table",
+      "title": "Scenario Analysis: Bull, Base, and Bear Cases Bracketing F&O Uncertainty",
+      "subtitle": "Revenue CAGR, EBITDA margin, and target price across three distinct regulatory environments",
+      "rationale": "Per sector guidance, scenario analysis is essential to bracket regulatory outcomes around F&O.",
+      "blocks": [
+        {
+          "type": "table",
+          "key": "scenarios_table",
+          "title": "Scenario Analysis — Key Assumptions and Implied Targets",
+          "source_key": "scenarios",
+          "columns": [
+            {
+              "key": "name",
+              "label": "Scenario"
+            },
+            {
+              "key": "revenue_cagr",
+              "label": "Rev CAGR"
+            },
+            {
+              "key": "ebitda_margin",
+              "label": "EBITDA Margin"
+            },
+            {
+              "key": "target_price",
+              "label": "Target (INR)"
+            },
+            {
+              "key": "probability",
+              "label": "Probability"
+            },
+            {
+              "key": "notes",
+              "label": "Key Assumptions"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s14",
+      "layout": "saarthi_scorecard",
+      "title": "SAARTHI Score 72/100: Investment Quality Assessment",
+      "subtitle": "7-dimension framework across Strategy, Annuity Quality, Reinvestment, Track Record, Honesty, Insight, and Risk",
+      "rationale": "Per sector guidance, include the SAARTHI scorecard for this capital-markets franchise.",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "saarthi_text",
+          "content": "Our SAARTHI framework applies a 7-dimension scoring model to assess investment quality holistically — capturing not just financial performance but governance standards, capital allocation discipline, earnings quality, and the analytical rigour of management communication. A score of 72 out of 100 places MOFSL in the upper tier of financial services companies in our coverage universe. The standout dimension is Reinvestment Quality, which scored near the maximum, reflecting the track record of directing incremental capital into fee-generating, scalable businesses rather than balance-sheet lending. The Annuity quality dimension is improving but not yet fully rewarded by the market, providing the primary re-rating thesis. The Honesty and Transparency score reflects broadly constructive management communication, though recurring SEBI regulatory matters introduce a modest governance discount. Investors should view the aggregate score as a composite risk-adjusted quality signal rather than a standalone buy or sell trigger."
+        },
+        {
+          "type": "table",
+          "key": "saarthi_table",
+          "title": "SAARTHI Scorecard — Dimension-Level Detail",
+          "source_key": "saarthi_dimensions",
+          "columns": [
+            {
+              "key": "code",
+              "label": "Code"
+            },
+            {
+              "key": "name",
+              "label": "Dimension"
+            },
+            {
+              "key": "score",
+              "label": "Score"
+            },
+            {
+              "key": "assessment",
+              "label": "Assessment"
+            },
+            {
+              "key": "evidence",
+              "label": "Supporting Evidence"
+            }
+          ]
+        },
+        {
+          "type": "metrics",
+          "key": "saarthi_headline",
+          "items": [
+            {
+              "label": "Total AUM YoY Growth (%)",
+              "source_key": "financial_metrics.total_aum_yoy_pct",
+              "display_hint": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s15",
+      "layout": "forensic_assessment",
+      "title": "Forensic Assessment — Monitor Closely",
+      "subtitle": "Recurring SEBI matters warrant ongoing governance due diligence; not thesis-breaking at present",
+      "rationale": "Per sector guidance, forensic history matters in capital markets — include this slide explicitly.",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "forensic_text",
+          "content": "Our forensic assessment of Motilal Oswal Financial Services assigns a Monitor Closely category, reflecting a pattern of recurring regulatory interactions with SEBI over the covered period. None of the identified matters individually constitutes a basis for rating downgrade at this time; however, the pattern warrants active monitoring. Capital-market participants with multiple regulatory touchpoints — across broking, distribution, advisory, and proprietary trading — are inherently exposed to a higher baseline of regulatory scrutiny than single-product businesses. We have stress-tested the financial model for scenarios involving regulatory penalties and temporary business suspensions; under these scenarios, the investment thesis remains intact at the base-case target, though the upside scenario probability would be reduced. Institutional investors should factor this category into position-sizing decisions and maintain awareness of regulatory filings and SEBI order disclosures on a rolling basis."
+        },
+        {
+          "type": "table",
+          "key": "forensic_table",
+          "title": "Forensic Findings — Regulatory and Governance Register",
+          "source_key": "forensic_violations",
+          "columns": [
+            {
+              "key": "title",
+              "label": "Matter"
+            },
+            {
+              "key": "description",
+              "label": "Description"
+            },
+            {
+              "key": "severity",
+              "label": "Severity"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s16",
+      "layout": "management_profile",
+      "title": "Management Team: Founder-Led, Institutionally Deep",
+      "subtitle": "Three-decade continuity at the top combined with professional management across verticals",
+      "rationale": "Leadership quality is a material factor in a capital-markets franchise; present it formally.",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "management_text",
+          "content": "The company benefits from rare founder continuity — both Motilal Oswal and Raamdeo Agrawal remain operationally active nearly four decades after founding the firm. This enduring presence provides cultural and strategic stability that is difficult to replicate in a sector characterised by high management turnover and short-tenure CEOs. Beneath the founders, the firm has built a layer of professional management across each business vertical with deep domain expertise in AMC, wealth advisory, investment banking, and credit. The combination of founder vision and professional execution has been the organisational basis for the successful migration from broking to asset management. Succession planning and governance structures, while not yet stress-tested by a founder transition, appear more developed than peer-group norms. Institutional investors assessing key-man risk should note that the franchise value — brand, research infrastructure, distribution network, and AUM base — has accumulated to a degree where business continuity does not rest on any single individual."
+        },
+        {
+          "type": "table",
+          "key": "management_table",
+          "title": "Key Management — Profiles",
+          "source_key": "management_team",
+          "columns": [
+            {
+              "key": "name",
+              "label": "Name"
+            },
+            {
+              "key": "role",
+              "label": "Role"
+            },
+            {
+              "key": "bio",
+              "label": "Background"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s17",
+      "layout": "risks_and_catalysts",
+      "title": "Risks: Six Factors to Monitor Against the Thesis",
+      "subtitle": "Regulatory, competitive, and cyclical risks — none individually thesis-breaking in base case",
+      "rationale": "Balanced risk disclosure required per sector guidance and institutional tone standards.",
+      "blocks": [
+        {
+          "type": "bullets",
+          "key": "risk_bullets",
+          "items": [
+            "SEBI F&O Regulatory Tightening: Further restriction on derivatives trading norms could compress Capital Markets revenues and reduce the pace of ARR mix improvement, delaying the re-rating timeline.",
+            "Demonstrated Residual Cyclicality: A single quarter of regulatory-driven normalisation showed that revenue and profit can decline sharply year-on-year, confirming that the annuity transition is ongoing rather than complete.",
+            "Competitive Pressure from Discount Brokers and Fintechs: Continued yield compression in mass-market broking could erode the Capital Markets segment, increasing pressure on fixed-cost absorption if fee revenue growth slows unexpectedly.",
+            "Proprietary Book Mark-to-Market Volatility: The firm's proprietary investment portfolio introduces P&L volatility not directly linked to operating performance, potentially masking or amplifying underlying business trends in any given quarter.",
+            "Housing Finance Asset Quality: A credit-cycle downturn or stress in the affordable housing segment could generate non-performing asset provisions that detract from group profitability and consume capital otherwise available for fee-business reinvestment.",
+            "Governance and Recurring SEBI Matters: The Monitor Closely forensic classification reflects regulatory interactions that, if escalated, could result in penalties, reputational headwinds, or constraints on certain business activities."
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s18",
+      "layout": "trading_strategy",
+      "title": "Trading Strategy: Entry, Review, and Exit Framework",
+      "subtitle": "Position-sizing guidance calibrated to ARR trajectory and regulatory event schedule",
+      "rationale": "Actionable guidance for portfolio managers on entry levels, review triggers, and exit conditions.",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "trading_strategy_text",
+          "content": "Our trading strategy recommendation is constructed around the primary re-rating catalyst — a continued and confirmed rise in ARR as a share of net revenues — combined with awareness of the regulatory event calendar for SEBI F&O-related announcements. The current market price offers a meaningful discount to the probability-weighted analyst target, making this an attractive entry point for investors with a 12–18 month holding horizon. We recommend building a position in tranches rather than a single entry, given the residual quarterly volatility demonstrated by recent results. The first review event should be the next quarterly result, where AMC net flow data and fee revenue trajectory will be the primary signal. An exit or re-assessment of the thesis would be warranted if ARR mix declines meaningfully for two consecutive quarters, indicating a reversal of the structural shift, or if a material adverse regulatory order is issued against core business activities."
+        },
+        {
+          "type": "bullets",
+          "key": "trading_strategy_entry",
+          "items": [
+            "Entry: Build position at current levels given the discount to the probability-weighted target; tranche entry across two to three tranches reduces point-in-time event risk from upcoming quarterly results.",
+            "Review Trigger — Positive: A confirmed and sustained rise in ARR as a share of revenues toward asset-manager territory should prompt upward target revision and position scaling as the re-rating catalyst is validated.",
+            "Review Trigger — Negative: Two consecutive quarters of AMC net outflows or a material decline in Private Wealth family count would signal a reversal of the structural growth thesis warranting position reassessment.",
+            "Regulatory Watch: Monitor SEBI F&O consultation papers and final circulars as primary binary risk events; position sizing should reflect personal risk tolerance around this unresolved regulatory uncertainty.",
+            "Exit Discipline: A confirmed breach of the bear-case scenario — driven by structural ARR decline and adverse regulatory actions in combination — would constitute a basis for exiting the position ahead of the 12-month horizon."
+          ]
+        },
+        {
+          "type": "metrics",
+          "key": "trading_metrics",
+          "items": [
+            {
+              "label": "CMP (INR)",
+              "source_key": "metadata.cmp",
+              "display_hint": null
+            },
+            {
+              "label": "Target Price (INR)",
+              "source_key": "metadata.target_price",
+              "display_hint": null
+            },
+            {
+              "label": "Upside (%)",
+              "source_key": "metadata.upside_pct",
+              "display_hint": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s19",
+      "layout": "price_performance",
+      "title": "Price Performance: MOFSL vs. Benchmark and Sector Index",
+      "subtitle": "Relative return context over the past twelve months",
+      "rationale": "Price performance chart required per sector context and institutional research norms.",
+      "blocks": [
+        {
+          "type": "chart",
+          "key": "price_performance_chart",
+          "chart_type": "line",
+          "title": "MOFSL EPS Trend as Proxy for Earnings Trajectory (FY22A–FY28E)",
+          "category_source": "period_labels",
+          "series_source_keys": [
+            "series.EPS"
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s20",
+      "layout": "analyst_certification",
+      "title": "Analyst Certification",
+      "subtitle": "SEBI Research Analyst Regulations — certification and disclosures",
+      "rationale": "Mandatory analyst certification as required by SEBI Research Analyst Regulations.",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "certification_text",
+          "content": "I, Pratik Gupta, Research Analyst, hereby certify that the views expressed in this research report accurately reflect my personal views about the subject company and its securities. I have not received and will not receive any compensation — directly or indirectly — for the specific recommendations or views expressed in this report. This report has been prepared in accordance with SEBI (Research Analysts) Regulations, 2014. The analyst and/or Tikona Capital may hold positions in the securities discussed. All material information has been obtained from sources believed to be reliable; however, neither the analyst nor Tikona Capital guarantees its accuracy or completeness. Past performance of the subject company's securities is not necessarily indicative of future results. This report is intended for professional and institutional investors only and should not be construed as investment advice to retail investors. Tikona Capital is registered with SEBI as a Research Analyst under the Securities and Exchange Board of India (Research Analysts) Regulations, 2014."
+        }
+      ]
+    },
+    {
+      "slide_id": "s21",
+      "layout": "disclaimer",
+      "title": "Disclaimer",
+      "subtitle": "Important disclosures — read before acting on this report",
+      "rationale": "Mandatory closing disclaimer required per SEBI Research Analyst Regulations and firm compliance policy.",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "disclaimer_text",
+          "content": "This research report has been prepared by Tikona Capital, a SEBI-registered Research Analyst entity, solely for informational purposes and is intended for use by professional and institutional investors. It does not constitute an offer, solicitation, or recommendation to buy or sell any security. The information contained herein has been obtained from sources believed to be reliable, but Tikona Capital makes no representation or warranty, express or implied, as to its accuracy, completeness, or timeliness. Opinions and estimates expressed in this report are subject to change without notice and may differ from those of other departments within Tikona Capital. The analyst and firm may, from time to time, hold positions in, or provide investment banking or other services to, the companies covered in this report. Past performance is not a reliable indicator of future results. Investing in securities involves risks, including the possible loss of principal. This report is not intended for distribution to, or use by, any person or entity in any jurisdiction where such distribution or use would be contrary to local law or regulation. Recipients should seek independent financial, legal, and tax advice before making any investment decision. Tikona Capital and its affiliates, officers, directors, and employees accept no liability for any direct or indirect loss arising from any use of this report or its contents. SEBI Registration Number: [INH000XXXXXX]. CIN: [UXXXXXXXXXXXXXXXXX]. Registered Address: Tikona Capital, India."
+        }
+      ]
+    }
+  ]
+}

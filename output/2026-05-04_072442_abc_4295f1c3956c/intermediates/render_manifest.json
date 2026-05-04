@@ -1,0 +1,221 @@
+{
+  "records": [
+    {
+      "slide_id": "s2",
+      "block_key": "snapshot_metrics",
+      "source_key": "metadata.cmp",
+      "resolved_value": "\u20b9420.0",
+      "kind": "metric"
+    },
+    {
+      "slide_id": "s2",
+      "block_key": "snapshot_metrics",
+      "source_key": "metadata.target_price",
+      "resolved_value": "\u20b9515.0",
+      "kind": "metric"
+    },
+    {
+      "slide_id": "s2",
+      "block_key": "snapshot_metrics",
+      "source_key": "metadata.upside_pct",
+      "resolved_value": "22.6%",
+      "kind": "metric"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "revenue_chart",
+      "source_key": "period_labels",
+      "resolved_value": "FY24, FY25, FY26, FY27",
+      "kind": "chart_category"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "revenue_chart",
+      "source_key": "series.Revenue@FY24",
+      "resolved_value": "19800",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "revenue_chart",
+      "source_key": "series.Revenue@FY25",
+      "resolved_value": "23500",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "revenue_chart",
+      "source_key": "series.Revenue@FY26",
+      "resolved_value": "28500",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "revenue_chart",
+      "source_key": "series.Revenue@FY27",
+      "resolved_value": "33450",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s7",
+      "block_key": "margin_chart",
+      "source_key": "period_labels",
+      "resolved_value": "FY24, FY25, FY26, FY27",
+      "kind": "chart_category"
+    },
+    {
+      "slide_id": "s7",
+      "block_key": "margin_chart",
+      "source_key": "series.EBITDA Margin@FY24",
+      "resolved_value": "18.2",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s7",
+      "block_key": "margin_chart",
+      "source_key": "series.EBITDA Margin@FY25",
+      "resolved_value": "19.1",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s7",
+      "block_key": "margin_chart",
+      "source_key": "series.EBITDA Margin@FY26",
+      "resolved_value": "20.7",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s7",
+      "block_key": "margin_chart",
+      "source_key": "series.EBITDA Margin@FY27",
+      "resolved_value": "21.4",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s8",
+      "block_key": "valuation_metrics",
+      "source_key": "metadata.rating",
+      "resolved_value": "BUY",
+      "kind": "metric"
+    },
+    {
+      "slide_id": "s8",
+      "block_key": "valuation_metrics",
+      "source_key": "metadata.target_price",
+      "resolved_value": "\u20b9515.0",
+      "kind": "metric"
+    },
+    {
+      "slide_id": "s8",
+      "block_key": "valuation_metrics",
+      "source_key": "metadata.upside_pct",
+      "resolved_value": "22.6%",
+      "kind": "metric"
+    },
+    {
+      "slide_id": "s8",
+      "block_key": "valuation_metrics",
+      "source_key": "financial_metrics.revenue_fy26",
+      "resolved_value": "28,500.0",
+      "kind": "metric"
+    },
+    {
+      "slide_id": "s8",
+      "block_key": "valuation_metrics",
+      "source_key": "financial_metrics.ebitda_fy26",
+      "resolved_value": "5,900.0",
+      "kind": "metric"
+    },
+    {
+      "slide_id": "s8",
+      "block_key": "valuation_metrics",
+      "source_key": "financial_metrics.pat_fy26",
+      "resolved_value": "3,450.0",
+      "kind": "metric"
+    },
+    {
+      "slide_id": "s9",
+      "block_key": "combo_chart",
+      "source_key": "period_labels",
+      "resolved_value": "FY24, FY25, FY26, FY27",
+      "kind": "chart_category"
+    },
+    {
+      "slide_id": "s9",
+      "block_key": "combo_chart",
+      "source_key": "series.Revenue@FY24",
+      "resolved_value": "19800",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s9",
+      "block_key": "combo_chart",
+      "source_key": "series.Revenue@FY25",
+      "resolved_value": "23500",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s9",
+      "block_key": "combo_chart",
+      "source_key": "series.Revenue@FY26",
+      "resolved_value": "28500",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s9",
+      "block_key": "combo_chart",
+      "source_key": "series.Revenue@FY27",
+      "resolved_value": "33450",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s9",
+      "block_key": "combo_chart",
+      "source_key": "series.EBITDA Margin@FY24",
+      "resolved_value": "18.2",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s9",
+      "block_key": "combo_chart",
+      "source_key": "series.EBITDA Margin@FY25",
+      "resolved_value": "19.1",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s9",
+      "block_key": "combo_chart",
+      "source_key": "series.EBITDA Margin@FY26",
+      "resolved_value": "20.7",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s9",
+      "block_key": "combo_chart",
+      "source_key": "series.EBITDA Margin@FY27",
+      "resolved_value": "21.4",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "dcf_metrics",
+      "source_key": "financial_metrics.ebitda_fy26",
+      "resolved_value": "5,900.0",
+      "kind": "metric"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "dcf_metrics",
+      "source_key": "financial_metrics.net_debt_to_ebitda_fy26",
+      "resolved_value": "0.8",
+      "kind": "metric"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "dcf_metrics",
+      "source_key": "financial_metrics.roe_fy26",
+      "resolved_value": "18.4",
+      "kind": "metric"
+    }
+  ]
+}

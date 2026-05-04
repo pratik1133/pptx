@@ -1,0 +1,4 @@
+run_id=83da8a3100ee
+ticker=ABC
+status=pdf_skipped
+note=No supported PDF conversion backend is available. Configure LibreOffice or PowerPoint.

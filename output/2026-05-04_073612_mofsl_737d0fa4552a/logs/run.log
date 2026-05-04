@@ -1,0 +1,17 @@
+ts=2026-05-04T02:06:15.730725+00:00 level=INFO msg=pipeline_started run_id=737d0fa4552a ticker=MOFSL
+ts=2026-05-04T02:06:15.730773+00:00 level=WARN msg=qa_warning detail=Slide s2 bullet item in 'thesis_points' is long and may wrap heavily.
+ts=2026-05-04T02:06:15.730785+00:00 level=WARN msg=qa_warning detail=Slide s2 bullet item in 'thesis_points' is long and may wrap heavily.
+ts=2026-05-04T02:06:15.730793+00:00 level=WARN msg=qa_warning detail=Slide s4 bullet item in 'industry_bullets' is long and may wrap heavily.
+ts=2026-05-04T02:06:15.730801+00:00 level=WARN msg=qa_warning detail=Slide s5 bullet item in 'highlights_bullets' is long and may wrap heavily.
+ts=2026-05-04T02:06:15.730808+00:00 level=WARN msg=qa_warning detail=Slide s5 bullet item in 'highlights_bullets' is long and may wrap heavily.
+ts=2026-05-04T02:06:15.730816+00:00 level=WARN msg=qa_warning detail=Slide s5 bullet item in 'highlights_bullets' is long and may wrap heavily.
+ts=2026-05-04T02:06:15.730822+00:00 level=WARN msg=qa_warning detail=Slide s18 bullet item in 'entry_bullets' is long and may wrap heavily.
+ts=2026-05-04T02:06:15.730826+00:00 level=WARN msg=qa_warning detail=Slide s19 bullet item in 'risks_bullets' is long and may wrap heavily.
+ts=2026-05-04T02:06:15.730830+00:00 level=WARN msg=qa_warning detail=Slide s19 bullet item in 'risks_bullets' is long and may wrap heavily.
+ts=2026-05-04T02:06:15.730834+00:00 level=WARN msg=qa_warning detail=Slide s19 bullet item in 'risks_bullets' is long and may wrap heavily.
+ts=2026-05-04T02:06:15.730838+00:00 level=WARN msg=qa_warning detail=Slide s19 bullet item in 'risks_bullets' is long and may wrap heavily.
+ts=2026-05-04T02:06:15.730842+00:00 level=WARN msg=qa_warning detail=Slide s19 bullet item in 'risks_bullets' is long and may wrap heavily.
+ts=2026-05-04T02:06:15.730846+00:00 level=WARN msg=qa_warning detail=Slide s19 bullet item in 'risks_bullets' is long and may wrap heavily.
+ts=2026-05-04T02:06:15.730850+00:00 level=WARN msg=qa_warning detail=Slide s21 text block 'disclaimer_text' is very long.
+ts=2026-05-04T02:06:15.730857+00:00 level=WARN msg=qa_warning detail=No supported PDF conversion backend is available. Configure LibreOffice or PowerPoint.
+ts=2026-05-04T02:06:15.730879+00:00 level=INFO msg=pipeline_finished status=pdf_skipped

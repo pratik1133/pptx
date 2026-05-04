@@ -1,0 +1,8 @@
+ts=2026-05-04T03:01:23.723096+00:00 level=INFO msg=pipeline_started run_id=f58fa7e5ec59 ticker=MOFSL
+ts=2026-05-04T03:01:23.723120+00:00 level=WARN msg=qa_warning detail=Slide s5 bullet item in 'highlights' is long and may wrap heavily.
+ts=2026-05-04T03:01:23.723125+00:00 level=WARN msg=qa_warning detail=Slide s5 bullet item in 'highlights' is long and may wrap heavily.
+ts=2026-05-04T03:01:23.723130+00:00 level=WARN msg=qa_warning detail=Slide s17 bullet item in 'risks' is long and may wrap heavily.
+ts=2026-05-04T03:01:23.723134+00:00 level=WARN msg=qa_warning detail=Slide s18 bullet item in 'strategy_points' is long and may wrap heavily.
+ts=2026-05-04T03:01:23.723138+00:00 level=WARN msg=qa_warning detail=Slide s20 text block 'disclaimer_text' is very long.
+ts=2026-05-04T03:01:23.723142+00:00 level=WARN msg=qa_warning detail=No supported PDF conversion backend is available. Install LibreOffice or run on Windows with PowerPoint + pywin32.
+ts=2026-05-04T03:01:23.723147+00:00 level=INFO msg=pipeline_finished status=pdf_skipped

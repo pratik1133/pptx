@@ -1,0 +1,3 @@
+ts=2026-05-01T11:32:54.353661+00:00 level=INFO msg=pipeline_started run_id=5aa3e773bdfe ticker=ABC
+ts=2026-05-01T11:32:54.353734+00:00 level=WARN msg=qa_warning detail=No supported PDF conversion backend is available. Configure LibreOffice or PowerPoint.
+ts=2026-05-01T11:32:54.353758+00:00 level=INFO msg=pipeline_finished status=pdf_skipped

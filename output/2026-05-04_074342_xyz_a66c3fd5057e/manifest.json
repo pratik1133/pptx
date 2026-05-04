@@ -1,0 +1,87 @@
+{
+  "run_id": "a66c3fd5057e",
+  "created_at": "2026-05-04T02:13:42.746121Z",
+  "company_ticker": "XYZ",
+  "status": "pdf_skipped",
+  "artifacts": [
+    {
+      "label": "company",
+      "path": "inputs\\company.json",
+      "sha256": "13b8b97f29cd52e311c8b0cb786a0e4b198308756fec093bf9c65fb82b125d03",
+      "size_bytes": 371
+    },
+    {
+      "label": "metadata",
+      "path": "inputs\\metadata.json",
+      "sha256": "8579abceb3fd008175eb71fd26f8a03de4c9ecc3525f6da49ab327832c7551e1",
+      "size_bytes": 214
+    },
+    {
+      "label": "financial_model",
+      "path": "inputs\\financial_model.json",
+      "sha256": "6ab170a188fe5e3f50071a456cc95107985c86c700f21e1ec1704b1f42daefea",
+      "size_bytes": 548
+    },
+    {
+      "label": "approved_report",
+      "path": "inputs\\approved_report.md",
+      "sha256": "d7f70f6e3fc5e5fa4e6d204735e7d02a48337745fb8e9d1a67dbbd3c4e0804ab",
+      "size_bytes": 569
+    },
+    {
+      "label": "slide_plan",
+      "path": "intermediates\\slide_plan.json",
+      "sha256": "47de7788b45b0fbd32468335fcbeea818a024d385eb83cadb61f05e5b7cd9506",
+      "size_bytes": 30015
+    },
+    {
+      "label": "report_spec",
+      "path": "intermediates\\report.json",
+      "sha256": "8aaff1bf9296976285e418e6a3ab291c01ee27f383dd3a01b8b7dacf1543b76a",
+      "size_bytes": 29357
+    },
+    {
+      "label": "pptx",
+      "path": "artifacts\\report.pptx",
+      "sha256": "96afb68afdfe49fae43857ce4aaec6b2e4566d54de7c397e9516f8e2aa7cf6ed",
+      "size_bytes": 251264
+    },
+    {
+      "label": "render_manifest",
+      "path": "intermediates\\render_manifest.json",
+      "sha256": "7effd336065d62b8480d4e27a311f94f6c4da90cf16f51e59e344f95941bd427",
+      "size_bytes": 6636
+    },
+    {
+      "label": "run_log",
+      "path": "logs\\run.log",
+      "sha256": "f00326793098b6c1058c449381bd0b8f20463facfb98bb16769bddf89ede00ce",
+      "size_bytes": 3456
+    }
+  ],
+  "notes": [
+    "Slide s4 bullet item in 'industry_tailwinds' is long and may wrap heavily.",
+    "Slide s5 bullet item in 'highlight_points' is long and may wrap heavily.",
+    "Slide s5 bullet item in 'highlight_points' is long and may wrap heavily.",
+    "Slide s5 bullet item in 'highlight_points' is long and may wrap heavily.",
+    "Slide s5 bullet item in 'highlight_points' is long and may wrap heavily.",
+    "Slide s12 bullet item in 'trading_points' is long and may wrap heavily.",
+    "Slide s12 bullet item in 'trading_points' is long and may wrap heavily.",
+    "Slide s12 bullet item in 'trading_points' is long and may wrap heavily.",
+    "Slide s12 bullet item in 'trading_points' is long and may wrap heavily.",
+    "Slide s13 bullet item in 'risk_points' is long and may wrap heavily.",
+    "Slide s13 bullet item in 'risk_points' is long and may wrap heavily.",
+    "Slide s13 bullet item in 'risk_points' is long and may wrap heavily.",
+    "Slide s13 bullet item in 'risk_points' is long and may wrap heavily.",
+    "Slide s13 bullet item in 'risk_points' is long and may wrap heavily.",
+    "Slide s13 bullet item in 'risk_points' is long and may wrap heavily.",
+    "Slide s14 bullet item in 'operating_bullets' is long and may wrap heavily.",
+    "Slide s14 bullet item in 'operating_bullets' is long and may wrap heavily.",
+    "Slide s14 bullet item in 'operating_bullets' is long and may wrap heavily.",
+    "Slide s14 bullet item in 'operating_bullets' is long and may wrap heavily.",
+    "Slide s14 bullet item in 'operating_bullets' is long and may wrap heavily.",
+    "Slide s14 bullet item in 'operating_bullets' is long and may wrap heavily.",
+    "Slide s16 text block 'disclaimer_text' is very long.",
+    "No supported PDF conversion backend is available. Configure LibreOffice or PowerPoint."
+  ]
+}

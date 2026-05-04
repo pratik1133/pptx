@@ -1,0 +1,218 @@
+{
+  "schema_version": "1.1.0",
+  "report_id": "3dc0efae-b853-43da-a983-2439fd419290",
+  "run_id": "1d6dc2f2-a52e-4c58-87bb-283a107732a8",
+  "company": {
+    "name": "XYZ Finance Ltd",
+    "ticker": "XYZ",
+    "exchange": "NSE",
+    "sector": "Financial Services",
+    "industry": "NBFC",
+    "isin": "INE111XYZ999",
+    "country": "India",
+    "description": "XYZ Finance Ltd is a diversified NBFC with a growing secured retail loan franchise and improving return ratios.",
+    "peer_list": [
+      "Alpha Finance",
+      "Prime Credit",
+      "SecureCap"
+    ]
+  },
+  "metadata": {
+    "rating": "BUY",
+    "currency": "INR",
+    "cmp": "178",
+    "target_price": "225",
+    "upside_pct": "26.4",
+    "market_cap": "92000000000",
+    "analyst": "Amit Rao",
+    "report_date": "2026-04-28",
+    "report_type": "Update"
+  },
+  "inputs": {
+    "financial_model_ref": "C:\\Users\\pratik\\pptx\\data\\samples\\financial_models\\xyz_model.json",
+    "approved_content_ref": "C:\\Users\\pratik\\pptx\\data\\samples\\approved_reports\\xyz.md"
+  },
+  "slides": [
+    {
+      "slide_id": "s1",
+      "layout": "cover_slide",
+      "title": "XYZ Finance Ltd Update Note",
+      "subtitle": "XYZ Finance Ltd | BUY",
+      "blocks": [
+        {
+          "type": "metrics",
+          "key": "headline_metrics",
+          "items": [
+            {
+              "label": "Rating",
+              "value": "BUY",
+              "source": "metadata.rating"
+            },
+            {
+              "label": "CMP",
+              "value": "₹178.0",
+              "source": "metadata.cmp"
+            },
+            {
+              "label": "TP",
+              "value": "₹225.0",
+              "source": "metadata.target_price"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s2",
+      "layout": "investment_thesis",
+      "title": "Investment Thesis",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "summary",
+          "content": "XYZ Finance is delivering consistent secured-loan growth while preserving balance-sheet discipline and improving profitability."
+        },
+        {
+          "type": "bullets",
+          "key": "key_points",
+          "items": [
+            "XYZ Finance is delivering consistent secured-loan growth while preserving balance-sheet discipline and improving profitability.",
+            "Branch productivity is improving across newer cohorts.",
+            "The secured mix is supporting credit-cost stability.",
+            "Funding access remains adequate for the next growth phase.",
+            "Competitive intensity could pressure spreads.",
+            "Asset-quality normalization may take longer than expected."
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s3",
+      "layout": "company_snapshot",
+      "title": "XYZ Finance Ltd At A Glance",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "business_summary",
+          "content": "XYZ Finance Ltd is a diversified NBFC with a growing secured retail loan franchise and improving return ratios."
+        },
+        {
+          "type": "metrics",
+          "key": "snapshot_metrics",
+          "items": [
+            {
+              "label": "CMP",
+              "value": "₹178.0",
+              "source": "metadata.cmp"
+            },
+            {
+              "label": "TP",
+              "value": "₹225.0",
+              "source": "metadata.target_price"
+            },
+            {
+              "label": "Upside",
+              "value": "26.4%",
+              "source": "metadata.upside_pct"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s4",
+      "layout": "text_plus_chart",
+      "title": "Revenue Trend",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "trend_summary",
+          "content": "Revenue trajectory across the forecast period reflects mix shift and AUM scale-up."
+        },
+        {
+          "type": "chart",
+          "key": "trend_chart",
+          "chart_type": "bar",
+          "title": "Revenue Trend",
+          "category_source": "period_labels",
+          "series": [
+            {
+              "label": "AUM",
+              "source_key": "series.AUM"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s5",
+      "layout": "full_table",
+      "title": "Annual Financial Summary",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "table",
+          "key": "financial_table",
+          "title": "Revenue By Period",
+          "source_key": "series.AUM",
+          "columns": [
+            {
+              "key": "period",
+              "label": "Period"
+            },
+            {
+              "key": "value",
+              "label": "Revenue"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s6",
+      "layout": "risks_and_catalysts",
+      "title": "Key Risks",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "bullets",
+          "key": "risk_points",
+          "items": [
+            "Competitive intensity could pressure spreads.",
+            "Asset-quality normalization may take longer than expected.",
+            "Execution slippage in new geographies may slow disbursement momentum."
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s7",
+      "layout": "analyst_certification",
+      "title": "Analyst Certification & Disclosures",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "cert_text",
+          "content": "## Analyst Certification\n\nI, the research analyst whose name appears on this report, certify that:\n\n1. The views expressed in this report accurately reflect my personal views about the subject company and its securities.\n2. No part of my compensation was, is, or will be directly or indirectly related to the specific recommendations or views expressed herein.\n3. I have not received any compensation from the subject company in the past twelve months.\n4. I, my relatives, or Tikona Capital do not have any actual or potential conflict of interest with the subject company at the time of publication of this report, except as may be disclosed below.\n\n## Disclosures\n\n- Ownership in subject company: None unless otherwise disclosed.\n- Material conflicts of interest: None at the time of publication.\n- Investment banking or merchant banking relationship in the past twelve months: None.\n\nThis certification is made in accordance with SEBI (Research Analysts) Regulations, 2014."
+        }
+      ]
+    },
+    {
+      "slide_id": "s8",
+      "layout": "disclaimer",
+      "title": "Disclaimer",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "disclaimer_text",
+          "content": "## Disclaimer\n\nThis research report is prepared by Tikona Capital (SEBI Research Analyst Registration No. INH000069807) for the exclusive use of its clients. It is intended solely for informational purposes and does not constitute an offer, solicitation, or recommendation to buy, sell, or hold any security.\n\nThe views expressed are those of the analyst as of the date of publication and are based on information believed to be reliable but are not guaranteed as to accuracy or completeness. Past performance is not indicative of future results. Investments in securities are subject to market risks. Investors should consult their own financial, legal, and tax advisors before making any investment decision.\n\nTikona Capital, its affiliates, directors, employees, or research analysts may, from time to time, hold positions in the securities mentioned, or in instruments related to such securities, and may transact in them in a manner inconsistent with the views expressed herein.\n\nThis document is the intellectual property of Tikona Capital. No part of it may be reproduced, distributed, or transmitted without prior written consent. Unauthorized use is prohibited.\n\nFor grievances, contact: research@tikonacapital.in."
+        }
+      ]
+    }
+  ]
+}

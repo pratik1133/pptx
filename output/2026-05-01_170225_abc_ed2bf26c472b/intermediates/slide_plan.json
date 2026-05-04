@@ -1,0 +1,179 @@
+{
+  "schema_version": "1.0.0",
+  "company_ticker": "ABC",
+  "generated_at": "2026-05-01T11:32:25.513982Z",
+  "slides": [
+    {
+      "slide_id": "s1",
+      "layout": "cover_slide",
+      "title": "ABC Ltd Initiation Note",
+      "subtitle": "ABC Ltd | BUY",
+      "rationale": null,
+      "blocks": [
+        {
+          "type": "metrics",
+          "key": "headline_metrics",
+          "items": [
+            {
+              "label": "Rating",
+              "source_key": "metadata.rating",
+              "display_hint": null
+            },
+            {
+              "label": "CMP",
+              "source_key": "metadata.cmp",
+              "display_hint": null
+            },
+            {
+              "label": "TP",
+              "source_key": "metadata.target_price",
+              "display_hint": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s2",
+      "layout": "investment_thesis",
+      "title": "Investment Thesis",
+      "subtitle": null,
+      "rationale": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "summary",
+          "content": "ABC Ltd is emerging as a scaled specialty chemicals platform with improving mix, stronger export penetration, and disciplined capacity expansion."
+        },
+        {
+          "type": "bullets",
+          "key": "key_points",
+          "items": [
+            "ABC Ltd is emerging as a scaled specialty chemicals platform with improving mix, stronger export penetration, and disciplined capacity expansion.",
+            "Demand visibility remains healthy across key end markets.",
+            "Margin profile is improving due to mix and backward integration.",
+            "Management execution has been steady across prior capex cycles.",
+            "Raw material volatility could pressure gross margins.",
+            "Delays in utilization ramp-up may push out earnings conversion."
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s3",
+      "layout": "company_snapshot",
+      "title": "ABC Ltd At A Glance",
+      "subtitle": null,
+      "rationale": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "business_summary",
+          "content": "ABC Ltd is a specialty chemicals manufacturer focused on export-led growth and margin expansion."
+        },
+        {
+          "type": "metrics",
+          "key": "snapshot_metrics",
+          "items": [
+            {
+              "label": "CMP",
+              "source_key": "metadata.cmp",
+              "display_hint": null
+            },
+            {
+              "label": "TP",
+              "source_key": "metadata.target_price",
+              "display_hint": null
+            },
+            {
+              "label": "Upside",
+              "source_key": "metadata.upside_pct",
+              "display_hint": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s4",
+      "layout": "text_plus_chart",
+      "title": "Revenue Trend",
+      "subtitle": null,
+      "rationale": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "trend_summary",
+          "content": "Revenue trajectory across FY22A–FY28E reflects post-FY22 step-up driven by ARR-led mix shift and AUM scale-up."
+        },
+        {
+          "type": "chart",
+          "key": "trend_chart",
+          "chart_type": "bar",
+          "title": "Revenue (INR Cr)",
+          "category_source": "period_labels",
+          "series_source_keys": [
+            "series.Revenue"
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s5",
+      "layout": "full_table",
+      "title": "Annual Financial Summary",
+      "subtitle": null,
+      "rationale": null,
+      "blocks": [
+        {
+          "type": "table",
+          "key": "financial_table",
+          "title": "Revenue By Period",
+          "source_key": "series.Revenue",
+          "columns": [
+            {
+              "key": "period",
+              "label": "Period"
+            },
+            {
+              "key": "value",
+              "label": "Revenue (INR Cr)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s6",
+      "layout": "risks_and_catalysts",
+      "title": "Key Risks",
+      "subtitle": null,
+      "rationale": null,
+      "blocks": [
+        {
+          "type": "bullets",
+          "key": "risk_points",
+          "items": [
+            "Raw material volatility could pressure gross margins.",
+            "Delays in utilization ramp-up may push out earnings conversion.",
+            "Export demand softness could affect near-term growth."
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s7",
+      "layout": "disclaimer",
+      "title": "Disclaimer",
+      "subtitle": null,
+      "rationale": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "disclaimer_text",
+          "content": "For internal research workflow validation only. Final legal disclaimer copy will be supplied from approved assets."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+ts=2026-05-04T03:05:33.944940+00:00 level=INFO msg=pipeline_started run_id=6cdf1d993535 ticker=ABC
+ts=2026-05-04T03:05:33.944962+00:00 level=WARN msg=qa_warning detail=Slide s8 text block 'disclaimer_text' is very long.
+ts=2026-05-04T03:05:33.944966+00:00 level=WARN msg=qa_warning detail=No supported PDF conversion backend is available. Install LibreOffice or run on Windows with PowerPoint + pywin32.
+ts=2026-05-04T03:05:33.944971+00:00 level=INFO msg=pipeline_finished status=pdf_skipped

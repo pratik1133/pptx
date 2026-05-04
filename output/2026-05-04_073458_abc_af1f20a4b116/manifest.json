@@ -1,0 +1,68 @@
+{
+  "run_id": "af1f20a4b116",
+  "created_at": "2026-05-04T02:04:58.190263Z",
+  "company_ticker": "ABC",
+  "status": "pdf_skipped",
+  "artifacts": [
+    {
+      "label": "company",
+      "path": "inputs\\company.json",
+      "sha256": "816a14998fc7c4791b332978afc4ce35d599c5d093ead5b548a51b106185d6d1",
+      "size_bytes": 361
+    },
+    {
+      "label": "metadata",
+      "path": "inputs\\metadata.json",
+      "sha256": "709684b13dbcb2491804ad15c09e9907e6bd050a502cf08e0280b7d7fc180c13",
+      "size_bytes": 219
+    },
+    {
+      "label": "financial_model",
+      "path": "inputs\\financial_model.json",
+      "sha256": "787e43b86c635daadf938227064672127d896bede3387079efdcc341dd986836",
+      "size_bytes": 597
+    },
+    {
+      "label": "approved_report",
+      "path": "inputs\\approved_report.md",
+      "sha256": "e6ad8520d06462597a6a7515509a7a6c07f2b18817b6cfe5f4edd2fd66a8e17f",
+      "size_bytes": 599
+    },
+    {
+      "label": "slide_plan",
+      "path": "intermediates\\slide_plan.json",
+      "sha256": "c22151f0e76de0aeb4211d670871f4f224afe0e036fbc2345f6fccff3e6462cc",
+      "size_bytes": 18847
+    },
+    {
+      "label": "report_spec",
+      "path": "intermediates\\report.json",
+      "sha256": "6550fe3c7ff868868352ccea5d3f1fde91300297cc1f02842d7e9b8c21b70505",
+      "size_bytes": 18845
+    },
+    {
+      "label": "pptx",
+      "path": "artifacts\\report.pptx",
+      "sha256": "0a100a8d66bd7975cf0f1610e9e1e684979d4807845a39bd7c37eba6854c4d2b",
+      "size_bytes": 144381
+    },
+    {
+      "label": "render_manifest",
+      "path": "intermediates\\render_manifest.json",
+      "sha256": "3cd86471ebed76d0e187fb2985f75c4ccd312c62cb8b7842c1514cdb94de9069",
+      "size_bytes": 3617
+    },
+    {
+      "label": "run_log",
+      "path": "logs\\run.log",
+      "sha256": "f74bd65e96c9104c7c2ffaf745d1826711c52cfe6bbb3674be7d2227d6d014f7",
+      "size_bytes": 709
+    }
+  ],
+  "notes": [
+    "Slide s8 text block 'valuation_text' is very long.",
+    "Slide s8 metrics block 'valuation_cards' is dense.",
+    "Slide s10 text block 'disclaimer_text' is very long.",
+    "No supported PDF conversion backend is available. Configure LibreOffice or PowerPoint."
+  ]
+}

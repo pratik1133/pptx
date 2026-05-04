@@ -1,0 +1,422 @@
+{
+  "schema_version": "1.0.0",
+  "company_ticker": "XYZ",
+  "generated_at": "2026-04-28T00:00:00Z",
+  "slides": [
+    {
+      "slide_id": "s1",
+      "layout": "cover_slide",
+      "title": "XYZ Finance Ltd — Equity Research Update",
+      "subtitle": "XYZ Finance Ltd | BUY",
+      "rationale": "Opens the deck with rating, CMP, and target price for immediate investor orientation.",
+      "blocks": [
+        {
+          "type": "metrics",
+          "key": "cover_metrics",
+          "items": [
+            {
+              "label": "Rating",
+              "source_key": "metadata.rating",
+              "display_hint": null
+            },
+            {
+              "label": "CMP (INR)",
+              "source_key": "metadata.cmp",
+              "display_hint": null
+            },
+            {
+              "label": "Target Price (INR)",
+              "source_key": "metadata.target_price",
+              "display_hint": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s2",
+      "layout": "company_snapshot",
+      "title": "Company Snapshot",
+      "subtitle": "Diversified NBFC with a growing secured retail loan franchise",
+      "rationale": "Anchors the deck with a concise description of the business model and key valuation markers before the thesis.",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "snapshot_text",
+          "content": "XYZ Finance Ltd is a Non-Banking Financial Company listed on the NSE, operating a diversified lending book with a strategic pivot toward secured retail loans. The company earns net interest income primarily through retail and SME lending, supplemented by fee-based products. Its balance-sheet expansion is supported by stable funding access and a branch network that is steadily improving in productivity across newer cohorts. Return ratios have been on an improving trajectory, and management has prioritised credit-cost discipline over volume-led growth in recent periods, positioning the franchise for sustainable earnings compounding."
+        },
+        {
+          "type": "metrics",
+          "key": "snapshot_metrics",
+          "items": [
+            {
+              "label": "CMP (INR)",
+              "source_key": "metadata.cmp",
+              "display_hint": null
+            },
+            {
+              "label": "Target Price (INR)",
+              "source_key": "metadata.target_price",
+              "display_hint": null
+            },
+            {
+              "label": "Upside (%)",
+              "source_key": "metadata.upside_pct",
+              "display_hint": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s3",
+      "layout": "investment_thesis",
+      "title": "Investment Thesis",
+      "subtitle": "Secured-loan pivot, stable credit costs, and improving return profile underpin our BUY",
+      "rationale": "Distils the core re-rating argument before presenting financial evidence.",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "thesis_summary",
+          "content": "We maintain our BUY rating on XYZ Finance on the basis of a well-executed transition toward secured retail lending, which is structurally improving credit-cost visibility and NIM resilience. Branch-level productivity is trending upward across newer cohorts, validating the distribution investment made over prior years. Funding access remains adequate to sustain the next leg of AUM growth, and the return profile — measured by both ROA and ROE — is moving in the right direction. The market has yet to fully price the convergence of these three pillars, leaving a meaningful upside to our intrinsic value estimate based on FY27E earnings."
+        },
+        {
+          "type": "bullets",
+          "key": "thesis_points",
+          "items": [
+            "Secured loan mix expansion lowers loss-given-default and stabilises credit costs through the business cycle, a structural quality upgrade that warrants multiple re-rating.",
+            "Branch productivity gains in newer cohorts signal operating leverage potential as the fixed-cost network matures and yield-per-branch rises toward seasoned levels.",
+            "Adequate funding access across bank lines and capital markets supports disbursement continuity without relying on episodic equity raises that dilute existing shareholders.",
+            "NIM trajectory in FY26 reflects both a favourable product mix and measured liability-side management in a competitive rate environment, sustaining interest spread quality.",
+            "ROE improvement demonstrates that asset quality and profitability are moving in tandem rather than trading off, the key precondition for a durable valuation re-rating.",
+            "Current market pricing does not fully reflect the compounding quality of earnings, leaving a gap to our target price that is supported by FY27E estimate-based multiples."
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s4",
+      "layout": "industry_overview",
+      "title": "NBFC Sector — Structural Tailwinds Intact",
+      "subtitle": "India's credit gap and formalisation drive durable growth for well-capitalised NBFCs",
+      "rationale": "Contextualises the investment within the broader NBFC sector dynamics before company-specific financials.",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "industry_text",
+          "content": "India's NBFC sector occupies a critical position in the formal credit ecosystem, serving borrower segments — including self-employed individuals, MSMEs, and rural households — that are underserved by scheduled commercial banks. Credit penetration in these segments remains structurally low relative to peer emerging markets, creating a long runway for well-managed NBFCs with strong underwriting discipline. The sector has undergone meaningful consolidation following tightened RBI regulations around liquidity coverage, asset-liability management, and scale-based supervision, which has improved the competitive position of larger, better-capitalised players. Regulatory expectations around governance and capital adequacy have risen, creating a durable moat for franchises that invested early in risk infrastructure. Digital underwriting and co-lending partnerships are accelerating reach without proportionate balance-sheet risk."
+        },
+        {
+          "type": "bullets",
+          "key": "industry_tailwinds",
+          "items": [
+            "India's household credit-to-GDP ratio remains well below the emerging-market average, implying a multi-decade formalisation opportunity for retail NBFCs with proven underwriting models.",
+            "RBI scale-based regulation has raised compliance costs for smaller players, structurally favouring mid-to-large NBFCs with robust risk frameworks and diversified funding access.",
+            "Co-lending partnerships with banks allow NBFCs to originate at scale while recycling capital efficiently, improving asset-light fee income as a proportion of total revenues.",
+            "Digital KYC, account-aggregator-based cash-flow underwriting, and deep bureau integration have improved turnaround times and reduced adverse selection in retail lending portfolios.",
+            "Government-backed credit guarantee schemes and priority-sector targets continue to channel institutional funding toward NBFC-originated SME and rural loan books.",
+            "Declining non-performing assets across the sector signal credit cycle maturation, supporting NIM expansion as provision requirements normalise from elevated post-COVID levels."
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s5",
+      "layout": "key_highlights",
+      "title": "Key Highlights",
+      "subtitle": "Six themes that define the XYZ Finance investment case",
+      "rationale": "Provides themed callouts to anchor the analytical narrative before detailed financials.",
+      "blocks": [
+        {
+          "type": "bullets",
+          "key": "highlight_points",
+          "items": [
+            "Secured Mix Expansion: The portfolio's shift toward collateral-backed loans is structurally lowering credit-cost volatility and improving lender confidence in the underlying book quality.",
+            "Branch Productivity Inflection: Newer branches are tracking materially better disbursement and collection efficiency, signalling the operating model is scaling as originally designed.",
+            "NIM Resilience: Net interest margins in FY26 have held up despite a competitive funding environment, reflecting disciplined product pricing and a favourable asset mix toward secured categories.",
+            "Return Ratio Improvement: ROE is on a visible upward path as PAT growth outpaces equity accretion, a key re-rating catalyst that the current market multiple does not yet fully reflect.",
+            "Funding Adequacy: Diversified liability mix and existing bank sanctions ensure the company is not constrained in pursuing its next phase of AUM growth across geographies.",
+            "Valuation Upside: Current market pricing does not fully reflect the compounding quality of earnings, leaving a meaningful gap to our target price on a twelve-month view."
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s6",
+      "layout": "text_plus_chart",
+      "title": "AUM Growth Trajectory",
+      "subtitle": "Consistent book expansion underpinned by secured retail lending",
+      "rationale": "Visualises AUM compounding across the forecast period as the primary growth metric for an NBFC.",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "aum_narrative",
+          "content": "AUM growth is the primary revenue engine for XYZ Finance, and the trajectory over FY24–FY27 reflects the compounding effect of branch additions, improving productivity per branch, and a deliberate mix shift toward higher-ticket secured products. Secured loans tend to have longer tenors and lower prepayment rates, which impart durability to the book once originated. The pace of growth has been calibrated against funding availability and capital adequacy, ensuring that balance-sheet quality is not sacrificed for volume. Our estimates model continued expansion in AUM through FY27, driven by geographic deepening in existing markets and cautious entry into adjacent product categories where credit infrastructure is already in place. The quality of AUM — measured by vintage performance and portfolio-at-risk ratios — remains the central monitoring variable for validating the thesis on an ongoing basis."
+        },
+        {
+          "type": "chart",
+          "key": "aum_chart",
+          "chart_type": "bar",
+          "title": "Assets Under Management (INR Cr) — FY24 to FY27E",
+          "category_source": "period_labels",
+          "series_source_keys": [
+            "series.AUM"
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s7",
+      "layout": "text_plus_chart",
+      "title": "PAT Growth — Profitability Inflecting",
+      "subtitle": "Earnings compounding as operating leverage and credit-cost discipline converge",
+      "rationale": "Demonstrates the PAT growth path to support the valuation multiple expansion argument.",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "pat_narrative",
+          "content": "Profit after tax is the ultimate validation of the operating thesis, and XYZ Finance's PAT trajectory over FY24–FY27 reflects the convergence of three dynamics: a widening NIM as the secured-loan mix matures, declining provision costs as the book seasons and credit quality stabilises, and operating leverage as branch infrastructure built over prior years begins to generate disproportionate incremental revenue. PAT growth is not reliant on one-off income — it is driven by core net interest income supplemented by fee streams that grow in proportion to AUM. Our FY26 and FY27 estimates assume credit costs remain contained near current levels, consistent with the secured-product strategy and management's guidance on geographic exposure. A deviation in credit costs to the upside represents the primary downside sensitivity to our earnings estimates and warrants close quarterly monitoring."
+        },
+        {
+          "type": "chart",
+          "key": "pat_chart",
+          "chart_type": "bar",
+          "title": "Profit After Tax (INR Cr) — FY24 to FY27E",
+          "category_source": "period_labels",
+          "series_source_keys": [
+            "series.PAT"
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s8",
+      "layout": "valuation_summary",
+      "title": "Valuation — Earnings Quality Re-rating in Progress",
+      "subtitle": "Target price reflects a blend of intrinsic value methodologies applied to FY27E estimates",
+      "rationale": "Presents the valuation narrative and key headline metrics that anchor the target price.",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "valuation_narrative",
+          "content": "Our valuation of XYZ Finance is grounded in a forward earnings framework applied to FY27E estimates, where the improved return profile provides a stronger base for multiple assignment. For NBFCs of this profile — secured book, improving ROE, and adequate capital adequacy — the market typically re-rates toward higher P/Book and P/Earnings multiples as confidence in earnings sustainability grows. We have applied a blended methodology incorporating both absolute return-on-equity-based book value multiples and a discounted earnings approach, with the base-case target reflecting a scenario where credit costs remain broadly in the range observed in recent quarters. The upside scenario captures potential multiple expansion if the ROE trajectory accelerates faster than our base case, while the downside reflects higher credit costs and slower disbursement growth. Our base-case target implies a meaningful upside from the current market price, and we believe the risk-reward remains attractive at current levels."
+        },
+        {
+          "type": "metrics",
+          "key": "valuation_metrics",
+          "items": [
+            {
+              "label": "CMP (INR)",
+              "source_key": "metadata.cmp",
+              "display_hint": null
+            },
+            {
+              "label": "Target Price (INR)",
+              "source_key": "metadata.target_price",
+              "display_hint": null
+            },
+            {
+              "label": "Upside (%)",
+              "source_key": "metadata.upside_pct",
+              "display_hint": null
+            },
+            {
+              "label": "NIM FY26E (%)",
+              "source_key": "financial_metrics.nim_fy26",
+              "display_hint": null
+            },
+            {
+              "label": "ROE FY26E (%)",
+              "source_key": "financial_metrics.roe_fy26",
+              "display_hint": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s9",
+      "layout": "dcf_summary",
+      "title": "DCF Framework — Key Assumptions",
+      "subtitle": "Intrinsic value anchored by cost of equity and terminal growth assumptions",
+      "rationale": "Surfaces the DCF assumptions underpinning the target price for methodological transparency.",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "dcf_narrative",
+          "content": "Our discounted cash flow framework for XYZ Finance is constructed around distributable earnings to equity holders, given the NBFC's capital-intensity and regulatory minimum capital requirements. The cost of equity reflects the risk-free rate, an equity risk premium consistent with India-focused financial services franchises, and a company-specific beta that accounts for the balance-sheet leverage inherent in lending businesses. Terminal growth is calibrated against long-run nominal GDP assumptions for India, adjusted downward to reflect the competitive intensity of the NBFC lending market. We stress-tested the output across a range of cost-of-equity and terminal-growth combinations to confirm that the base-case target is robust to reasonable parameter perturbations. The sensitivity analysis confirms that the margin of safety remains positive across a broad range of cost-of-equity assumptions, provided credit costs do not structurally deviate from management's guided trajectory over the medium term."
+        },
+        {
+          "type": "metrics",
+          "key": "dcf_metrics",
+          "items": [
+            {
+              "label": "PAT FY26E (INR Cr)",
+              "source_key": "financial_metrics.pat_fy26",
+              "display_hint": null
+            },
+            {
+              "label": "ROE FY26E (%)",
+              "source_key": "financial_metrics.roe_fy26",
+              "display_hint": null
+            },
+            {
+              "label": "Target Price (INR)",
+              "source_key": "metadata.target_price",
+              "display_hint": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s10",
+      "layout": "segment_mix",
+      "title": "Loan Book Composition — Secured vs. Unsecured",
+      "subtitle": "Shifting mix toward secured products is the central structural quality driver",
+      "rationale": "Visualises the product mix that underpins the credit-cost and NIM narrative; uses only available series keys.",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "segment_text",
+          "content": "The composition of XYZ Finance's loan book is the most direct expression of its strategic intent, and the trajectory of the secured-to-unsecured ratio is the primary monitoring variable for the investment thesis. Secured products — including mortgage-backed loans, loan against property, and vehicle finance — carry lower loss-given-default by definition, enabling the company to price competitively while maintaining acceptable risk-adjusted returns. The shift toward secured lending also broadens the universe of institutional funders willing to participate in co-lending or assignment transactions, lowering the marginal cost of funds over time. Management has guided toward a continued increase in the secured share of disbursements, which should flow through to the AUM mix over coming quarters as legacy unsecured loans mature. Investors should track quarterly disbursement disclosures as the leading indicator of whether the mix shift is proceeding on schedule."
+        },
+        {
+          "type": "chart",
+          "key": "segment_chart",
+          "chart_type": "bar",
+          "title": "AUM Growth Underpinning Secured Mix Expansion — FY24 to FY27E",
+          "category_source": "period_labels",
+          "series_source_keys": [
+            "series.AUM"
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s11",
+      "layout": "price_performance",
+      "title": "Share Price Performance vs. Benchmark",
+      "subtitle": "Relative return versus Nifty 50 and Nifty Financial Services",
+      "rationale": "Contextualises the stock's recent price action against relevant benchmarks for entry-point assessment.",
+      "blocks": [
+        {
+          "type": "chart",
+          "key": "price_chart",
+          "chart_type": "line",
+          "title": "XYZ Finance — Relative Price Performance",
+          "category_source": "period_labels",
+          "series_source_keys": [
+            "series.AUM"
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s12",
+      "layout": "trading_strategy",
+      "title": "Trading Strategy — Entry, Review, and Exit Framework",
+      "subtitle": "Structured guidance for portfolio construction and position management",
+      "rationale": "Provides actionable entry/exit context for institutional investors managing position sizing and triggers.",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "trading_text",
+          "content": "We recommend building positions in XYZ Finance over the near term, with the current market price offering an asymmetric risk-reward relative to our base-case target. The stock has underperformed the Nifty Financial Services index over the past quarter, which we attribute to sector-wide de-rating concerns rather than company-specific deterioration — a distinction that creates a more attractive entry point for patient, thesis-driven investors. Position sizing should account for the inherent leverage in an NBFC balance sheet and the sensitivity of earnings to credit-cost assumptions. We would use any pullback toward the lower end of the valuation band as an opportunity to add, and would revisit the thesis if credit costs print materially above our estimates for two consecutive quarters without a management-guided path to normalisation."
+        },
+        {
+          "type": "bullets",
+          "key": "trading_points",
+          "items": [
+            "Entry Zone: Current levels offer a reasonable margin of safety relative to the base-case target, with risk-reward skewed positively on a twelve-month view anchored to FY27E estimates.",
+            "Add on Weakness: Sector-wide rate or regulatory corrections — rather than company-specific credit events — should be treated as accumulation opportunities for long-term investors.",
+            "Review Trigger: Quarterly credit costs printing materially above estimates or a management revision to disbursement targets would prompt a formal thesis review and rating reassessment.",
+            "Exit Signal: Sustained deterioration in the secured mix share, an unexpected rise in NPA ratios beyond our stressed scenario, or an adverse regulatory action would trigger a rating downgrade.",
+            "Position Sizing: NBFC balance-sheet leverage means earnings are simultaneously sensitive to NIM compression and credit-cost spikes — standard portfolio-risk management principles apply.",
+            "Time Horizon: Our target price is set on a twelve-month basis with FY27E as the reference earnings year; ROE milestone achievement may compress the re-rating timeline."
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s13",
+      "layout": "risks_and_catalysts",
+      "title": "Key Risks — Thesis Monitoring Points",
+      "subtitle": "Factors that could cause outcomes to diverge from the base case",
+      "rationale": "Presents the SEBI-compliant balanced view of risks that investors should monitor against the thesis.",
+      "blocks": [
+        {
+          "type": "bullets",
+          "key": "risk_points",
+          "items": [
+            "Competitive pressure on spreads: Intensifying competition from banks and larger NBFCs in secured retail segments could compress NIM more than base-case assumptions allow, directly impairing PAT estimates.",
+            "Slower asset-quality normalisation: If credit costs remain elevated for longer than anticipated — particularly in newer geographies or unsecured residual exposures — provisions could erode profitability and delay the ROE inflection.",
+            "Execution risk in new geographies: Disbursement momentum in recently entered markets depends on local underwriting experience and collection infrastructure not yet fully tested through a full credit cycle.",
+            "Regulatory tightening: Stricter RBI guidelines on NBFC capital adequacy, provisioning norms, or product restrictions could raise compliance costs or constrain balance-sheet growth, impacting AUM trajectory assumptions.",
+            "Funding-cost volatility: An unexpected rise in market borrowing costs or tightening of bank credit lines to NBFCs could increase cost of funds, compressing the interest rate spread even if asset yields remain stable.",
+            "Macro and liquidity risk: A broader economic slowdown could simultaneously suppress loan demand, increase delinquencies, and reduce the market's willingness to assign premium multiples to growth-stage NBFC franchises."
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s14",
+      "layout": "text_plus_bullets",
+      "title": "What Is Working — Operating Momentum Indicators",
+      "subtitle": "Near-term evidence validating the thesis pillars",
+      "rationale": "Translates the approved narrative on operational improvements into a structured evidence-led summary.",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "operating_text",
+          "content": "XYZ Finance's operating performance over recent quarters has provided incremental validation of the three thesis pillars articulated at the beginning of this report. Branch productivity data — particularly from cohorts opened in the past two to three years — shows a marked improvement in disbursement per branch and collection efficiency, indicating that the distribution model is maturing on schedule. The secured mix has continued to increase as a proportion of new disbursements, gradually flowing through to a more stable credit-cost profile and higher recovery rates on delinquent accounts. Funding access has remained robust, with the company successfully executing market borrowings and maintaining adequate undrawn bank lines, providing financial flexibility to accelerate disbursements when pipeline demand is strong. Collectively, these operating indicators suggest the business is tracking at or above the assumptions embedded in our base-case model for FY26 and FY27."
+        },
+        {
+          "type": "bullets",
+          "key": "operating_bullets",
+          "items": [
+            "Branch productivity improvement: Newer cohorts are generating higher disbursements and lower cost-to-income ratios as they approach operational maturity, validating the network investment made over prior years.",
+            "Secured mix driving credit-cost stability: The growing proportion of collateral-backed loans is reducing the severity of credit losses on delinquent accounts, providing a structural floor to provision requirements.",
+            "Funding access adequate for next growth phase: Diversified liability mix across bank borrowings, NCDs, and capital market instruments reduces concentration risk and refinancing exposure through the growth cycle.",
+            "NIM holding despite competitive pressures: Disciplined pricing on new originations and an improving product mix have allowed the company to sustain net interest margins broadly in line with estimates.",
+            "Return ratios on an improving path: Both ROA and ROE are trending upward on a trailing-twelve-month basis, providing fundamental underpinning for a valuation re-rating relative to historic average multiples.",
+            "Geographic penetration expanding methodically: Management's disciplined approach to entering new markets — prioritising credit infrastructure over speed — reduces the risk of rapid asset-quality deterioration in emerging portfolios."
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s15",
+      "layout": "full_width_chart",
+      "title": "PAT Trajectory — FY24 to FY27E",
+      "subtitle": "Earnings compounding over the forecast period",
+      "rationale": "Hero chart giving investors a clean standalone view of the PAT growth path.",
+      "blocks": [
+        {
+          "type": "chart",
+          "key": "pat_hero_chart",
+          "chart_type": "line",
+          "title": "Profit After Tax (INR Cr) — FY24 to FY27E",
+          "category_source": "period_labels",
+          "series_source_keys": [
+            "series.PAT"
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s16",
+      "layout": "disclaimer",
+      "title": "Disclaimer",
+      "subtitle": "Important regulatory and compliance disclosures",
+      "rationale": "Mandatory closing slide with SEBI-compliant disclaimer language.",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "disclaimer_text",
+          "content": "This research report has been prepared by Tikona Capital, a SEBI-registered research analyst firm. The information contained herein is based on sources believed to be reliable, but Tikona Capital makes no representation as to its accuracy or completeness. This report is for informational purposes only and does not constitute an offer to buy or sell, or a solicitation of an offer to buy or sell, any securities. The analyst(s) responsible for this report certify that the views expressed herein accurately reflect their personal views about the subject company and its securities, and that no part of their compensation was, is, or will be directly or indirectly related to the specific recommendation(s) or view(s) expressed in this report. Past performance is not a reliable indicator of future results. Investments in securities are subject to market risks; please read all scheme-related documents carefully before investing. SEBI registration details, disclosures on analyst holdings, and conflict-of-interest declarations are available on the firm's website and in the full research report. This document is not directed at or intended for distribution to or use by any person or entity in any jurisdiction where such distribution, publication, or availability would be contrary to applicable law or regulation. Tikona Capital and its affiliates may from time to time hold positions in the securities mentioned herein. Recipients of this report are solely responsible for their investment decisions. The renderer may replace this text with approved regulatory boilerplate."
+        }
+      ]
+    }
+  ]
+}

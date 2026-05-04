@@ -1,0 +1,66 @@
+{
+  "run_id": "8ebda238bcb1",
+  "created_at": "2026-05-04T03:05:32.901743Z",
+  "company_ticker": "ABC",
+  "status": "pdf_skipped",
+  "artifacts": [
+    {
+      "label": "company",
+      "path": "inputs\\company.json",
+      "sha256": "816a14998fc7c4791b332978afc4ce35d599c5d093ead5b548a51b106185d6d1",
+      "size_bytes": 361
+    },
+    {
+      "label": "metadata",
+      "path": "inputs\\metadata.json",
+      "sha256": "709684b13dbcb2491804ad15c09e9907e6bd050a502cf08e0280b7d7fc180c13",
+      "size_bytes": 219
+    },
+    {
+      "label": "financial_model",
+      "path": "inputs\\financial_model.json",
+      "sha256": "787e43b86c635daadf938227064672127d896bede3387079efdcc341dd986836",
+      "size_bytes": 597
+    },
+    {
+      "label": "approved_report",
+      "path": "inputs\\approved_report.md",
+      "sha256": "e6ad8520d06462597a6a7515509a7a6c07f2b18817b6cfe5f4edd2fd66a8e17f",
+      "size_bytes": 599
+    },
+    {
+      "label": "slide_plan",
+      "path": "intermediates\\slide_plan.json",
+      "sha256": "83d740f1e6610cdc31fa820e29c88d67448aaac5d4c98196dfc77a7b148fd521",
+      "size_bytes": 7599
+    },
+    {
+      "label": "report_spec",
+      "path": "intermediates\\report.json",
+      "sha256": "7cb9c6e2de5cfd86792a1b7364b14b2e78fc01622407e9c6654a02dbe0f214f3",
+      "size_bytes": 8381
+    },
+    {
+      "label": "pptx",
+      "path": "artifacts\\report.pptx",
+      "sha256": "6eb4b6a543ad37c9e4573171bc2a244f21374996d5e412568357ddc03f5b6967",
+      "size_bytes": 118122
+    },
+    {
+      "label": "render_manifest",
+      "path": "intermediates\\render_manifest.json",
+      "sha256": "765b4de80660dccca2ff041ede84ffd0d705189d166f7f42d70c7bcb146a4302",
+      "size_bytes": 3065
+    },
+    {
+      "label": "run_log",
+      "path": "logs\\run.log",
+      "sha256": "92533e90cad47c7cfe7a19598bacd55b6113d4385b5848d69eb8d08943d0317f",
+      "size_bytes": 494
+    }
+  ],
+  "notes": [
+    "Slide s8 text block 'disclaimer_text' is very long.",
+    "No supported PDF conversion backend is available. Install LibreOffice or run on Windows with PowerPoint + pywin32."
+  ]
+}

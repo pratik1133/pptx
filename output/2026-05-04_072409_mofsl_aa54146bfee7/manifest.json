@@ -1,0 +1,89 @@
+{
+  "run_id": "aa54146bfee7",
+  "created_at": "2026-05-04T01:54:09.267135Z",
+  "company_ticker": "MOFSL",
+  "status": "pdf_skipped",
+  "artifacts": [
+    {
+      "label": "company",
+      "path": "inputs\\company.json",
+      "sha256": "ac3b61cb5cc974e8bbeb457ec3219b24a9fee4be09a45e9426efc270d86b1367",
+      "size_bytes": 739
+    },
+    {
+      "label": "metadata",
+      "path": "inputs\\metadata.json",
+      "sha256": "c22b560b55109d7899c83bfa1a68a55deb7d1306e8a75d705065d8b5ee531214",
+      "size_bytes": 225
+    },
+    {
+      "label": "financial_model",
+      "path": "inputs\\financial_model.json",
+      "sha256": "8a2d3f80f1999162b367b2a6621d8bbaedace2bf52a26d4cbe945ff0d91d49cc",
+      "size_bytes": 15166
+    },
+    {
+      "label": "approved_report",
+      "path": "inputs\\approved_report.md",
+      "sha256": "9452fd6239d647312e0635051abf45bf646dadf6394709d812b40dd60c02615c",
+      "size_bytes": 2649
+    },
+    {
+      "label": "slide_plan",
+      "path": "intermediates\\slide_plan.json",
+      "sha256": "6482c28ab35b91b4be927fa81cbc13c1e91336bfb80713a39fb489e571151822",
+      "size_bytes": 40903
+    },
+    {
+      "label": "report_spec",
+      "path": "intermediates\\report.json",
+      "sha256": "05009d0e4ab5965916bbd75f9b15e129f9038eae5e28ecfc7fcb672d76cdecc6",
+      "size_bytes": 39917
+    },
+    {
+      "label": "pptx",
+      "path": "artifacts\\report.pptx",
+      "sha256": "fa861d15ba6cc70a47f315518c6ab2a4a6a2d05eab1ad97b77a6e2701f51aa2e",
+      "size_bytes": 225936
+    },
+    {
+      "label": "render_manifest",
+      "path": "intermediates\\render_manifest.json",
+      "sha256": "aaa68c33df57a6e33c078fe8c51322ca2c3cf2ae7c660b643d815f8a8c9f321e",
+      "size_bytes": 54183
+    },
+    {
+      "label": "run_log",
+      "path": "logs\\run.log",
+      "sha256": "e85b1c978d746faf8ac407487a6ccffabc70ea276120a195d14d8592bae7248d",
+      "size_bytes": 3696
+    }
+  ],
+  "notes": [
+    "Slide s2 bullet item in 'thesis_points' is long and may wrap heavily.",
+    "Slide s2 bullet item in 'thesis_points' is long and may wrap heavily.",
+    "Slide s4 bullet item in 'industry_tailwinds' is long and may wrap heavily.",
+    "Slide s4 bullet item in 'industry_tailwinds' is long and may wrap heavily.",
+    "Slide s4 bullet item in 'industry_tailwinds' is long and may wrap heavily.",
+    "Slide s4 bullet item in 'industry_tailwinds' is long and may wrap heavily.",
+    "Slide s5 bullet item in 'highlights' is long and may wrap heavily.",
+    "Slide s5 bullet item in 'highlights' is long and may wrap heavily.",
+    "Slide s5 bullet item in 'highlights' is long and may wrap heavily.",
+    "Slide s5 bullet item in 'highlights' is long and may wrap heavily.",
+    "Slide s5 bullet item in 'highlights' is long and may wrap heavily.",
+    "Slide s5 bullet item in 'highlights' is long and may wrap heavily.",
+    "Slide s17 bullet item in 'risk_bullets' is long and may wrap heavily.",
+    "Slide s17 bullet item in 'risk_bullets' is long and may wrap heavily.",
+    "Slide s17 bullet item in 'risk_bullets' is long and may wrap heavily.",
+    "Slide s17 bullet item in 'risk_bullets' is long and may wrap heavily.",
+    "Slide s17 bullet item in 'risk_bullets' is long and may wrap heavily.",
+    "Slide s17 bullet item in 'risk_bullets' is long and may wrap heavily.",
+    "Slide s18 bullet item in 'entry_bullets' is long and may wrap heavily.",
+    "Slide s18 bullet item in 'entry_bullets' is long and may wrap heavily.",
+    "Slide s18 bullet item in 'entry_bullets' is long and may wrap heavily.",
+    "Slide s18 bullet item in 'entry_bullets' is long and may wrap heavily.",
+    "Slide s18 bullet item in 'entry_bullets' is long and may wrap heavily.",
+    "Slide s21 text block 'disclaimer_text' is very long.",
+    "No supported PDF conversion backend is available. Configure LibreOffice or PowerPoint."
+  ]
+}

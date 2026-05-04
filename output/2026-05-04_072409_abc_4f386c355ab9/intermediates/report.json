@@ -1,0 +1,318 @@
+{
+  "schema_version": "1.1.0",
+  "report_id": "51d5b9bb-a9dc-476f-bb22-7497632a829e",
+  "run_id": "e2dab071-671b-4b5a-b844-3905a7e6b2c4",
+  "company": {
+    "name": "ABC Ltd",
+    "ticker": "ABC",
+    "exchange": "NSE",
+    "sector": "Chemicals",
+    "industry": "Specialty Chemicals",
+    "isin": "INE000ABC123",
+    "country": "India",
+    "description": "ABC Ltd is a specialty chemicals manufacturer focused on export-led growth and margin expansion.",
+    "peer_list": [
+      "PeerChem Ltd",
+      "InduChem Corp",
+      "GlobalChem India"
+    ]
+  },
+  "metadata": {
+    "rating": "BUY",
+    "currency": "INR",
+    "cmp": "420",
+    "target_price": "515",
+    "upside_pct": "22.6",
+    "market_cap": "185000000000",
+    "analyst": "Jane Doe",
+    "report_date": "2026-04-28",
+    "report_type": "Initiation"
+  },
+  "inputs": {
+    "financial_model_ref": "C:\\Users\\pratik\\pptx\\data\\samples\\financial_models\\abc_model.json",
+    "approved_content_ref": "C:\\Users\\pratik\\pptx\\data\\samples\\approved_reports\\abc.md"
+  },
+  "slides": [
+    {
+      "slide_id": "s1",
+      "layout": "cover_slide",
+      "title": "ABC Ltd — Initiation of Coverage",
+      "subtitle": "ABC Ltd | BUY",
+      "blocks": [
+        {
+          "type": "metrics",
+          "key": "cover_metrics",
+          "items": [
+            {
+              "label": "Rating",
+              "value": "BUY",
+              "source": "metadata.rating"
+            },
+            {
+              "label": "CMP",
+              "value": "₹420.0",
+              "source": "metadata.cmp"
+            },
+            {
+              "label": "Target Price",
+              "value": "₹515.0",
+              "source": "metadata.target_price"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s2",
+      "layout": "company_snapshot",
+      "title": "Company Snapshot",
+      "subtitle": "Specialty chemicals manufacturer with an export-led growth model",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "snapshot_text",
+          "content": "ABC Ltd is a specialty chemicals manufacturer operating within the broader chemicals sector on the NSE. The company generates revenues primarily through the development and sale of differentiated specialty chemical products targeting export markets, with domestic distribution providing a secondary revenue base. Its earnings model is anchored on mix improvement — progressively shifting away from lower-margin commodity formulations toward value-added specialty grades — combined with backward integration investments that structurally support gross margin retention. Management has historically reinvested free cash flows into capacity and process improvements, creating a compounding effect on utilisation and per-unit profitability as cycles mature."
+        },
+        {
+          "type": "metrics",
+          "key": "snapshot_kpis",
+          "items": [
+            {
+              "label": "CMP",
+              "value": "₹420.0",
+              "source": "metadata.cmp"
+            },
+            {
+              "label": "Target Price",
+              "value": "₹515.0",
+              "source": "metadata.target_price"
+            },
+            {
+              "label": "Upside",
+              "value": "22.6%",
+              "source": "metadata.upside_pct"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s3",
+      "layout": "investment_thesis",
+      "title": "Investment Thesis",
+      "subtitle": "Initiating with BUY — mix, exports, and margin expansion underpriced by the market",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "thesis_text",
+          "content": "We initiate coverage on ABC Ltd with a BUY rating. The company is executing a deliberate transition from volume-led, lower-margin chemistry toward specialty grades with structurally superior margins, while simultaneously growing its export footprint. In our view, the market has not fully priced the earnings quality improvement that follows from this mix shift, creating a compelling entry point for investors with a medium-term horizon. Capacity discipline and backward integration lend credibility to the forward margin trajectory, and management's track record across prior capex cycles supports our confidence in execution."
+        },
+        {
+          "type": "bullets",
+          "key": "thesis_bullets",
+          "items": [
+            "Specialty mix shift is the primary re-rating lever — higher-value products carry structurally superior margins compared with commodity grades.",
+            "Export penetration is expanding into regulated markets where entry barriers protect pricing and reduce competition from unorganised domestic players.",
+            "Backward integration investments reduce raw material pass-through risk and support gross margin stability even during input cost cycles.",
+            "Management execution across prior capex cycles has been disciplined, with utilisation ramp-ups broadly meeting guided timelines.",
+            "Demand visibility across key end markets remains healthy, underpinned by multi-year supply agreements and customer qualification cycles.",
+            "Earnings conversion is expected to accelerate as installed capacity is absorbed, generating operating leverage on the existing fixed cost base."
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s4",
+      "layout": "industry_overview",
+      "title": "Industry Overview — Specialty Chemicals",
+      "subtitle": "Structural tailwinds from China diversification and domestic capacity build-out",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "industry_text",
+          "content": "The global specialty chemicals industry is undergoing a sustained structural shift as multinational end-users actively seek to diversify supply chains away from a single-country dependency on Chinese manufacturers. India has emerged as the most credible alternative, combining cost-competitive manufacturing, a strong technical talent base, and improving regulatory standards in REACH and USFDA-aligned segments. The domestic market is simultaneously growing as industrialisation deepens across sectors including agrochemicals, pharmaceuticals, polymers, and electronics. Indian specialty chemical companies that have invested early in process chemistry, backward integration, and export infrastructure are disproportionately capturing this reallocation of global procurement budgets, and the cycle appears to have years of runway ahead."
+        },
+        {
+          "type": "bullets",
+          "key": "industry_bullets",
+          "items": [
+            "Global supply-chain diversification away from China is redirecting procurement toward India-based specialty chemical manufacturers with credible quality certifications.",
+            "Regulated-market export qualification acts as a durable moat — once a supplier is approved, switching costs for the customer are high and relationships are sticky.",
+            "Domestic end-market growth across agrochemicals, pharma intermediates, and advanced materials provides a growing secondary demand base for Indian producers.",
+            "Government policy support through PLI schemes and environmental compliance enforcement is raising the bar for new entrants and protecting incumbents.",
+            "Raw material backward integration investments by leading players are compressing the margin gap between Indian and Chinese cost structures.",
+            "Capital discipline across the sector has improved, with most listed players tying capacity additions to firm order pipelines rather than speculative build-out."
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s5",
+      "layout": "key_highlights",
+      "title": "Key Highlights",
+      "subtitle": "Six themes anchoring our BUY thesis on ABC Ltd",
+      "blocks": [
+        {
+          "type": "bullets",
+          "key": "highlights_bullets",
+          "items": [
+            "Mix Shift Underway: The portfolio is migrating toward higher-margin specialty grades, with commodity exposure declining as a share of revenues over the forecast horizon.",
+            "Export Momentum: Export penetration into regulated international markets is expanding, providing pricing power and demand diversification beyond the domestic cycle.",
+            "Margin Expansion Visible: EBITDA margins are on an upward trajectory supported by backward integration, operating leverage, and a richer product mix.",
+            "Capex Cycle Maturing: The current investment cycle is past peak spend, setting the stage for meaningful free cash flow generation as utilisation improves across FY26 and FY27.",
+            "Balance Sheet Headroom: Net debt to EBITDA remains within a conservative range, preserving optionality for the next phase of capacity or bolt-on investment.",
+            "Management Track Record: Prior capex cycles have been executed broadly on time and on budget, lending credibility to management guidance on the current expansion."
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s6",
+      "layout": "text_plus_chart",
+      "title": "Revenue Growth Trajectory",
+      "subtitle": "Steady topline compounding driven by volume and mix across FY24–FY27",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "revenue_text",
+          "content": "ABC Ltd's revenue trajectory reflects the dual benefit of capacity addition and ongoing mix enrichment. Volume growth is expected to be underpinned by ramp-up of recently commissioned capacity, while a rising share of specialty grades in the revenue base supports realisation improvement even in periods of moderate volume growth. Export channels are expected to grow faster than domestic revenues over the forecast horizon as the company builds on existing regulated-market qualifications and adds new customer relationships in Europe and North America. The combination of volume, mix, and pricing should drive compounding topline growth that, in our view, the market is currently discounting conservatively."
+        },
+        {
+          "type": "chart",
+          "key": "revenue_chart",
+          "chart_type": "bar",
+          "title": "Annual Revenue (FY24–FY27)",
+          "category_source": "period_labels",
+          "series": [
+            {
+              "label": "Revenue",
+              "source_key": "series.Revenue"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s7",
+      "layout": "text_plus_chart",
+      "title": "EBITDA Margin Expansion",
+      "subtitle": "Backward integration and mix driving a structural step-up in profitability",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "margin_text",
+          "content": "EBITDA margin expansion is the central financial narrative for ABC Ltd. Three forces are working simultaneously to structurally lift margins: first, the shift in product mix toward higher-value specialty grades, which carry superior contribution margins relative to standard commodity grades; second, backward integration investments that reduce the company's exposure to third-party raw material pricing volatility; and third, operating leverage as fixed costs are spread across a growing revenue base with new capacity moving through its utilisation curve. Together, these factors are expected to drive a meaningful improvement in EBITDA margins across the forecast window, with the pace of improvement accelerating as utilisation reaches optimal levels in the outer years. We view the margin trajectory as the most important signal of structural quality improvement within the P&L."
+        },
+        {
+          "type": "chart",
+          "key": "margin_chart",
+          "chart_type": "line",
+          "title": "EBITDA Margin Trend (FY24–FY27)",
+          "category_source": "period_labels",
+          "series": [
+            {
+              "label": "EBITDA Margin",
+              "source_key": "series.EBITDA Margin"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s8",
+      "layout": "valuation_summary",
+      "title": "Valuation Summary",
+      "subtitle": "BUY — target price implies meaningful upside from current market price",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "valuation_text",
+          "content": "Our target price for ABC Ltd is derived using a forward earnings multiple methodology applied to FY26 estimates, with cross-validation against peer group trading multiples and a discounted cash flow framework. We believe the current market price does not adequately reflect the improving earnings quality, margin trajectory, or export optionality embedded in the business. As the company delivers on its utilisation ramp and margin expansion narrative over the next four to six quarters, we expect a re-rating toward peer-average multiples for companies at a comparable stage of their specialty chemicals upgrade cycle. The implied upside offers an attractive risk-reward for investors willing to hold through the near-term noise of raw material and export demand volatility. Our BUY rating is maintained with conviction."
+        },
+        {
+          "type": "metrics",
+          "key": "valuation_metrics",
+          "items": [
+            {
+              "label": "Rating",
+              "value": "BUY",
+              "source": "metadata.rating"
+            },
+            {
+              "label": "CMP",
+              "value": "₹420.0",
+              "source": "metadata.cmp"
+            },
+            {
+              "label": "Target Price",
+              "value": "₹515.0",
+              "source": "metadata.target_price"
+            },
+            {
+              "label": "Upside",
+              "value": "22.6%",
+              "source": "metadata.upside_pct"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s9",
+      "layout": "text_plus_bullets",
+      "title": "FY26 Financial Snapshot",
+      "subtitle": "Key P&L and balance sheet outputs for the base-case forecast year",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "fy26_text",
+          "content": "FY26 represents the first full year in which the benefits of the current capex cycle are expected to be reflected across the P&L and balance sheet simultaneously. Revenue should benefit from higher utilisation of recently commissioned capacity layered with a richer product mix, while EBITDA is expected to expand as operating leverage amplifies the gross margin gains from backward integration. Profit after tax should grow at a faster rate than EBITDA owing to reducing interest charges as the debt incurred during the capex phase is progressively retired. Return on equity is expected to improve as asset sweating begins in earnest, and net debt to EBITDA should decline materially, signalling the transition from an investment phase to a harvest phase. These dynamics, in combination, underpin our conviction that FY26 will be the inflection year that validates the re-rating thesis."
+        },
+        {
+          "type": "bullets",
+          "key": "fy26_bullets",
+          "items": [
+            "Revenue (FY26) reflects capacity ramp and mix enrichment — see key: financial_metrics.revenue_fy26 for the reported figure.",
+            "EBITDA (FY26) captures operating leverage benefits from backward integration and specialty grade shift.",
+            "PAT (FY26) growth is amplified by declining interest costs as capex-phase debt is repaid.",
+            "RoE (FY26) improvement signals the portfolio is entering a higher-return harvest phase.",
+            "Net Debt to EBITDA (FY26) declining toward a conservative level, preserving future optionality."
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s10",
+      "layout": "risks_and_catalysts",
+      "title": "Risks and Monitoring Points",
+      "subtitle": "Factors that could cause the thesis to lag, stall, or reverse",
+      "blocks": [
+        {
+          "type": "bullets",
+          "key": "risks_bullets",
+          "items": [
+            "Raw material cost volatility — key chemical inputs can experience sharp price swings that compress gross margins faster than selling-price adjustments can offset.",
+            "Utilisation ramp-up delays — if newly commissioned capacity takes longer than guided to reach target utilisation, earnings conversion timelines shift outward, deferring the free cash flow inflection.",
+            "Export demand softness — a deceleration in global industrial activity or customer destocking in regulated markets could reduce order volumes from international accounts in the near term.",
+            "China competitive risk — any structural improvement in Chinese supply economics or aggressive export pricing from mainland producers could narrow India's cost advantage and pressure realisations.",
+            "Regulatory and compliance risk — export qualification in regulated markets is subject to ongoing audits; any compliance lapse could result in volume disruptions at key customer accounts.",
+            "Forex exposure — a significant portion of revenues is denominated in or indexed to foreign currencies, and an adverse INR appreciation cycle could dilute reported revenue and margin in domestic currency terms."
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s11",
+      "layout": "disclaimer",
+      "title": "Disclaimer",
+      "subtitle": "",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "disclaimer_text",
+          "content": "This research report has been prepared by Tikona Capital, a SEBI-registered research analyst entity, for informational purposes only. It is not an offer, solicitation, or recommendation to buy or sell any security. The analyst(s) certify that the views expressed herein accurately reflect their personal views about the subject company and its securities. Tikona Capital and/or its affiliates may hold positions in the securities discussed. Past performance is not indicative of future results. Investments in securities are subject to market and other risks; investors should conduct their own due diligence and consult their financial adviser before making investment decisions. This document is intended solely for the recipient and may not be reproduced or redistributed without prior written consent. SEBI Registration No. [INH000XXXXXX]. The renderer will substitute this placeholder text with the firm's approved legal boilerplate prior to publication."
+        }
+      ]
+    }
+  ]
+}

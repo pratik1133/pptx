@@ -1,0 +1,68 @@
+{
+  "run_id": "be7e9b2f976e",
+  "created_at": "2026-05-04T02:14:38.668753Z",
+  "company_ticker": "XYZ",
+  "status": "pdf_skipped",
+  "artifacts": [
+    {
+      "label": "company",
+      "path": "inputs\\company.json",
+      "sha256": "13b8b97f29cd52e311c8b0cb786a0e4b198308756fec093bf9c65fb82b125d03",
+      "size_bytes": 371
+    },
+    {
+      "label": "metadata",
+      "path": "inputs\\metadata.json",
+      "sha256": "8579abceb3fd008175eb71fd26f8a03de4c9ecc3525f6da49ab327832c7551e1",
+      "size_bytes": 214
+    },
+    {
+      "label": "financial_model",
+      "path": "inputs\\financial_model.json",
+      "sha256": "6ab170a188fe5e3f50071a456cc95107985c86c700f21e1ec1704b1f42daefea",
+      "size_bytes": 548
+    },
+    {
+      "label": "approved_report",
+      "path": "inputs\\approved_report.md",
+      "sha256": "d7f70f6e3fc5e5fa4e6d204735e7d02a48337745fb8e9d1a67dbbd3c4e0804ab",
+      "size_bytes": 569
+    },
+    {
+      "label": "slide_plan",
+      "path": "intermediates\\slide_plan.json",
+      "sha256": "aa96508c2bafab7257048dc7a4bca9fb951fdd85d27012b2799d7fa6489146f5",
+      "size_bytes": 17757
+    },
+    {
+      "label": "report_spec",
+      "path": "intermediates\\report.json",
+      "sha256": "ffb2de879290e35130b4b4cfa3207389c1f31e9f609fd1475e00641f11f19b8f",
+      "size_bytes": 17498
+    },
+    {
+      "label": "pptx",
+      "path": "artifacts\\report.pptx",
+      "sha256": "62110f89b35e5055e6a86298a8efcae8b449e0483d6bb5c361331811a13b6bd2",
+      "size_bytes": 126594
+    },
+    {
+      "label": "render_manifest",
+      "path": "intermediates\\render_manifest.json",
+      "sha256": "26770b15e4b7790d0dd4e9f639ab3758cf67e0b66e9aa1712591f53d2be96aef",
+      "size_bytes": 3305
+    },
+    {
+      "label": "run_log",
+      "path": "logs\\run.log",
+      "sha256": "fd5e914e03e422979b9bee280030bf2ef1e57d846ddb398f1c14c192f6481beb",
+      "size_bytes": 747
+    }
+  ],
+  "notes": [
+    "Slide s9 bullet item in 'risks_bullets' is long and may wrap heavily.",
+    "Slide s9 bullet item in 'risks_bullets' is long and may wrap heavily.",
+    "Slide s10 text block 'disclaimer_text' is very long.",
+    "No supported PDF conversion backend is available. Configure LibreOffice or PowerPoint."
+  ]
+}

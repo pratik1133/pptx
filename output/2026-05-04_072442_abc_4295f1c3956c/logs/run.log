@@ -1,0 +1,16 @@
+ts=2026-05-04T01:54:43.598770+00:00 level=INFO msg=pipeline_started run_id=4295f1c3956c ticker=ABC
+ts=2026-05-04T01:54:43.598809+00:00 level=WARN msg=qa_warning detail=Slide s4 text block 'industry_text' is very long.
+ts=2026-05-04T01:54:43.598819+00:00 level=WARN msg=qa_warning detail=Slide s7 text block 'margin_text' is very long.
+ts=2026-05-04T01:54:43.598827+00:00 level=WARN msg=qa_warning detail=Slide s8 text block 'valuation_text' is very long.
+ts=2026-05-04T01:54:43.598834+00:00 level=WARN msg=qa_warning detail=Slide s8 metrics block 'valuation_metrics' is dense.
+ts=2026-05-04T01:54:43.598840+00:00 level=WARN msg=qa_warning detail=Slide s11 bullet item in 'risks_bullets' is long and may wrap heavily.
+ts=2026-05-04T01:54:43.598848+00:00 level=WARN msg=qa_warning detail=Slide s11 bullet item in 'risks_bullets' is long and may wrap heavily.
+ts=2026-05-04T01:54:43.598855+00:00 level=WARN msg=qa_warning detail=Slide s11 bullet item in 'risks_bullets' is long and may wrap heavily.
+ts=2026-05-04T01:54:43.598862+00:00 level=WARN msg=qa_warning detail=Slide s11 bullet item in 'risks_bullets' is long and may wrap heavily.
+ts=2026-05-04T01:54:43.598869+00:00 level=WARN msg=qa_warning detail=Slide s11 bullet item in 'risks_bullets' is long and may wrap heavily.
+ts=2026-05-04T01:54:43.598876+00:00 level=WARN msg=qa_warning detail=Slide s11 bullet item in 'risks_bullets' is long and may wrap heavily.
+ts=2026-05-04T01:54:43.598882+00:00 level=WARN msg=qa_warning detail=Slide s12 bullet item in 'trading_bullets' is long and may wrap heavily.
+ts=2026-05-04T01:54:43.598890+00:00 level=WARN msg=qa_warning detail=Slide s12 bullet item in 'trading_bullets' is long and may wrap heavily.
+ts=2026-05-04T01:54:43.598898+00:00 level=WARN msg=qa_warning detail=Slide s13 text block 'disclaimer_text' is very long.
+ts=2026-05-04T01:54:43.598905+00:00 level=WARN msg=qa_warning detail=No supported PDF conversion backend is available. Configure LibreOffice or PowerPoint.
+ts=2026-05-04T01:54:43.598914+00:00 level=INFO msg=pipeline_finished status=pdf_skipped

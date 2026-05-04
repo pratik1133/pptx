@@ -1,0 +1,6 @@
+ts=2026-05-04T02:04:59.887501+00:00 level=INFO msg=pipeline_started run_id=af1f20a4b116 ticker=ABC
+ts=2026-05-04T02:04:59.887541+00:00 level=WARN msg=qa_warning detail=Slide s8 text block 'valuation_text' is very long.
+ts=2026-05-04T02:04:59.887552+00:00 level=WARN msg=qa_warning detail=Slide s8 metrics block 'valuation_cards' is dense.
+ts=2026-05-04T02:04:59.887558+00:00 level=WARN msg=qa_warning detail=Slide s10 text block 'disclaimer_text' is very long.
+ts=2026-05-04T02:04:59.887564+00:00 level=WARN msg=qa_warning detail=No supported PDF conversion backend is available. Configure LibreOffice or PowerPoint.
+ts=2026-05-04T02:04:59.887570+00:00 level=INFO msg=pipeline_finished status=pdf_skipped

@@ -1,0 +1,11 @@
+{
+  "name": "XYZ Finance Ltd",
+  "ticker": "XYZ",
+  "exchange": "NSE",
+  "sector": "Financial Services",
+  "industry": "NBFC",
+  "isin": "INE111XYZ999",
+  "country": "India",
+  "description": "XYZ Finance Ltd is a diversified NBFC with a growing secured retail loan franchise and improving return ratios.",
+  "peer_list": ["Alpha Finance", "Prime Credit", "SecureCap"]
+}

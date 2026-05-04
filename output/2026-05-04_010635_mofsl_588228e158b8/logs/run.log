@@ -1,0 +1,3 @@
+ts=2026-05-03T19:36:36.163994+00:00 level=INFO msg=pipeline_started run_id=588228e158b8 ticker=MOFSL
+ts=2026-05-03T19:36:36.164023+00:00 level=WARN msg=qa_warning detail=No supported PDF conversion backend is available. Configure LibreOffice or PowerPoint.
+ts=2026-05-03T19:36:36.164033+00:00 level=INFO msg=pipeline_finished status=pdf_skipped

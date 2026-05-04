@@ -1,0 +1,123 @@
+{
+  "records": [
+    {
+      "slide_id": "s2",
+      "block_key": "snapshot_metrics",
+      "source_key": "metadata.cmp",
+      "resolved_value": "\u20b9178.0",
+      "kind": "metric"
+    },
+    {
+      "slide_id": "s2",
+      "block_key": "snapshot_metrics",
+      "source_key": "metadata.target_price",
+      "resolved_value": "\u20b9225.0",
+      "kind": "metric"
+    },
+    {
+      "slide_id": "s2",
+      "block_key": "snapshot_metrics",
+      "source_key": "metadata.upside_pct",
+      "resolved_value": "26.4%",
+      "kind": "metric"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "aum_chart",
+      "source_key": "period_labels",
+      "resolved_value": "FY24, FY25, FY26, FY27",
+      "kind": "chart_category"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "aum_chart",
+      "source_key": "series.AUM@FY24",
+      "resolved_value": "31200",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "aum_chart",
+      "source_key": "series.AUM@FY25",
+      "resolved_value": "39250",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "aum_chart",
+      "source_key": "series.AUM@FY26",
+      "resolved_value": "48500",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "aum_chart",
+      "source_key": "series.AUM@FY27",
+      "resolved_value": "58100",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s7",
+      "block_key": "pat_chart",
+      "source_key": "period_labels",
+      "resolved_value": "FY24, FY25, FY26, FY27",
+      "kind": "chart_category"
+    },
+    {
+      "slide_id": "s7",
+      "block_key": "pat_chart",
+      "source_key": "series.PAT@FY24",
+      "resolved_value": "1180",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s7",
+      "block_key": "pat_chart",
+      "source_key": "series.PAT@FY25",
+      "resolved_value": "1620",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s7",
+      "block_key": "pat_chart",
+      "source_key": "series.PAT@FY26",
+      "resolved_value": "2140",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s7",
+      "block_key": "pat_chart",
+      "source_key": "series.PAT@FY27",
+      "resolved_value": "2710",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s8",
+      "block_key": "valuation_metrics",
+      "source_key": "metadata.rating",
+      "resolved_value": "BUY",
+      "kind": "metric"
+    },
+    {
+      "slide_id": "s8",
+      "block_key": "valuation_metrics",
+      "source_key": "metadata.target_price",
+      "resolved_value": "\u20b9225.0",
+      "kind": "metric"
+    },
+    {
+      "slide_id": "s8",
+      "block_key": "valuation_metrics",
+      "source_key": "metadata.upside_pct",
+      "resolved_value": "26.4%",
+      "kind": "metric"
+    },
+    {
+      "slide_id": "s8",
+      "block_key": "valuation_metrics",
+      "source_key": "financial_metrics.roe_fy26",
+      "resolved_value": "16.9",
+      "kind": "metric"
+    }
+  ]
+}

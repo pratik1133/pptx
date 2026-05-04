@@ -1,0 +1,1712 @@
+{
+  "records": [
+    {
+      "slide_id": "s3",
+      "block_key": "snapshot_metrics",
+      "source_key": "metadata.cmp",
+      "resolved_value": "\u20b9822.9",
+      "kind": "metric"
+    },
+    {
+      "slide_id": "s3",
+      "block_key": "snapshot_metrics",
+      "source_key": "metadata.target_price",
+      "resolved_value": "\u20b91,127.0",
+      "kind": "metric"
+    },
+    {
+      "slide_id": "s3",
+      "block_key": "snapshot_metrics",
+      "source_key": "metadata.upside_pct",
+      "resolved_value": "37.0%",
+      "kind": "metric"
+    },
+    {
+      "slide_id": "s3",
+      "block_key": "snapshot_metrics",
+      "source_key": "financial_metrics.total_aum_lakh_cr",
+      "resolved_value": "1.8",
+      "kind": "metric"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_revenue_chart",
+      "source_key": "period_labels",
+      "resolved_value": "FY22A, FY23A, FY24A, FY25A, FY26E, FY27E, FY28E",
+      "kind": "chart_category"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_revenue_chart",
+      "source_key": "series.Revenue@FY22A",
+      "resolved_value": "4298",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_revenue_chart",
+      "source_key": "series.Revenue@FY23A",
+      "resolved_value": "4178",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_revenue_chart",
+      "source_key": "series.Revenue@FY24A",
+      "resolved_value": "7106",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_revenue_chart",
+      "source_key": "series.Revenue@FY25A",
+      "resolved_value": "8340",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_revenue_chart",
+      "source_key": "series.Revenue@FY26E",
+      "resolved_value": "10402",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_revenue_chart",
+      "source_key": "series.Revenue@FY27E",
+      "resolved_value": "12973",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_revenue_chart",
+      "source_key": "series.Revenue@FY28E",
+      "resolved_value": "16181",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_table",
+      "source_key": "segments[0].name",
+      "resolved_value": "Capital Markets (Broking + IB)",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_table",
+      "source_key": "segments[0].revenue_share",
+      "resolved_value": "30.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_table",
+      "source_key": "segments[0].ebitda_share",
+      "resolved_value": "\u2014",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_table",
+      "source_key": "segments[0].aum_label",
+      "resolved_value": "Brokerage Rev YoY",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_table",
+      "source_key": "segments[0].aum_value",
+      "resolved_value": "-24%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_table",
+      "source_key": "segments[0].description",
+      "resolved_value": "Equity, derivatives, commodity, currency trading + institutional services and investment banking. Brokerage now contributes only 30% of total revenue, down from historical highs.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_table",
+      "source_key": "segments[1].name",
+      "resolved_value": "Asset Management",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_table",
+      "source_key": "segments[1].revenue_share",
+      "resolved_value": "\u2014",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_table",
+      "source_key": "segments[1].ebitda_share",
+      "resolved_value": "\u2014",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_table",
+      "source_key": "segments[1].aum_label",
+      "resolved_value": "AMC AUM",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_table",
+      "source_key": "segments[1].aum_value",
+      "resolved_value": "INR 1.89L Cr (+33% YoY)",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_table",
+      "source_key": "segments[1].description",
+      "resolved_value": "Mutual funds and PMS. 91% of AUM outperforming benchmarks over 3 years.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_table",
+      "source_key": "segments[2].name",
+      "resolved_value": "Private Wealth Management",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_table",
+      "source_key": "segments[2].revenue_share",
+      "resolved_value": "\u2014",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_table",
+      "source_key": "segments[2].ebitda_share",
+      "resolved_value": "\u2014",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_table",
+      "source_key": "segments[2].aum_label",
+      "resolved_value": "PWM AUM",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_table",
+      "source_key": "segments[2].aum_value",
+      "resolved_value": "INR 1.96L Cr (+31% YoY)",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_table",
+      "source_key": "segments[2].description",
+      "resolved_value": "HNI/UHNI advisory. Family count up 41% YoY.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_table",
+      "source_key": "segments[3].name",
+      "resolved_value": "Housing Finance",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_table",
+      "source_key": "segments[3].revenue_share",
+      "resolved_value": "\u2014",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_table",
+      "source_key": "segments[3].ebitda_share",
+      "resolved_value": "\u2014",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_table",
+      "source_key": "segments[3].aum_label",
+      "resolved_value": "Loan Book",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_table",
+      "source_key": "segments[3].aum_value",
+      "resolved_value": "INR 6,630 Cr (+25% YoY)",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_table",
+      "source_key": "segments[3].description",
+      "resolved_value": "Retail mortgage lending \u2014 affordable and mid-segment.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_table",
+      "source_key": "segments[4].name",
+      "resolved_value": "Alternative Investments",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_table",
+      "source_key": "segments[4].revenue_share",
+      "resolved_value": "\u2014",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_table",
+      "source_key": "segments[4].ebitda_share",
+      "resolved_value": "\u2014",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_table",
+      "source_key": "segments[4].aum_label",
+      "resolved_value": "Carry Income",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_table",
+      "source_key": "segments[4].aum_value",
+      "resolved_value": "INR 58 Cr recurring",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s6",
+      "block_key": "segment_table",
+      "source_key": "segments[4].description",
+      "resolved_value": "Private credit, real estate, alternatives.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s7",
+      "block_key": "revenue_chart",
+      "source_key": "period_labels",
+      "resolved_value": "FY22A, FY23A, FY24A, FY25A, FY26E, FY27E, FY28E",
+      "kind": "chart_category"
+    },
+    {
+      "slide_id": "s7",
+      "block_key": "revenue_chart",
+      "source_key": "series.Revenue@FY22A",
+      "resolved_value": "4298",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s7",
+      "block_key": "revenue_chart",
+      "source_key": "series.Revenue@FY23A",
+      "resolved_value": "4178",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s7",
+      "block_key": "revenue_chart",
+      "source_key": "series.Revenue@FY24A",
+      "resolved_value": "7106",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s7",
+      "block_key": "revenue_chart",
+      "source_key": "series.Revenue@FY25A",
+      "resolved_value": "8340",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s7",
+      "block_key": "revenue_chart",
+      "source_key": "series.Revenue@FY26E",
+      "resolved_value": "10402",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s7",
+      "block_key": "revenue_chart",
+      "source_key": "series.Revenue@FY27E",
+      "resolved_value": "12973",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s7",
+      "block_key": "revenue_chart",
+      "source_key": "series.Revenue@FY28E",
+      "resolved_value": "16181",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s8",
+      "block_key": "pat_chart",
+      "source_key": "period_labels",
+      "resolved_value": "FY22A, FY23A, FY24A, FY25A, FY26E, FY27E, FY28E",
+      "kind": "chart_category"
+    },
+    {
+      "slide_id": "s8",
+      "block_key": "pat_chart",
+      "source_key": "series.PAT@FY22A",
+      "resolved_value": "1310",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s8",
+      "block_key": "pat_chart",
+      "source_key": "series.PAT@FY23A",
+      "resolved_value": "932",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s8",
+      "block_key": "pat_chart",
+      "source_key": "series.PAT@FY24A",
+      "resolved_value": "2441",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s8",
+      "block_key": "pat_chart",
+      "source_key": "series.PAT@FY25A",
+      "resolved_value": "2502",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s8",
+      "block_key": "pat_chart",
+      "source_key": "series.PAT@FY26E",
+      "resolved_value": "3066",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s8",
+      "block_key": "pat_chart",
+      "source_key": "series.PAT@FY27E",
+      "resolved_value": "3983",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s8",
+      "block_key": "pat_chart",
+      "source_key": "series.PAT@FY28E",
+      "resolved_value": "5128",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s9",
+      "block_key": "quarterly_table",
+      "source_key": "quarterly_series.Quarterly PAT[0].period",
+      "resolved_value": "Q2FY25",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s9",
+      "block_key": "quarterly_table",
+      "source_key": "quarterly_series.Quarterly PAT[0].value",
+      "resolved_value": "\u20b91,242.0 Cr",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s9",
+      "block_key": "quarterly_table",
+      "source_key": "quarterly_series.Quarterly PAT[1].period",
+      "resolved_value": "Q3FY25",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s9",
+      "block_key": "quarterly_table",
+      "source_key": "quarterly_series.Quarterly PAT[1].value",
+      "resolved_value": "\u20b9715.0 Cr",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s9",
+      "block_key": "quarterly_table",
+      "source_key": "quarterly_series.Quarterly PAT[2].period",
+      "resolved_value": "Q4FY25",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s9",
+      "block_key": "quarterly_table",
+      "source_key": "quarterly_series.Quarterly PAT[2].value",
+      "resolved_value": "\u20b9545.0 Cr",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s9",
+      "block_key": "quarterly_table",
+      "source_key": "quarterly_series.Quarterly PAT[3].period",
+      "resolved_value": "Q1FY26",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s9",
+      "block_key": "quarterly_table",
+      "source_key": "quarterly_series.Quarterly PAT[3].value",
+      "resolved_value": "\u20b9425.0 Cr",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s9",
+      "block_key": "quarterly_table",
+      "source_key": "quarterly_series.Quarterly PAT[4].period",
+      "resolved_value": "Q2FY26",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s9",
+      "block_key": "quarterly_table",
+      "source_key": "quarterly_series.Quarterly PAT[4].value",
+      "resolved_value": "\u20b9401.0 Cr",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[0].ratio",
+      "resolved_value": "EBITDA Margin",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[0].unit",
+      "resolved_value": "%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[0].FY22A",
+      "resolved_value": "49.3%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[0].FY23A",
+      "resolved_value": "44.9%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[0].FY24A",
+      "resolved_value": "57.4%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[0].FY25A",
+      "resolved_value": "54.5%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[0].FY26E",
+      "resolved_value": "52.3%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[0].FY27E",
+      "resolved_value": "52.3%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[0].FY28E",
+      "resolved_value": "52.3%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[1].ratio",
+      "resolved_value": "PAT Margin",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[1].unit",
+      "resolved_value": "%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[1].FY22A",
+      "resolved_value": "30.5%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[1].FY23A",
+      "resolved_value": "22.3%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[1].FY24A",
+      "resolved_value": "34.4%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[1].FY25A",
+      "resolved_value": "30.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[1].FY26E",
+      "resolved_value": "29.5%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[1].FY27E",
+      "resolved_value": "30.7%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[1].FY28E",
+      "resolved_value": "31.7%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[2].ratio",
+      "resolved_value": "RoE",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[2].unit",
+      "resolved_value": "%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[2].FY22A",
+      "resolved_value": "23.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[2].FY23A",
+      "resolved_value": "15.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[2].FY24A",
+      "resolved_value": "28.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[2].FY25A",
+      "resolved_value": "23.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[2].FY26E",
+      "resolved_value": "22.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[2].FY27E",
+      "resolved_value": "23.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[2].FY28E",
+      "resolved_value": "24.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[3].ratio",
+      "resolved_value": "RoCE",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[3].unit",
+      "resolved_value": "%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[3].FY22A",
+      "resolved_value": "19.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[3].FY23A",
+      "resolved_value": "13.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[3].FY24A",
+      "resolved_value": "21.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[3].FY25A",
+      "resolved_value": "19.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[3].FY26E",
+      "resolved_value": "18.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[3].FY27E",
+      "resolved_value": "18.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[3].FY28E",
+      "resolved_value": "19.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[4].ratio",
+      "resolved_value": "RoIC",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[4].unit",
+      "resolved_value": "%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[4].FY22A",
+      "resolved_value": "92.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[4].FY23A",
+      "resolved_value": "78.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[4].FY24A",
+      "resolved_value": "119.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[4].FY25A",
+      "resolved_value": "87.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[4].FY26E",
+      "resolved_value": "35.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[4].FY27E",
+      "resolved_value": "24.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[4].FY28E",
+      "resolved_value": "24.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[5].ratio",
+      "resolved_value": "P/E",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[5].unit",
+      "resolved_value": "x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[5].FY22A",
+      "resolved_value": "37.5x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[5].FY23A",
+      "resolved_value": "52.3x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[5].FY24A",
+      "resolved_value": "20.1x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[5].FY25A",
+      "resolved_value": "19.7x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[5].FY26E",
+      "resolved_value": "16.1x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[5].FY27E",
+      "resolved_value": "12.4x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[5].FY28E",
+      "resolved_value": "9.6x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[6].ratio",
+      "resolved_value": "P/B",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[6].unit",
+      "resolved_value": "x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[6].FY22A",
+      "resolved_value": "8.7x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[6].FY23A",
+      "resolved_value": "7.8x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[6].FY24A",
+      "resolved_value": "5.6x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[6].FY25A",
+      "resolved_value": "4.5x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[6].FY26E",
+      "resolved_value": "3.6x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[6].FY27E",
+      "resolved_value": "2.9x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[6].FY28E",
+      "resolved_value": "2.3x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[7].ratio",
+      "resolved_value": "EV/EBITDA",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[7].unit",
+      "resolved_value": "x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[7].FY22A",
+      "resolved_value": "9.0x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[7].FY23A",
+      "resolved_value": "10.3x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[7].FY24A",
+      "resolved_value": "9.5x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[7].FY25A",
+      "resolved_value": "11.4x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[7].FY26E",
+      "resolved_value": "12.7x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[7].FY27E",
+      "resolved_value": "10.5x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[7].FY28E",
+      "resolved_value": "8.8x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s11",
+      "block_key": "valuation_metrics",
+      "source_key": "metadata.target_price",
+      "resolved_value": "\u20b91,127.0",
+      "kind": "metric"
+    },
+    {
+      "slide_id": "s11",
+      "block_key": "valuation_metrics",
+      "source_key": "financial_metrics.probability_weighted_target",
+      "resolved_value": "1,109.0",
+      "kind": "metric"
+    },
+    {
+      "slide_id": "s11",
+      "block_key": "valuation_metrics",
+      "source_key": "metadata.upside_pct",
+      "resolved_value": "37.0%",
+      "kind": "metric"
+    },
+    {
+      "slide_id": "s11",
+      "block_key": "valuation_metrics",
+      "source_key": "financial_metrics.pe_fy26e_x",
+      "resolved_value": "16.1",
+      "kind": "metric"
+    },
+    {
+      "slide_id": "s12",
+      "block_key": "valuation_bands_table",
+      "source_key": "valuation_bands[0].method",
+      "resolved_value": "Bull Case",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s12",
+      "block_key": "valuation_bands_table",
+      "source_key": "valuation_bands[0].low",
+      "resolved_value": "1,400.0",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s12",
+      "block_key": "valuation_bands_table",
+      "source_key": "valuation_bands[0].base",
+      "resolved_value": "1,400.0",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s12",
+      "block_key": "valuation_bands_table",
+      "source_key": "valuation_bands[0].high",
+      "resolved_value": "1,400.0",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s12",
+      "block_key": "valuation_bands_table",
+      "source_key": "valuation_bands[0].weight",
+      "resolved_value": "30.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s12",
+      "block_key": "valuation_bands_table",
+      "source_key": "valuation_bands[0].notes",
+      "resolved_value": "28x P/E on FY27E EPS of INR 50; ARR > 70%, AMC +40% YoY.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s12",
+      "block_key": "valuation_bands_table",
+      "source_key": "valuation_bands[1].method",
+      "resolved_value": "Base Case",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s12",
+      "block_key": "valuation_bands_table",
+      "source_key": "valuation_bands[1].low",
+      "resolved_value": "1,127.0",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s12",
+      "block_key": "valuation_bands_table",
+      "source_key": "valuation_bands[1].base",
+      "resolved_value": "1,127.0",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s12",
+      "block_key": "valuation_bands_table",
+      "source_key": "valuation_bands[1].high",
+      "resolved_value": "1,127.0",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s12",
+      "block_key": "valuation_bands_table",
+      "source_key": "valuation_bands[1].weight",
+      "resolved_value": "50.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s12",
+      "block_key": "valuation_bands_table",
+      "source_key": "valuation_bands[1].notes",
+      "resolved_value": "24x P/E on FY27E EPS of INR 47; ARR stable at 65%, steady AUM.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s12",
+      "block_key": "valuation_bands_table",
+      "source_key": "valuation_bands[2].method",
+      "resolved_value": "Bear Case",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s12",
+      "block_key": "valuation_bands_table",
+      "source_key": "valuation_bands[2].low",
+      "resolved_value": "630.0",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s12",
+      "block_key": "valuation_bands_table",
+      "source_key": "valuation_bands[2].base",
+      "resolved_value": "630.0",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s12",
+      "block_key": "valuation_bands_table",
+      "source_key": "valuation_bands[2].high",
+      "resolved_value": "630.0",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s12",
+      "block_key": "valuation_bands_table",
+      "source_key": "valuation_bands[2].weight",
+      "resolved_value": "20.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s12",
+      "block_key": "valuation_bands_table",
+      "source_key": "valuation_bands[2].notes",
+      "resolved_value": "18x P/E on depressed FY27E EPS of INR 35; sustained regulatory headwinds.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s13",
+      "block_key": "scenarios_table",
+      "source_key": "scenarios[0].name",
+      "resolved_value": "Bull",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s13",
+      "block_key": "scenarios_table",
+      "source_key": "scenarios[0].revenue_cagr",
+      "resolved_value": "27.5%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s13",
+      "block_key": "scenarios_table",
+      "source_key": "scenarios[0].ebitda_margin",
+      "resolved_value": "55.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s13",
+      "block_key": "scenarios_table",
+      "source_key": "scenarios[0].target_price",
+      "resolved_value": "1,400.0",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s13",
+      "block_key": "scenarios_table",
+      "source_key": "scenarios[0].probability",
+      "resolved_value": "30.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s13",
+      "block_key": "scenarios_table",
+      "source_key": "scenarios[0].notes",
+      "resolved_value": "ARR > 70%, AMC AUM +40% YoY, regulatory clarity.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s13",
+      "block_key": "scenarios_table",
+      "source_key": "scenarios[1].name",
+      "resolved_value": "Base",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s13",
+      "block_key": "scenarios_table",
+      "source_key": "scenarios[1].revenue_cagr",
+      "resolved_value": "16.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s13",
+      "block_key": "scenarios_table",
+      "source_key": "scenarios[1].ebitda_margin",
+      "resolved_value": "51.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s13",
+      "block_key": "scenarios_table",
+      "source_key": "scenarios[1].target_price",
+      "resolved_value": "1,127.0",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s13",
+      "block_key": "scenarios_table",
+      "source_key": "scenarios[1].probability",
+      "resolved_value": "50.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s13",
+      "block_key": "scenarios_table",
+      "source_key": "scenarios[1].notes",
+      "resolved_value": "ARR steady at 65%, AUM compounding, stable regulation.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s13",
+      "block_key": "scenarios_table",
+      "source_key": "scenarios[2].name",
+      "resolved_value": "Bear",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s13",
+      "block_key": "scenarios_table",
+      "source_key": "scenarios[2].revenue_cagr",
+      "resolved_value": "6.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s13",
+      "block_key": "scenarios_table",
+      "source_key": "scenarios[2].ebitda_margin",
+      "resolved_value": "45.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s13",
+      "block_key": "scenarios_table",
+      "source_key": "scenarios[2].target_price",
+      "resolved_value": "630.0",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s13",
+      "block_key": "scenarios_table",
+      "source_key": "scenarios[2].probability",
+      "resolved_value": "20.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s13",
+      "block_key": "scenarios_table",
+      "source_key": "scenarios[2].notes",
+      "resolved_value": "Sustained F&O headwinds, fintech share loss.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_headline",
+      "source_key": "financial_metrics.roe_fy26e_pct",
+      "resolved_value": "22.0",
+      "kind": "metric"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_headline",
+      "source_key": "financial_metrics.roce_fy26e_pct",
+      "resolved_value": "18.0",
+      "kind": "metric"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_table",
+      "source_key": "saarthi_dimensions[0].code",
+      "resolved_value": "S",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_table",
+      "source_key": "saarthi_dimensions[0].name",
+      "resolved_value": "Scalability of Core Engine",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_table",
+      "source_key": "saarthi_dimensions[0].score",
+      "resolved_value": "12/15",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_table",
+      "source_key": "saarthi_dimensions[0].assessment",
+      "resolved_value": "ARR at 61% of net revenues; fee-based at 45%. H1FY26 operating PAT INR 1,088 Cr (+11% YoY) on net revenue INR 2,888 Cr (+15%). Asset-light fee model scales without proportional cost growth. F&O constraints limit broking scalability near-term.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_table",
+      "source_key": "saarthi_dimensions[0].evidence",
+      "resolved_value": "AMC AUM +33% YoY to INR 1.89L Cr with INR 11,610 Cr net flows.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_table",
+      "source_key": "saarthi_dimensions[1].code",
+      "resolved_value": "A1",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_table",
+      "source_key": "saarthi_dimensions[1].name",
+      "resolved_value": "Addressable Market & Adjacency",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_table",
+      "source_key": "saarthi_dimensions[1].score",
+      "resolved_value": "9/10",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_table",
+      "source_key": "saarthi_dimensions[1].assessment",
+      "resolved_value": "16.57L HNWIs by 2027; India 4th-largest private wealth market by 2028 (+58.4% UHNWIs). Sector profits to nearly double by FY30. MF penetration at 5\u20136%. Massive TAM with adjacency expansion across capital markets, wealth, housing, alternatives.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_table",
+      "source_key": "saarthi_dimensions[1].evidence",
+      "resolved_value": "India private credit hit USD 9.0 Bn in H1 2025 (+53% YoY).",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_table",
+      "source_key": "saarthi_dimensions[2].code",
+      "resolved_value": "A2",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_table",
+      "source_key": "saarthi_dimensions[2].name",
+      "resolved_value": "Asymmetric Pricing Power",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_table",
+      "source_key": "saarthi_dimensions[2].score",
+      "resolved_value": "10/15",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_table",
+      "source_key": "saarthi_dimensions[2].assessment",
+      "resolved_value": "91% of AUM outperforming benchmarks over 3 years gives pricing power in PMS/wealth. Brokerage revenue down 24% from regulatory changes \u2014 fee compression in cyclical segment. Discount brokers and fintech limit pricing in commoditized broking.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_table",
+      "source_key": "saarthi_dimensions[2].evidence",
+      "resolved_value": "Diversified mix offset 24% brokerage decline, validating partial pricing-power hedge.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_table",
+      "source_key": "saarthi_dimensions[3].code",
+      "resolved_value": "R",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_table",
+      "source_key": "saarthi_dimensions[3].name",
+      "resolved_value": "Reinvestment Quality",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_table",
+      "source_key": "saarthi_dimensions[3].score",
+      "resolved_value": "13/15",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_table",
+      "source_key": "saarthi_dimensions[3].assessment",
+      "resolved_value": "MCap INR 49,079 Cr (+24.8% YoY); P/E 24.2; P/B 3.82. Strong RoCE; disciplined allocation into high-return fee businesses. Reinvestment in tech, talent, distribution, research generates sustainable advantage.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_table",
+      "source_key": "saarthi_dimensions[3].evidence",
+      "resolved_value": "PWM AUM +31% YoY to INR 1.96L Cr; family count +41%; PAT +14% (9M).",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_table",
+      "source_key": "saarthi_dimensions[4].code",
+      "resolved_value": "T",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_table",
+      "source_key": "saarthi_dimensions[4].name",
+      "resolved_value": "Track Record Through Adversity",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_table",
+      "source_key": "saarthi_dimensions[4].score",
+      "resolved_value": "8/10",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_table",
+      "source_key": "saarthi_dimensions[4].assessment",
+      "resolved_value": "Q2FY25 PAT INR 1,242 Cr (+123% YoY), 46% revenue growth, 48% RoE \u2014 recovery and execution. Q2FY26 PAT -67.6% YoY, revenue -34.9% YoY shows residual cyclicality from F&O regulation. Continuity across cycles maintained.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_table",
+      "source_key": "saarthi_dimensions[4].evidence",
+      "resolved_value": "Despite repeated SEBI interventions, AUM and ARR base continue to compound \u2014 institutional resilience.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_table",
+      "source_key": "saarthi_dimensions[5].code",
+      "resolved_value": "H",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_table",
+      "source_key": "saarthi_dimensions[5].name",
+      "resolved_value": "Human Capital & Institutional DNA",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_table",
+      "source_key": "saarthi_dimensions[5].score",
+      "resolved_value": "9/10",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_table",
+      "source_key": "saarthi_dimensions[5].assessment",
+      "resolved_value": "Raamdeo Agrawal: QGLP creator, 'Buy Right, Sit Tight' framework. Navin Agarwal (since 2000): business strategy and capital allocation. Ajay Menon (27+ yrs): operations, compliance, risk, technology. Founding duo across nearly four decades \u2014 rare DNA in Indian financial services.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_table",
+      "source_key": "saarthi_dimensions[5].evidence",
+      "resolved_value": "Rashtriya Samman Patra recipient (top tax-payer FY95\u2013FY99) signals early ethical commercial success.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_table",
+      "source_key": "saarthi_dimensions[6].code",
+      "resolved_value": "I",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_table",
+      "source_key": "saarthi_dimensions[6].name",
+      "resolved_value": "Inflection Point Identification",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_table",
+      "source_key": "saarthi_dimensions[6].score",
+      "resolved_value": "11/15",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_table",
+      "source_key": "saarthi_dimensions[6].assessment",
+      "resolved_value": "Consensus TP INR 1,126.67 (max INR 1,200) vs CMP INR 822.90 \u2014 37% upside; market not yet pricing ARR re-rating. Credit rating upgraded to AA+ (Stable) by ICRA. ARR > 70% would trigger re-rating from broking to asset-management multiples within 6\u201318 months.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "saarthi_table",
+      "source_key": "saarthi_dimensions[6].evidence",
+      "resolved_value": "ARR at 65% of net revenues (up from 61%); management guiding higher \u2014 measurable inflection.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s15",
+      "block_key": "management_table",
+      "source_key": "management_team[0].name",
+      "resolved_value": "Raamdeo Agrawal",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s15",
+      "block_key": "management_table",
+      "source_key": "management_team[0].role",
+      "resolved_value": "Chairman, MOFSL & Chairman, AMC",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s15",
+      "block_key": "management_table",
+      "source_key": "management_team[0].bio",
+      "resolved_value": "Co-founder (1987). Creator of the QGLP investment process and 'Buy Right, Sit Tight' framework. Built one of India's most respected investment research franchises. Widely cited investment thinker.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s15",
+      "block_key": "management_table",
+      "source_key": "management_team[1].name",
+      "resolved_value": "Motilal Oswal",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s15",
+      "block_key": "management_table",
+      "source_key": "management_team[1].role",
+      "resolved_value": "Founder, Chairman & MD",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s15",
+      "block_key": "management_table",
+      "source_key": "management_team[1].bio",
+      "resolved_value": "Co-founder (1987). Led the firm's transformation from broking house into a comprehensive financial services platform. Recipient of Rashtriya Samman Patra for being among the highest taxpayers FY95\u2013FY99.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s15",
+      "block_key": "management_table",
+      "source_key": "management_team[2].name",
+      "resolved_value": "Navin Agarwal",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s15",
+      "block_key": "management_table",
+      "source_key": "management_team[2].role",
+      "resolved_value": "Executive Board \u2014 Strategy & Capital Allocation",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s15",
+      "block_key": "management_table",
+      "source_key": "management_team[2].bio",
+      "resolved_value": "Joined 2000. Drives business strategy and capital allocation across the Group, building market-leading positions through disciplined deployment.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s15",
+      "block_key": "management_table",
+      "source_key": "management_team[3].name",
+      "resolved_value": "Ajay Menon",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s15",
+      "block_key": "management_table",
+      "source_key": "management_team[3].role",
+      "resolved_value": "Executive \u2014 Operations, Compliance, Risk & Technology",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s15",
+      "block_key": "management_table",
+      "source_key": "management_team[3].bio",
+      "resolved_value": "Joined 1998. 27+ years in Indian capital markets. Cornerstone of operational excellence and technology initiatives across the Group.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s16",
+      "block_key": "forensic_table",
+      "source_key": "forensic_violations[0].title",
+      "resolved_value": "SEBI \u2014 Margin Reporting Violations",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s16",
+      "block_key": "forensic_table",
+      "source_key": "forensic_violations[0].description",
+      "resolved_value": "INR 7 lakh penalty for margin reporting, collection violations, and other regulatory lapses found during inspection.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s16",
+      "block_key": "forensic_table",
+      "source_key": "forensic_violations[0].severity",
+      "resolved_value": "Low",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s16",
+      "block_key": "forensic_table",
+      "source_key": "forensic_violations[1].title",
+      "resolved_value": "SEBI \u2014 Client Fund Misutilization (2022)",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s16",
+      "block_key": "forensic_table",
+      "source_key": "forensic_violations[1].description",
+      "resolved_value": "INR 25 lakh fine for misutilization of client funds and inaccurate margin reporting.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s16",
+      "block_key": "forensic_table",
+      "source_key": "forensic_violations[1].severity",
+      "resolved_value": "Medium",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s16",
+      "block_key": "forensic_table",
+      "source_key": "forensic_violations[2].title",
+      "resolved_value": "NSEL \u2014 Misselling Accusations",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s16",
+      "block_key": "forensic_table",
+      "source_key": "forensic_violations[2].description",
+      "resolved_value": "Accused alongside other top brokers of misselling NSEL contracts, KYC manipulation, client code modification, and illegal transactions per SFIO/EOW findings.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s16",
+      "block_key": "forensic_table",
+      "source_key": "forensic_violations[2].severity",
+      "resolved_value": "High (Historical)",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s16",
+      "block_key": "forensic_table",
+      "source_key": "forensic_violations[3].title",
+      "resolved_value": "SEBI \u2014 Not Fit and Proper (Commodities)",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s16",
+      "block_key": "forensic_table",
+      "source_key": "forensic_violations[3].description",
+      "resolved_value": "Declared 'not fit and proper' as commodity derivative broker in Feb 2019 based on SFIO/EOW recommendations.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s16",
+      "block_key": "forensic_table",
+      "source_key": "forensic_violations[3].severity",
+      "resolved_value": "High (Historical)",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s16",
+      "block_key": "forensic_table",
+      "source_key": "forensic_violations[4].title",
+      "resolved_value": "Unauthorized Terminal Operations",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s16",
+      "block_key": "forensic_table",
+      "source_key": "forensic_violations[4].description",
+      "resolved_value": "13 NSE and 9 BSE terminals operating from undeclared locations including an unreported branch in Delhi.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s16",
+      "block_key": "forensic_table",
+      "source_key": "forensic_violations[4].severity",
+      "resolved_value": "Medium",
+      "kind": "table_cell"
+    }
+  ]
+}

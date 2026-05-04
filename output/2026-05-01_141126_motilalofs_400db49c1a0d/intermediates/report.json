@@ -1,0 +1,506 @@
+{
+  "schema_version": "1.1.0",
+  "report_id": "ff763df3-9771-4570-bd3b-5f7dab3940bb",
+  "run_id": "ba6b62d6-f7ba-49d0-8cde-6c747a1906f7",
+  "company": {
+    "name": "Motilal Oswal Financial Services Ltd",
+    "ticker": "MOTILALOFS",
+    "exchange": "NSE",
+    "sector": "Financial Services",
+    "industry": "Capital Markets",
+    "isin": "INE338I01027",
+    "country": "India",
+    "description": "Motilal Oswal Financial Services is a diversified financial services group with leadership in retail broking, asset management, wealth management, investment banking, and housing finance, supported by a meaningful proprietary investment book.",
+    "peer_list": [
+      "ICICI Securities",
+      "Angel One",
+      "IIFL Securities",
+      "Nuvama Wealth Management",
+      "Anand Rathi Wealth"
+    ]
+  },
+  "metadata": {
+    "rating": "BUY",
+    "currency": "INR",
+    "cmp": "720",
+    "target_price": "920",
+    "upside_pct": "27.8",
+    "market_cap": "432000000000",
+    "analyst": "Pratik Gupta",
+    "report_date": "2026-04-28",
+    "report_type": "Initiation"
+  },
+  "inputs": {
+    "financial_model_ref": "C:\\Users\\pratik\\pptx\\data\\samples\\financial_models\\motilal_model.json",
+    "approved_content_ref": "C:\\Users\\pratik\\pptx\\data\\samples\\approved_reports\\motilal.md"
+  },
+  "slides": [
+    {
+      "slide_id": "s1",
+      "layout": "cover_slide",
+      "title": "Motilal Oswal Financial Services Initiation Note",
+      "subtitle": "Motilal Oswal Financial Services Ltd | BUY",
+      "blocks": [
+        {
+          "type": "metrics",
+          "key": "headline_metrics",
+          "items": [
+            {
+              "label": "Rating",
+              "value": "BUY",
+              "source": "metadata.rating"
+            },
+            {
+              "label": "CMP",
+              "value": "INR 720.0",
+              "source": "metadata.cmp"
+            },
+            {
+              "label": "TP",
+              "value": "INR 920.0",
+              "source": "metadata.target_price"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s2",
+      "layout": "investment_thesis",
+      "title": "Investment Thesis",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "summary",
+          "content": "Motilal Oswal Financial Services is one of the most diversified capital-markets franchises in India, with a structurally improving mix of annuity-style asset management and wealth fees offsetting cyclicality in broking and investment banking. The next leg of growth is being driven by strong client additions, AUM compounding in AMC and PWM, and operating leverage in housing finance."
+        },
+        {
+          "type": "bullets",
+          "key": "key_points",
+          "items": [
+            "Motilal Oswal Financial Services is one of the most diversified capital-markets franchises in India, with a structurally improving mix of annuity-style asset ma",
+            "Wealth and AMC are scaling annuity revenues, reducing earnings volatility.",
+            "Retail broking continues to gain incremental market share among active clients.",
+            "Housing finance has turned the corner on asset quality with disciplined growth.",
+            "Proprietary book provides a credible long-term capital allocation tailwind."
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s3",
+      "layout": "company_snapshot",
+      "title": "Motilal Oswal Financial Services Ltd At A Glance",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "business_summary",
+          "content": "Motilal Oswal Financial Services is a diversified financial services group with leadership in retail broking, asset management, wealth management, investment banking, and housing finance, supported by a meaningful proprietary investment book."
+        },
+        {
+          "type": "metrics",
+          "key": "snapshot_metrics",
+          "items": [
+            {
+              "label": "CMP",
+              "value": "INR 720.0",
+              "source": "metadata.cmp"
+            },
+            {
+              "label": "TP",
+              "value": "INR 920.0",
+              "source": "metadata.target_price"
+            },
+            {
+              "label": "Upside",
+              "value": "27.8%",
+              "source": "metadata.upside_pct"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s4",
+      "layout": "industry_overview",
+      "title": "Industry Overview",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "industry_text",
+          "content": "Indian capital-markets franchises continue to benefit from rising household equity allocation, demat additions, and SIP penetration. Wealth and asset-management economics are migrating toward fee-based annuity revenue, narrowing the cyclicality gap with private banks."
+        },
+        {
+          "type": "bullets",
+          "key": "industry_points",
+          "items": [
+            "Indian capital-markets franchises continue to benefit from rising household equity allocation, demat additions, and SIP penetration. Wealth and asset-management"
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s5",
+      "layout": "text_plus_chart",
+      "title": "Financial Trend Overview",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "trend_summary",
+          "content": "Revenue and profitability trends are grounded in deterministic model outputs."
+        },
+        {
+          "type": "chart",
+          "key": "trend_chart",
+          "chart_type": "bar",
+          "title": "Revenue Trend",
+          "category_source": "period_labels",
+          "series": [
+            {
+              "label": "Revenue",
+              "source_key": "series.Revenue"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s6",
+      "layout": "full_table",
+      "title": "Revenue Summary Table",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "table",
+          "key": "revenue_table",
+          "title": "Revenue By Period",
+          "source_key": "series.Revenue",
+          "columns": [
+            {
+              "key": "period",
+              "label": "Period"
+            },
+            {
+              "key": "value",
+              "label": "Value"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s7",
+      "layout": "quarterly_summary",
+      "title": "Quarterly Performance",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "quarterly_summary_text",
+          "content": "Recent quarters demonstrate steady revenue and earnings progression."
+        },
+        {
+          "type": "table",
+          "key": "quarterly_table",
+          "title": "Quarterly Revenue",
+          "source_key": "quarterly_series.Quarterly Revenue",
+          "columns": [
+            {
+              "key": "period",
+              "label": "Quarter"
+            },
+            {
+              "key": "value",
+              "label": "Revenue (INR Cr)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s8",
+      "layout": "segment_mix",
+      "title": "Segment Mix",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "segment_text",
+          "content": "Segment composition reveals diversification and where future growth is concentrated."
+        },
+        {
+          "type": "chart",
+          "key": "segment_chart",
+          "chart_type": "bar",
+          "title": "Revenue Share by Segment",
+          "category_source": "period_labels",
+          "series": [
+            {
+              "label": "segments.revenue_share",
+              "source_key": "segments.revenue_share"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s9",
+      "layout": "ratio_summary",
+      "title": "Key Ratios",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "ratio_text",
+          "content": "Margin trajectory and return profile underpin the valuation case."
+        },
+        {
+          "type": "table",
+          "key": "ratio_table",
+          "title": "Ratio Summary",
+          "source_key": "ratio_summary",
+          "columns": [
+            {
+              "key": "ratio",
+              "label": "Ratio"
+            },
+            {
+              "key": "FY23",
+              "label": "FY23"
+            },
+            {
+              "key": "FY24",
+              "label": "FY24"
+            },
+            {
+              "key": "FY25",
+              "label": "FY25"
+            },
+            {
+              "key": "FY26",
+              "label": "FY26"
+            },
+            {
+              "key": "FY27",
+              "label": "FY27"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s10",
+      "layout": "peer_comparison",
+      "title": "Peer Comparison",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "peer_text",
+          "content": "Target company highlighted with an asterisk; multiples are illustrative."
+        },
+        {
+          "type": "table",
+          "key": "peer_table",
+          "title": "Listed Peer Multiples",
+          "source_key": "peers",
+          "columns": [
+            {
+              "key": "name",
+              "label": "Company"
+            },
+            {
+              "key": "market_cap",
+              "label": "MCap (Cr)"
+            },
+            {
+              "key": "pe",
+              "label": "P/E"
+            },
+            {
+              "key": "ev_ebitda",
+              "label": "EV/EBITDA"
+            },
+            {
+              "key": "pb",
+              "label": "P/B"
+            },
+            {
+              "key": "roe",
+              "label": "ROE"
+            },
+            {
+              "key": "revenue_growth",
+              "label": "Rev Growth"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s11",
+      "layout": "valuation_table",
+      "title": "Valuation — Methods Summary",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "valuation_text",
+          "content": "Target price is a weighted blend of SOTP, P/E, and DCF estimates."
+        },
+        {
+          "type": "table",
+          "key": "valuation_methods_table",
+          "title": "Valuation By Method",
+          "source_key": "valuation_bands",
+          "columns": [
+            {
+              "key": "method",
+              "label": "Method"
+            },
+            {
+              "key": "low",
+              "label": "Low"
+            },
+            {
+              "key": "base",
+              "label": "Base"
+            },
+            {
+              "key": "high",
+              "label": "High"
+            },
+            {
+              "key": "weight",
+              "label": "Weight"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s12",
+      "layout": "dcf_summary",
+      "title": "DCF Summary",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "dcf_text",
+          "content": "DCF assumes mid-cycle margins, normalized capex intensity, and a steady-state terminal return profile."
+        },
+        {
+          "type": "metrics",
+          "key": "dcf_metrics",
+          "items": [
+            {
+              "label": "WACC",
+              "value": "12.5",
+              "source": "financial_metrics.wacc_pct"
+            },
+            {
+              "label": "Terminal g",
+              "value": "5.0",
+              "source": "financial_metrics.terminal_growth_pct"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s13",
+      "layout": "full_table",
+      "title": "Scenario Analysis",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "table",
+          "key": "scenario_table",
+          "title": "Scenarios",
+          "source_key": "scenarios",
+          "columns": [
+            {
+              "key": "name",
+              "label": "Scenario"
+            },
+            {
+              "key": "revenue_cagr",
+              "label": "Rev CAGR"
+            },
+            {
+              "key": "ebitda_margin",
+              "label": "EBITDA Mgn"
+            },
+            {
+              "key": "target_price",
+              "label": "Target Price"
+            },
+            {
+              "key": "probability",
+              "label": "Probability"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s14",
+      "layout": "text_plus_bullets",
+      "title": "Key Catalysts",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "catalysts_text",
+          "content": "- Sustained AMC AUM growth and improvement in industry market share.\n- PWM net-new-money momentum and yield resilience.\n- Operating leverage as broking technology spend matures.\n- Recovery in capital-markets activity boosting investment banking and broking."
+        },
+        {
+          "type": "bullets",
+          "key": "catalyst_points",
+          "items": [
+            "Sustained AMC AUM growth and improvement in industry market share.",
+            "PWM net-new-money momentum and yield resilience.",
+            "Operating leverage as broking technology spend matures.",
+            "Recovery in capital-markets activity boosting investment banking and broking."
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s15",
+      "layout": "risks_and_catalysts",
+      "title": "Risks And Catalysts",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "bullets",
+          "key": "risk_points",
+          "items": [
+            "Cyclical drawdowns in capital-markets activity hurt broking revenue.",
+            "Mark-to-market on the proprietary book can introduce earnings volatility.",
+            "Regulatory tightening on broking pricing or distribution economics.",
+            "Competitive intensity from discount brokers compressing yields.",
+            "Housing finance asset-quality slippage in stressed credit cycles."
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s16",
+      "layout": "disclaimer",
+      "title": "Disclaimer",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "disclaimer_text",
+          "content": "For internal research workflow validation only. Final legal disclaimer copy will be supplied from approved assets."
+        }
+      ]
+    }
+  ]
+}

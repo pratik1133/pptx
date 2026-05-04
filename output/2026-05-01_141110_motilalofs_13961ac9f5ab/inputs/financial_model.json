@@ -1,0 +1,139 @@
+{
+  "model_name": "MOTILALOFS Base Model",
+  "model_version": "v1.1",
+  "currency": "INR",
+  "fiscal_year_end": "March",
+  "metrics": {
+    "revenue_fy26": 8200,
+    "ebitda_fy26": 4350,
+    "pat_fy26": 3050,
+    "roe_fy26": 26.4,
+    "net_debt_to_ebitda_fy26": 0.4,
+    "eps_fy26": 51.2,
+    "bvps_fy26": 195.0,
+    "dividend_per_share_fy26": 14.0,
+    "wacc_pct": 12.5,
+    "terminal_growth_pct": 5.0
+  },
+  "series": [
+    {
+      "name": "Revenue",
+      "unit": "INR Cr",
+      "periods": ["FY23", "FY24", "FY25", "FY26", "FY27"],
+      "values": [4500, 5400, 6800, 8200, 9450]
+    },
+    {
+      "name": "EBITDA Margin",
+      "unit": "%",
+      "periods": ["FY23", "FY24", "FY25", "FY26", "FY27"],
+      "values": [42.0, 47.5, 50.2, 53.0, 54.0]
+    },
+    {
+      "name": "PAT",
+      "unit": "INR Cr",
+      "periods": ["FY23", "FY24", "FY25", "FY26", "FY27"],
+      "values": [1430, 2050, 2510, 3050, 3580]
+    }
+  ],
+  "quarterly_series": [
+    {
+      "name": "Quarterly Revenue",
+      "unit": "INR Cr",
+      "periods": ["Q1FY25", "Q2FY25", "Q3FY25", "Q4FY25", "Q1FY26"],
+      "values": [1580, 1690, 1740, 1790, 1925]
+    },
+    {
+      "name": "Quarterly PAT",
+      "unit": "INR Cr",
+      "periods": ["Q1FY25", "Q2FY25", "Q3FY25", "Q4FY25", "Q1FY26"],
+      "values": [580, 615, 640, 675, 720]
+    }
+  ],
+  "segments": [
+    { "name": "Capital Markets (Broking + IB)", "revenue_share_pct": 38.0, "ebitda_share_pct": 32.0, "growth_pct": 18.0 },
+    { "name": "Asset Management", "revenue_share_pct": 22.0, "ebitda_share_pct": 28.0, "growth_pct": 25.0 },
+    { "name": "Private Wealth Management", "revenue_share_pct": 18.0, "ebitda_share_pct": 20.0, "growth_pct": 30.0 },
+    { "name": "Housing Finance", "revenue_share_pct": 14.0, "ebitda_share_pct": 12.0, "growth_pct": 20.0 },
+    { "name": "Treasury & Other", "revenue_share_pct": 8.0, "ebitda_share_pct": 8.0, "growth_pct": 10.0 }
+  ],
+  "peers": [
+    {
+      "name": "Motilal Oswal Financial Services",
+      "ticker": "MOTILALOFS",
+      "market_cap_cr": 43200,
+      "pe": 14.1,
+      "ev_ebitda": 9.9,
+      "pb": 3.7,
+      "roe_pct": 26.4,
+      "revenue_growth_pct": 21.0,
+      "is_target": true
+    },
+    {
+      "name": "ICICI Securities",
+      "ticker": "ISEC",
+      "market_cap_cr": 27800,
+      "pe": 12.3,
+      "ev_ebitda": 8.5,
+      "pb": 4.4,
+      "roe_pct": 35.6,
+      "revenue_growth_pct": 14.0
+    },
+    {
+      "name": "Angel One",
+      "ticker": "ANGELONE",
+      "market_cap_cr": 24500,
+      "pe": 18.8,
+      "ev_ebitda": 12.1,
+      "pb": 5.9,
+      "roe_pct": 32.4,
+      "revenue_growth_pct": 28.0
+    },
+    {
+      "name": "IIFL Securities",
+      "ticker": "IIFLSEC",
+      "market_cap_cr": 7800,
+      "pe": 11.4,
+      "ev_ebitda": 7.6,
+      "pb": 2.9,
+      "roe_pct": 24.1,
+      "revenue_growth_pct": 12.0
+    },
+    {
+      "name": "Nuvama Wealth Management",
+      "ticker": "NUVAMA",
+      "market_cap_cr": 22600,
+      "pe": 22.5,
+      "ev_ebitda": 14.8,
+      "pb": 5.1,
+      "roe_pct": 22.8,
+      "revenue_growth_pct": 31.0
+    },
+    {
+      "name": "Anand Rathi Wealth",
+      "ticker": "ANANDRATHI",
+      "market_cap_cr": 18900,
+      "pe": 38.4,
+      "ev_ebitda": 27.2,
+      "pb": 14.6,
+      "roe_pct": 41.9,
+      "revenue_growth_pct": 33.0
+    }
+  ],
+  "valuation_bands": [
+    { "method": "Sum-of-the-Parts", "low": 820, "base": 920, "high": 1050, "weight_pct": 60, "notes": "AMC and PWM at peer multiples; broking at cycle-adj P/E." },
+    { "method": "P/E (FY27 EPS)", "low": 780, "base": 900, "high": 1020, "weight_pct": 25, "notes": "16x mid-cycle on FY27E EPS." },
+    { "method": "DCF", "low": 750, "base": 880, "high": 1010, "weight_pct": 15, "notes": "WACC 12.5%, terminal growth 5%." }
+  ],
+  "scenarios": [
+    { "name": "Bull", "revenue_cagr_pct": 22.0, "ebitda_margin_pct": 56.0, "target_price": 1080, "probability_pct": 25, "notes": "Sustained AMC/PWM scale-up; capital-markets tailwind." },
+    { "name": "Base", "revenue_cagr_pct": 18.0, "ebitda_margin_pct": 53.5, "target_price": 920, "probability_pct": 55, "notes": "Steady AUM compounding; mix shift continues." },
+    { "name": "Bear", "revenue_cagr_pct": 11.0, "ebitda_margin_pct": 47.0, "target_price": 660, "probability_pct": 20, "notes": "Capital-markets drawdown; pricing pressure on broking." }
+  ],
+  "ratios": [
+    { "name": "EBITDA Margin", "unit": "%", "periods": ["FY23", "FY24", "FY25", "FY26", "FY27"], "values": [42.0, 47.5, 50.2, 53.0, 54.0] },
+    { "name": "PAT Margin", "unit": "%", "periods": ["FY23", "FY24", "FY25", "FY26", "FY27"], "values": [31.8, 38.0, 36.9, 37.2, 37.9] },
+    { "name": "ROE", "unit": "%", "periods": ["FY23", "FY24", "FY25", "FY26", "FY27"], "values": [22.0, 24.5, 25.7, 26.4, 27.1] },
+    { "name": "ROA", "unit": "%", "periods": ["FY23", "FY24", "FY25", "FY26", "FY27"], "values": [9.0, 10.5, 11.4, 12.1, 12.6] },
+    { "name": "Net D/E", "unit": "x", "periods": ["FY23", "FY24", "FY25", "FY26", "FY27"], "values": [0.6, 0.5, 0.4, 0.4, 0.3] }
+  ]
+}

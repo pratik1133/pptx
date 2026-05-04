@@ -1,0 +1,25 @@
+ts=2026-05-04T02:13:45.889098+00:00 level=INFO msg=pipeline_started run_id=a66c3fd5057e ticker=XYZ
+ts=2026-05-04T02:13:45.889180+00:00 level=WARN msg=qa_warning detail=Slide s4 bullet item in 'industry_tailwinds' is long and may wrap heavily.
+ts=2026-05-04T02:13:45.889195+00:00 level=WARN msg=qa_warning detail=Slide s5 bullet item in 'highlight_points' is long and may wrap heavily.
+ts=2026-05-04T02:13:45.889206+00:00 level=WARN msg=qa_warning detail=Slide s5 bullet item in 'highlight_points' is long and may wrap heavily.
+ts=2026-05-04T02:13:45.889217+00:00 level=WARN msg=qa_warning detail=Slide s5 bullet item in 'highlight_points' is long and may wrap heavily.
+ts=2026-05-04T02:13:45.889228+00:00 level=WARN msg=qa_warning detail=Slide s5 bullet item in 'highlight_points' is long and may wrap heavily.
+ts=2026-05-04T02:13:45.889239+00:00 level=WARN msg=qa_warning detail=Slide s12 bullet item in 'trading_points' is long and may wrap heavily.
+ts=2026-05-04T02:13:45.889250+00:00 level=WARN msg=qa_warning detail=Slide s12 bullet item in 'trading_points' is long and may wrap heavily.
+ts=2026-05-04T02:13:45.889260+00:00 level=WARN msg=qa_warning detail=Slide s12 bullet item in 'trading_points' is long and may wrap heavily.
+ts=2026-05-04T02:13:45.889271+00:00 level=WARN msg=qa_warning detail=Slide s12 bullet item in 'trading_points' is long and may wrap heavily.
+ts=2026-05-04T02:13:45.889281+00:00 level=WARN msg=qa_warning detail=Slide s13 bullet item in 'risk_points' is long and may wrap heavily.
+ts=2026-05-04T02:13:45.889292+00:00 level=WARN msg=qa_warning detail=Slide s13 bullet item in 'risk_points' is long and may wrap heavily.
+ts=2026-05-04T02:13:45.889301+00:00 level=WARN msg=qa_warning detail=Slide s13 bullet item in 'risk_points' is long and may wrap heavily.
+ts=2026-05-04T02:13:45.889312+00:00 level=WARN msg=qa_warning detail=Slide s13 bullet item in 'risk_points' is long and may wrap heavily.
+ts=2026-05-04T02:13:45.889321+00:00 level=WARN msg=qa_warning detail=Slide s13 bullet item in 'risk_points' is long and may wrap heavily.
+ts=2026-05-04T02:13:45.889331+00:00 level=WARN msg=qa_warning detail=Slide s13 bullet item in 'risk_points' is long and may wrap heavily.
+ts=2026-05-04T02:13:45.889340+00:00 level=WARN msg=qa_warning detail=Slide s14 bullet item in 'operating_bullets' is long and may wrap heavily.
+ts=2026-05-04T02:13:45.889351+00:00 level=WARN msg=qa_warning detail=Slide s14 bullet item in 'operating_bullets' is long and may wrap heavily.
+ts=2026-05-04T02:13:45.889361+00:00 level=WARN msg=qa_warning detail=Slide s14 bullet item in 'operating_bullets' is long and may wrap heavily.
+ts=2026-05-04T02:13:45.889371+00:00 level=WARN msg=qa_warning detail=Slide s14 bullet item in 'operating_bullets' is long and may wrap heavily.
+ts=2026-05-04T02:13:45.889384+00:00 level=WARN msg=qa_warning detail=Slide s14 bullet item in 'operating_bullets' is long and may wrap heavily.
+ts=2026-05-04T02:13:45.889395+00:00 level=WARN msg=qa_warning detail=Slide s14 bullet item in 'operating_bullets' is long and may wrap heavily.
+ts=2026-05-04T02:13:45.889405+00:00 level=WARN msg=qa_warning detail=Slide s16 text block 'disclaimer_text' is very long.
+ts=2026-05-04T02:13:45.889414+00:00 level=WARN msg=qa_warning detail=No supported PDF conversion backend is available. Configure LibreOffice or PowerPoint.
+ts=2026-05-04T02:13:45.889427+00:00 level=INFO msg=pipeline_finished status=pdf_skipped

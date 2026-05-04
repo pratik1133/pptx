@@ -1,0 +1,13 @@
+ts=2026-05-04T02:13:12.050146+00:00 level=INFO msg=pipeline_started run_id=1d90508c8e98 ticker=ABC
+ts=2026-05-04T02:13:12.050206+00:00 level=WARN msg=qa_warning detail=Slide s4 bullet item in 'industry_tailwinds' is long and may wrap heavily.
+ts=2026-05-04T02:13:12.050228+00:00 level=WARN msg=qa_warning detail=Slide s4 bullet item in 'industry_tailwinds' is long and may wrap heavily.
+ts=2026-05-04T02:13:12.050240+00:00 level=WARN msg=qa_warning detail=Slide s4 bullet item in 'industry_tailwinds' is long and may wrap heavily.
+ts=2026-05-04T02:13:12.050252+00:00 level=WARN msg=qa_warning detail=Slide s10 bullet item in 'trading_entry' is long and may wrap heavily.
+ts=2026-05-04T02:13:12.050261+00:00 level=WARN msg=qa_warning detail=Slide s11 bullet item in 'risks_bullets' is long and may wrap heavily.
+ts=2026-05-04T02:13:12.050272+00:00 level=WARN msg=qa_warning detail=Slide s11 bullet item in 'risks_bullets' is long and may wrap heavily.
+ts=2026-05-04T02:13:12.050282+00:00 level=WARN msg=qa_warning detail=Slide s11 bullet item in 'risks_bullets' is long and may wrap heavily.
+ts=2026-05-04T02:13:12.050293+00:00 level=WARN msg=qa_warning detail=Slide s11 bullet item in 'risks_bullets' is long and may wrap heavily.
+ts=2026-05-04T02:13:12.050303+00:00 level=WARN msg=qa_warning detail=Slide s11 bullet item in 'risks_bullets' is long and may wrap heavily.
+ts=2026-05-04T02:13:12.050314+00:00 level=WARN msg=qa_warning detail=Slide s14 text block 'disclaimer_text' is very long.
+ts=2026-05-04T02:13:12.050324+00:00 level=WARN msg=qa_warning detail=No supported PDF conversion backend is available. Configure LibreOffice or PowerPoint.
+ts=2026-05-04T02:13:12.050337+00:00 level=INFO msg=pipeline_finished status=pdf_skipped

@@ -1,0 +1,6 @@
+ts=2026-05-04T02:14:39.928812+00:00 level=INFO msg=pipeline_started run_id=be7e9b2f976e ticker=XYZ
+ts=2026-05-04T02:14:39.928880+00:00 level=WARN msg=qa_warning detail=Slide s9 bullet item in 'risks_bullets' is long and may wrap heavily.
+ts=2026-05-04T02:14:39.928896+00:00 level=WARN msg=qa_warning detail=Slide s9 bullet item in 'risks_bullets' is long and may wrap heavily.
+ts=2026-05-04T02:14:39.928907+00:00 level=WARN msg=qa_warning detail=Slide s10 text block 'disclaimer_text' is very long.
+ts=2026-05-04T02:14:39.928918+00:00 level=WARN msg=qa_warning detail=No supported PDF conversion backend is available. Configure LibreOffice or PowerPoint.
+ts=2026-05-04T02:14:39.928931+00:00 level=INFO msg=pipeline_finished status=pdf_skipped

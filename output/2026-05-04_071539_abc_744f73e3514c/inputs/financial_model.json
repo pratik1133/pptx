@@ -1,0 +1,27 @@
+{
+  "model_name": "ABC Base Model",
+  "model_version": "v1.0",
+  "currency": "INR",
+  "fiscal_year_end": "March",
+  "metrics": {
+    "revenue_fy26": 28500,
+    "ebitda_fy26": 5900,
+    "pat_fy26": 3450,
+    "roe_fy26": 18.4,
+    "net_debt_to_ebitda_fy26": 0.8
+  },
+  "series": [
+    {
+      "name": "Revenue",
+      "unit": "INR Cr",
+      "periods": ["FY24", "FY25", "FY26", "FY27"],
+      "values": [19800, 23500, 28500, 33450]
+    },
+    {
+      "name": "EBITDA Margin",
+      "unit": "%",
+      "periods": ["FY24", "FY25", "FY26", "FY27"],
+      "values": [18.2, 19.1, 20.7, 21.4]
+    }
+  ]
+}

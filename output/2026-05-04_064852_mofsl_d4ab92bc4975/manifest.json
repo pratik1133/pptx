@@ -1,0 +1,60 @@
+{
+  "run_id": "d4ab92bc4975",
+  "created_at": "2026-05-04T01:18:52.594984Z",
+  "company_ticker": "MOFSL",
+  "status": "render_failed",
+  "artifacts": [
+    {
+      "label": "company",
+      "path": "inputs\\company.json",
+      "sha256": "ac3b61cb5cc974e8bbeb457ec3219b24a9fee4be09a45e9426efc270d86b1367",
+      "size_bytes": 739
+    },
+    {
+      "label": "metadata",
+      "path": "inputs\\metadata.json",
+      "sha256": "c22b560b55109d7899c83bfa1a68a55deb7d1306e8a75d705065d8b5ee531214",
+      "size_bytes": 225
+    },
+    {
+      "label": "financial_model",
+      "path": "inputs\\financial_model.json",
+      "sha256": "8a2d3f80f1999162b367b2a6621d8bbaedace2bf52a26d4cbe945ff0d91d49cc",
+      "size_bytes": 15166
+    },
+    {
+      "label": "approved_report",
+      "path": "inputs\\approved_report.md",
+      "sha256": "9452fd6239d647312e0635051abf45bf646dadf6394709d812b40dd60c02615c",
+      "size_bytes": 2649
+    },
+    {
+      "label": "slide_plan",
+      "path": "intermediates\\slide_plan.json",
+      "sha256": "ebc131895148e44b7b61220c160ded60de1a780775149df71aa8d3bb15a999e0",
+      "size_bytes": 31382
+    },
+    {
+      "label": "report_spec",
+      "path": "intermediates\\report.json",
+      "sha256": "5c5a2301a01fffd7609dfdf08350eabc6713e1b3137976ecf385953d1809f6ee",
+      "size_bytes": 30516
+    },
+    {
+      "label": "pptx",
+      "path": "artifacts\\report.pptx",
+      "sha256": "7e39e7727eeed9a1239f2f8aec28699b5628d3c2b2a88fa91ec4eaa1f1aeb054",
+      "size_bytes": 193286
+    },
+    {
+      "label": "run_log",
+      "path": "logs\\run.log",
+      "sha256": "cc95f9fdc5402f1a56dd70f93a557aef6c492c37745d28ff106f73664cee2ac3",
+      "size_bytes": 541
+    }
+  ],
+  "notes": [
+    "Slide s12 metrics block 'valuation_metrics' is dense.",
+    "Slide s6 is missing a rendered table."
+  ]
+}

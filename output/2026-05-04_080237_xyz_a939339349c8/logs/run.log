@@ -1,0 +1,4 @@
+ts=2026-05-04T02:32:38.200758+00:00 level=INFO msg=pipeline_started run_id=a939339349c8 ticker=XYZ
+ts=2026-05-04T02:32:38.200782+00:00 level=WARN msg=qa_warning detail=Slide s10 text block 'disclaimer_text' is very long.
+ts=2026-05-04T02:32:38.200788+00:00 level=WARN msg=qa_warning detail=No supported PDF conversion backend is available. Configure LibreOffice or PowerPoint.
+ts=2026-05-04T02:32:38.200800+00:00 level=INFO msg=pipeline_finished status=pdf_skipped

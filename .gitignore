@@ -1,13 +1,3 @@
-.venv/
-__pycache__/
-.pytest_cache/
-.ruff_cache/
-*.pyc
-*.pyo
-*.pyd
-*.pptx
-*.pdf
-output/
 # Environment variables
 .env
 .env.local

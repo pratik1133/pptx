@@ -1,0 +1,17 @@
+{
+  "name": "Motilal Oswal Financial Services Ltd",
+  "ticker": "MOTILALOFS",
+  "exchange": "NSE",
+  "sector": "Financial Services",
+  "industry": "Capital Markets",
+  "isin": "INE338I01027",
+  "country": "India",
+  "description": "Motilal Oswal Financial Services is a diversified financial services group with leadership in retail broking, asset management, wealth management, investment banking, and housing finance, supported by a meaningful proprietary investment book.",
+  "peer_list": [
+    "ICICI Securities",
+    "Angel One",
+    "IIFL Securities",
+    "Nuvama Wealth Management",
+    "Anand Rathi Wealth"
+  ]
+}

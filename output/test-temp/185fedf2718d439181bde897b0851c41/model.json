@@ -1,0 +1,1 @@
+{"model_name":"ABC Base Model","model_version":"v1.0","currency":"INR","fiscal_year_end":"March","metrics":{"revenue_fy26":28500},"series":[{"name":"Revenue","unit":"INR Cr","periods":["FY24","FY25"],"values":[19800,21000]},{"name":"EBITDA","unit":"INR Cr","periods":["FY24","FY26"],"values":[3500,3900]}]}
