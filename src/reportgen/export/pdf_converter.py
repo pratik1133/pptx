@@ -54,9 +54,9 @@ class PowerPointPdfConverter(PdfConverter):
         pdf_path.parent.mkdir(parents=True, exist_ok=True)
         app = win32com.client.Dispatch("PowerPoint.Application")
         app.Visible = 1
-        presentation = app.Presentations.Open(str(pptx_path), WithWindow=False)
+        presentation = app.Presentations.Open(str(pptx_path.resolve()), WithWindow=False)
         try:
-            presentation.SaveAs(str(pdf_path), 32)
+            presentation.SaveAs(str(pdf_path.resolve()), 32)
         finally:
             presentation.Close()
             app.Quit()

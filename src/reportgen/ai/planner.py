@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 
-from reportgen.ai.anthropic_client import AnthropicPlanningClient, PlanningModelClient
+from reportgen.ai.openrouter_client import OpenRouterPlanningClient, PlanningModelClient
 from reportgen.ai.prompt_builder import SYSTEM_PROMPT, build_slide_planner_prompt
 from reportgen.ai.repair import parse_slide_plan_safely
 from reportgen.ai.serializers import dump_slide_plan_json
@@ -545,13 +545,13 @@ def plan_slides_mock(bundle: NormalizedInputBundle) -> SlidePlan:
 def plan_slides(bundle: NormalizedInputBundle, *, use_mock: bool = False) -> SlidePlan:
     """Default planning entry point.
 
-    By default, calls the real Anthropic planner. Falls back to mock if no API key
+    By default, calls the real OpenRouter planner. Falls back to mock if no API key
     is configured, or if `use_mock=True` is passed explicitly.
     """
-    if use_mock or not settings.anthropic_api_key:
+    if use_mock or not settings.openrouter_api_key:
         return plan_slides_mock(bundle)
 
-    client = AnthropicPlanningClient()
+    client = OpenRouterPlanningClient()
     return plan_slides_with_client(bundle, client)
 
 

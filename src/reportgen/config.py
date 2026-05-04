@@ -13,7 +13,8 @@ class Settings(BaseSettings):
     schema_version: str = "1.1.0"
     default_currency: str = "INR"
     anthropic_api_key: str | None = None
-    model_name: str = "claude-sonnet-4-6"
+    openrouter_api_key: str | None = None
+    model_name: str = "openrouter/free" # Swapped temporarily for testing
     min_slide_count: int = 5
     max_slide_count: int = 24
     max_planning_retries: int = 2
@@ -28,6 +29,7 @@ class Settings(BaseSettings):
         env_file=".env",
         env_file_encoding="utf-8",
         extra="ignore",
+        protected_namespaces=(),
     )
 
 

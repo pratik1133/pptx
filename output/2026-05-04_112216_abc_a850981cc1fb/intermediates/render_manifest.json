@@ -1,0 +1,116 @@
+{
+  "records": [
+    {
+      "slide_id": "s3",
+      "block_key": "snapshot_metrics",
+      "source_key": "metadata.cmp",
+      "resolved_value": "\u20b9420.0",
+      "kind": "metric"
+    },
+    {
+      "slide_id": "s3",
+      "block_key": "snapshot_metrics",
+      "source_key": "metadata.target_price",
+      "resolved_value": "\u20b9515.0",
+      "kind": "metric"
+    },
+    {
+      "slide_id": "s3",
+      "block_key": "snapshot_metrics",
+      "source_key": "metadata.upside_pct",
+      "resolved_value": "22.6%",
+      "kind": "metric"
+    },
+    {
+      "slide_id": "s4",
+      "block_key": "trend_chart",
+      "source_key": "period_labels",
+      "resolved_value": "FY24, FY25, FY26, FY27",
+      "kind": "chart_category"
+    },
+    {
+      "slide_id": "s4",
+      "block_key": "trend_chart",
+      "source_key": "series.Revenue@FY24",
+      "resolved_value": "19800",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s4",
+      "block_key": "trend_chart",
+      "source_key": "series.Revenue@FY25",
+      "resolved_value": "23500",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s4",
+      "block_key": "trend_chart",
+      "source_key": "series.Revenue@FY26",
+      "resolved_value": "28500",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s4",
+      "block_key": "trend_chart",
+      "source_key": "series.Revenue@FY27",
+      "resolved_value": "33450",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s5",
+      "block_key": "financial_table",
+      "source_key": "series.Revenue[0].period",
+      "resolved_value": "FY24",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s5",
+      "block_key": "financial_table",
+      "source_key": "series.Revenue[0].value",
+      "resolved_value": "\u20b919,800.0 Cr",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s5",
+      "block_key": "financial_table",
+      "source_key": "series.Revenue[1].period",
+      "resolved_value": "FY25",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s5",
+      "block_key": "financial_table",
+      "source_key": "series.Revenue[1].value",
+      "resolved_value": "\u20b923,500.0 Cr",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s5",
+      "block_key": "financial_table",
+      "source_key": "series.Revenue[2].period",
+      "resolved_value": "FY26",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s5",
+      "block_key": "financial_table",
+      "source_key": "series.Revenue[2].value",
+      "resolved_value": "\u20b928,500.0 Cr",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s5",
+      "block_key": "financial_table",
+      "source_key": "series.Revenue[3].period",
+      "resolved_value": "FY27",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s5",
+      "block_key": "financial_table",
+      "source_key": "series.Revenue[3].value",
+      "resolved_value": "\u20b933,450.0 Cr",
+      "kind": "table_cell"
+    }
+  ]
+}

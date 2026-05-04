@@ -55,9 +55,9 @@ def validate_input(bundle: Path = typer.Option(..., exists=True, readable=True, 
 def plan_slides_command(
     bundle: Path = typer.Option(..., exists=True, readable=True, help="Path to input bundle JSON."),
     out: Path = typer.Option(..., help="Path to write the slide plan JSON."),
-    mock: bool = typer.Option(False, "--mock", help="Use deterministic mock planner instead of Anthropic."),
+    mock: bool = typer.Option(False, "--mock", help="Use deterministic mock planner instead of OpenRouter."),
 ) -> None:
-    """Generate a validated slide plan. Defaults to the real Anthropic planner; falls back to mock without an API key."""
+    """Generate a validated slide plan. Defaults to the real OpenRouter planner; falls back to mock without an API key."""
 
     try:
         normalized = load_normalized_input_bundle(bundle)
@@ -137,7 +137,7 @@ def export_pdf(
 def run_pipeline(
     bundle: Path = typer.Option(..., exists=True, readable=True, help="Path to input bundle JSON."),
     out_root: Path = typer.Option(settings.output_root, help="Root directory for packaged run outputs."),
-    mock: bool = typer.Option(False, "--mock", help="Use deterministic mock planner instead of Anthropic."),
+    mock: bool = typer.Option(False, "--mock", help="Use deterministic mock planner instead of OpenRouter."),
 ) -> None:
     """Run the end-to-end pipeline and package outputs into a run folder."""
 
@@ -150,7 +150,7 @@ def run_pipeline(
         raise typer.Exit(code=2) from exc
     except RuntimeError as exc:
         message = str(exc)
-        if "Anthropic" in message or "LLM" in message:
+        if "OpenRouter" in message or "LLM" in message or "Anthropic" in message:
             code, label = "E_PLAN", "Slide planning failed"
         elif "PDF" in message or "PowerPoint" in message or "LibreOffice" in message:
             code, label = "E_PDF", "PDF export failed"

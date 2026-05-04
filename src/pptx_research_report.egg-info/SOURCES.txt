@@ -8,10 +8,11 @@ src/pptx_research_report.egg-info/requires.txt
 src/pptx_research_report.egg-info/top_level.txt
 src/reportgen/__init__.py
 src/reportgen/cli.py
+src/reportgen/compliance.py
 src/reportgen/config.py
 src/reportgen/logging.py
 src/reportgen/ai/__init__.py
-src/reportgen/ai/anthropic_client.py
+src/reportgen/ai/openrouter_client.py
 src/reportgen/ai/planner.py
 src/reportgen/ai/prompt_builder.py
 src/reportgen/ai/repair.py
@@ -38,6 +39,7 @@ src/reportgen/planning/slide_plan_validator.py
 src/reportgen/qa/__init__.py
 src/reportgen/qa/regression.py
 src/reportgen/qa/render_checks.py
+src/reportgen/qa/snapshot.py
 src/reportgen/qa/validators.py
 src/reportgen/rendering/__init__.py
 src/reportgen/rendering/brand_shell.py
@@ -47,8 +49,10 @@ src/reportgen/rendering/engine.py
 src/reportgen/rendering/geometry.py
 src/reportgen/rendering/layout_registry.py
 src/reportgen/rendering/metrics_renderer.py
+src/reportgen/rendering/number_format.py
 src/reportgen/rendering/overflow.py
 src/reportgen/rendering/pptx_runtime.py
+src/reportgen/rendering/render_manifest.py
 src/reportgen/rendering/table_renderer.py
 src/reportgen/rendering/text_renderer.py
 src/reportgen/rendering/theme.py
