@@ -1,0 +1,7 @@
+ts=2026-05-04T09:31:18.329457+00:00 level=INFO msg=pipeline_started run_id=b205e0236c38 ticker=MOFSL
+ts=2026-05-04T09:31:18.330466+00:00 level=WARN msg=qa_warning detail=Slide s4 bullet block 'highlights' is dense.
+ts=2026-05-04T09:31:18.330466+00:00 level=WARN msg=qa_warning detail=Slide s7 bullet block 'industry_points' is dense.
+ts=2026-05-04T09:31:18.330466+00:00 level=WARN msg=qa_warning detail=Slide s17 bullet block 'risk_points' is dense.
+ts=2026-05-04T09:31:18.330466+00:00 level=WARN msg=qa_warning detail=Slide s18 bullet block 'trading_points' is dense.
+ts=2026-05-04T09:31:18.330466+00:00 level=WARN msg=qa_warning detail=Slide s20 text block 'disclaimer_text' is very long.
+ts=2026-05-04T09:31:18.330466+00:00 level=INFO msg=pipeline_finished status=complete

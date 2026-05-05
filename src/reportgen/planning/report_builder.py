@@ -41,6 +41,12 @@ def resolve_source_value(bundle: NormalizedInputBundle, source_key: str) -> str:
     if metadata.upside_pct is not None:
         source_map["metadata.upside_pct"] = format_percent(metadata.upside_pct)
 
+    if metadata.market_cap is not None:
+        mcap = float(metadata.market_cap)
+        if mcap >= 1_000_000:
+            mcap = mcap / 1_00_00_000
+        source_map["metadata.market_cap"] = f"₹{mcap:,.0f} Cr"
+
     if source_key.startswith("financial_metrics."):
         metric_key = source_key.removeprefix("financial_metrics.")
         metric_value = bundle.source.financial_model.metrics[metric_key]

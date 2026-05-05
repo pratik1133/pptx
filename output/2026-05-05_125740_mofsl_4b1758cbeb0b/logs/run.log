@@ -1,0 +1,11 @@
+ts=2026-05-05T07:27:42.957999+00:00 level=INFO msg=pipeline_started run_id=4b1758cbeb0b ticker=MOFSL
+ts=2026-05-05T07:27:42.957999+00:00 level=WARN msg=qa_warning detail=Slide s1 bullet item in 'highlights' is long and may wrap heavily.
+ts=2026-05-05T07:27:42.957999+00:00 level=WARN msg=qa_warning detail=Slide s1 metrics block 'headline_metrics' is dense.
+ts=2026-05-05T07:27:42.957999+00:00 level=WARN msg=qa_warning detail=Slide s6 bullet item in 'highlights_items' is long and may wrap heavily.
+ts=2026-05-05T07:27:42.957999+00:00 level=WARN msg=qa_warning detail=Slide s6 bullet item in 'highlights_items' is long and may wrap heavily.
+ts=2026-05-05T07:27:42.957999+00:00 level=WARN msg=qa_warning detail=Slide s6 bullet item in 'highlights_items' is long and may wrap heavily.
+ts=2026-05-05T07:27:42.957999+00:00 level=WARN msg=qa_warning detail=Slide s6 bullet item in 'highlights_items' is long and may wrap heavily.
+ts=2026-05-05T07:27:42.957999+00:00 level=WARN msg=qa_warning detail=Slide s20 text block 'disclaimer_text' is very long.
+ts=2026-05-05T07:27:42.957999+00:00 level=WARN msg=qa_warning detail=Slide s11 is missing a rendered table.
+ts=2026-05-05T07:27:42.957999+00:00 level=ERROR msg=render_check_failed detail=Slide s11 is missing a rendered table.
+ts=2026-05-05T07:27:42.957999+00:00 level=INFO msg=pipeline_finished status=render_failed

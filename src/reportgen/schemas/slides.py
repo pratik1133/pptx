@@ -31,6 +31,7 @@ SlideLayout = Literal[
     "forensic_assessment",
     "trading_strategy",
     "key_highlights",
+    "scenario_analysis",
     "analyst_certification",
 ]
 

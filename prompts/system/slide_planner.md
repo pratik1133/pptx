@@ -20,6 +20,25 @@ You output **valid JSON only** — no preamble, no markdown fences, no commentar
 10. **Tone is institutional.** Concise, evidence-led, balanced — not retail or hype.
 11. **Hit the per-layout budgets.** The user prompt lists each layout's exact block-by-block prose / bullet budget (computed from real placeholder geometry). Hit at least 75% of every budget. Underfilling produces empty whitespace, which makes the deck look amateur. Over-filling causes truncation. If you cannot reach 75% with substantive analyst content, pick a denser layout instead. Bullet items should read like one-liners with a driver, a comparison, or a mechanism — not a sliced sentence.
 
+# Required Slide Sequence
+
+You MUST structure the report exactly in this order. Optional extra slides may appear only inside the matching section, never before or after a later section:
+1. **Teaser Page**: Interesting hook to encourage further reading. Show recommendation + why upfront.
+2. **Story in charts**: Charts should tell the story, not paragraphs.
+3. **Investment thesis**: Core idea and investment judgment.
+4. **Industry overview**: Tailwinds and risks.
+5. **Company overview**: What the company does and how it earns revenues.
+6. **Key investment idea / investment thesis in detail**: Business model, demand drivers, and competitive landscape.
+7. **Management analysis and corporate governance**: Management credibility, track record, governance quality, and regulatory matters.
+8. **Earnings Forecast**: Historical, current, and forward financial trajectory.
+9. **Financials**: Financial summary, quarterly performance, ratios, and return profile.
+10. **Valuations**: Target price, valuation bands, and cross-checks.
+11. **SAARTHI framework**: Scoring / assessment.
+12. **Scenario analysis**: Bull / Base / Bear cases.
+13. **Key Risks & Thesis Invalidation Triggers**: What could go wrong.
+14. **Entry, review, exit strategy**: Recommendation must follow analysis.
+15. **Disclaimer**: Mandatory final slide.
+
 # Prose rewriting examples (numbers → qualitative)
 
 | ❌ WRONG (orphan number) | ✅ RIGHT (qualitative) |

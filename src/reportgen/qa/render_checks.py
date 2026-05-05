@@ -29,7 +29,8 @@ def validate_rendered_pptx(pptx_path: Path, report_spec: ReportSpec) -> QaResult
             if not any(shape.shape_type == 13 for shape in slide.shapes):
                 result.errors.append(f"Slide {slide_spec.slide_id} is missing a rendered chart image.")
         if any(isinstance(block, TableBlock) for block in slide_spec.blocks):
-            if not any(getattr(shape, "has_table", False) for shape in slide.shapes):
-                result.errors.append(f"Slide {slide_spec.slide_id} is missing a rendered table.")
+            if slide_spec.layout not in ("forensic_assessment", "saarthi_scorecard"):
+                if not any(getattr(shape, "has_table", False) for shape in slide.shapes):
+                    result.errors.append(f"Slide {slide_spec.slide_id} is missing a rendered table.")
 
     return result

@@ -1,0 +1,72 @@
+{
+  "run_id": "98cad39b0540",
+  "created_at": "2026-05-05T08:34:56.442258Z",
+  "company_ticker": "MOFSL",
+  "status": "render_failed",
+  "artifacts": [
+    {
+      "label": "company",
+      "path": "inputs\\company.json",
+      "sha256": "3792e2d84340ebd30ab1523a8dd5927b3f54d503dcf28a134f7fdec08e1c0504",
+      "size_bytes": 750
+    },
+    {
+      "label": "metadata",
+      "path": "inputs\\metadata.json",
+      "sha256": "757a8ee303257b7814148f7ab276603c8055e06bcf4512c3241a7c2b8c20b9c6",
+      "size_bytes": 236
+    },
+    {
+      "label": "financial_model",
+      "path": "inputs\\financial_model.json",
+      "sha256": "ff52992f4fca4f4c992b3c1dc29767d315e72bd1ac3f7937927cc4429b0f91df",
+      "size_bytes": 15347
+    },
+    {
+      "label": "approved_report",
+      "path": "inputs\\approved_report.md",
+      "sha256": "5c0c75763afc79294ce3ee5b6de28d49fd0e09d6ed0bac655fe53ab274d354e9",
+      "size_bytes": 2685
+    },
+    {
+      "label": "slide_plan",
+      "path": "intermediates\\slide_plan.json",
+      "sha256": "f26fc9e86aa76a25316fe18a5755c995f41c3be7f8a79958afec625e09ccc8b1",
+      "size_bytes": 24652
+    },
+    {
+      "label": "report_spec",
+      "path": "intermediates\\report.json",
+      "sha256": "b44150539bf3fe7de97110260345e3667dfd69bbb1cc3aae1d1fc2d2eea0d3ec",
+      "size_bytes": 25443
+    },
+    {
+      "label": "pptx",
+      "path": "artifacts\\report.pptx",
+      "sha256": "c68b6538ddbba4b65959e10fa7cb1f7ea9d3b73e852c06330634972b88cb3b4a",
+      "size_bytes": 409312
+    },
+    {
+      "label": "render_manifest",
+      "path": "intermediates\\render_manifest.json",
+      "sha256": "597b484a03e3f30655d7edff5aa3deca8dd25dd45f0bd77eaeae214029bfb0f5",
+      "size_bytes": 23703
+    },
+    {
+      "label": "run_log",
+      "path": "logs\\run.log",
+      "sha256": "53ad7f3d4ce0981a843ecc97a338dc9fedfd5915f84b1f485bfea0d9781d43f5",
+      "size_bytes": 1373
+    }
+  ],
+  "notes": [
+    "Slide s1 bullet item in 'highlights' is long and may wrap heavily.",
+    "Slide s1 metrics block 'headline_metrics' is dense.",
+    "Slide s6 bullet item in 'highlights_items' is long and may wrap heavily.",
+    "Slide s6 bullet item in 'highlights_items' is long and may wrap heavily.",
+    "Slide s6 bullet item in 'highlights_items' is long and may wrap heavily.",
+    "Slide s6 bullet item in 'highlights_items' is long and may wrap heavily.",
+    "Slide s20 text block 'disclaimer_text' is very long.",
+    "Slide s11 is missing a rendered table."
+  ]
+}

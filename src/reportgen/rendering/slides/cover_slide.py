@@ -3,21 +3,533 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from reportgen.rendering.brand_shell import (
-    _add_filled_rect,
-    _add_text_in_rect,
-    _format_currency_compact,
-    _format_date_ddmmyyyy,
-    _format_market_cap,
-    _hex_to_rgb,
-    apply_background,
-)
-from reportgen.rendering.components.rating_badge import render_rating_badge
-from reportgen.rendering.geometry import Box
+from reportgen.rendering.brand_shell import _format_date_ddmmyyyy, _hex_to_rgb, apply_background
+from reportgen.rendering.data_resolver import RenderDataResolver
+from reportgen.rendering.number_format import format_for_unit
 from reportgen.rendering.theme import BrandTheme
-from reportgen.schemas.blocks import MetricsBlock
+from reportgen.schemas.blocks import BulletBlock, TextBlock
+from reportgen.schemas.financials import FinancialModelSnapshot, FinancialSeries
 from reportgen.schemas.report import ReportSpec
 from reportgen.schemas.slides import SlideSpec
+
+
+def _num(value: Any) -> float | None:
+    try:
+        if value is None:
+            return None
+        return float(value)
+    except (TypeError, ValueError):
+        return None
+
+
+def _money(value: Any, *, precision: int = 0) -> str:
+    number = _num(value)
+    if number is None:
+        return "-"
+    return f"\u20b9{number:,.{precision}f}"
+
+
+def _market_cap(value: Any) -> str:
+    number = _num(value)
+    if number is None:
+        return "-"
+    if number >= 1_000_000:
+        number = number / 1_00_00_000
+    return f"\u20b9{number:,.0f} Cr"
+
+
+def _percent(value: Any, *, signed: bool = False) -> str:
+    number = _num(value)
+    if number is None:
+        return "-"
+    sign = "+" if signed and number > 0 else ""
+    return f"{sign}{number:.0f}%"
+
+
+def _clip(text: str, limit: int) -> str:
+    cleaned = " ".join(str(text or "").split())
+    if len(cleaned) <= limit:
+        return cleaned
+    return cleaned[: max(0, limit - 1)].rstrip() + "..."
+
+
+def _add_rect(
+    slide: Any,
+    runtime: Any,
+    left: float,
+    top: float,
+    width: float,
+    height: float,
+    fill: str,
+    *,
+    line: str | None = None,
+    radius: bool = False,
+) -> Any:
+    shape_type = runtime.MSO_AUTO_SHAPE_TYPE.ROUNDED_RECTANGLE if radius else runtime.MSO_AUTO_SHAPE_TYPE.RECTANGLE
+    shape = slide.shapes.add_shape(
+        shape_type,
+        runtime.Inches(left),
+        runtime.Inches(top),
+        runtime.Inches(width),
+        runtime.Inches(height),
+    )
+    shape.fill.solid()
+    shape.fill.fore_color.rgb = _hex_to_rgb(runtime, fill)
+    if line:
+        shape.line.color.rgb = _hex_to_rgb(runtime, line)
+        shape.line.width = runtime.Pt(0.7)
+    else:
+        shape.line.fill.background()
+    return shape
+
+
+def _add_text(
+    slide: Any,
+    runtime: Any,
+    left: float,
+    top: float,
+    width: float,
+    height: float,
+    text: str,
+    *,
+    font: str,
+    size: float,
+    color: str,
+    bold: bool = False,
+    align: Any | None = None,
+) -> Any:
+    box = slide.shapes.add_textbox(
+        runtime.Inches(left),
+        runtime.Inches(top),
+        runtime.Inches(width),
+        runtime.Inches(height),
+    )
+    frame = box.text_frame
+    frame.clear()
+    frame.word_wrap = True
+    frame.margin_left = runtime.Inches(0.04)
+    frame.margin_right = runtime.Inches(0.04)
+    frame.margin_top = runtime.Inches(0.01)
+    frame.margin_bottom = runtime.Inches(0.01)
+    paragraph = frame.paragraphs[0]
+    if align is not None:
+        paragraph.alignment = align
+    run = paragraph.add_run()
+    run.text = text
+    run.font.name = font
+    run.font.size = runtime.Pt(size)
+    run.font.bold = bold
+    run.font.color.rgb = _hex_to_rgb(runtime, color)
+    return box
+
+
+def _set_cell(
+    cell: Any,
+    runtime: Any,
+    text: str,
+    *,
+    font: str,
+    size: float,
+    color: str,
+    fill: str,
+    bold: bool = False,
+    align: Any | None = None,
+) -> None:
+    cell.text = text
+    cell.vertical_anchor = runtime.MSO_ANCHOR.MIDDLE
+    cell.margin_left = runtime.Inches(0.025)
+    cell.margin_right = runtime.Inches(0.025)
+    cell.margin_top = runtime.Inches(0.006)
+    cell.margin_bottom = runtime.Inches(0.006)
+    cell.fill.solid()
+    cell.fill.fore_color.rgb = _hex_to_rgb(runtime, fill)
+    paragraph = cell.text_frame.paragraphs[0]
+    if align is not None:
+        paragraph.alignment = align
+    run = paragraph.runs[0]
+    run.font.name = font
+    run.font.size = runtime.Pt(size)
+    run.font.bold = bold
+    run.font.color.rgb = _hex_to_rgb(runtime, color)
+
+
+def _series_by_name(model: FinancialModelSnapshot, name: str) -> FinancialSeries | None:
+    for series in model.series:
+        if series.name.lower() == name.lower():
+            return series
+    return None
+
+
+def _series_value(model: FinancialModelSnapshot, name: str, period: str) -> str:
+    series = _series_by_name(model, name)
+    if not series or period not in series.periods:
+        return "-"
+    index = series.periods.index(period)
+    return format_for_unit(series.values[index], series.unit)
+
+
+def _ratio_value(model: FinancialModelSnapshot, name: str, period: str) -> str:
+    for ratio in model.ratios:
+        if ratio.name.lower() == name.lower() and period in ratio.periods:
+            return format_for_unit(ratio.values[ratio.periods.index(period)], ratio.unit)
+    return "-"
+
+
+def _metric(model: FinancialModelSnapshot, key: str, default: str = "-") -> str:
+    value = model.metrics.get(key)
+    if value is None:
+        return default
+    return str(value)
+
+
+def _cover_text(slide_spec: SlideSpec) -> tuple[str, list[str]]:
+    thesis = ""
+    bullets: list[str] = []
+    for block in slide_spec.blocks:
+        if isinstance(block, TextBlock) and not thesis:
+            thesis = block.content
+        if isinstance(block, BulletBlock):
+            bullets = list(block.items)
+    return thesis, bullets
+
+
+def _render_brand_header(
+    slide: Any,
+    report_spec: ReportSpec,
+    slide_spec: SlideSpec,
+    theme: BrandTheme,
+    runtime: Any,
+    model: FinancialModelSnapshot | None,
+) -> None:
+    canvas_w = theme.canvas.width_in
+    meta = report_spec.metadata
+    header_h = 1.90
+    _add_rect(slide, runtime, 0, 0, canvas_w, header_h, theme.palette.primary)
+
+    logo_path = Path(theme.logo_path) if theme.logo_path else None
+    logo_exists = bool(logo_path and logo_path.exists())
+    if logo_exists:
+        try:
+            # Add a white background "chip" behind the logo to ensure visibility
+            chip_pad_x = 0.08
+            chip_pad_y = 0.06
+            logo_height = 0.36
+            chip_height = logo_height + 2 * chip_pad_y
+            chip_width = 1.7 + 2 * chip_pad_x
+            chip = slide.shapes.add_shape(
+                runtime.MSO_AUTO_SHAPE_TYPE.ROUNDED_RECTANGLE,
+                runtime.Inches(0.22 - chip_pad_x),
+                runtime.Inches(0.12 - chip_pad_y),
+                runtime.Inches(chip_width),
+                runtime.Inches(chip_height),
+            )
+            chip.fill.solid()
+            chip.fill.fore_color.rgb = _hex_to_rgb(runtime, theme.palette.background)
+            chip.line.fill.background()
+            slide.shapes.add_picture(str(logo_path), runtime.Inches(0.22), runtime.Inches(0.12), height=runtime.Inches(logo_height))
+        except Exception:
+            pass
+    else:
+        emblem = slide.shapes.add_shape(
+            runtime.MSO_AUTO_SHAPE_TYPE.OVAL,
+            runtime.Inches(0.22),
+            runtime.Inches(0.12),
+            runtime.Inches(0.36),
+            runtime.Inches(0.36),
+        )
+        emblem.fill.solid()
+        emblem.fill.fore_color.rgb = _hex_to_rgb(runtime, theme.palette.accent)
+        emblem.line.fill.background()
+        _add_text(slide, runtime, 0.28, 0.18, 0.24, 0.18, "T", font=theme.header_font.family, size=10, color=theme.palette.primary, bold=True, align=runtime.PP_ALIGN.CENTER)
+        _add_text(slide, runtime, 0.62, 0.09, 2.1, 0.24, theme.firm_name, font=theme.title_font.family, size=14, color="#FFFFFF", bold=True)
+        _add_text(slide, runtime, 0.62, 0.34, 2.6, 0.16, theme.firm_tagline.upper(), font=theme.header_font.family, size=7, color="#C8D2E3")
+    _add_text(
+        slide,
+        runtime,
+        canvas_w - 2.85,
+        0.10,
+        2.55,
+        0.22,
+        f"{(meta.report_type or 'Initiating').upper()} COVERAGE - Q2 FY25-26",
+        font=theme.header_font.family,
+        size=8,
+        color="#FFFFFF",
+        bold=True,
+        align=runtime.PP_ALIGN.CENTER,
+    )
+
+    _add_text(slide, runtime, 0.22, 0.55, 5.15, 0.45, report_spec.company.name, font=theme.title_font.family, size=24, color="#FFFFFF", bold=True)
+    rating = (meta.rating or "").upper()
+    if rating:
+        _add_rect(slide, runtime, 5.40, 0.62, 0.62, 0.28, theme.palette.accent, radius=True)
+        _add_text(slide, runtime, 5.42, 0.64, 0.58, 0.22, rating, font=theme.header_font.family, size=8, color=theme.palette.primary, bold=True, align=runtime.PP_ALIGN.CENTER)
+
+    exchange = f"NSE: {report_spec.company.ticker}"
+    if report_spec.company.exchange and report_spec.company.exchange.upper() != "NSE":
+        exchange = f"{report_spec.company.exchange}: {report_spec.company.ticker}"
+    descriptor = f"{exchange}  |  {report_spec.company.sector or ''} / {report_spec.company.industry or ''}"
+    _add_text(slide, runtime, 6.10, 0.70, 4.47, 0.16, descriptor, font=theme.header_font.family, size=7.5, color="#D9E2F2")
+
+    _add_rect(slide, runtime, 0.22, 1.02, canvas_w - 0.44, 0.01, theme.palette.secondary)
+    saarthi = "-"
+    if model and model.saarthi:
+        saarthi = f"{model.saarthi.total_score}/{model.saarthi.max_score}"
+    market_cap = _market_cap(meta.market_cap)
+    stats = [
+        ("CMP", _money(meta.cmp, precision=2), f"As of {_format_date_ddmmyyyy(str(meta.report_date))}"),
+        ("TARGET PRICE", _money(meta.target_price), "12M upside case"),
+        ("MARKET CAP", market_cap, ""),
+        ("MARKET CAP CATEGORY", "Mid Cap", "Financial Services leader"),
+        ("SAARTHI SCORE", saarthi, model.saarthi.rating if model and model.saarthi and model.saarthi.rating else ""),
+        ("PROB. WEIGHTED TP", _money(model.metrics.get("probability_weighted_target")) if model else "-", ""),
+    ]
+    stat_w = (canvas_w - 0.44) / len(stats)
+    for index, (label, value, sub) in enumerate(stats):
+        left = 0.22 + index * stat_w
+        _add_text(slide, runtime, left, 1.08, stat_w - 0.05, 0.14, label, font=theme.header_font.family, size=7, color="#BFD0EA", bold=True)
+        _add_text(slide, runtime, left, 1.24, stat_w - 0.05, 0.22, value, font=theme.metric_font.family, size=12, color=theme.palette.accent if index in {0, 1, 4} else "#FFFFFF", bold=True)
+        if sub:
+            _add_text(slide, runtime, left, 1.48, stat_w - 0.05, 0.14, _clip(sub, 35), font=theme.header_font.family, size=6, color="#C8D2E3")
+        if index < len(stats) - 1:
+            _add_rect(slide, runtime, left + stat_w - 0.04, 1.12, 0.006, 0.40, theme.palette.secondary)
+
+    _add_text(slide, runtime, canvas_w - 3.2, 1.72, 2.95, 0.14, f"Report Reference: Q2 FY2025-26 | {_format_date_ddmmyyyy(str(meta.report_date))}", font=theme.header_font.family, size=6.5, color="#E8EEF8", align=runtime.PP_ALIGN.RIGHT)
+
+    tagline = slide_spec.subtitle or ""
+    if not tagline:
+        thesis, _ = _cover_text(slide_spec)
+        tagline = thesis.split(".")[0] if thesis else report_spec.company.description
+    _add_rect(slide, runtime, 0, header_h, canvas_w, 0.55, theme.palette.accent)
+    _add_text(slide, runtime, 0.22, header_h + 0.08, canvas_w - 0.44, 0.35, f'"{_clip(tagline, 160)}"', font=theme.title_font.family, size=13, color=theme.palette.primary, bold=True)
+
+
+def _render_highlight_card(
+    slide: Any,
+    runtime: Any,
+    left: float,
+    top: float,
+    width: float,
+    height: float,
+    title: str,
+    body: str,
+    theme: BrandTheme,
+    accent: str,
+) -> None:
+    _add_rect(slide, runtime, left, top, width, height, "#F7F9FC", line="#C8D2E3")
+    _add_rect(slide, runtime, left, top, 0.035, height, accent)
+    _add_text(slide, runtime, left + 0.10, top + 0.06, width - 0.18, 0.20, title, font=theme.body_font.family, size=8.5, color=theme.palette.primary, bold=True)
+    _add_text(slide, runtime, left + 0.10, top + 0.28, width - 0.18, height - 0.34, _clip(body, 185), font=theme.body_font.family, size=7.5, color=theme.palette.text)
+
+
+def _render_left_column(
+    slide: Any,
+    slide_spec: SlideSpec,
+    model: FinancialModelSnapshot | None,
+    theme: BrandTheme,
+    runtime: Any,
+) -> None:
+    thesis, bullets = _cover_text(slide_spec)
+    highlights = [(item.split(":", 1)[0], item.split(":", 1)[1].strip() if ":" in item else item) for item in bullets]
+    if model and model.key_highlights:
+        highlights = [(h.title, h.body) for h in model.key_highlights]
+
+    left = 0.22
+    top = 2.58
+    width = 6.86
+    thesis_h = 1.36
+    _add_rect(slide, runtime, left, top, width, thesis_h, "#FFF0CC", line="#F3C673")
+    _add_rect(slide, runtime, left, top, 0.035, thesis_h, theme.palette.accent)
+    _add_text(slide, runtime, left + 0.12, top + 0.08, width - 0.24, 0.20, "Investment Thesis", font=theme.body_font.family, size=9, color=theme.palette.primary, bold=True)
+    _add_text(slide, runtime, left + 0.12, top + 0.30, width - 0.24, thesis_h - 0.38, _clip(thesis, 760), font=theme.body_font.family, size=8, color=theme.palette.text, bold=True)
+
+    card_top = top + thesis_h + 0.12
+    gap_x = 0.14
+    gap_y = 0.10
+    card_w = (width - gap_x) / 2
+    card_h = 0.88
+    accents = [theme.palette.primary, theme.palette.accent, theme.palette.green, theme.palette.secondary, theme.palette.teal, theme.palette.green]
+    for index, (title, body) in enumerate(highlights[:6]):
+        col = index % 2
+        row = index // 2
+        _render_highlight_card(
+            slide,
+            runtime,
+            left + col * (card_w + gap_x),
+            card_top + row * (card_h + gap_y),
+            card_w,
+            card_h,
+            _clip(title, 42),
+            body,
+            theme,
+            accents[index % len(accents)],
+        )
+
+
+def _render_financial_summary(
+    slide: Any,
+    model: FinancialModelSnapshot | None,
+    theme: BrandTheme,
+    runtime: Any,
+) -> None:
+    if model is None:
+        return
+    left = 7.22
+    top = 2.58
+    width = 3.48
+    _add_text(slide, runtime, left, top, width, 0.18, "FINANCIAL SUMMARY (INR CRORE)", font=theme.header_font.family, size=8, color=theme.palette.primary, bold=True)
+    periods = ["FY24A", "FY25A", "FY26E", "FY27E"]
+    rows = [
+        ("Revenue", [_series_value(model, "Revenue", p) for p in periods]),
+        ("EBITDA", [_series_value(model, "EBITDA", p) for p in periods]),
+        ("EBITDA Mgn", [_ratio_value(model, "EBITDA Margin", p) for p in periods]),
+        ("PAT", [_series_value(model, "PAT", p) for p in periods]),
+        ("PAT Mgn", [_ratio_value(model, "PAT Margin", p) for p in periods]),
+        ("EPS", [_series_value(model, "EPS", p) for p in periods]),
+        ("P/E", [_ratio_value(model, "P/E", p) for p in periods]),
+        ("P/B", [_ratio_value(model, "P/B", p) for p in periods]),
+        ("EV/EBITDA", [_ratio_value(model, "EV/EBITDA", p) for p in periods]),
+    ]
+    shape = slide.shapes.add_table(
+        len(rows) + 1,
+        len(periods) + 1,
+        runtime.Inches(left),
+        runtime.Inches(top + 0.23),
+        runtime.Inches(width),
+        runtime.Inches(2.55),
+    )
+    table = shape.table
+    table.columns[0].width = runtime.Inches(0.86)
+    for col in range(1, len(periods) + 1):
+        table.columns[col].width = runtime.Inches((width - 0.86) / len(periods))
+    headers = ["Metric", *periods]
+    for col, header in enumerate(headers):
+        _set_cell(table.cell(0, col), runtime, header, font=theme.header_font.family, size=7, color="#FFFFFF", fill=theme.palette.primary, bold=True, align=runtime.PP_ALIGN.CENTER if col else runtime.PP_ALIGN.LEFT)
+    for row_index, (label, values) in enumerate(rows, start=1):
+        fill = "#FFFFFF" if row_index % 2 == 0 else theme.palette.light_grey
+        _set_cell(table.cell(row_index, 0), runtime, label, font=theme.body_font.family, size=7, color=theme.palette.text, fill=fill, bold=True)
+        for col, value in enumerate(values, start=1):
+            color = theme.palette.green if col >= 3 and label in {"EPS", "P/E", "P/B", "EV/EBITDA"} else theme.palette.text
+            _set_cell(table.cell(row_index, col), runtime, value.replace(" Cr", ""), font=theme.body_font.family, size=7, color=color, fill=fill, bold=col >= 3, align=runtime.PP_ALIGN.CENTER)
+
+    _add_text(slide, runtime, left, top + 2.95, width, 0.18, "H1 FY26 SNAPSHOT", font=theme.header_font.family, size=8, color=theme.palette.primary, bold=True)
+    snapshot_rows = [
+        ("Consol. Net Revenue", "\u20b92,888 Cr"),
+        ("Operating PAT", "\u20b91,088 Cr (+11% YoY)"),
+        ("ARR % of Net Revenue", f"{_metric(model, 'arr_pct_of_revenue')}%"),
+        ("Fee-Based % of Revenue", f"{_metric(model, 'fee_based_pct_of_revenue')}%"),
+        ("EPS FY25 Annual", f"\u20b9{_metric(model, 'eps_fy26e')}"),
+    ]
+    _render_key_value_table(slide, runtime, left, top + 3.16, width, 1.02, snapshot_rows, theme, title_fill=theme.palette.light_grey)
+
+
+def _render_key_value_table(
+    slide: Any,
+    runtime: Any,
+    left: float,
+    top: float,
+    width: float,
+    height: float,
+    rows: list[tuple[str, str]],
+    theme: BrandTheme,
+    *,
+    title_fill: str = "#FFFFFF",
+    value_color: str | None = None,
+) -> None:
+    shape = slide.shapes.add_table(len(rows), 2, runtime.Inches(left), runtime.Inches(top), runtime.Inches(width), runtime.Inches(height))
+    table = shape.table
+    table.columns[0].width = runtime.Inches(width * 0.63)
+    table.columns[1].width = runtime.Inches(width * 0.37)
+    for row_index, (label, value) in enumerate(rows):
+        fill = title_fill if row_index % 2 == 0 else "#FFFFFF"
+        _set_cell(table.cell(row_index, 0), runtime, label, font=theme.body_font.family, size=7, color=theme.palette.text, fill=fill, bold=False)
+        _set_cell(table.cell(row_index, 1), runtime, value, font=theme.body_font.family, size=7, color=value_color or theme.palette.primary, fill=fill, bold=True, align=runtime.PP_ALIGN.RIGHT)
+
+
+def _render_side_panel(
+    slide: Any,
+    model: FinancialModelSnapshot | None,
+    report_spec: ReportSpec,
+    theme: BrandTheme,
+    runtime: Any,
+) -> None:
+    if model is None:
+        return
+    left = 10.86
+    top = 2.58
+    width = 2.25
+
+    def panel(y: float, h: float, title: str, rows: list[tuple[str, str]], *, fill: str = theme.palette.primary, value_color: str | None = None) -> None:
+        _add_rect(slide, runtime, left, y, width, h, fill, radius=True)
+        _add_text(slide, runtime, left + 0.09, y + 0.06, width - 0.18, 0.18, title.upper(), font=theme.header_font.family, size=7.5, color=theme.palette.accent if fill == theme.palette.primary else theme.palette.primary, bold=True)
+        if fill == theme.palette.primary:
+            row_top = y + 0.27
+            for index, (label, value) in enumerate(rows):
+                _add_text(slide, runtime, left + 0.10, row_top + index * 0.20, width * 0.55, 0.14, label, font=theme.body_font.family, size=7, color="#E8EEF8")
+                _add_text(slide, runtime, left + width * 0.55, row_top + index * 0.20, width * 0.40, 0.14, value, font=theme.body_font.family, size=7.5, color=value_color or "#FFFFFF", bold=True, align=runtime.PP_ALIGN.RIGHT)
+        else:
+            row_top = y + 0.28
+            for index, (label, value) in enumerate(rows):
+                _add_text(slide, runtime, left + 0.10, row_top + index * 0.20, width * 0.55, 0.14, label, font=theme.body_font.family, size=7, color=theme.palette.text)
+                _add_text(slide, runtime, left + width * 0.55, row_top + index * 0.20, width * 0.40, 0.14, value, font=theme.body_font.family, size=7.5, color=value_color or theme.palette.primary, bold=True, align=runtime.PP_ALIGN.RIGHT)
+
+    panel(
+        top,
+        1.02,
+        "Key Valuation Metrics",
+        [
+            ("P/E (TTM)", "24.20x"),
+            ("P/B Ratio", "3.82x"),
+            ("EPS (FY25A)", f"\u20b9{_series_value(model, 'EPS', 'FY25A').replace('\u20b9', '')}"),
+            ("EPS (FY27E)", f"\u20b9{_series_value(model, 'EPS', 'FY27E').replace('\u20b9', '')}"),
+        ],
+    )
+    panel(
+        top + 1.10,
+        0.68,
+        "Analyst Consensus",
+        [
+            ("Consensus TP", _money(report_spec.metadata.target_price)),
+            ("Max Target", "\u20b91,200"),
+            ("Upside to Cons.", _percent(report_spec.metadata.upside_pct, signed=True)),
+        ],
+    )
+    panel(
+        top + 1.86,
+        0.80,
+        "Key Operating Stats",
+        [
+            ("Total AUM", f"\u20b9{_metric(model, 'total_aum_lakh_cr')}L Cr"),
+            ("AMC AUM", f"\u20b9{_metric(model, 'amc_aum_lakh_cr')}L Cr"),
+            ("Pvt Wealth AUM", f"\u20b9{_metric(model, 'pwm_aum_lakh_cr')}L Cr"),
+        ],
+        fill="#F7F9FC",
+    )
+    panel(
+        top + 2.74,
+        0.65,
+        "Credit Rating",
+        [
+            ("ICRA Rating", "AA+"),
+            ("Outlook", "Stable"),
+            ("Net Worth", f"\u20b9{_metric(model, 'net_worth_cr')} Cr"),
+        ],
+        fill="#F7F9FC",
+        value_color=theme.palette.accent,
+    )
+    _add_rect(slide, runtime, left, top + 3.47, width, 0.78, theme.palette.secondary, radius=True)
+    _add_text(slide, runtime, left + 0.10, top + 3.53, width - 0.20, 0.16, "ARR INFLECTION WATCH", font=theme.header_font.family, size=7.5, color=theme.palette.accent, bold=True)
+    _add_text(slide, runtime, left + 0.10, top + 3.72, width - 0.20, 0.26, f"{_metric(model, 'arr_pct_of_revenue')}%", font=theme.metric_font.family, size=20, color=theme.palette.accent, bold=True)
+    _add_text(slide, runtime, left + 0.10, top + 4.00, width - 0.20, 0.18, "ARR of total net revenues. Re-rating trigger: 70%+ ARR.", font=theme.body_font.family, size=6.5, color="#FFFFFF")
+
+
+def _render_footer(slide: Any, report_spec: ReportSpec, theme: BrandTheme, runtime: Any) -> None:
+    canvas_w = theme.canvas.width_in
+    canvas_h = theme.canvas.height_in
+    footer_top = canvas_h - 0.18
+    _add_rect(slide, runtime, 0, footer_top, canvas_w, 0.18, "#F7F9FC", line="#D8DEE8")
+    _add_text(slide, runtime, 0.22, footer_top + 0.02, 3.0, 0.12, "SEBI Reg. No.: INH000069807", font=theme.footer_font.family, size=6.5, color=theme.palette.muted_text)
+    _add_text(slide, runtime, canvas_w * 0.32, footer_top + 0.02, canvas_w * 0.36, 0.12, f"{report_spec.company.name} - Equity Research", font=theme.footer_font.family, size=6.5, color=theme.palette.primary, bold=True, align=runtime.PP_ALIGN.CENTER)
+    _add_text(slide, runtime, canvas_w - 1.05, footer_top + 0.02, 0.85, 0.12, "Page 1 of 15", font=theme.footer_font.family, size=6.5, color=theme.palette.muted_text, align=runtime.PP_ALIGN.RIGHT)
 
 
 def render_cover_slide(
@@ -28,359 +540,13 @@ def render_cover_slide(
     runtime: Any,
 ) -> None:
     apply_background(slide, theme, runtime)
-    canvas_w = theme.canvas.width_in
-    canvas_h = theme.canvas.height_in
-    meta = report_spec.metadata
-
-    # ════════════════════════════════════════════════════════════════
-    # SECTION 1: NAVY HEADER BLOCK (top ~35% of slide)
-    # Matches the HTML .report-header
-    # ════════════════════════════════════════════════════════════════
-    header_h = canvas_h * 0.34
-    _add_filled_rect(slide, runtime, 0, 0, canvas_w, header_h, theme.palette.primary)
-
-    # Orange accent triangle/wedge on the right (decorative)
     try:
-        from pptx.util import Inches, Pt, Emu
-        from pptx.oxml.ns import qn
-        import lxml.etree as etree
-
-        # Add a subtle gradient overlay effect on the right side
-        wedge_w = 2.5
-        wedge = slide.shapes.add_shape(
-            runtime.MSO_AUTO_SHAPE_TYPE.RECTANGLE,
-            runtime.Inches(canvas_w - wedge_w),
-            runtime.Inches(0),
-            runtime.Inches(wedge_w),
-            runtime.Inches(header_h),
-        )
-        wedge.fill.solid()
-        wedge.fill.fore_color.rgb = _hex_to_rgb(runtime, theme.palette.accent)
-        wedge.line.fill.background()
-        # Set transparency to make it subtle
-        wedge.fill.fore_color.brightness = 0.0
+        model = RenderDataResolver(report_spec).financial_model
     except Exception:
-        pass
+        model = None
 
-    # ── Row 1: Logo + Firm Brand (left) | Report Type Badge (right) ──
-    logo_path = Path(theme.logo_path) if theme.logo_path else None
-    brand_left = 0.5
-    if logo_path and logo_path.exists():
-        try:
-            # White chip behind logo
-            chip = slide.shapes.add_shape(
-                runtime.MSO_AUTO_SHAPE_TYPE.ROUNDED_RECTANGLE,
-                runtime.Inches(0.4),
-                runtime.Inches(0.25),
-                runtime.Inches(2.6),
-                runtime.Inches(0.65),
-            )
-            chip.fill.solid()
-            chip.fill.fore_color.rgb = _hex_to_rgb(runtime, theme.palette.background)
-            chip.line.fill.background()
-            slide.shapes.add_picture(
-                str(logo_path),
-                runtime.Inches(0.5),
-                runtime.Inches(0.3),
-                height=runtime.Inches(0.50),
-            )
-            brand_left = 1.3
-        except Exception:
-            pass
-
-    # Firm name
-    _add_text_in_rect(
-        slide, runtime, brand_left, 0.3, 3.0, 0.35,
-        theme.firm_name,
-        theme.title_font.family, 16, True,
-        "#FFFFFF",
-        runtime.PP_ALIGN.LEFT,
-    )
-    # Firm tagline
-    _add_text_in_rect(
-        slide, runtime, brand_left, 0.65, 3.0, 0.2,
-        theme.firm_tagline.upper(),
-        theme.body_font.family, 8, False,
-        "#A0B0C8",  # muted white on navy
-        runtime.PP_ALIGN.LEFT,
-    )
-
-    # Report type badge (right side)
-    report_type = f"{meta.report_type or 'Initiation'}"
-    badge_box = slide.shapes.add_shape(
-        runtime.MSO_AUTO_SHAPE_TYPE.ROUNDED_RECTANGLE,
-        runtime.Inches(canvas_w - 4.2),
-        runtime.Inches(0.3),
-        runtime.Inches(3.5),
-        runtime.Inches(0.3),
-    )
-    badge_box.fill.solid()
-    badge_box.fill.fore_color.rgb = runtime.RGBColor(255, 255, 255)
-    badge_box.fill.fore_color.brightness = 0.85  # semi-transparent
-    badge_box.line.fill.background()
-    tf = badge_box.text_frame
-    tf.margin_left = runtime.Inches(0.05)
-    tf.margin_top = runtime.Inches(0.02)
-    p = tf.paragraphs[0]
-    p.alignment = runtime.PP_ALIGN.CENTER
-    r = p.add_run()
-    r.text = report_type.upper()
-    r.font.name = theme.body_font.family
-    r.font.size = runtime.Pt(9)
-    r.font.bold = False
-    r.font.color.rgb = _hex_to_rgb(runtime, "#FFFFFF")
-
-    # ── Row 2: Company Name + Rating Badge + Sector Tag ──
-    company_name = report_spec.company.name
-    _add_text_in_rect(
-        slide, runtime, 0.5, 1.0, canvas_w * 0.6, 0.6,
-        company_name,
-        theme.title_font.family, 30, True,
-        "#FFFFFF",
-        runtime.PP_ALIGN.LEFT,
-    )
-
-    # Rating badge (BUY/HOLD/SELL)
-    rating = (meta.rating or "").upper()
-    if rating:
-        rating_color = getattr(theme.rating_colors, rating, theme.palette.accent)
-        render_rating_badge(
-            slide,
-            Box(left=0.5 + len(company_name) * 0.18, top=1.15, width=1.0, height=0.35),
-            rating,
-            theme,
-            runtime,
-        )
-
-    # Sector/Exchange tag
-    exchange_info = f"{report_spec.company.exchange}: {report_spec.company.ticker}"
-    if report_spec.company.sector:
-        exchange_info += f"  |  {report_spec.company.sector}"
-    _add_text_in_rect(
-        slide, runtime, 0.5, 1.6, canvas_w - 1.0, 0.2,
-        exchange_info,
-        theme.body_font.family, 9, False,
-        "#8899AA",
-        runtime.PP_ALIGN.LEFT,
-    )
-
-    # ── Row 3: Stats bar (CMP | TP | Market Cap | SAARTHI | Upside) ──
-    stats_top = 1.95
-    stats_height = 0.65
-
-    # Divider line above stats
-    _add_filled_rect(slide, runtime, 0.5, stats_top - 0.02, canvas_w - 1.0, 0.015, "#4A6AA0")
-
-    stats_data = [
-        ("CMP", _format_currency_compact(meta.cmp), f"As of {_format_date_ddmmyyyy(str(meta.report_date))}"),
-        ("TARGET PRICE", _format_currency_compact(meta.target_price), ""),
-    ]
-    if meta.market_cap:
-        stats_data.append(("MARKET CAP", _format_market_cap(meta.market_cap), ""))
-
-    # Calculate upside
-    try:
-        cmp_val = float(meta.cmp)
-        tp_val = float(meta.target_price)
-        if cmp_val > 0:
-            upside = ((tp_val - cmp_val) / cmp_val) * 100
-            stats_data.append(("UPSIDE", f"+{upside:.0f}%", ""))
-    except (ValueError, TypeError):
-        pass
-
-    stat_count = len(stats_data)
-    stat_w = (canvas_w - 1.0) / stat_count
-
-    for idx, (label, value, sub) in enumerate(stats_data):
-        x = 0.5 + idx * stat_w
-
-        # Label
-        _add_text_in_rect(
-            slide, runtime, x, stats_top, stat_w - 0.2, 0.15,
-            label,
-            theme.body_font.family, 7, False,
-            "#8899AA",
-            runtime.PP_ALIGN.LEFT,
-        )
-        # Value
-        is_accent = idx == 0  # CMP in accent color
-        _add_text_in_rect(
-            slide, runtime, x, stats_top + 0.15, stat_w - 0.2, 0.3,
-            value,
-            theme.body_font.family, 16, True,
-            theme.palette.accent if is_accent else "#FFFFFF",
-            runtime.PP_ALIGN.LEFT,
-        )
-        # Sub-text
-        if sub:
-            _add_text_in_rect(
-                slide, runtime, x, stats_top + 0.45, stat_w - 0.2, 0.15,
-                sub,
-                theme.body_font.family, 7, False,
-                "#7788AA",
-                runtime.PP_ALIGN.LEFT,
-            )
-
-        # Vertical separator
-        if idx < stat_count - 1:
-            _add_filled_rect(slide, runtime, x + stat_w - 0.15, stats_top + 0.05, 0.01, 0.5, "#3A5BA0")
-
-    # Report date (bottom-right of header)
-    _add_text_in_rect(
-        slide, runtime, canvas_w - 3.5, header_h - 0.25, 3.0, 0.2,
-        f"Report: {_format_date_ddmmyyyy(str(meta.report_date))}",
-        theme.body_font.family, 8, False,
-        "#8899AA",
-        runtime.PP_ALIGN.RIGHT,
-    )
-
-    # ════════════════════════════════════════════════════════════════
-    # SECTION 2: ORANGE TAGLINE BAND
-    # Matches the HTML .tagline-band
-    # ════════════════════════════════════════════════════════════════
-    tagline_top = header_h
-    tagline_h = 0.4
-    _add_filled_rect(slide, runtime, 0, tagline_top, canvas_w, tagline_h, theme.palette.accent)
-
-    # Get tagline from subtitle or a thesis summary
-    tagline_text = slide_spec.subtitle or ""
-    if not tagline_text:
-        # Fallback: find text block in cover for tagline
-        from reportgen.schemas.blocks import TextBlock
-        for block in slide_spec.blocks:
-            if isinstance(block, TextBlock):
-                tagline_text = block.content[:200]
-                break
-    if tagline_text:
-        _add_text_in_rect(
-            slide, runtime, 0.5, tagline_top, canvas_w - 1.0, tagline_h,
-            f'"{tagline_text}"' if not tagline_text.startswith('"') else tagline_text,
-            theme.title_font.family, 12, True,
-            theme.palette.primary,
-            runtime.PP_ALIGN.LEFT,
-        )
-
-    # ════════════════════════════════════════════════════════════════
-    # SECTION 3: COVER METRIC CARDS (bottom section)
-    # Matches the HTML cover metric cards
-    # ════════════════════════════════════════════════════════════════
-    content_top = tagline_top + tagline_h + 0.1
-    _render_cover_metrics(slide, slide_spec, theme, runtime, canvas_h, content_top)
-
-    # ════════════════════════════════════════════════════════════════
-    # SECTION 4: FOOTER
-    # ════════════════════════════════════════════════════════════════
-    footer_h = 0.35
-    footer_top = canvas_h - footer_h
-    _add_filled_rect(slide, runtime, 0, footer_top, canvas_w, footer_h, theme.palette.primary)
-
-    # Footer left: SEBI
-    _add_text_in_rect(
-        slide, runtime, 0.5, footer_top, 3.5, footer_h,
-        theme.footer_line,
-        theme.footer_font.family, theme.footer_font.size_pt, False,
-        theme.footer_font.color_hex,
-        runtime.PP_ALIGN.LEFT,
-    )
-
-    # Footer center: Company name
-    _add_text_in_rect(
-        slide, runtime, canvas_w * 0.3, footer_top, canvas_w * 0.4, footer_h,
-        f"{company_name} — Equity Research",
-        theme.footer_font.family, theme.footer_font.size_pt, True,
-        theme.palette.accent,
-        runtime.PP_ALIGN.CENTER,
-    )
-
-    # Footer right: Date + Page 1
-    formatted_date = _format_date_ddmmyyyy(str(meta.report_date))
-    total_slides = 1  # Cover is page 1
-    _add_text_in_rect(
-        slide, runtime, canvas_w - 2.5, footer_top, 2.0, footer_h,
-        f"{formatted_date}  |  Page 1",
-        theme.footer_font.family, theme.footer_font.size_pt, False,
-        theme.footer_font.color_hex,
-        runtime.PP_ALIGN.RIGHT,
-    )
-
-
-def _render_cover_metrics(
-    slide: Any,
-    slide_spec: SlideSpec,
-    theme: BrandTheme,
-    runtime: Any,
-    canvas_h: float,
-    content_top: float,
-) -> None:
-    metrics_block = next(
-        (b for b in slide_spec.blocks if isinstance(b, MetricsBlock)),
-        None,
-    )
-    if not metrics_block or not metrics_block.items:
-        return
-
-    items = list(metrics_block.items)
-    n = len(items)
-    canvas_w = theme.canvas.width_in
-    side = 0.5
-    gap = 0.2
-    total_w = canvas_w - 2 * side
-    card_w = (total_w - gap * (n - 1)) / n
-    card_h = 1.0
-    card_top = content_top + 0.1
-
-    # Color rotation for metric cards (matching HTML .metric-card variants)
-    bg_colors = [
-        theme.palette.primary,     # navy
-        theme.palette.accent,      # orange
-        theme.palette.secondary,   # mid-blue
-        theme.palette.teal,        # teal
-        theme.palette.primary,     # navy
-        theme.palette.accent,      # orange
-    ]
-
-    for index, item in enumerate(items):
-        left = side + index * (card_w + gap)
-        bg = bg_colors[index % len(bg_colors)]
-
-        card = slide.shapes.add_shape(
-            runtime.MSO_AUTO_SHAPE_TYPE.ROUNDED_RECTANGLE,
-            runtime.Inches(left),
-            runtime.Inches(card_top),
-            runtime.Inches(card_w),
-            runtime.Inches(card_h),
-        )
-        card.fill.solid()
-        card.fill.fore_color.rgb = _hex_to_rgb(runtime, bg)
-        card.line.fill.background()
-
-        # Determine text colors based on background
-        is_accent_bg = bg == theme.palette.accent
-        label_color = theme.palette.primary if is_accent_bg else "#C0C8D4"
-        value_color = theme.palette.primary if is_accent_bg else "#FFFFFF"
-
-        tf = card.text_frame
-        tf.margin_left = runtime.Inches(0.08)
-        tf.margin_right = runtime.Inches(0.08)
-        tf.margin_top = runtime.Inches(0.08)
-        tf.margin_bottom = runtime.Inches(0.05)
-
-        # Label
-        p_label = tf.paragraphs[0]
-        p_label.alignment = runtime.PP_ALIGN.CENTER
-        rl = p_label.add_run()
-        rl.text = item.label.upper()
-        rl.font.name = theme.body_font.family
-        rl.font.size = runtime.Pt(8)
-        rl.font.bold = False
-        rl.font.color.rgb = _hex_to_rgb(runtime, label_color)
-
-        # Value
-        p_val = tf.add_paragraph()
-        p_val.alignment = runtime.PP_ALIGN.CENTER
-        rv = p_val.add_run()
-        rv.text = str(item.value) if item.value is not None else ""
-        rv.font.name = theme.metric_font.family
-        rv.font.size = runtime.Pt(18)
-        rv.font.bold = True
-        rv.font.color.rgb = _hex_to_rgb(runtime, value_color)
+    _render_brand_header(slide, report_spec, slide_spec, theme, runtime, model)
+    _render_left_column(slide, slide_spec, model, theme, runtime)
+    _render_financial_summary(slide, model, theme, runtime)
+    _render_side_panel(slide, model, report_spec, theme, runtime)
+    _render_footer(slide, report_spec, theme, runtime)

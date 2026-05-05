@@ -1,0 +1,75 @@
+{
+  "run_id": "b205e0236c38",
+  "created_at": "2026-05-04T09:30:45.615201Z",
+  "company_ticker": "MOFSL",
+  "status": "complete",
+  "artifacts": [
+    {
+      "label": "company",
+      "path": "inputs\\company.json",
+      "sha256": "3792e2d84340ebd30ab1523a8dd5927b3f54d503dcf28a134f7fdec08e1c0504",
+      "size_bytes": 750
+    },
+    {
+      "label": "metadata",
+      "path": "inputs\\metadata.json",
+      "sha256": "757a8ee303257b7814148f7ab276603c8055e06bcf4512c3241a7c2b8c20b9c6",
+      "size_bytes": 236
+    },
+    {
+      "label": "financial_model",
+      "path": "inputs\\financial_model.json",
+      "sha256": "ff52992f4fca4f4c992b3c1dc29767d315e72bd1ac3f7937927cc4429b0f91df",
+      "size_bytes": 15347
+    },
+    {
+      "label": "approved_report",
+      "path": "inputs\\approved_report.md",
+      "sha256": "5c0c75763afc79294ce3ee5b6de28d49fd0e09d6ed0bac655fe53ab274d354e9",
+      "size_bytes": 2685
+    },
+    {
+      "label": "slide_plan",
+      "path": "intermediates\\slide_plan.json",
+      "sha256": "63afa647a1b4deb17a4d4419a23d67d8eb6875defe76fcee96e830291afb08d7",
+      "size_bytes": 29589
+    },
+    {
+      "label": "report_spec",
+      "path": "intermediates\\report.json",
+      "sha256": "37e79b038cdbd8a07ae5e360b6a9ea1e22b1edd41e3313c565d7fcdd304816f0",
+      "size_bytes": 29618
+    },
+    {
+      "label": "pptx",
+      "path": "artifacts\\report.pptx",
+      "sha256": "fb4bee64e84d56787d8469880e0f690045a8c669b6237fa5aa8368eb719dae5f",
+      "size_bytes": 330625
+    },
+    {
+      "label": "render_manifest",
+      "path": "intermediates\\render_manifest.json",
+      "sha256": "56fe240a9850d2e7b89791cdfa0e1c905f2ee746ff475aa5f825a08bf182b413",
+      "size_bytes": 39128
+    },
+    {
+      "label": "pdf",
+      "path": "artifacts\\report.pdf",
+      "sha256": "5abda96628ddb57feeba5327f1fd6fa5592b63d550d5c35867c3833ffadcc4e3",
+      "size_bytes": 696765
+    },
+    {
+      "label": "run_log",
+      "path": "logs\\run.log",
+      "sha256": "92a416fe8eeb953d20ca01caf00094cca4564b0d9e2cc4a11295d844c6a81cce",
+      "size_bytes": 781
+    }
+  ],
+  "notes": [
+    "Slide s4 bullet block 'highlights' is dense.",
+    "Slide s7 bullet block 'industry_points' is dense.",
+    "Slide s17 bullet block 'risk_points' is dense.",
+    "Slide s18 bullet block 'trading_points' is dense.",
+    "Slide s20 text block 'disclaimer_text' is very long."
+  ]
+}

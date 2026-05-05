@@ -1,0 +1,639 @@
+{
+  "schema_version": "1.1.0",
+  "report_id": "5c095dda-fdd6-4890-bb44-c510d436e056",
+  "run_id": "c2471d50-4b26-4e65-a3af-c23787fb72b9",
+  "company": {
+    "name": "Motilal Oswal Financial Services Ltd",
+    "ticker": "MOFSL",
+    "exchange": "NSE",
+    "sector": "Financial Services",
+    "industry": "Capital Markets",
+    "isin": "INE338I01027",
+    "country": "India",
+    "description": "Motilal Oswal Financial Services, founded in 1987 by Motilal Oswal and Raamdeo Agrawal, has evolved from a research-driven equity broking house into one of India's most comprehensive financial services platforms. The company spans Capital Markets, Asset & Wealth Management, Housing Finance, and Alternative Investments, serving over 1,600,000 customers across 550+ cities through 2,500+ business locations. Research coverage of 300+ companies remains the firm's enduring competitive moat.",
+    "peer_list": []
+  },
+  "metadata": {
+    "rating": "BUY",
+    "currency": "INR",
+    "cmp": "822.9",
+    "target_price": "1127",
+    "upside_pct": "37",
+    "market_cap": "490790000000",
+    "analyst": "Pratik Gupta",
+    "report_date": "2026-04-28",
+    "report_type": "Initiation"
+  },
+  "inputs": {
+    "financial_model_ref": "C:\\pptx\\data\\samples\\financial_models\\motilal_model.json",
+    "approved_content_ref": "C:\\pptx\\data\\samples\\approved_reports\\motilal.md"
+  },
+  "slides": [
+    {
+      "slide_id": "s1",
+      "layout": "cover_slide",
+      "title": "Motilal Oswal Financial Services Initiation Note",
+      "subtitle": "BUY with SAARTHI Score of 72/100",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "thesis_summary",
+          "content": "BUY with SAARTHI Score of 72/100. Motilal Oswal Financial Services represents a compelling investment opportunity driven by its accelerating transformation from a cyclical broking firm into a high-quality, annuity-driven financial services platform. Annual Recurring Revenue (ARR) now constitutes the relevant figure of total net revenues — with management guiding for further increases — fundamentally re-rating the"
+        },
+        {
+          "type": "bullets",
+          "key": "highlights",
+          "items": [
+            "BUY with SAARTHI Score of 72/100. Motilal Oswal Financial Services represents a compelling investment opportunity driven",
+            "ARR contribution at the relevant figure of total net revenues, reducing cyclical broking volatility",
+            "Q2FY25 profits up the relevant figure YoY with the relevant figure revenue growth and the relevant figure ROE",
+            "Total AUM at the relevant figure lakh crore (+the relevant figure YoY); the relevant figure of AUM outperforming benchma"
+          ]
+        },
+        {
+          "type": "metrics",
+          "key": "headline_metrics",
+          "items": [
+            {
+              "label": "Rating",
+              "value": "BUY",
+              "source": "metadata.rating"
+            },
+            {
+              "label": "CMP",
+              "value": "₹822.9",
+              "source": "metadata.cmp"
+            },
+            {
+              "label": "Target Price",
+              "value": "₹1,127.0",
+              "source": "metadata.target_price"
+            },
+            {
+              "label": "Upside",
+              "value": "37.0%",
+              "source": "metadata.upside_pct"
+            },
+            {
+              "label": "Market Cap",
+              "value": "₹49,079 Cr",
+              "source": "metadata.market_cap"
+            },
+            {
+              "label": "EPS (FY25)",
+              "value": "₹822.9",
+              "source": "metadata.cmp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s2",
+      "layout": "investment_thesis",
+      "title": "Investment Thesis",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "summary",
+          "content": "BUY with SAARTHI Score of 72/100. Motilal Oswal Financial Services represents a compelling investment opportunity driven by its accelerating transformation from a cyclical broking firm into a high-quality, annuity-driven financial services platform. Annual Recurring Revenue (ARR) now constitutes the relevant figure of total net revenues — with management guiding for further increases — fundamentally re-rating the quality of the earnings base. CMP of the relevant figure offers a the relevant figure discount to analyst consensus target of the relevant figure with a probability-weighted target of the relevant figure."
+        },
+        {
+          "type": "bullets",
+          "key": "key_points",
+          "items": [
+            "BUY with SAARTHI Score of 72/100. Motilal Oswal Financial Services represents a compelling investment opportunity driven by its accelerating transformation from a cyclical broking",
+            "ARR contribution at the relevant figure of total net revenues, reducing cyclical broking volatility",
+            "Q2FY25 profits up the relevant figure YoY with the relevant figure revenue growth and the relevant figure ROE",
+            "Total AUM at the relevant figure lakh crore (+the relevant figure YoY); the relevant figure of AUM outperforming benchmarks over 3 years",
+            "Private Wealth AUM at the relevant figure lakh crore (+the relevant figure YoY); family count up the relevant figure YoY",
+            "Long-term credit rating upgraded to AA+ (Stable) by ICRA"
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s3",
+      "layout": "saarthi_scorecard",
+      "title": "SAARTHI Investment Quality Score — 72/100",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "saarthi_intro",
+          "content": "Proprietary 7-dimension framework. Overall score 72/100 (BUY (70-84 range))."
+        },
+        {
+          "type": "table",
+          "key": "saarthi_table",
+          "title": "SAARTHI Dimensions",
+          "source_key": "saarthi_dimensions",
+          "columns": [
+            {
+              "key": "code",
+              "label": "Code"
+            },
+            {
+              "key": "name",
+              "label": "Dimension"
+            },
+            {
+              "key": "score",
+              "label": "Score"
+            },
+            {
+              "key": "evidence",
+              "label": "Key Evidence"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s4",
+      "layout": "company_snapshot",
+      "title": "Motilal Oswal Financial Services Ltd At A Glance",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "business_summary",
+          "content": "Motilal Oswal Financial Services, founded in 1987 by Motilal Oswal and Raamdeo Agrawal, has evolved from a research-driven equity broking house into one of India's most comprehensive financial services platforms. The company spans Capital Markets, Asset & Wealth Management, Housing Finance, and Alternative Investments, serving over 1,600,000 customers across 550+ cities through 2,500+ business locations. Research coverage of 300+ companies remains the firm's enduring competitive moat."
+        },
+        {
+          "type": "metrics",
+          "key": "snapshot_metrics",
+          "items": [
+            {
+              "label": "CMP",
+              "value": "₹822.9",
+              "source": "metadata.cmp"
+            },
+            {
+              "label": "TP",
+              "value": "₹1,127.0",
+              "source": "metadata.target_price"
+            },
+            {
+              "label": "Upside",
+              "value": "37.0%",
+              "source": "metadata.upside_pct"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s5",
+      "layout": "industry_overview",
+      "title": "Industry Overview",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "industry_text",
+          "content": "Indian Financial Services is a strategic shock absorber for the growth story. India is expected to have the relevant figure HNWIs by 2027 and become the fourth-largest private wealth market by 2028, with a the relevant figure projected rise in UHNWIs. The financial services sector is projected to nearly double profits by FY30, led by NBFCs growing at the relevant figure annually. Mutual fund penetration at just 5–the relevant figure reflects substantial latent growth opportunity. Private credit hit a record the relevant figure billion in H1 2025, up the relevant figure YoY."
+        },
+        {
+          "type": "bullets",
+          "key": "industry_points",
+          "items": [
+            "Mutual fund penetration at 5-the relevant figure — massive latent opportunity",
+            "Financial savings shifting from gold/real estate to financial assets",
+            "BSE-listed companies grew from 135 (1995) to 5,328 (Feb 2025)",
+            "Private wealth set to be 4th-largest globally by 2028",
+            "NBFCs growing at the relevant figure annually with improving asset quality",
+            "Demographic dividend — large working-age population entering peak earning"
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s6",
+      "layout": "key_highlights",
+      "title": "Key Highlights",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "highlights_intro",
+          "content": "Six themes underpinning the investment view."
+        },
+        {
+          "type": "bullets",
+          "key": "highlights_items",
+          "items": [
+            "ARR Transformation: ARR at the relevant figure of net revenues (up from the relevant figure); fee-based at the relevant figure. Annuity income reduces transaction-cycle volatility.",
+            "Profitability Momentum: Q2FY25 PAT the relevant figure Cr (+the relevant figure YoY); H1FY26 operating PAT the relevant figure Cr (+the relevant figure YoY); Asset & PWM businesses leading at +the rel",
+            "AUM Scale and Outperformance: Total AUM the relevant figureL Cr (+the relevant figure YoY). AMC AUM the relevant figureL Cr (+the relevant figure) with the relevant figure Cr net flows. the relevant f",
+            "Private Wealth Expansion: PWM AUM the relevant figureL Cr (+the relevant figure YoY); family count +the relevant figure YoY; PAT +the relevant figure (9M). Distribution book +the relevant figure YoY t",
+            "Valuation Opportunity: CMP the relevant figure vs consensus TP the relevant figure (max the relevant figure) — the relevant figure upside. Probability-weighted target the relevant figure.",
+            "Credit Upgrade: Long-term credit rating upgraded to AA+ (Stable) by ICRA. Net worth the relevant figure Cr (+the relevant figure YoY)."
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s7",
+      "layout": "text_plus_chart",
+      "title": "Revenue Trend",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "trend_summary",
+          "content": "Revenue trajectory across the forecast period reflects mix shift and AUM scale-up."
+        },
+        {
+          "type": "chart",
+          "key": "trend_chart",
+          "chart_type": "bar",
+          "title": "Revenue Trend",
+          "category_source": "period_labels",
+          "series": [
+            {
+              "label": "Revenue",
+              "source_key": "series.Revenue"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s8",
+      "layout": "full_table",
+      "title": "Annual Financial Summary",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "table",
+          "key": "financial_table",
+          "title": "Revenue By Period",
+          "source_key": "series.Revenue",
+          "columns": [
+            {
+              "key": "period",
+              "label": "Period"
+            },
+            {
+              "key": "value",
+              "label": "Revenue"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s9",
+      "layout": "quarterly_summary",
+      "title": "Quarterly Performance",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "quarterly_text",
+          "content": "Recent quarterly trajectory showing the variability inherent to the cyclical revenue base."
+        },
+        {
+          "type": "table",
+          "key": "quarterly_table",
+          "title": "Quarterly PAT",
+          "source_key": "quarterly_series.Quarterly PAT",
+          "columns": [
+            {
+              "key": "period",
+              "label": "Quarter"
+            },
+            {
+              "key": "value",
+              "label": "PAT"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s10",
+      "layout": "full_table",
+      "title": "Segment Mix",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "table",
+          "key": "segment_table",
+          "title": "Segment Breakdown",
+          "source_key": "segments",
+          "columns": [
+            {
+              "key": "name",
+              "label": "Segment"
+            },
+            {
+              "key": "aum_label",
+              "label": "Scale Metric"
+            },
+            {
+              "key": "aum_value",
+              "label": "Latest"
+            },
+            {
+              "key": "description",
+              "label": "Notes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s11",
+      "layout": "ratio_summary",
+      "title": "Key Ratios",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "ratio_text",
+          "content": "Margin and return profile across the forecast period."
+        },
+        {
+          "type": "table",
+          "key": "ratio_table",
+          "title": "Ratio Summary",
+          "source_key": "ratio_summary",
+          "columns": [
+            {
+              "key": "ratio",
+              "label": "Ratio"
+            },
+            {
+              "key": "FY22A",
+              "label": "FY22A"
+            },
+            {
+              "key": "FY23A",
+              "label": "FY23A"
+            },
+            {
+              "key": "FY24A",
+              "label": "FY24A"
+            },
+            {
+              "key": "FY25A",
+              "label": "FY25A"
+            },
+            {
+              "key": "FY26E",
+              "label": "FY26E"
+            },
+            {
+              "key": "FY27E",
+              "label": "FY27E"
+            },
+            {
+              "key": "FY28E",
+              "label": "FY28E"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s12",
+      "layout": "valuation_table",
+      "title": "Valuation — Methods Summary",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "valuation_text",
+          "content": "Probability-weighted target price reconciles bull, base, and bear cases."
+        },
+        {
+          "type": "table",
+          "key": "valuation_methods_table",
+          "title": "Target Price Bands",
+          "source_key": "valuation_bands",
+          "columns": [
+            {
+              "key": "method",
+              "label": "Case"
+            },
+            {
+              "key": "base",
+              "label": "Target"
+            },
+            {
+              "key": "weight",
+              "label": "Weight"
+            },
+            {
+              "key": "notes",
+              "label": "Basis"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s13",
+      "layout": "full_table",
+      "title": "Scenario Analysis",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "table",
+          "key": "scenario_table",
+          "title": "Bull / Base / Bear",
+          "source_key": "scenarios",
+          "columns": [
+            {
+              "key": "name",
+              "label": "Case"
+            },
+            {
+              "key": "revenue_cagr",
+              "label": "Rev CAGR"
+            },
+            {
+              "key": "ebitda_margin",
+              "label": "EBITDA Mgn"
+            },
+            {
+              "key": "target_price",
+              "label": "Target Price"
+            },
+            {
+              "key": "probability",
+              "label": "Probability"
+            },
+            {
+              "key": "notes",
+              "label": "Drivers"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s14",
+      "layout": "text_plus_bullets",
+      "title": "Key Catalysts",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "catalysts_text",
+          "content": "- ARR contribution crossing the relevant figure of revenues, triggering valuation re-rating from broking to asset management multiples - Sustained AMC AUM growth above the relevant figure YoY with net flows exceeding the relevant figure crore annually - Private wealth AUM growth above the relevant figure YoY with family count expansion - Operating leverage improvement with cost-to-income ratio declining - Regulatory clarity on F&O trading norms"
+        },
+        {
+          "type": "bullets",
+          "key": "catalyst_points",
+          "items": [
+            "ARR contribution crossing the relevant figure of revenues, triggering valuation re-rating from broking to asset management multiples",
+            "Sustained AMC AUM growth above the relevant figure YoY with net flows exceeding the relevant figure crore annually",
+            "Private wealth AUM growth above the relevant figure YoY with family count expansion",
+            "Operating leverage improvement with cost-to-income ratio declining",
+            "Regulatory clarity on F&O trading norms"
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s15",
+      "layout": "management_profile",
+      "title": "Management Team",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "management_intro",
+          "content": "Founder-led leadership with deep institutional DNA."
+        },
+        {
+          "type": "table",
+          "key": "management_table",
+          "title": "Leadership",
+          "source_key": "management_team",
+          "columns": [
+            {
+              "key": "name",
+              "label": "Name"
+            },
+            {
+              "key": "role",
+              "label": "Role"
+            },
+            {
+              "key": "bio",
+              "label": "Background"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s16",
+      "layout": "forensic_assessment",
+      "title": "Forensic / Governance — Monitor Closely",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "forensic_intro",
+          "content": "Recurring regulatory matters are operational rather than fraudulent. Despite SEBI interventions, structural lapses suggest deeper governance attention needed in risk management. Pattern warrants monitoring but does not impair the business model."
+        },
+        {
+          "type": "table",
+          "key": "forensic_table",
+          "title": "Regulatory Matters",
+          "source_key": "forensic_violations",
+          "columns": [
+            {
+              "key": "title",
+              "label": "Matter"
+            },
+            {
+              "key": "description",
+              "label": "Description"
+            },
+            {
+              "key": "severity",
+              "label": "Severity"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s17",
+      "layout": "text_plus_bullets",
+      "title": "Trading Strategy",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "strategy_text",
+          "content": "Entry: the relevant figure-850. 15-the relevant figure discount to analyst consensus target — margin of safety. Position size: 3-the relevant figure of portfolio (institutional). Review: Quarterly. Downside exit: Stop-loss at the relevant figure (-the relevant figure from CMP) on technical break with high volume. Upside exit: Sell the relevant figure at the relevant figure-1,150 (30-the relevant figure gains) / Sell remaining at the relevant figure+ if multiples expand beyond the relevant figure P/E."
+        },
+        {
+          "type": "bullets",
+          "key": "strategy_review",
+          "items": [
+            "ARR contribution above the relevant figure of net revenues",
+            "AMC AUM growth above the relevant figure YoY with net flows > the relevant figure Cr",
+            "PWM AUM growth above the relevant figure YoY with family count expansion",
+            "Cost-to-income ratio declining",
+            "SEBI compliance with no major enforcement actions"
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s18",
+      "layout": "risks_and_catalysts",
+      "title": "Key Risks",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "bullets",
+          "key": "risk_points",
+          "items": [
+            "SEBI regulatory headwinds on F&O trading norms compressing cyclical broking revenues",
+            "Q2FY26 profit declined the relevant figure YoY and revenue the relevant figure YoY due to regulatory changes — residual cyclicality",
+            "Competitive intensity from discount brokers and fintech platforms compressing yields",
+            "Forensic / governance: recurring SEBI matters require monitoring (Monitor Closely category)",
+            "Mark-to-market volatility on the proprietary book",
+            "Housing finance asset-quality slippage in stressed credit cycles"
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s19",
+      "layout": "analyst_certification",
+      "title": "Analyst Certification & Disclosures",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "cert_text",
+          "content": "## Analyst Certification\n\nI, the research analyst whose name appears on this report, certify that:\n\n1. The views expressed in this report accurately reflect my personal views about the subject company and its securities.\n2. No part of my compensation was, is, or will be directly or indirectly related to the specific recommendations or views expressed herein.\n3. I have not received any compensation from the subject company in the past twelve months.\n4. I, my relatives, or Tikona Capital do not have any actual or potential conflict of interest with the subject company at the time of publication of this report, except as may be disclosed below.\n\n## Disclosures\n\n- Ownership in subject company: None unless otherwise disclosed.\n- Material conflicts of interest: None at the time of publication.\n- Investment banking or merchant banking relationship in the past twelve months: None.\n\nThis certification is made in accordance with SEBI (Research Analysts) Regulations, 2014."
+        }
+      ]
+    },
+    {
+      "slide_id": "s20",
+      "layout": "disclaimer",
+      "title": "Disclaimer",
+      "subtitle": null,
+      "blocks": [
+        {
+          "type": "text",
+          "key": "disclaimer_text",
+          "content": "## Disclaimer\n\nThis research report is prepared by Tikona Capital (SEBI Research Analyst Registration No. INH000069807) for the exclusive use of its clients. It is intended solely for informational purposes and does not constitute an offer, solicitation, or recommendation to buy, sell, or hold any security.\n\nThe views expressed are those of the analyst as of the date of publication and are based on information believed to be reliable but are not guaranteed as to accuracy or completeness. Past performance is not indicative of future results. Investments in securities are subject to market risks. Investors should consult their own financial, legal, and tax advisors before making any investment decision.\n\nTikona Capital, its affiliates, directors, employees, or research analysts may, from time to time, hold positions in the securities mentioned, or in instruments related to such securities, and may transact in them in a manner inconsistent with the views expressed herein.\n\nThis document is the intellectual property of Tikona Capital. No part of it may be reproduced, distributed, or transmitted without prior written consent. Unauthorized use is prohibited.\n\nFor grievances, contact: research@tikonacapital.in."
+        }
+      ]
+    }
+  ]
+}

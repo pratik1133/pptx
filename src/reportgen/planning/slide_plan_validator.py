@@ -64,6 +64,8 @@ def _valid_source_keys(bundle: NormalizedInputBundle) -> set[str]:
     }
     if bundle.source.metadata.upside_pct is not None:
         keys.add("metadata.upside_pct")
+    if bundle.source.metadata.market_cap is not None:
+        keys.add("metadata.market_cap")
     if refs.has_quarterly:
         keys.add("period_labels.quarterly")
     if refs.has_peers:

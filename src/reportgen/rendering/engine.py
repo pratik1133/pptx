@@ -14,6 +14,21 @@ from reportgen.rendering.metrics_renderer import render_metrics_block
 from reportgen.rendering.pptx_runtime import load_pptx_runtime
 from reportgen.rendering.render_manifest import RenderManifest
 from reportgen.rendering.slides.cover_slide import render_cover_slide
+from reportgen.rendering.slides.disclaimer_slide import render_disclaimer_slide
+from reportgen.rendering.slides.saarthi_slide import render_saarthi_slide
+from reportgen.rendering.slides.scenario_slide import render_scenario_slide
+from reportgen.rendering.slides.story_charts_slide import render_story_charts_slide
+from reportgen.rendering.slides.strategy_slide import render_strategy_slide
+from reportgen.rendering.slides.investment_thesis_slide import render_investment_thesis_slide
+from reportgen.rendering.slides.industry_overview_slide import render_industry_overview_slide
+from reportgen.rendering.slides.company_overview_slide import render_company_overview_slide
+from reportgen.rendering.slides.earnings_forecast_slide import render_earnings_forecast_slide
+from reportgen.rendering.slides.business_segments_slide import render_business_segments_slide
+from reportgen.rendering.slides.quarterly_performance_slide import render_quarterly_performance_slide
+from reportgen.rendering.slides.key_highlights_slide import render_key_highlights_slide
+from reportgen.rendering.slides.forensic_assessment_slide import render_forensic_assessment_slide
+from reportgen.rendering.slides.risks_and_catalysts_slide import render_risks_and_catalysts_slide
+from reportgen.rendering.slides.valuation_slide import render_valuation_slide
 from reportgen.rendering.table_renderer import render_table_block
 from reportgen.rendering.text_renderer import add_bullet_list, add_textbox
 from reportgen.rendering.theme import DEFAULT_THEME, BrandTheme
@@ -101,6 +116,119 @@ class PresentationRenderer:
             market_cap=str(report_spec.metadata.market_cap) if report_spec.metadata.market_cap else "",
             rating=report_spec.metadata.rating or "",
         )
+
+        if slide_spec.layout == "saarthi_scorecard":
+            render_saarthi_slide(slide, slide_spec, report_spec, self.theme, runtime)
+            return
+
+        if slide_spec.layout == "investment_thesis":
+            render_investment_thesis_slide(slide, slide_spec, report_spec, self.theme, runtime, page_number=page_number)
+            return
+
+        if slide_spec.layout == "industry_overview":
+            render_industry_overview_slide(slide, slide_spec, report_spec, self.theme, runtime, page_number=page_number)
+            return
+
+        if slide_spec.layout == "company_snapshot":
+            render_company_overview_slide(slide, slide_spec, report_spec, self.theme, runtime, page_number=page_number)
+            return
+
+        if slide_spec.layout in ("valuation_table", "valuation_summary"):
+            render_valuation_slide(slide, slide_spec, report_spec, self.theme, runtime, page_number=page_number)
+            return
+
+        if slide_spec.layout in ("disclaimer", "analyst_certification"):
+            render_disclaimer_slide(slide, slide_spec, report_spec, self.theme, runtime, page_number=page_number)
+            return
+
+        if slide_spec.layout == "scenario_analysis":
+            render_scenario_slide(slide, slide_spec, report_spec, self.theme, runtime, page_number=page_number)
+            for block in slide_spec.blocks:
+                if isinstance(block, TableBlock):
+                    try:
+                        rows = resolver.resolve_table_rows(block.source_key)
+                        for row_index, row in enumerate(rows):
+                            for column in block.columns:
+                                self.manifest.add(
+                                    slide_id=slide_spec.slide_id,
+                                    block_key=block.key,
+                                    source_key=f"{block.source_key}[{row_index}].{column.key}",
+                                    resolved_value=str(row.get(column.key, "")),
+                                    kind="table_cell",
+                                )
+                    except KeyError:
+                        pass
+            return
+
+        if slide_spec.layout == "text_plus_chart" and slide_spec.title.casefold().startswith("story in charts"):
+            render_story_charts_slide(slide, slide_spec, report_spec, self.theme, runtime, page_number=page_number)
+            for block in slide_spec.blocks:
+                if isinstance(block, ChartBlock):
+                    try:
+                        categories = resolver.resolve_period_labels(block.category_source)
+                        self.manifest.add(
+                            slide_id=slide_spec.slide_id,
+                            block_key=block.key,
+                            source_key=block.category_source,
+                            resolved_value=", ".join(categories),
+                            kind="chart_category",
+                        )
+                        for series_ref in block.series:
+                            series = resolver.resolve_series(series_ref.source_key)
+                            for period, value in zip(series.periods, series.values):
+                                self.manifest.add(
+                                    slide_id=slide_spec.slide_id,
+                                    block_key=block.key,
+                                    source_key=f"{series_ref.source_key}@{period}",
+                                    resolved_value=str(value),
+                                    kind="chart_series",
+                                )
+                    except KeyError:
+                        pass
+            return
+
+        if slide_spec.layout == "text_plus_bullets" and "entry" in slide_spec.title.casefold() and "exit" in slide_spec.title.casefold():
+            render_strategy_slide(slide, slide_spec, report_spec, self.theme, runtime, page_number=page_number)
+            return
+
+        if slide_spec.layout == "full_table" and "earning" in slide_spec.title.casefold():
+            render_earnings_forecast_slide(slide, slide_spec, report_spec, self.theme, runtime, page_number=page_number)
+            return
+
+        if slide_spec.layout == "full_table" and "business model" in slide_spec.title.casefold():
+            render_business_segments_slide(slide, slide_spec, report_spec, self.theme, runtime, page_number=page_number)
+            return
+
+        if slide_spec.layout == "quarterly_summary":
+            render_quarterly_performance_slide(slide, slide_spec, report_spec, self.theme, runtime, page_number=page_number)
+            return
+
+        if slide_spec.layout == "key_highlights" or slide_spec.layout == "text_plus_bullets":
+            render_key_highlights_slide(slide, slide_spec, report_spec, self.theme, runtime, page_number=page_number)
+            return
+
+        if slide_spec.layout == "forensic_assessment":
+            render_forensic_assessment_slide(slide, slide_spec, report_spec, self.theme, runtime, page_number=page_number)
+            for block in slide_spec.blocks:
+                if isinstance(block, TableBlock):
+                    try:
+                        rows = resolver.resolve_table_rows(block.source_key)
+                        for row_index, row in enumerate(rows):
+                            for column in block.columns:
+                                self.manifest.add(
+                                    slide_id=slide_spec.slide_id,
+                                    block_key=block.key,
+                                    source_key=f"{block.source_key}[{row_index}].{column.key}",
+                                    resolved_value=str(row.get(column.key, "")),
+                                    kind="table_cell",
+                                )
+                    except KeyError:
+                        pass
+            return
+
+        if slide_spec.layout == "risks_and_catalysts":
+            render_risks_and_catalysts_slide(slide, slide_spec, report_spec, self.theme, runtime, page_number=page_number)
+            return
 
         layout_definition = get_layout_definition(slide_spec.layout)
 

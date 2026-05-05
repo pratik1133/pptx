@@ -1,0 +1,8 @@
+ts=2026-05-04T09:55:39.532429+00:00 level=INFO msg=pipeline_started run_id=315fc0eacaf4 ticker=MOFSL
+ts=2026-05-04T09:55:39.533005+00:00 level=WARN msg=qa_warning detail=Slide s1 metrics block 'headline_metrics' is dense.
+ts=2026-05-04T09:55:39.533005+00:00 level=WARN msg=qa_warning detail=Slide s6 bullet item in 'highlights_items' is long and may wrap heavily.
+ts=2026-05-04T09:55:39.533005+00:00 level=WARN msg=qa_warning detail=Slide s6 bullet item in 'highlights_items' is long and may wrap heavily.
+ts=2026-05-04T09:55:39.533005+00:00 level=WARN msg=qa_warning detail=Slide s6 bullet item in 'highlights_items' is long and may wrap heavily.
+ts=2026-05-04T09:55:39.533005+00:00 level=WARN msg=qa_warning detail=Slide s6 bullet item in 'highlights_items' is long and may wrap heavily.
+ts=2026-05-04T09:55:39.533005+00:00 level=WARN msg=qa_warning detail=Slide s20 text block 'disclaimer_text' is very long.
+ts=2026-05-04T09:55:39.533005+00:00 level=INFO msg=pipeline_finished status=complete

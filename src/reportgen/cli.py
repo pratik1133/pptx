@@ -196,6 +196,8 @@ def run_html_pipeline_cmd(
         console.print(f"[bold]HTML:[/bold] {result.html_path}")
     if result.pdf_path:
         console.print(f"[bold]PDF:[/bold] {result.pdf_path}")
+    if result.pptx_path:
+        console.print(f"[bold]PPTX:[/bold] {result.pptx_path}")
     elif result.manifest.notes:
         for note in result.manifest.notes:
             console.print(f"[yellow]- {note}[/yellow]")

@@ -1,0 +1,69 @@
+{
+  "run_id": "f54451ebeb1b",
+  "created_at": "2026-05-05T08:39:56.424654Z",
+  "company_ticker": "MOFSL",
+  "status": "complete",
+  "artifacts": [
+    {
+      "label": "company",
+      "path": "inputs\\company.json",
+      "sha256": "3792e2d84340ebd30ab1523a8dd5927b3f54d503dcf28a134f7fdec08e1c0504",
+      "size_bytes": 750
+    },
+    {
+      "label": "metadata",
+      "path": "inputs\\metadata.json",
+      "sha256": "757a8ee303257b7814148f7ab276603c8055e06bcf4512c3241a7c2b8c20b9c6",
+      "size_bytes": 236
+    },
+    {
+      "label": "financial_model",
+      "path": "inputs\\financial_model.json",
+      "sha256": "ff52992f4fca4f4c992b3c1dc29767d315e72bd1ac3f7937927cc4429b0f91df",
+      "size_bytes": 15347
+    },
+    {
+      "label": "approved_report",
+      "path": "inputs\\approved_report.md",
+      "sha256": "5c0c75763afc79294ce3ee5b6de28d49fd0e09d6ed0bac655fe53ab274d354e9",
+      "size_bytes": 2685
+    },
+    {
+      "label": "slide_plan",
+      "path": "intermediates\\slide_plan.json",
+      "sha256": "1e4f8baba0c08654ef2438da3cc8152f22d67133618c58b97aac95503c056603",
+      "size_bytes": 24652
+    },
+    {
+      "label": "report_spec",
+      "path": "intermediates\\report.json",
+      "sha256": "12bbc21bd2e8f5d588cdab2b048b9a6a3e99e58643f5784e36116f13e1dc99b1",
+      "size_bytes": 25443
+    },
+    {
+      "label": "pptx",
+      "path": "artifacts\\report.pptx",
+      "sha256": "43d0ad5f303110cf9a827825653b9a1a3776befe6a2536852af231cf725e9b51",
+      "size_bytes": 409312
+    },
+    {
+      "label": "render_manifest",
+      "path": "intermediates\\render_manifest.json",
+      "sha256": "597b484a03e3f30655d7edff5aa3deca8dd25dd45f0bd77eaeae214029bfb0f5",
+      "size_bytes": 23703
+    },
+    {
+      "label": "pdf",
+      "path": "artifacts\\report.pdf",
+      "sha256": "89523d4619129c93ec52d0161bfe3a2b4c55b44a53b5fb7eed30924510b75075",
+      "size_bytes": 892318
+    },
+    {
+      "label": "run_log",
+      "path": "logs\\run.log",
+      "sha256": "1afe096aee5e85a0f3a7998e72c290def289ef7256ea568798c00d4bbc548a7f",
+      "size_bytes": 186
+    }
+  ],
+  "notes": []
+}

@@ -1,0 +1,2122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Motilal Oswal Financial Services Ltd — Equity Research | Tikona Capital</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@page { size: A4 landscape; margin: 8mm; }
+
+:root {
+  --primary-dark: #1F4690;
+  --primary-mid: #3A5BA0;
+  --accent: #FFA500;
+  --accent-light: #FFE5B4;
+  --slate: #3a4d6b;
+  --mid-grey: #6b7c93;
+  --light-grey: #f4f6f9;
+  --border: #d5dce8;
+  --text: #1a2537;
+  --text-light: #4a5568;
+  --green: #1a7a4a;
+  --red: #b91c1c;
+  --teal: #0e7490;
+  --white: #ffffff;
+  --page-width: 297mm;
+  --page-height: 210mm;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 8pt;
+  color: var(--text);
+  background: #e0e6f0;
+  line-height: 1.45;
+}
+
+.page {
+  width: var(--page-width);
+  min-height: var(--page-height);
+  background: var(--white);
+  margin: 0 auto 16px;
+  position: relative;
+  padding: 0;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  overflow: hidden;
+}
+
+/* ===== COVER HEADER ===== */
+.report-header {
+  background: var(--primary-dark);
+  padding: 11px 18px 9px;
+  position: relative;
+  overflow: hidden;
+}
+.report-header::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 220px; height: 100%;
+  background: linear-gradient(135deg, var(--accent) 0%, #FFB833 100%);
+  clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+}
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.firm-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  position: relative;
+  z-index: 2;
+}
+.firm-logo {
+  width: 32px; height: 32px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 13px; font-weight: 700;
+  color: var(--primary-dark);
+}
+.firm-name {
+  color: var(--white);
+  font-family: 'Playfair Display', serif;
+  font-size: 12pt;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+.firm-tagline {
+  color: rgba(255,255,255,0.6);
+  font-size: 6pt;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  font-family: 'JetBrains Mono', monospace;
+}
+.report-type-badge {
+  position: relative; z-index: 2;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 4px;
+  padding: 3px 10px;
+  color: var(--white);
+  font-size: 6pt;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  font-family: 'JetBrains Mono', monospace;
+}
+.header-company-line {
+  margin-top: 8px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.company-name-hdr {
+  font-family: 'Playfair Display', serif;
+  font-size: 20pt;
+  font-weight: 700;
+  color: var(--white);
+}
+.rating-badge {
+  background: var(--accent);
+  color: var(--primary-dark);
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 8.5pt;
+  padding: 2px 12px;
+  border-radius: 3px;
+  letter-spacing: 1px;
+}
+.sector-tag {
+  color: rgba(255,255,255,0.65);
+  font-size: 7pt;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.4px;
+}
+
+/* ===== HEADER STATS BAR (Cover) ===== */
+.header-stats-bar {
+  display: flex;
+  gap: 0;
+  margin-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding-top: 7px;
+  position: relative; z-index: 2;
+}
+.hstat {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding-right: 18px;
+  margin-right: 18px;
+  border-right: 1px solid rgba(255,255,255,0.18);
+}
+.hstat:last-child { border-right: none; }
+.hstat-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 5.5pt;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+.hstat-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11pt;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.1;
+}
+.hstat-value.white { color: var(--white); }
+.hstat-sub {
+  font-size: 6pt;
+  color: rgba(255,255,255,0.45);
+  font-family: 'JetBrains Mono', monospace;
+}
+.report-date {
+  color: rgba(255,255,255,0.45);
+  font-size: 6pt;
+  font-family: 'JetBrains Mono', monospace;
+  position: absolute;
+  bottom: 8px; right: 18px;
+  z-index: 2;
+}
+
+/* ===== MINI HEADER (sub-pages) ===== */
+.mini-header {
+  background: var(--primary-dark);
+  padding: 5px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mini-firm { color: var(--accent); font-family: 'JetBrains Mono', monospace; font-size: 6.5pt; font-weight: 700; letter-spacing: 1px; }
+.mini-company { color: var(--white); font-family: 'Playfair Display', serif; font-size: 8pt; font-weight: 600; }
+
+/* ===== MINI HEADER STATS ===== */
+.mini-stats {
+  display: flex;
+  gap: 0;
+  align-items: center;
+}
+.mini-stat {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 10px;
+  border-right: 1px solid rgba(255,255,255,0.2);
+}
+.mini-stat:last-child { border-right: none; padding-right: 0; }
+.mini-stat-label { font-size: 5.5pt; color: rgba(255,255,255,0.5); font-family: 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 0.5px; }
+.mini-stat-value { font-size: 7.5pt; font-weight: 700; color: var(--white); font-family: 'JetBrains Mono', monospace; }
+.mini-stat-value.accent { color: var(--accent); }
+.mini-stat-value.green-v { color: #6ee7b7; }
+.mini-stat-value.buy { background: var(--accent); color: var(--primary-dark); padding: 1px 6px; border-radius: 2px; font-size: 6.5pt; }
+
+/* TAGLINE BAND */
+.tagline-band {
+  background: var(--accent);
+  padding: 6px 18px;
+}
+.tagline-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 10.5pt;
+  font-weight: 600;
+  color: var(--primary-dark);
+  letter-spacing: 0.2px;
+}
+
+/* THREE-COL LAYOUT */
+.three-col-wide {
+  display: grid;
+  grid-template-columns: 2fr 1fr 180px;
+  gap: 12px;
+  padding: 12px 18px 0;
+}
+.three-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px;
+}
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.two-col-wide {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 14px;
+}
+
+/* PAGE CONTENT */
+.page-content {
+  padding: 12px 18px;
+}
+
+/* SECTION HEADER */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 9px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--primary-dark);
+}
+.section-number {
+  background: var(--primary-dark);
+  color: var(--accent);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7.5pt;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 2px;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 13pt;
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+/* THESIS BOX */
+.thesis-box {
+  border-left: 3px solid var(--accent);
+  padding: 9px 12px;
+  background: var(--accent-light);
+  margin-bottom: 10px;
+  border-radius: 0 4px 4px 0;
+}
+.thesis-box p {
+  font-size: 7.5pt;
+  font-weight: 600;
+  color: var(--primary-dark);
+  line-height: 1.55;
+}
+
+/* SIDE PANEL */
+.side-panel-card {
+  background: var(--primary-dark);
+  border-radius: 4px;
+  padding: 9px;
+  margin-bottom: 8px;
+}
+.side-panel-card.light {
+  background: var(--light-grey);
+  border: 1px solid var(--border);
+}
+.side-metric-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 5.5pt;
+  color: rgba(255,255,255,0.55);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+.side-metric-title.dark { color: var(--mid-grey); }
+.side-metric-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12pt;
+  font-weight: 700;
+  color: var(--accent);
+}
+.side-metric-value.dark { color: var(--primary-dark); }
+.side-metric-sub {
+  font-size: 6pt;
+  color: rgba(255,255,255,0.45);
+  font-family: 'JetBrains Mono', monospace;
+}
+.side-metric-sub.dark { color: var(--mid-grey); }
+.side-divider { border-top: 1px solid rgba(255,255,255,0.1); margin: 5px 0; }
+.side-divider.dark { border-color: var(--border); }
+.side-row { display: flex; justify-content: space-between; align-items: center; padding: 2px 0; }
+.side-label { font-size: 6.5pt; color: rgba(255,255,255,0.65); }
+.side-label.dark { color: var(--text-light); }
+.side-value { font-size: 6.5pt; font-weight: 600; color: var(--white); font-family: 'JetBrains Mono', monospace; }
+.side-value.dark { color: var(--primary-dark); }
+.side-value.accent { color: var(--accent); }
+.side-section-hdr {
+  font-size: 6pt;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'JetBrains Mono', monospace;
+  margin: 5px 0 3px;
+  font-weight: 700;
+}
+
+/* TABLES */
+.fin-table-wrap { margin-top: 8px; }
+.fin-table-title {
+  font-size: 7pt;
+  font-weight: 700;
+  color: var(--primary-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  font-family: 'JetBrains Mono', monospace;
+  margin-bottom: 3px;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 2px;
+}
+table { width: 100%; border-collapse: collapse; font-size: 6.5pt; }
+thead tr { background: var(--primary-dark); }
+thead th {
+  color: var(--white);
+  padding: 3.5px 5px;
+  text-align: right;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 6pt;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+thead th:first-child { text-align: left; }
+tbody tr:nth-child(odd) { background: var(--light-grey); }
+td {
+  padding: 2.5px 5px;
+  text-align: right;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 6.5pt;
+}
+td:first-child { text-align: left; font-weight: 500; color: var(--slate); font-family: 'Source Serif 4', serif; font-size: 6.5pt; }
+td.bold { font-weight: 700; color: var(--primary-dark); }
+td.green { color: var(--green); font-weight: 600; }
+td.red { color: var(--red); font-weight: 600; }
+td.accent { color: var(--accent); font-weight: 700; }
+.tbl-highlight td { background: rgba(255,165,0,0.1) !important; font-weight: 700; }
+.tbl-section td { background: #e8eef8 !important; font-weight: 700; color: var(--primary-dark) !important; font-family: 'JetBrains Mono', monospace; font-size: 6.5pt; }
+
+/* METRIC CARDS */
+.metric-strip { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin-bottom: 10px; }
+.metric-strip-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 10px; }
+.metric-strip-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 10px; }
+.metric-card {
+  background: var(--primary-dark);
+  border-radius: 4px;
+  padding: 7px 8px;
+  text-align: center;
+}
+.metric-card.accent-bg { background: var(--accent); }
+.metric-card.mid-bg { background: var(--primary-mid); }
+.metric-card.teal-bg { background: var(--teal); }
+.metric-card.light-bg { background: var(--accent-light); border: 1px solid var(--accent); }
+.metric-card-label { font-size: 5.5pt; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.7px; font-family: 'JetBrains Mono', monospace; margin-bottom: 2px; }
+.metric-card.accent-bg .metric-card-label { color: var(--primary-dark); }
+.metric-card.light-bg .metric-card-label { color: var(--primary-dark); }
+.metric-card-value { font-size: 11pt; font-weight: 700; color: var(--white); font-family: 'JetBrains Mono', monospace; }
+.metric-card.accent-bg .metric-card-value { color: var(--primary-dark); }
+.metric-card.light-bg .metric-card-value { color: var(--primary-dark); }
+.metric-card-sub { font-size: 5.5pt; color: rgba(255,255,255,0.45); font-family: 'JetBrains Mono', monospace; margin-top: 1px; }
+.metric-card.accent-bg .metric-card-sub { color: rgba(31,70,144,0.65); }
+.metric-card.light-bg .metric-card-sub { color: rgba(31,70,144,0.65); }
+
+/* ANALYSIS BLOCKS */
+.analysis-block { margin-bottom: 9px; }
+.analysis-block p { font-size: 7.5pt; line-height: 1.55; color: var(--text); margin-bottom: 5px; }
+.analysis-bold { font-weight: 700; color: var(--primary-dark); }
+.analysis-block ul { margin-left: 11px; margin-bottom: 5px; }
+.analysis-block li { font-size: 7.5pt; line-height: 1.5; color: var(--text); margin-bottom: 2px; }
+
+/* HIGHLIGHT BOXES */
+.highlight-box {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 7px 9px;
+  background: var(--light-grey);
+  margin-bottom: 8px;
+}
+.highlight-box.accent-border { border-left: 3px solid var(--accent); }
+.highlight-box.navy-border { border-left: 3px solid var(--primary-dark); }
+.highlight-box.green-border { border-left: 3px solid var(--green); }
+.highlight-box.red-border { border-left: 3px solid var(--red); }
+.highlight-box-title { font-weight: 700; color: var(--primary-dark); font-size: 7.5pt; margin-bottom: 3px; }
+.highlight-box p { font-size: 7pt; color: var(--text-light); line-height: 1.5; }
+
+/* CATALYST ITEMS */
+.catalyst-item { display: flex; gap: 7px; margin-bottom: 7px; padding: 5px 7px; background: var(--light-grey); border-radius: 3px; border-left: 3px solid var(--accent); }
+.catalyst-icon { font-size: 12pt; flex-shrink: 0; width: 20px; text-align: center; }
+.catalyst-title { font-weight: 700; font-size: 7.5pt; color: var(--primary-dark); margin-bottom: 1px; }
+.catalyst-desc { font-size: 6.5pt; color: var(--text-light); line-height: 1.4; }
+.catalyst-badge { display: inline-block; background: var(--primary-dark); color: var(--accent); font-size: 5.5pt; padding: 1px 5px; border-radius: 2px; font-family: 'JetBrains Mono', monospace; margin-left: 4px; }
+
+/* RISK ITEMS */
+.risk-item { display: flex; gap: 7px; margin-bottom: 5px; padding-bottom: 5px; border-bottom: 1px solid var(--border); }
+.risk-badge {
+  flex-shrink: 0;
+  width: 36px;
+  height: 15px;
+  border-radius: 2px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 5pt;
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.4px;
+}
+.risk-high { background: #fee2e2; color: var(--red); }
+.risk-med { background: #fef3c7; color: #92400e; }
+.risk-low { background: #d1fae5; color: var(--green); }
+.risk-text { font-size: 6.5pt; color: var(--text); line-height: 1.4; }
+.risk-title { font-weight: 700; color: var(--primary-dark); margin-bottom: 1px; font-size: 7pt; }
+
+/* SCENARIO */
+.scenario-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px; margin-top: 7px; }
+.scenario-card { border-radius: 4px; padding: 8px; text-align: center; }
+.scenario-card.bear { background: #fee2e2; border: 1px solid #fca5a5; }
+.scenario-card.base { background: var(--accent-light); border: 1px solid var(--accent); }
+.scenario-card.bull { background: #d1fae5; border: 1px solid #6ee7b7; }
+.scenario-label { font-size: 6pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; font-family: 'JetBrains Mono', monospace; margin-bottom: 3px; }
+.scenario-card.bear .scenario-label { color: var(--red); }
+.scenario-card.base .scenario-label { color: #8a5c00; }
+.scenario-card.bull .scenario-label { color: var(--green); }
+.scenario-tp { font-size: 16pt; font-weight: 700; font-family: 'JetBrains Mono', monospace; line-height: 1.1; }
+.scenario-card.bear .scenario-tp { color: var(--red); }
+.scenario-card.base .scenario-tp { color: var(--primary-dark); }
+.scenario-card.bull .scenario-tp { color: var(--green); }
+.scenario-updown { font-size: 6.5pt; font-family: 'JetBrains Mono', monospace; margin-top: 3px; }
+.scenario-desc { font-size: 6pt; color: var(--text-light); margin-top: 4px; line-height: 1.4; }
+
+/* MANAGEMENT */
+.mgmt-row { display: grid; grid-template-columns: 140px 110px 1fr; gap: 7px; padding: 4px 5px; border-bottom: 1px solid var(--border); align-items: start; }
+.mgmt-row:nth-child(odd) { background: var(--light-grey); }
+.mgmt-name { font-weight: 600; font-size: 7pt; color: var(--primary-dark); }
+.mgmt-role { font-size: 6pt; color: var(--mid-grey); }
+.mgmt-bio { font-size: 6pt; color: var(--text-light); line-height: 1.4; }
+
+/* SCORECARD */
+.score-bar-bg { background: var(--border); border-radius: 2px; height: 6px; margin-top: 2px; }
+.score-bar-fill { height: 100%; border-radius: 2px; }
+.score-item { margin-bottom: 7px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+.score-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px; }
+.score-name { font-size: 7.5pt; font-weight: 700; color: var(--primary-dark); }
+.score-val { font-size: 8pt; font-weight: 700; color: var(--primary-dark); font-family: 'JetBrains Mono', monospace; }
+.score-desc { font-size: 6.5pt; color: var(--text-light); line-height: 1.4; margin-top: 2px; }
+
+/* SEGMENT CARDS */
+.segment-card { border: 1px solid var(--border); border-radius: 4px; padding: 8px; margin-bottom: 7px; }
+.segment-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
+.segment-name { font-weight: 700; font-size: 8pt; color: var(--primary-dark); font-family: 'Playfair Display', serif; }
+.segment-share { background: var(--primary-dark); color: var(--accent); font-size: 6pt; padding: 1px 6px; border-radius: 2px; font-family: 'JetBrains Mono', monospace; font-weight: 700; }
+.segment-kpi { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 4px; }
+.kpi-chip { background: var(--accent-light); border: 1px solid var(--accent); border-radius: 2px; padding: 1px 5px; font-size: 6pt; font-family: 'JetBrains Mono', monospace; color: var(--primary-dark); font-weight: 700; }
+.segment-desc { font-size: 6.5pt; color: var(--text-light); line-height: 1.4; }
+
+/* FIGURE */
+.figure-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 6pt;
+  font-weight: 700;
+  color: var(--primary-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  margin-bottom: 5px;
+  padding: 3px 5px;
+  background: var(--light-grey);
+  border-left: 3px solid var(--accent);
+}
+.figure-source { font-size: 5.5pt; color: var(--mid-grey); margin-top: 2px; font-style: italic; }
+
+/* BAR CHART */
+.bar-chart-container { display: flex; align-items: flex-end; gap: 5px; height: 75px; padding: 0 2px; border-bottom: 1.5px solid var(--border); }
+.bar-grp { display: flex; align-items: flex-end; gap: 2px; flex: 1; }
+.bar { flex: 1; border-radius: 2px 2px 0 0; min-width: 8px; }
+.bar-blue { background: var(--primary-dark); }
+.bar-accent { background: var(--accent); }
+.bar-mid { background: var(--primary-mid); }
+.bar-green { background: var(--green); }
+.bar-teal { background: var(--teal); }
+.bar-chart-labels { display: flex; margin-top: 3px; }
+.bar-lbl { font-size: 5.5pt; color: var(--mid-grey); font-family: 'JetBrains Mono', monospace; flex: 1; text-align: center; }
+
+/* LEGEND */
+.chart-legend { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+.legend-item { display: flex; align-items: center; gap: 4px; }
+.legend-dot { width: 7px; height: 7px; border-radius: 50%; }
+.legend-label { font-size: 6pt; color: var(--text-light); font-family: 'JetBrains Mono', monospace; }
+
+/* TAGS */
+.tag {
+  display: inline-block;
+  background: var(--primary-dark);
+  color: var(--white);
+  font-size: 5.5pt;
+  padding: 1px 5px;
+  border-radius: 2px;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.3px;
+  margin-right: 3px;
+}
+.tag.accent-tag { background: var(--accent); color: var(--primary-dark); }
+.tag.green-tag { background: var(--green); }
+
+/* FOOTER */
+.page-footer {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  border-top: 1px solid var(--border);
+  padding: 3px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--white);
+}
+.footer-left { font-size: 5.5pt; color: var(--mid-grey); font-family: 'JetBrains Mono', monospace; }
+.footer-right { font-size: 5.5pt; color: var(--mid-grey); font-family: 'JetBrains Mono', monospace; }
+.footer-center { font-size: 5.5pt; color: var(--primary-dark); font-family: 'Playfair Display', serif; font-weight: 600; }
+
+/* DISCLAIMER */
+.disclaimer {
+  background: var(--light-grey);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 6px 8px;
+  font-size: 5.5pt;
+  color: var(--mid-grey);
+  line-height: 1.5;
+  margin-top: 8px;
+}
+
+/* TIMELINE */
+.timeline { position: relative; padding-left: 14px; }
+.timeline::before { content: ''; position: absolute; left: 4px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+.timeline-item { position: relative; margin-bottom: 7px; padding-left: 10px; }
+.timeline-item::before { content: ''; position: absolute; left: -10px; top: 3px; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); border: 2px solid var(--white); box-shadow: 0 0 0 1px var(--accent); }
+.timeline-year { font-family: 'JetBrains Mono', monospace; font-size: 6pt; font-weight: 700; color: var(--accent); }
+.timeline-text { font-size: 6.5pt; color: var(--text); line-height: 1.4; }
+
+/* PROGRESS */
+.progress-item { margin-bottom: 5px; }
+.progress-label { display: flex; justify-content: space-between; margin-bottom: 2px; }
+.progress-name { font-size: 6.5pt; color: var(--text); }
+.progress-val { font-size: 6.5pt; font-weight: 600; color: var(--primary-dark); font-family: 'JetBrains Mono', monospace; }
+.progress-bar-bg { background: var(--border); border-radius: 2px; height: 5px; }
+.progress-bar-fill { height: 100%; border-radius: 2px; background: var(--primary-dark); }
+
+/* KPI GRID */
+.kpi-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.kpi-box { background: var(--light-grey); border: 1px solid var(--border); border-radius: 3px; padding: 5px 7px; }
+.kpi-box-label { font-size: 6pt; color: var(--mid-grey); font-family: 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 0.5px; }
+.kpi-box-value { font-size: 10pt; font-weight: 700; color: var(--primary-dark); font-family: 'JetBrains Mono', monospace; }
+.kpi-box-sub { font-size: 6pt; color: var(--text-light); }
+
+.full-width { grid-column: 1 / -1; }
+
+/* SPACING */
+.mb4 { margin-bottom: 4px; }
+.mb6 { margin-bottom: 6px; }
+.mb8 { margin-bottom: 8px; }
+.mb10 { margin-bottom: 10px; }
+.mt6 { margin-top: 6px; }
+.mt8 { margin-top: 8px; }
+.pb48 { padding-bottom: 48px; }
+
+/* VAL TABLE */
+.val-table-wrapper { border: 1px solid var(--border); border-radius: 4px; overflow: hidden; margin-bottom: 10px; }
+.val-table-hdr { background: var(--primary-dark); color: var(--accent); font-family: 'JetBrains Mono', monospace; font-size: 6.5pt; font-weight: 700; padding: 4px 9px; text-transform: uppercase; letter-spacing: 0.4px; }
+
+@media print {
+  body { background: white; }
+  .page { box-shadow: none; margin: 0; page-break-after: always; }
+}
+
+/* PARAGRAPH JUSTIFICATION */
+.page-content p, .analysis-block p, .highlight-box p, .thesis-box p,
+.segment-desc, .catalyst-desc, .risk-text, .score-desc, .mgmt-bio,
+.timeline-text, .highlight-box-title + p, .disclaimer { text-align: justify; }
+
+/* FONT SIZE INCREASE */
+.analysis-block p { font-size: 8pt !important; line-height: 1.6; }
+.analysis-block li { font-size: 8pt !important; line-height: 1.6; }
+.thesis-box p { font-size: 8pt !important; line-height: 1.6; }
+.segment-desc { font-size: 7pt !important; line-height: 1.55; }
+.catalyst-desc { font-size: 7pt !important; line-height: 1.55; }
+.highlight-box p { font-size: 7.5pt !important; line-height: 1.55; }
+.risk-text { font-size: 7pt !important; line-height: 1.5; }
+.score-desc { font-size: 7pt !important; line-height: 1.5; }
+.mgmt-bio { font-size: 6.5pt !important; line-height: 1.5; }
+.timeline-text { font-size: 7pt !important; line-height: 1.5; }
+.disclaimer { font-size: 6pt !important; line-height: 1.6; }
+</style>
+</head>
+<body>
+<!-- COVER PAGE -->
+<div class="page">
+  <div class="report-header">
+    <div class="header-top">
+      <div class="firm-brand">
+        <div class="firm-logo">T</div>
+        <div>
+          <div class="firm-name">Tikona Capital</div>
+          <div class="firm-tagline">Institutional Equity Research</div>
+        </div>
+      </div>
+      <div class="report-type-badge">Initiation — Apr 2026</div>
+    </div>
+    <div class="header-company-line">
+      <span class="company-name-hdr">Motilal Oswal Financial Services Ltd</span>
+      <span class="rating-badge">BUY</span>
+      <span class="sector-tag">NSE: MOFSL &nbsp;|&nbsp; Financial Services / Capital Markets</span>
+    </div>
+    <div class="header-stats-bar">
+      <div class="hstat"><div class="hstat-label">CMP</div><div class="hstat-value">₹822.90</div></div>
+      <div class="hstat"><div class="hstat-label">Target Price</div><div class="hstat-value white">₹1,127</div></div>
+      <div class="hstat"><div class="hstat-label">Upside</div><div class="hstat-value white">+37%</div></div>
+<div class="hstat"><div class="hstat-label">Market Cap</div><div class="hstat-value white">₹49,079 Cr</div></div><div class="hstat"><div class="hstat-label">SAARTHI Score</div><div class="hstat-value">72/100</div></div>    </div>
+    <div class="report-date">2026-04-28</div>
+  </div>
+
+<div class="tagline-band"><div class="tagline-text">"BUY with SAARTHI Score of 72/100"</div></div>
+  <div class="page-content pb48">
+      <div class="thesis-box"><p>BUY with SAARTHI Score of 72/100. Motilal Oswal Financial Services represents a compelling investment opportunity driven by its accelerating transformation from a cyclical broking firm into a high-quality, annuity-driven financial services platform. Annual Recurring Revenue (ARR) now constitutes the relevant figure of total net revenues — with management guiding for further increases — fundamentally re-rating the</p></div>
+      <div class="two-col">
+        <div class="highlight-box accent-border">
+          <p>BUY with SAARTHI Score of 72/100. Motilal Oswal Financial Services represents a compelling investment opportunity driven</p>
+        </div>
+        <div class="highlight-box navy-border">
+          <p>ARR contribution at the relevant figure of total net revenues, reducing cyclical broking volatility</p>
+        </div>
+        <div class="highlight-box green-border">
+          <p>Q2FY25 profits up the relevant figure YoY with the relevant figure revenue growth and the relevant figure ROE</p>
+        </div>
+        <div class="highlight-box accent-border">
+          <p>Total AUM at the relevant figure lakh crore (+the relevant figure YoY); the relevant figure of AUM outperforming benchma</p>
+        </div>
+      </div>
+      <div class="metric-strip-6">
+        <div class="metric-card ">
+          <div class="metric-card-label">Rating</div>
+          <div class="metric-card-value">BUY</div>
+        </div>
+        <div class="metric-card accent-bg">
+          <div class="metric-card-label">CMP</div>
+          <div class="metric-card-value">₹822.9</div>
+        </div>
+        <div class="metric-card mid-bg">
+          <div class="metric-card-label">Target Price</div>
+          <div class="metric-card-value">₹1,127.0</div>
+        </div>
+        <div class="metric-card teal-bg">
+          <div class="metric-card-label">Upside</div>
+          <div class="metric-card-value">37.0%</div>
+        </div>
+        <div class="metric-card ">
+          <div class="metric-card-label">Market Cap</div>
+          <div class="metric-card-value">₹49,079 Cr</div>
+        </div>
+        <div class="metric-card accent-bg">
+          <div class="metric-card-label">EPS (FY25)</div>
+          <div class="metric-card-value">₹822.9</div>
+        </div>
+      </div>
+
+    <div class="fin-table-wrap mt8">
+      <div class="fin-table-title">Financial Summary</div>
+      <table>
+        <thead><tr>
+          <th>Metric</th>
+<th>FY22A</th><th>FY23A</th><th>FY24A</th><th>FY25A</th><th>FY26E</th><th>FY27E</th><th>FY28E</th>        </tr></thead>
+        <tbody>
+          <tr>
+            <td>Revenue (INR Cr)</td>
+<td>4298</td><td>4178</td><td>7106</td><td>8340</td><td>10402</td><td>12973</td><td>16181</td>          </tr>
+          <tr>
+            <td>EBITDA (INR Cr)</td>
+<td>2120</td><td>1877</td><td>4082</td><td>4546</td><td>5439</td><td>6784</td><td>8462</td>          </tr>
+          <tr class="tbl-highlight">
+            <td>PAT (INR Cr)</td>
+<td>1310</td><td>932</td><td>2441</td><td>2502</td><td>3066</td><td>3983</td><td>5128</td>          </tr>
+          <tr>
+            <td>EPS (INR)</td>
+<td>22.0</td><td>15.7</td><td>41.0</td><td>41.7</td><td>51.2</td><td>66.5</td><td>85.6</td>          </tr>
+          <tr>
+            <td>EBITDA Margin (%)</td>
+<td>49.3%</td><td>44.9%</td><td>57.4%</td><td>54.5%</td><td>52.3%</td><td>52.3%</td><td>52.3%</td>          </tr>
+          <tr class="tbl-highlight">
+            <td>PAT Margin (%)</td>
+<td>30.5%</td><td>22.3%</td><td>34.4%</td><td>30.0%</td><td>29.5%</td><td>30.7%</td><td>31.7%</td>          </tr>
+          <tr>
+            <td>RoE (%)</td>
+<td>23%</td><td>15%</td><td>28%</td><td>23%</td><td>22%</td><td>23%</td><td>24%</td>          </tr>
+          <tr>
+            <td>RoCE (%)</td>
+<td>19%</td><td>13%</td><td>21%</td><td>19%</td><td>18%</td><td>18%</td><td>19%</td>          </tr>
+          <tr>
+            <td>RoIC (%)</td>
+<td>92%</td><td>78%</td><td>119%</td><td>87%</td><td>35%</td><td>24%</td><td>24%</td>          </tr>
+          <tr>
+            <td>P/E (x)</td>
+<td>37.5</td><td>52.3</td><td>20.1</td><td>19.7</td><td>16.1</td><td>12.4</td><td>9.6</td>          </tr>
+          <tr>
+            <td>P/B (x)</td>
+<td>8.7</td><td>7.8</td><td>5.6</td><td>4.5</td><td>3.6</td><td>2.9</td><td>2.3</td>          </tr>
+          <tr>
+            <td>EV/EBITDA (x)</td>
+<td>9.0</td><td>10.3</td><td>9.5</td><td>11.4</td><td>12.7</td><td>10.5</td><td>8.8</td>          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">Tikona Capital | SEBI Registration No.: INH000069807</div>
+    <div class="footer-center">Motilal Oswal Financial Services Ltd — Equity Research</div>
+    <div class="footer-right">Page 1 of 20</div>
+  </div>
+</div>
+
+<!-- INTERIOR PAGE: investment_thesis -->
+<div class="page">
+  <div class="mini-header">
+    <div class="mini-firm">Tikona Capital</div>
+    <div class="mini-company">Motilal Oswal Financial Services Ltd — Investment Thesis</div>
+    <div class="mini-stats">
+      <div class="mini-stat"><span class="mini-stat-label">CMP</span><span class="mini-stat-value">₹822.90</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">TP</span><span class="mini-stat-value accent">₹1,127</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">Upside</span><span class="mini-stat-value green-v">+37%</span></div>
+<div class="mini-stat"><span class="mini-stat-label">Mkt Cap</span><span class="mini-stat-value">₹49,079 Cr</span></div>      <div class="mini-stat"><span class="mini-stat-label">Rating</span><span class="mini-stat-value buy">BUY</span></div>
+    </div>
+  </div>
+
+  <div style="padding:10px 18px 48px;">
+    <div class="section-header">
+      <span class="section-number">02</span>
+      <span class="section-title">Investment Thesis</span>
+    </div>
+
+
+
+      <div class="analysis-block"><p>BUY with SAARTHI Score of 72/100. Motilal Oswal Financial Services represents a compelling investment opportunity driven by its accelerating transformation from a cyclical broking firm into a high-quality, annuity-driven financial services platform. Annual Recurring Revenue (ARR) now constitutes the relevant figure of total net revenues — with management guiding for further increases — fundamentally re-rating the quality of the earnings base. CMP of the relevant figure offers a the relevant figure discount to analyst consensus target of the relevant figure with a probability-weighted target of the relevant figure.</p></div>
+
+
+      <div class="analysis-block">
+        <ul><li>BUY with SAARTHI Score of 72/100. Motilal Oswal Financial Services represents a compelling investment opportunity driven by its accelerating transformation from a cyclical broking</li><li>ARR contribution at the relevant figure of total net revenues, reducing cyclical broking volatility</li><li>Q2FY25 profits up the relevant figure YoY with the relevant figure revenue growth and the relevant figure ROE</li><li>Total AUM at the relevant figure lakh crore (+the relevant figure YoY); the relevant figure of AUM outperforming benchmarks over 3 years</li><li>Private Wealth AUM at the relevant figure lakh crore (+the relevant figure YoY); family count up the relevant figure YoY</li><li>Long-term credit rating upgraded to AA+ (Stable) by ICRA</li></ul>
+      </div>
+
+
+
+
+
+
+
+
+
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">Tikona Capital | SEBI Registration No.: INH000069807</div>
+    <div class="footer-center">Motilal Oswal Financial Services Ltd — Equity Research</div>
+    <div class="footer-right">2026-04-28 | Page 2 of 20</div>
+  </div>
+</div>
+<!-- INTERIOR PAGE: saarthi_scorecard -->
+<div class="page">
+  <div class="mini-header">
+    <div class="mini-firm">Tikona Capital</div>
+    <div class="mini-company">Motilal Oswal Financial Services Ltd — SAARTHI Investment Quality Score — 72/100</div>
+    <div class="mini-stats">
+      <div class="mini-stat"><span class="mini-stat-label">CMP</span><span class="mini-stat-value">₹822.90</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">TP</span><span class="mini-stat-value accent">₹1,127</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">Upside</span><span class="mini-stat-value green-v">+37%</span></div>
+<div class="mini-stat"><span class="mini-stat-label">Mkt Cap</span><span class="mini-stat-value">₹49,079 Cr</span></div>      <div class="mini-stat"><span class="mini-stat-label">Rating</span><span class="mini-stat-value buy">BUY</span></div>
+    </div>
+  </div>
+
+  <div style="padding:10px 18px 48px;">
+    <div class="section-header">
+      <span class="section-number">03</span>
+      <span class="section-title">SAARTHI Investment Quality Score — 72/100</span>
+    </div>
+
+
+
+      <div class="analysis-block"><p>Proprietary 7-dimension framework. Overall score 72/100 (BUY (70-84 range)).</p></div>
+
+
+      <div class="fin-table-wrap mb8">
+        <div class="fin-table-title">SAARTHI Dimensions</div>
+        <table>
+          <thead><tr>
+<th>Code</th><th>Dimension</th><th>Score</th><th>Key Evidence</th>          </tr></thead>
+          <tbody>
+            <tr style="background:#f4f6f9;">
+              <td style="font-weight:500;color:#3a4d6b;">S</td>
+              <td>Scalability of Core Engine</td>
+              <td>12/15</td>
+              <td>AMC AUM +33% YoY to INR 1.89L Cr with INR 11,610 Cr net flows.</td>
+            </tr>
+            <tr>
+              <td style="font-weight:500;color:#3a4d6b;">A1</td>
+              <td>Addressable Market & Adjacency</td>
+              <td>9/10</td>
+              <td>India private credit hit USD 9.0 Bn in H1 2025 (+53% YoY).</td>
+            </tr>
+            <tr style="background:#f4f6f9;">
+              <td style="font-weight:500;color:#3a4d6b;">A2</td>
+              <td>Asymmetric Pricing Power</td>
+              <td>10/15</td>
+              <td>Diversified mix offset 24% brokerage decline, validating partial pricing-power hedge.</td>
+            </tr>
+            <tr>
+              <td style="font-weight:500;color:#3a4d6b;">R</td>
+              <td>Reinvestment Quality</td>
+              <td>13/15</td>
+              <td>PWM AUM +31% YoY to INR 1.96L Cr; family count +41%; PAT +14% (9M).</td>
+            </tr>
+            <tr style="background:#f4f6f9;">
+              <td style="font-weight:500;color:#3a4d6b;">T</td>
+              <td>Track Record Through Adversity</td>
+              <td>8/10</td>
+              <td>Despite repeated SEBI interventions, AUM and ARR base continue to compound — institutional resilience.</td>
+            </tr>
+            <tr>
+              <td style="font-weight:500;color:#3a4d6b;">H</td>
+              <td>Human Capital & Institutional DNA</td>
+              <td>9/10</td>
+              <td>Rashtriya Samman Patra recipient (top tax-payer FY95–FY99) signals early ethical commercial success.</td>
+            </tr>
+            <tr style="background:#f4f6f9;">
+              <td style="font-weight:500;color:#3a4d6b;">I</td>
+              <td>Inflection Point Identification</td>
+              <td>11/15</td>
+              <td>ARR at 65% of net revenues (up from 61%); management guiding higher — measurable inflection.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
+    <div class="mb8" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+      <div class="score-item">
+        <div class="score-header">
+          <span class="score-name">Scalability of Core Engine</span>
+          <span class="score-val">12/15</span>
+        </div>
+        <div class="score-bar-bg"><div class="score-bar-fill" style="width:80%;background:#1a7a4a;"></div></div>
+<div class="score-desc">AMC AUM +33% YoY to INR 1.89L Cr with INR 11,610 Cr net flows.</div>      </div>
+      <div class="score-item">
+        <div class="score-header">
+          <span class="score-name">Addressable Market & Adjacency</span>
+          <span class="score-val">9/10</span>
+        </div>
+        <div class="score-bar-bg"><div class="score-bar-fill" style="width:90%;background:#1a7a4a;"></div></div>
+<div class="score-desc">India private credit hit USD 9.0 Bn in H1 2025 (+53% YoY).</div>      </div>
+      <div class="score-item">
+        <div class="score-header">
+          <span class="score-name">Asymmetric Pricing Power</span>
+          <span class="score-val">10/15</span>
+        </div>
+        <div class="score-bar-bg"><div class="score-bar-fill" style="width:66%;background:#FFA500;"></div></div>
+<div class="score-desc">Diversified mix offset 24% brokerage decline, validating partial pricing-power hedge.</div>      </div>
+      <div class="score-item">
+        <div class="score-header">
+          <span class="score-name">Reinvestment Quality</span>
+          <span class="score-val">13/15</span>
+        </div>
+        <div class="score-bar-bg"><div class="score-bar-fill" style="width:86%;background:#1a7a4a;"></div></div>
+<div class="score-desc">PWM AUM +31% YoY to INR 1.96L Cr; family count +41%; PAT +14% (9M).</div>      </div>
+      <div class="score-item">
+        <div class="score-header">
+          <span class="score-name">Track Record Through Adversity</span>
+          <span class="score-val">8/10</span>
+        </div>
+        <div class="score-bar-bg"><div class="score-bar-fill" style="width:80%;background:#1a7a4a;"></div></div>
+<div class="score-desc">Despite repeated SEBI interventions, AUM and ARR base continue to compound — institutional resilience.</div>      </div>
+      <div class="score-item">
+        <div class="score-header">
+          <span class="score-name">Human Capital & Institutional DNA</span>
+          <span class="score-val">9/10</span>
+        </div>
+        <div class="score-bar-bg"><div class="score-bar-fill" style="width:90%;background:#1a7a4a;"></div></div>
+<div class="score-desc">Rashtriya Samman Patra recipient (top tax-payer FY95–FY99) signals early ethical commercial success.</div>      </div>
+      <div class="score-item">
+        <div class="score-header">
+          <span class="score-name">Inflection Point Identification</span>
+          <span class="score-val">11/15</span>
+        </div>
+        <div class="score-bar-bg"><div class="score-bar-fill" style="width:73%;background:#FFA500;"></div></div>
+<div class="score-desc">ARR at 65% of net revenues (up from 61%); management guiding higher — measurable inflection.</div>      </div>
+    </div>
+
+
+
+
+
+
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">Tikona Capital | SEBI Registration No.: INH000069807</div>
+    <div class="footer-center">Motilal Oswal Financial Services Ltd — Equity Research</div>
+    <div class="footer-right">2026-04-28 | Page 3 of 20</div>
+  </div>
+</div>
+<!-- INTERIOR PAGE: company_snapshot -->
+<div class="page">
+  <div class="mini-header">
+    <div class="mini-firm">Tikona Capital</div>
+    <div class="mini-company">Motilal Oswal Financial Services Ltd — Motilal Oswal Financial Services Ltd At A Glance</div>
+    <div class="mini-stats">
+      <div class="mini-stat"><span class="mini-stat-label">CMP</span><span class="mini-stat-value">₹822.90</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">TP</span><span class="mini-stat-value accent">₹1,127</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">Upside</span><span class="mini-stat-value green-v">+37%</span></div>
+<div class="mini-stat"><span class="mini-stat-label">Mkt Cap</span><span class="mini-stat-value">₹49,079 Cr</span></div>      <div class="mini-stat"><span class="mini-stat-label">Rating</span><span class="mini-stat-value buy">BUY</span></div>
+    </div>
+  </div>
+
+  <div style="padding:10px 18px 48px;">
+    <div class="section-header">
+      <span class="section-number">04</span>
+      <span class="section-title">Motilal Oswal Financial Services Ltd At A Glance</span>
+    </div>
+
+
+
+      <div class="analysis-block"><p>Motilal Oswal Financial Services, founded in 1987 by Motilal Oswal and Raamdeo Agrawal, has evolved from a research-driven equity broking house into one of India's most comprehensive financial services platforms. The company spans Capital Markets, Asset & Wealth Management, Housing Finance, and Alternative Investments, serving over 1,600,000 customers across 550+ cities through 2,500+ business locations. Research coverage of 300+ companies remains the firm's enduring competitive moat.</p></div>
+
+
+      <div class="metric-strip-3 mb10">
+        <div class="metric-card ">
+          <div class="metric-card-label">CMP</div>
+          <div class="metric-card-value">₹822.9</div>
+        </div>
+        <div class="metric-card accent-bg">
+          <div class="metric-card-label">TP</div>
+          <div class="metric-card-value">₹1,127.0</div>
+        </div>
+        <div class="metric-card mid-bg">
+          <div class="metric-card-label">Upside</div>
+          <div class="metric-card-value">37.0%</div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">Tikona Capital | SEBI Registration No.: INH000069807</div>
+    <div class="footer-center">Motilal Oswal Financial Services Ltd — Equity Research</div>
+    <div class="footer-right">2026-04-28 | Page 4 of 20</div>
+  </div>
+</div>
+<!-- INTERIOR PAGE: industry_overview -->
+<div class="page">
+  <div class="mini-header">
+    <div class="mini-firm">Tikona Capital</div>
+    <div class="mini-company">Motilal Oswal Financial Services Ltd — Industry Overview</div>
+    <div class="mini-stats">
+      <div class="mini-stat"><span class="mini-stat-label">CMP</span><span class="mini-stat-value">₹822.90</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">TP</span><span class="mini-stat-value accent">₹1,127</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">Upside</span><span class="mini-stat-value green-v">+37%</span></div>
+<div class="mini-stat"><span class="mini-stat-label">Mkt Cap</span><span class="mini-stat-value">₹49,079 Cr</span></div>      <div class="mini-stat"><span class="mini-stat-label">Rating</span><span class="mini-stat-value buy">BUY</span></div>
+    </div>
+  </div>
+
+  <div style="padding:10px 18px 48px;">
+    <div class="section-header">
+      <span class="section-number">05</span>
+      <span class="section-title">Industry Overview</span>
+    </div>
+
+
+
+      <div class="analysis-block"><p>Indian Financial Services is a strategic shock absorber for the growth story. India is expected to have the relevant figure HNWIs by 2027 and become the fourth-largest private wealth market by 2028, with a the relevant figure projected rise in UHNWIs. The financial services sector is projected to nearly double profits by FY30, led by NBFCs growing at the relevant figure annually. Mutual fund penetration at just 5–the relevant figure reflects substantial latent growth opportunity. Private credit hit a record the relevant figure billion in H1 2025, up the relevant figure YoY.</p></div>
+
+
+      <div class="analysis-block">
+        <ul><li>Mutual fund penetration at 5-the relevant figure — massive latent opportunity</li><li>Financial savings shifting from gold/real estate to financial assets</li><li>BSE-listed companies grew from 135 (1995) to 5,328 (Feb 2025)</li><li>Private wealth set to be 4th-largest globally by 2028</li><li>NBFCs growing at the relevant figure annually with improving asset quality</li><li>Demographic dividend — large working-age population entering peak earning</li></ul>
+      </div>
+
+
+
+
+
+
+
+
+
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">Tikona Capital | SEBI Registration No.: INH000069807</div>
+    <div class="footer-center">Motilal Oswal Financial Services Ltd — Equity Research</div>
+    <div class="footer-right">2026-04-28 | Page 5 of 20</div>
+  </div>
+</div>
+<!-- INTERIOR PAGE: key_highlights -->
+<div class="page">
+  <div class="mini-header">
+    <div class="mini-firm">Tikona Capital</div>
+    <div class="mini-company">Motilal Oswal Financial Services Ltd — Key Highlights</div>
+    <div class="mini-stats">
+      <div class="mini-stat"><span class="mini-stat-label">CMP</span><span class="mini-stat-value">₹822.90</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">TP</span><span class="mini-stat-value accent">₹1,127</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">Upside</span><span class="mini-stat-value green-v">+37%</span></div>
+<div class="mini-stat"><span class="mini-stat-label">Mkt Cap</span><span class="mini-stat-value">₹49,079 Cr</span></div>      <div class="mini-stat"><span class="mini-stat-label">Rating</span><span class="mini-stat-value buy">BUY</span></div>
+    </div>
+  </div>
+
+  <div style="padding:10px 18px 48px;">
+    <div class="section-header">
+      <span class="section-number">06</span>
+      <span class="section-title">Key Highlights</span>
+    </div>
+
+
+
+      <div class="analysis-block"><p>Six themes underpinning the investment view.</p></div>
+
+
+      <div class="analysis-block">
+        <ul><li>ARR Transformation: ARR at the relevant figure of net revenues (up from the relevant figure); fee-based at the relevant figure. Annuity income reduces transaction-cycle volatility.</li><li>Profitability Momentum: Q2FY25 PAT the relevant figure Cr (+the relevant figure YoY); H1FY26 operating PAT the relevant figure Cr (+the relevant figure YoY); Asset & PWM businesses leading at +the rel</li><li>AUM Scale and Outperformance: Total AUM the relevant figureL Cr (+the relevant figure YoY). AMC AUM the relevant figureL Cr (+the relevant figure) with the relevant figure Cr net flows. the relevant f</li><li>Private Wealth Expansion: PWM AUM the relevant figureL Cr (+the relevant figure YoY); family count +the relevant figure YoY; PAT +the relevant figure (9M). Distribution book +the relevant figure YoY t</li><li>Valuation Opportunity: CMP the relevant figure vs consensus TP the relevant figure (max the relevant figure) — the relevant figure upside. Probability-weighted target the relevant figure.</li><li>Credit Upgrade: Long-term credit rating upgraded to AA+ (Stable) by ICRA. Net worth the relevant figure Cr (+the relevant figure YoY).</li></ul>
+      </div>
+
+
+
+
+
+
+
+
+
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">Tikona Capital | SEBI Registration No.: INH000069807</div>
+    <div class="footer-center">Motilal Oswal Financial Services Ltd — Equity Research</div>
+    <div class="footer-right">2026-04-28 | Page 6 of 20</div>
+  </div>
+</div>
+<!-- INTERIOR PAGE: text_plus_chart -->
+<div class="page">
+  <div class="mini-header">
+    <div class="mini-firm">Tikona Capital</div>
+    <div class="mini-company">Motilal Oswal Financial Services Ltd — Revenue Trend</div>
+    <div class="mini-stats">
+      <div class="mini-stat"><span class="mini-stat-label">CMP</span><span class="mini-stat-value">₹822.90</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">TP</span><span class="mini-stat-value accent">₹1,127</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">Upside</span><span class="mini-stat-value green-v">+37%</span></div>
+<div class="mini-stat"><span class="mini-stat-label">Mkt Cap</span><span class="mini-stat-value">₹49,079 Cr</span></div>      <div class="mini-stat"><span class="mini-stat-label">Rating</span><span class="mini-stat-value buy">BUY</span></div>
+    </div>
+  </div>
+
+  <div style="padding:10px 18px 48px;">
+    <div class="section-header">
+      <span class="section-number">07</span>
+      <span class="section-title">Revenue Trend</span>
+    </div>
+
+
+
+      <div class="analysis-block"><p>Revenue trajectory across the forecast period reflects mix shift and AUM scale-up.</p></div>
+
+
+      <div style="border:1px solid #d5dce8;border-radius:4px;padding:8px;margin-bottom:10px;">
+        <div class="figure-title">Revenue Trend</div>
+        <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+<line x1="42" y1="12.0" x2="270" y2="12.0" stroke="#d5dce8" stroke-width="0.3" stroke-dasharray="2,2"/>
+<text x="39" y="13.5" text-anchor="end" font-size="5.5" fill="#6b7c93" font-family="'JetBrains Mono', monospace">20.0K</text>
+<line x1="42" y1="33.5" x2="270" y2="33.5" stroke="#d5dce8" stroke-width="0.3" stroke-dasharray="2,2"/>
+<text x="39" y="35.0" text-anchor="end" font-size="5.5" fill="#6b7c93" font-family="'JetBrains Mono', monospace">15.0K</text>
+<line x1="42" y1="55.0" x2="270" y2="55.0" stroke="#d5dce8" stroke-width="0.3" stroke-dasharray="2,2"/>
+<text x="39" y="56.5" text-anchor="end" font-size="5.5" fill="#6b7c93" font-family="'JetBrains Mono', monospace">10.0K</text>
+<line x1="42" y1="76.5" x2="270" y2="76.5" stroke="#d5dce8" stroke-width="0.3" stroke-dasharray="2,2"/>
+<text x="39" y="78.0" text-anchor="end" font-size="5.5" fill="#6b7c93" font-family="'JetBrains Mono', monospace">5.0K</text>
+<line x1="42" y1="98.0" x2="270" y2="98.0" stroke="#d5dce8" stroke-width="0.3" stroke-dasharray="2,2"/>
+<text x="39" y="99.5" text-anchor="end" font-size="5.5" fill="#6b7c93" font-family="'JetBrains Mono', monospace">0</text>
+<line x1="42" y1="12" x2="42" y2="98" stroke="#d5dce8" stroke-width="0.5"/>
+<line x1="42" y1="98" x2="270" y2="98" stroke="#d5dce8" stroke-width="0.5"/>
+<rect x="46.9" y="79.5" width="22.8" height="18.5" fill="#1F4690" rx="1"/>
+<text x="58.3" y="77.5" text-anchor="middle" font-size="4.5" fill="white" font-family="'JetBrains Mono', monospace" font-weight="bold">4.3K</text>
+<rect x="79.5" y="80.0" width="22.8" height="18.0" fill="#1F4690" rx="1"/>
+<text x="90.9" y="78.0" text-anchor="middle" font-size="4.5" fill="white" font-family="'JetBrains Mono', monospace" font-weight="bold">4.2K</text>
+<rect x="112.0" y="67.4" width="22.8" height="30.6" fill="#1F4690" rx="1"/>
+<text x="123.4" y="65.4" text-anchor="middle" font-size="4.5" fill="white" font-family="'JetBrains Mono', monospace" font-weight="bold">7.1K</text>
+<rect x="144.6" y="62.1" width="22.8" height="35.9" fill="#1F4690" rx="1"/>
+<text x="156.0" y="60.1" text-anchor="middle" font-size="4.5" fill="white" font-family="'JetBrains Mono', monospace" font-weight="bold">8.3K</text>
+<rect x="177.2" y="53.3" width="22.8" height="44.7" fill="#FFA500" rx="1"/>
+<text x="188.6" y="51.3" text-anchor="middle" font-size="4.5" fill="#1F4690" font-family="'JetBrains Mono', monospace" font-weight="bold">10.4K</text>
+<rect x="209.7" y="42.2" width="22.8" height="55.8" fill="#FFA500" rx="1"/>
+<text x="221.1" y="40.2" text-anchor="middle" font-size="4.5" fill="#1F4690" font-family="'JetBrains Mono', monospace" font-weight="bold">13.0K</text>
+<rect x="242.3" y="28.4" width="22.8" height="69.6" fill="#FFA500" rx="1"/>
+<text x="253.7" y="26.4" text-anchor="middle" font-size="4.5" fill="#1F4690" font-family="'JetBrains Mono', monospace" font-weight="bold">16.2K</text>
+<text x="58.3" y="110" text-anchor="middle" font-size="5.5" fill="#6b7c93" font-family="'JetBrains Mono', monospace">FY22A</text>
+<text x="90.9" y="110" text-anchor="middle" font-size="5.5" fill="#6b7c93" font-family="'JetBrains Mono', monospace">FY23A</text>
+<text x="123.4" y="110" text-anchor="middle" font-size="5.5" fill="#6b7c93" font-family="'JetBrains Mono', monospace">FY24A</text>
+<text x="156.0" y="110" text-anchor="middle" font-size="5.5" fill="#6b7c93" font-family="'JetBrains Mono', monospace">FY25A</text>
+<text x="188.6" y="110" text-anchor="middle" font-size="5.5" fill="#FFA500" font-family="'JetBrains Mono', monospace">FY26E</text>
+<text x="221.1" y="110" text-anchor="middle" font-size="5.5" fill="#FFA500" font-family="'JetBrains Mono', monospace">FY27E</text>
+<text x="253.7" y="110" text-anchor="middle" font-size="5.5" fill="#FFA500" font-family="'JetBrains Mono', monospace">FY28E</text>
+<rect x="42" y="120" width="6" height="4" fill="#1F4690" rx="0.5"/>
+<text x="50" y="124" font-size="5.5" fill="#6b7c93" font-family="'JetBrains Mono', monospace">Historical</text>
+<rect x="112" y="120" width="6" height="4" fill="#FFA500" rx="0.5"/>
+<text x="120" y="124" font-size="5.5" fill="#6b7c93" font-family="'JetBrains Mono', monospace">Estimates</text>
+</svg>
+        <div class="figure-source">Source: Tikona Capital model</div>
+      </div>
+
+
+
+
+
+
+
+
+
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">Tikona Capital | SEBI Registration No.: INH000069807</div>
+    <div class="footer-center">Motilal Oswal Financial Services Ltd — Equity Research</div>
+    <div class="footer-right">2026-04-28 | Page 7 of 20</div>
+  </div>
+</div>
+<!-- INTERIOR PAGE: full_table -->
+<div class="page">
+  <div class="mini-header">
+    <div class="mini-firm">Tikona Capital</div>
+    <div class="mini-company">Motilal Oswal Financial Services Ltd — Annual Financial Summary</div>
+    <div class="mini-stats">
+      <div class="mini-stat"><span class="mini-stat-label">CMP</span><span class="mini-stat-value">₹822.90</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">TP</span><span class="mini-stat-value accent">₹1,127</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">Upside</span><span class="mini-stat-value green-v">+37%</span></div>
+<div class="mini-stat"><span class="mini-stat-label">Mkt Cap</span><span class="mini-stat-value">₹49,079 Cr</span></div>      <div class="mini-stat"><span class="mini-stat-label">Rating</span><span class="mini-stat-value buy">BUY</span></div>
+    </div>
+  </div>
+
+  <div style="padding:10px 18px 48px;">
+    <div class="section-header">
+      <span class="section-number">08</span>
+      <span class="section-title">Annual Financial Summary</span>
+    </div>
+
+
+
+      <div class="fin-table-wrap mb8">
+        <div class="fin-table-title">Revenue By Period</div>
+        <table>
+          <thead><tr>
+<th>Period</th><th>Revenue</th>          </tr></thead>
+          <tbody>
+            <tr style="background:#f4f6f9;">
+              <td style="font-weight:500;color:#3a4d6b;">FY22A</td>
+              <td>₹4,298.0 Cr</td>
+            </tr>
+            <tr>
+              <td style="font-weight:500;color:#3a4d6b;">FY23A</td>
+              <td>₹4,178.0 Cr</td>
+            </tr>
+            <tr style="background:#f4f6f9;">
+              <td style="font-weight:500;color:#3a4d6b;">FY24A</td>
+              <td>₹7,106.0 Cr</td>
+            </tr>
+            <tr>
+              <td style="font-weight:500;color:#3a4d6b;">FY25A</td>
+              <td>₹8,340.0 Cr</td>
+            </tr>
+            <tr style="background:#f4f6f9;">
+              <td style="font-weight:500;color:#3a4d6b;">FY26E</td>
+              <td>₹10,402.0 Cr</td>
+            </tr>
+            <tr>
+              <td style="font-weight:500;color:#3a4d6b;">FY27E</td>
+              <td>₹12,973.0 Cr</td>
+            </tr>
+            <tr style="background:#f4f6f9;">
+              <td style="font-weight:500;color:#3a4d6b;">FY28E</td>
+              <td>₹16,181.0 Cr</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
+
+
+
+
+
+
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">Tikona Capital | SEBI Registration No.: INH000069807</div>
+    <div class="footer-center">Motilal Oswal Financial Services Ltd — Equity Research</div>
+    <div class="footer-right">2026-04-28 | Page 8 of 20</div>
+  </div>
+</div>
+<!-- INTERIOR PAGE: quarterly_summary -->
+<div class="page">
+  <div class="mini-header">
+    <div class="mini-firm">Tikona Capital</div>
+    <div class="mini-company">Motilal Oswal Financial Services Ltd — Quarterly Performance</div>
+    <div class="mini-stats">
+      <div class="mini-stat"><span class="mini-stat-label">CMP</span><span class="mini-stat-value">₹822.90</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">TP</span><span class="mini-stat-value accent">₹1,127</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">Upside</span><span class="mini-stat-value green-v">+37%</span></div>
+<div class="mini-stat"><span class="mini-stat-label">Mkt Cap</span><span class="mini-stat-value">₹49,079 Cr</span></div>      <div class="mini-stat"><span class="mini-stat-label">Rating</span><span class="mini-stat-value buy">BUY</span></div>
+    </div>
+  </div>
+
+  <div style="padding:10px 18px 48px;">
+    <div class="section-header">
+      <span class="section-number">09</span>
+      <span class="section-title">Quarterly Performance</span>
+    </div>
+
+
+
+      <div class="analysis-block"><p>Recent quarterly trajectory showing the variability inherent to the cyclical revenue base.</p></div>
+
+
+      <div class="fin-table-wrap mb8">
+        <div class="fin-table-title">Quarterly PAT</div>
+        <table>
+          <thead><tr>
+<th>Quarter</th><th>PAT</th>          </tr></thead>
+          <tbody>
+            <tr style="background:#f4f6f9;">
+              <td style="font-weight:500;color:#3a4d6b;">Q2FY25</td>
+              <td>₹1,242.0 Cr</td>
+            </tr>
+            <tr>
+              <td style="font-weight:500;color:#3a4d6b;">Q3FY25</td>
+              <td>₹715.0 Cr</td>
+            </tr>
+            <tr style="background:#f4f6f9;">
+              <td style="font-weight:500;color:#3a4d6b;">Q4FY25</td>
+              <td>₹545.0 Cr</td>
+            </tr>
+            <tr>
+              <td style="font-weight:500;color:#3a4d6b;">Q1FY26</td>
+              <td>₹425.0 Cr</td>
+            </tr>
+            <tr style="background:#f4f6f9;">
+              <td style="font-weight:500;color:#3a4d6b;">Q2FY26</td>
+              <td>₹401.0 Cr</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
+
+
+
+
+
+
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">Tikona Capital | SEBI Registration No.: INH000069807</div>
+    <div class="footer-center">Motilal Oswal Financial Services Ltd — Equity Research</div>
+    <div class="footer-right">2026-04-28 | Page 9 of 20</div>
+  </div>
+</div>
+<!-- INTERIOR PAGE: full_table -->
+<div class="page">
+  <div class="mini-header">
+    <div class="mini-firm">Tikona Capital</div>
+    <div class="mini-company">Motilal Oswal Financial Services Ltd — Segment Mix</div>
+    <div class="mini-stats">
+      <div class="mini-stat"><span class="mini-stat-label">CMP</span><span class="mini-stat-value">₹822.90</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">TP</span><span class="mini-stat-value accent">₹1,127</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">Upside</span><span class="mini-stat-value green-v">+37%</span></div>
+<div class="mini-stat"><span class="mini-stat-label">Mkt Cap</span><span class="mini-stat-value">₹49,079 Cr</span></div>      <div class="mini-stat"><span class="mini-stat-label">Rating</span><span class="mini-stat-value buy">BUY</span></div>
+    </div>
+  </div>
+
+  <div style="padding:10px 18px 48px;">
+    <div class="section-header">
+      <span class="section-number">10</span>
+      <span class="section-title">Segment Mix</span>
+    </div>
+
+
+
+      <div class="fin-table-wrap mb8">
+        <div class="fin-table-title">Segment Breakdown</div>
+        <table>
+          <thead><tr>
+<th>Segment</th><th>Scale Metric</th><th>Latest</th><th>Notes</th>          </tr></thead>
+          <tbody>
+            <tr style="background:#f4f6f9;">
+              <td style="font-weight:500;color:#3a4d6b;">Capital Markets (Broking + IB)</td>
+              <td>Brokerage Rev YoY</td>
+              <td class="red">-24%</td>
+              <td>Equity, derivatives, commodity, currency trading + institutional services and investment banking. Brokerage now contributes only 30% of total revenue, down from historical highs.</td>
+            </tr>
+            <tr>
+              <td style="font-weight:500;color:#3a4d6b;">Asset Management</td>
+              <td>AMC AUM</td>
+              <td>INR 1.89L Cr (+33% YoY)</td>
+              <td>Mutual funds and PMS. 91% of AUM outperforming benchmarks over 3 years.</td>
+            </tr>
+            <tr style="background:#f4f6f9;">
+              <td style="font-weight:500;color:#3a4d6b;">Private Wealth Management</td>
+              <td>PWM AUM</td>
+              <td>INR 1.96L Cr (+31% YoY)</td>
+              <td>HNI/UHNI advisory. Family count up 41% YoY.</td>
+            </tr>
+            <tr>
+              <td style="font-weight:500;color:#3a4d6b;">Housing Finance</td>
+              <td>Loan Book</td>
+              <td>INR 6,630 Cr (+25% YoY)</td>
+              <td>Retail mortgage lending — affordable and mid-segment.</td>
+            </tr>
+            <tr style="background:#f4f6f9;">
+              <td style="font-weight:500;color:#3a4d6b;">Alternative Investments</td>
+              <td>Carry Income</td>
+              <td>INR 58 Cr recurring</td>
+              <td>Private credit, real estate, alternatives.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
+
+
+
+
+
+
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">Tikona Capital | SEBI Registration No.: INH000069807</div>
+    <div class="footer-center">Motilal Oswal Financial Services Ltd — Equity Research</div>
+    <div class="footer-right">2026-04-28 | Page 10 of 20</div>
+  </div>
+</div>
+<!-- INTERIOR PAGE: ratio_summary -->
+<div class="page">
+  <div class="mini-header">
+    <div class="mini-firm">Tikona Capital</div>
+    <div class="mini-company">Motilal Oswal Financial Services Ltd — Key Ratios</div>
+    <div class="mini-stats">
+      <div class="mini-stat"><span class="mini-stat-label">CMP</span><span class="mini-stat-value">₹822.90</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">TP</span><span class="mini-stat-value accent">₹1,127</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">Upside</span><span class="mini-stat-value green-v">+37%</span></div>
+<div class="mini-stat"><span class="mini-stat-label">Mkt Cap</span><span class="mini-stat-value">₹49,079 Cr</span></div>      <div class="mini-stat"><span class="mini-stat-label">Rating</span><span class="mini-stat-value buy">BUY</span></div>
+    </div>
+  </div>
+
+  <div style="padding:10px 18px 48px;">
+    <div class="section-header">
+      <span class="section-number">11</span>
+      <span class="section-title">Key Ratios</span>
+    </div>
+
+
+
+      <div class="analysis-block"><p>Margin and return profile across the forecast period.</p></div>
+
+
+      <div class="fin-table-wrap mb8">
+        <div class="fin-table-title">Ratio Summary</div>
+        <table>
+          <thead><tr>
+<th>Ratio</th><th>FY22A</th><th>FY23A</th><th>FY24A</th><th>FY25A</th><th>FY26E</th><th>FY27E</th><th>FY28E</th>          </tr></thead>
+          <tbody>
+            <tr style="background:#f4f6f9;">
+              <td style="font-weight:500;color:#3a4d6b;">EBITDA Margin</td>
+              <td>49.3%</td>
+              <td>44.9%</td>
+              <td>57.4%</td>
+              <td>54.5%</td>
+              <td>52.3%</td>
+              <td>52.3%</td>
+              <td>52.3%</td>
+            </tr>
+            <tr>
+              <td style="font-weight:500;color:#3a4d6b;">PAT Margin</td>
+              <td>30.5%</td>
+              <td>22.3%</td>
+              <td>34.4%</td>
+              <td>30.0%</td>
+              <td>29.5%</td>
+              <td>30.7%</td>
+              <td>31.7%</td>
+            </tr>
+            <tr style="background:#f4f6f9;">
+              <td style="font-weight:500;color:#3a4d6b;">RoE</td>
+              <td>23.0%</td>
+              <td>15.0%</td>
+              <td>28.0%</td>
+              <td>23.0%</td>
+              <td>22.0%</td>
+              <td>23.0%</td>
+              <td>24.0%</td>
+            </tr>
+            <tr>
+              <td style="font-weight:500;color:#3a4d6b;">RoCE</td>
+              <td>19.0%</td>
+              <td>13.0%</td>
+              <td>21.0%</td>
+              <td>19.0%</td>
+              <td>18.0%</td>
+              <td>18.0%</td>
+              <td>19.0%</td>
+            </tr>
+            <tr style="background:#f4f6f9;">
+              <td style="font-weight:500;color:#3a4d6b;">RoIC</td>
+              <td>92.0%</td>
+              <td>78.0%</td>
+              <td>119.0%</td>
+              <td>87.0%</td>
+              <td>35.0%</td>
+              <td>24.0%</td>
+              <td>24.0%</td>
+            </tr>
+            <tr>
+              <td style="font-weight:500;color:#3a4d6b;">P/E</td>
+              <td>37.5x</td>
+              <td>52.3x</td>
+              <td>20.1x</td>
+              <td>19.7x</td>
+              <td>16.1x</td>
+              <td>12.4x</td>
+              <td>9.6x</td>
+            </tr>
+            <tr style="background:#f4f6f9;">
+              <td style="font-weight:500;color:#3a4d6b;">P/B</td>
+              <td>8.7x</td>
+              <td>7.8x</td>
+              <td>5.6x</td>
+              <td>4.5x</td>
+              <td>3.6x</td>
+              <td>2.9x</td>
+              <td>2.3x</td>
+            </tr>
+            <tr>
+              <td style="font-weight:500;color:#3a4d6b;">EV/EBITDA</td>
+              <td>9.0x</td>
+              <td>10.3x</td>
+              <td>9.5x</td>
+              <td>11.4x</td>
+              <td>12.7x</td>
+              <td>10.5x</td>
+              <td>8.8x</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
+
+
+
+
+
+
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">Tikona Capital | SEBI Registration No.: INH000069807</div>
+    <div class="footer-center">Motilal Oswal Financial Services Ltd — Equity Research</div>
+    <div class="footer-right">2026-04-28 | Page 11 of 20</div>
+  </div>
+</div>
+<!-- INTERIOR PAGE: valuation_table -->
+<div class="page">
+  <div class="mini-header">
+    <div class="mini-firm">Tikona Capital</div>
+    <div class="mini-company">Motilal Oswal Financial Services Ltd — Valuation — Methods Summary</div>
+    <div class="mini-stats">
+      <div class="mini-stat"><span class="mini-stat-label">CMP</span><span class="mini-stat-value">₹822.90</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">TP</span><span class="mini-stat-value accent">₹1,127</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">Upside</span><span class="mini-stat-value green-v">+37%</span></div>
+<div class="mini-stat"><span class="mini-stat-label">Mkt Cap</span><span class="mini-stat-value">₹49,079 Cr</span></div>      <div class="mini-stat"><span class="mini-stat-label">Rating</span><span class="mini-stat-value buy">BUY</span></div>
+    </div>
+  </div>
+
+  <div style="padding:10px 18px 48px;">
+    <div class="section-header">
+      <span class="section-number">12</span>
+      <span class="section-title">Valuation — Methods Summary</span>
+    </div>
+
+
+
+      <div class="analysis-block"><p>Probability-weighted target price reconciles bull, base, and bear cases.</p></div>
+
+
+      <div class="fin-table-wrap mb8">
+        <div class="fin-table-title">Target Price Bands</div>
+        <table>
+          <thead><tr>
+<th>Case</th><th>Target</th><th>Weight</th><th>Basis</th>          </tr></thead>
+          <tbody>
+            <tr style="background:#f4f6f9;">
+              <td style="font-weight:500;color:#3a4d6b;">Bull Case</td>
+              <td>1,400.0</td>
+              <td>30.0%</td>
+              <td>28x P/E on FY27E EPS of INR 50; ARR > 70%, AMC +40% YoY.</td>
+            </tr>
+            <tr>
+              <td style="font-weight:500;color:#3a4d6b;">Base Case</td>
+              <td>1,127.0</td>
+              <td>50.0%</td>
+              <td>24x P/E on FY27E EPS of INR 47; ARR stable at 65%, steady AUM.</td>
+            </tr>
+            <tr style="background:#f4f6f9;">
+              <td style="font-weight:500;color:#3a4d6b;">Bear Case</td>
+              <td>630.0</td>
+              <td>20.0%</td>
+              <td>18x P/E on depressed FY27E EPS of INR 35; sustained regulatory headwinds.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
+
+
+    <div class="scenario-grid mb8">
+      <div class="scenario-card bull">
+        <div class="scenario-label">Bull</div>
+        <div class="scenario-tp">₹1400</div>
+<div class="scenario-updown">30% probability</div><div class="scenario-desc">ARR > 70%, AMC AUM +40% YoY, regulatory clarity.</div>      </div>
+      <div class="scenario-card base">
+        <div class="scenario-label">Base</div>
+        <div class="scenario-tp">₹1127</div>
+<div class="scenario-updown">50% probability</div><div class="scenario-desc">ARR steady at 65%, AUM compounding, stable regulation.</div>      </div>
+      <div class="scenario-card bear">
+        <div class="scenario-label">Bear</div>
+        <div class="scenario-tp">₹630</div>
+<div class="scenario-updown">20% probability</div><div class="scenario-desc">Sustained F&O headwinds, fintech share loss.</div>      </div>
+    </div>
+
+
+
+
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">Tikona Capital | SEBI Registration No.: INH000069807</div>
+    <div class="footer-center">Motilal Oswal Financial Services Ltd — Equity Research</div>
+    <div class="footer-right">2026-04-28 | Page 12 of 20</div>
+  </div>
+</div>
+<!-- INTERIOR PAGE: full_table -->
+<div class="page">
+  <div class="mini-header">
+    <div class="mini-firm">Tikona Capital</div>
+    <div class="mini-company">Motilal Oswal Financial Services Ltd — Scenario Analysis</div>
+    <div class="mini-stats">
+      <div class="mini-stat"><span class="mini-stat-label">CMP</span><span class="mini-stat-value">₹822.90</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">TP</span><span class="mini-stat-value accent">₹1,127</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">Upside</span><span class="mini-stat-value green-v">+37%</span></div>
+<div class="mini-stat"><span class="mini-stat-label">Mkt Cap</span><span class="mini-stat-value">₹49,079 Cr</span></div>      <div class="mini-stat"><span class="mini-stat-label">Rating</span><span class="mini-stat-value buy">BUY</span></div>
+    </div>
+  </div>
+
+  <div style="padding:10px 18px 48px;">
+    <div class="section-header">
+      <span class="section-number">13</span>
+      <span class="section-title">Scenario Analysis</span>
+    </div>
+
+
+
+      <div class="fin-table-wrap mb8">
+        <div class="fin-table-title">Bull / Base / Bear</div>
+        <table>
+          <thead><tr>
+<th>Case</th><th>Rev CAGR</th><th>EBITDA Mgn</th><th>Target Price</th><th>Probability</th><th>Drivers</th>          </tr></thead>
+          <tbody>
+            <tr style="background:#f4f6f9;">
+              <td style="font-weight:500;color:#3a4d6b;">Bull</td>
+              <td>27.5%</td>
+              <td>55.0%</td>
+              <td>1,400.0</td>
+              <td>30.0%</td>
+              <td>ARR > 70%, AMC AUM +40% YoY, regulatory clarity.</td>
+            </tr>
+            <tr>
+              <td style="font-weight:500;color:#3a4d6b;">Base</td>
+              <td>16.0%</td>
+              <td>51.0%</td>
+              <td>1,127.0</td>
+              <td>50.0%</td>
+              <td>ARR steady at 65%, AUM compounding, stable regulation.</td>
+            </tr>
+            <tr style="background:#f4f6f9;">
+              <td style="font-weight:500;color:#3a4d6b;">Bear</td>
+              <td>6.0%</td>
+              <td>45.0%</td>
+              <td>630.0</td>
+              <td>20.0%</td>
+              <td>Sustained F&O headwinds, fintech share loss.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
+
+
+
+
+
+
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">Tikona Capital | SEBI Registration No.: INH000069807</div>
+    <div class="footer-center">Motilal Oswal Financial Services Ltd — Equity Research</div>
+    <div class="footer-right">2026-04-28 | Page 13 of 20</div>
+  </div>
+</div>
+<!-- INTERIOR PAGE: text_plus_bullets -->
+<div class="page">
+  <div class="mini-header">
+    <div class="mini-firm">Tikona Capital</div>
+    <div class="mini-company">Motilal Oswal Financial Services Ltd — Key Catalysts</div>
+    <div class="mini-stats">
+      <div class="mini-stat"><span class="mini-stat-label">CMP</span><span class="mini-stat-value">₹822.90</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">TP</span><span class="mini-stat-value accent">₹1,127</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">Upside</span><span class="mini-stat-value green-v">+37%</span></div>
+<div class="mini-stat"><span class="mini-stat-label">Mkt Cap</span><span class="mini-stat-value">₹49,079 Cr</span></div>      <div class="mini-stat"><span class="mini-stat-label">Rating</span><span class="mini-stat-value buy">BUY</span></div>
+    </div>
+  </div>
+
+  <div style="padding:10px 18px 48px;">
+    <div class="section-header">
+      <span class="section-number">14</span>
+      <span class="section-title">Key Catalysts</span>
+    </div>
+
+
+
+      <div class="analysis-block"><p>- ARR contribution crossing the relevant figure of revenues, triggering valuation re-rating from broking to asset management multiples - Sustained AMC AUM growth above the relevant figure YoY with net flows exceeding the relevant figure crore annually - Private wealth AUM growth above the relevant figure YoY with family count expansion - Operating leverage improvement with cost-to-income ratio declining - Regulatory clarity on F&O trading norms</p></div>
+
+
+      <div class="analysis-block">
+        <ul><li>ARR contribution crossing the relevant figure of revenues, triggering valuation re-rating from broking to asset management multiples</li><li>Sustained AMC AUM growth above the relevant figure YoY with net flows exceeding the relevant figure crore annually</li><li>Private wealth AUM growth above the relevant figure YoY with family count expansion</li><li>Operating leverage improvement with cost-to-income ratio declining</li><li>Regulatory clarity on F&O trading norms</li></ul>
+      </div>
+
+
+
+
+
+
+
+
+
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">Tikona Capital | SEBI Registration No.: INH000069807</div>
+    <div class="footer-center">Motilal Oswal Financial Services Ltd — Equity Research</div>
+    <div class="footer-right">2026-04-28 | Page 14 of 20</div>
+  </div>
+</div>
+<!-- INTERIOR PAGE: management_profile -->
+<div class="page">
+  <div class="mini-header">
+    <div class="mini-firm">Tikona Capital</div>
+    <div class="mini-company">Motilal Oswal Financial Services Ltd — Management Team</div>
+    <div class="mini-stats">
+      <div class="mini-stat"><span class="mini-stat-label">CMP</span><span class="mini-stat-value">₹822.90</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">TP</span><span class="mini-stat-value accent">₹1,127</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">Upside</span><span class="mini-stat-value green-v">+37%</span></div>
+<div class="mini-stat"><span class="mini-stat-label">Mkt Cap</span><span class="mini-stat-value">₹49,079 Cr</span></div>      <div class="mini-stat"><span class="mini-stat-label">Rating</span><span class="mini-stat-value buy">BUY</span></div>
+    </div>
+  </div>
+
+  <div style="padding:10px 18px 48px;">
+    <div class="section-header">
+      <span class="section-number">15</span>
+      <span class="section-title">Management Team</span>
+    </div>
+
+
+
+      <div class="analysis-block"><p>Founder-led leadership with deep institutional DNA.</p></div>
+
+
+      <div class="fin-table-wrap mb8">
+        <div class="fin-table-title">Leadership</div>
+        <table>
+          <thead><tr>
+<th>Name</th><th>Role</th><th>Background</th>          </tr></thead>
+          <tbody>
+            <tr style="background:#f4f6f9;">
+              <td style="font-weight:500;color:#3a4d6b;">Raamdeo Agrawal</td>
+              <td>Chairman, MOFSL & Chairman, AMC</td>
+              <td>Co-founder (1987). Creator of the QGLP investment process and 'Buy Right, Sit Tight' framework. Built one of India's most respected investment research franchises. Widely cited investment thinker.</td>
+            </tr>
+            <tr>
+              <td style="font-weight:500;color:#3a4d6b;">Motilal Oswal</td>
+              <td>Founder, Chairman & MD</td>
+              <td>Co-founder (1987). Led the firm's transformation from broking house into a comprehensive financial services platform. Recipient of Rashtriya Samman Patra for being among the highest taxpayers FY95–FY99.</td>
+            </tr>
+            <tr style="background:#f4f6f9;">
+              <td style="font-weight:500;color:#3a4d6b;">Navin Agarwal</td>
+              <td>Executive Board — Strategy & Capital Allocation</td>
+              <td>Joined 2000. Drives business strategy and capital allocation across the Group, building market-leading positions through disciplined deployment.</td>
+            </tr>
+            <tr>
+              <td style="font-weight:500;color:#3a4d6b;">Ajay Menon</td>
+              <td>Executive — Operations, Compliance, Risk & Technology</td>
+              <td>Joined 1998. 27+ years in Indian capital markets. Cornerstone of operational excellence and technology initiatives across the Group.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
+
+    <div class="mb8">
+      <div class="mgmt-row">
+        <div class="mgmt-name">Raamdeo Agrawal</div>
+        <div class="mgmt-role">Chairman, MOFSL & Chairman, AMC</div>
+        <div class="mgmt-bio">Co-founder (1987). Creator of the QGLP investment process and 'Buy Right, Sit Tight' framework. Built one of India's most respected investment research franchises. Widely cited investment thinker.</div>
+      </div>
+      <div class="mgmt-row">
+        <div class="mgmt-name">Motilal Oswal</div>
+        <div class="mgmt-role">Founder, Chairman & MD</div>
+        <div class="mgmt-bio">Co-founder (1987). Led the firm's transformation from broking house into a comprehensive financial services platform. Recipient of Rashtriya Samman Patra for being among the highest taxpayers FY95–FY99.</div>
+      </div>
+      <div class="mgmt-row">
+        <div class="mgmt-name">Navin Agarwal</div>
+        <div class="mgmt-role">Executive Board — Strategy & Capital Allocation</div>
+        <div class="mgmt-bio">Joined 2000. Drives business strategy and capital allocation across the Group, building market-leading positions through disciplined deployment.</div>
+      </div>
+      <div class="mgmt-row">
+        <div class="mgmt-name">Ajay Menon</div>
+        <div class="mgmt-role">Executive — Operations, Compliance, Risk & Technology</div>
+        <div class="mgmt-bio">Joined 1998. 27+ years in Indian capital markets. Cornerstone of operational excellence and technology initiatives across the Group.</div>
+      </div>
+    </div>
+
+
+
+
+
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">Tikona Capital | SEBI Registration No.: INH000069807</div>
+    <div class="footer-center">Motilal Oswal Financial Services Ltd — Equity Research</div>
+    <div class="footer-right">2026-04-28 | Page 15 of 20</div>
+  </div>
+</div>
+<!-- INTERIOR PAGE: forensic_assessment -->
+<div class="page">
+  <div class="mini-header">
+    <div class="mini-firm">Tikona Capital</div>
+    <div class="mini-company">Motilal Oswal Financial Services Ltd — Forensic / Governance — Monitor Closely</div>
+    <div class="mini-stats">
+      <div class="mini-stat"><span class="mini-stat-label">CMP</span><span class="mini-stat-value">₹822.90</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">TP</span><span class="mini-stat-value accent">₹1,127</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">Upside</span><span class="mini-stat-value green-v">+37%</span></div>
+<div class="mini-stat"><span class="mini-stat-label">Mkt Cap</span><span class="mini-stat-value">₹49,079 Cr</span></div>      <div class="mini-stat"><span class="mini-stat-label">Rating</span><span class="mini-stat-value buy">BUY</span></div>
+    </div>
+  </div>
+
+  <div style="padding:10px 18px 48px;">
+    <div class="section-header">
+      <span class="section-number">16</span>
+      <span class="section-title">Forensic / Governance — Monitor Closely</span>
+    </div>
+
+
+
+      <div class="analysis-block"><p>Recurring regulatory matters are operational rather than fraudulent. Despite SEBI interventions, structural lapses suggest deeper governance attention needed in risk management. Pattern warrants monitoring but does not impair the business model.</p></div>
+
+
+      <div class="fin-table-wrap mb8">
+        <div class="fin-table-title">Regulatory Matters</div>
+        <table>
+          <thead><tr>
+<th>Matter</th><th>Description</th><th>Severity</th>          </tr></thead>
+          <tbody>
+            <tr style="background:#f4f6f9;">
+              <td style="font-weight:500;color:#3a4d6b;">SEBI — Margin Reporting Violations</td>
+              <td>INR 7 lakh penalty for margin reporting, collection violations, and other regulatory lapses found during inspection.</td>
+              <td>Low</td>
+            </tr>
+            <tr>
+              <td style="font-weight:500;color:#3a4d6b;">SEBI — Client Fund Misutilization (2022)</td>
+              <td>INR 25 lakh fine for misutilization of client funds and inaccurate margin reporting.</td>
+              <td>Medium</td>
+            </tr>
+            <tr style="background:#f4f6f9;">
+              <td style="font-weight:500;color:#3a4d6b;">NSEL — Misselling Accusations</td>
+              <td>Accused alongside other top brokers of misselling NSEL contracts, KYC manipulation, client code modification, and illegal transactions per SFIO/EOW findings.</td>
+              <td>High (Historical)</td>
+            </tr>
+            <tr>
+              <td style="font-weight:500;color:#3a4d6b;">SEBI — Not Fit and Proper (Commodities)</td>
+              <td>Declared 'not fit and proper' as commodity derivative broker in Feb 2019 based on SFIO/EOW recommendations.</td>
+              <td>High (Historical)</td>
+            </tr>
+            <tr style="background:#f4f6f9;">
+              <td style="font-weight:500;color:#3a4d6b;">Unauthorized Terminal Operations</td>
+              <td>13 NSE and 9 BSE terminals operating from undeclared locations including an unreported branch in Delhi.</td>
+              <td>Medium</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
+
+
+
+
+
+
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">Tikona Capital | SEBI Registration No.: INH000069807</div>
+    <div class="footer-center">Motilal Oswal Financial Services Ltd — Equity Research</div>
+    <div class="footer-right">2026-04-28 | Page 16 of 20</div>
+  </div>
+</div>
+<!-- INTERIOR PAGE: text_plus_bullets -->
+<div class="page">
+  <div class="mini-header">
+    <div class="mini-firm">Tikona Capital</div>
+    <div class="mini-company">Motilal Oswal Financial Services Ltd — Trading Strategy</div>
+    <div class="mini-stats">
+      <div class="mini-stat"><span class="mini-stat-label">CMP</span><span class="mini-stat-value">₹822.90</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">TP</span><span class="mini-stat-value accent">₹1,127</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">Upside</span><span class="mini-stat-value green-v">+37%</span></div>
+<div class="mini-stat"><span class="mini-stat-label">Mkt Cap</span><span class="mini-stat-value">₹49,079 Cr</span></div>      <div class="mini-stat"><span class="mini-stat-label">Rating</span><span class="mini-stat-value buy">BUY</span></div>
+    </div>
+  </div>
+
+  <div style="padding:10px 18px 48px;">
+    <div class="section-header">
+      <span class="section-number">17</span>
+      <span class="section-title">Trading Strategy</span>
+    </div>
+
+
+
+      <div class="analysis-block"><p>Entry: the relevant figure-850. 15-the relevant figure discount to analyst consensus target — margin of safety. Position size: 3-the relevant figure of portfolio (institutional). Review: Quarterly. Downside exit: Stop-loss at the relevant figure (-the relevant figure from CMP) on technical break with high volume. Upside exit: Sell the relevant figure at the relevant figure-1,150 (30-the relevant figure gains) / Sell remaining at the relevant figure+ if multiples expand beyond the relevant figure P/E.</p></div>
+
+
+      <div class="analysis-block">
+        <ul><li>ARR contribution above the relevant figure of net revenues</li><li>AMC AUM growth above the relevant figure YoY with net flows > the relevant figure Cr</li><li>PWM AUM growth above the relevant figure YoY with family count expansion</li><li>Cost-to-income ratio declining</li><li>SEBI compliance with no major enforcement actions</li></ul>
+      </div>
+
+
+
+
+
+
+
+
+
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">Tikona Capital | SEBI Registration No.: INH000069807</div>
+    <div class="footer-center">Motilal Oswal Financial Services Ltd — Equity Research</div>
+    <div class="footer-right">2026-04-28 | Page 17 of 20</div>
+  </div>
+</div>
+<!-- INTERIOR PAGE: risks_and_catalysts -->
+<div class="page">
+  <div class="mini-header">
+    <div class="mini-firm">Tikona Capital</div>
+    <div class="mini-company">Motilal Oswal Financial Services Ltd — Key Risks</div>
+    <div class="mini-stats">
+      <div class="mini-stat"><span class="mini-stat-label">CMP</span><span class="mini-stat-value">₹822.90</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">TP</span><span class="mini-stat-value accent">₹1,127</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">Upside</span><span class="mini-stat-value green-v">+37%</span></div>
+<div class="mini-stat"><span class="mini-stat-label">Mkt Cap</span><span class="mini-stat-value">₹49,079 Cr</span></div>      <div class="mini-stat"><span class="mini-stat-label">Rating</span><span class="mini-stat-value buy">BUY</span></div>
+    </div>
+  </div>
+
+  <div style="padding:10px 18px 48px;">
+    <div class="section-header">
+      <span class="section-number">18</span>
+      <span class="section-title">Key Risks</span>
+    </div>
+
+
+
+      <div class="analysis-block">
+        <ul><li>SEBI regulatory headwinds on F&O trading norms compressing cyclical broking revenues</li><li>Q2FY26 profit declined the relevant figure YoY and revenue the relevant figure YoY due to regulatory changes — residual cyclicality</li><li>Competitive intensity from discount brokers and fintech platforms compressing yields</li><li>Forensic / governance: recurring SEBI matters require monitoring (Monitor Closely category)</li><li>Mark-to-market volatility on the proprietary book</li><li>Housing finance asset-quality slippage in stressed credit cycles</li></ul>
+      </div>
+
+
+
+
+
+
+
+    <div class="mb8">
+          <div class="risk-item">
+            <div class="risk-badge risk-med">RISK</div>
+            <div><div class="risk-title">SEBI regulatory headwinds on F&O trading norms compressing c...</div><div class="risk-text">SEBI regulatory headwinds on F&O trading norms compressing cyclical broking revenues</div></div>
+          </div>
+          <div class="risk-item">
+            <div class="risk-badge risk-med">RISK</div>
+            <div><div class="risk-title">Q2FY26 profit declined the relevant figure YoY and revenue t...</div><div class="risk-text">Q2FY26 profit declined the relevant figure YoY and revenue the relevant figure YoY due to regulatory changes — residual cyclicality</div></div>
+          </div>
+          <div class="risk-item">
+            <div class="risk-badge risk-med">RISK</div>
+            <div><div class="risk-title">Competitive intensity from discount brokers and fintech plat...</div><div class="risk-text">Competitive intensity from discount brokers and fintech platforms compressing yields</div></div>
+          </div>
+          <div class="risk-item">
+            <div class="risk-badge risk-med">RISK</div>
+            <div><div class="risk-title">Forensic / governance: recurring SEBI matters require monito...</div><div class="risk-text">Forensic / governance: recurring SEBI matters require monitoring (Monitor Closely category)</div></div>
+          </div>
+          <div class="risk-item">
+            <div class="risk-badge risk-med">RISK</div>
+            <div><div class="risk-title">Mark-to-market volatility on the proprietary book</div><div class="risk-text">Mark-to-market volatility on the proprietary book</div></div>
+          </div>
+          <div class="risk-item">
+            <div class="risk-badge risk-med">RISK</div>
+            <div><div class="risk-title">Housing finance asset-quality slippage in stressed credit cy...</div><div class="risk-text">Housing finance asset-quality slippage in stressed credit cycles</div></div>
+          </div>
+    </div>
+
+
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">Tikona Capital | SEBI Registration No.: INH000069807</div>
+    <div class="footer-center">Motilal Oswal Financial Services Ltd — Equity Research</div>
+    <div class="footer-right">2026-04-28 | Page 18 of 20</div>
+  </div>
+</div>
+<!-- INTERIOR PAGE: analyst_certification -->
+<div class="page">
+  <div class="mini-header">
+    <div class="mini-firm">Tikona Capital</div>
+    <div class="mini-company">Motilal Oswal Financial Services Ltd — Analyst Certification & Disclosures</div>
+    <div class="mini-stats">
+      <div class="mini-stat"><span class="mini-stat-label">CMP</span><span class="mini-stat-value">₹822.90</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">TP</span><span class="mini-stat-value accent">₹1,127</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">Upside</span><span class="mini-stat-value green-v">+37%</span></div>
+<div class="mini-stat"><span class="mini-stat-label">Mkt Cap</span><span class="mini-stat-value">₹49,079 Cr</span></div>      <div class="mini-stat"><span class="mini-stat-label">Rating</span><span class="mini-stat-value buy">BUY</span></div>
+    </div>
+  </div>
+
+  <div style="padding:10px 18px 48px;">
+    <div class="section-header">
+      <span class="section-number">19</span>
+      <span class="section-title">Analyst Certification & Disclosures</span>
+    </div>
+
+
+
+      <div class="analysis-block"><p>## Analyst Certification
+
+I, the research analyst whose name appears on this report, certify that:
+
+1. The views expressed in this report accurately reflect my personal views about the subject company and its securities.
+2. No part of my compensation was, is, or will be directly or indirectly related to the specific recommendations or views expressed herein.
+3. I have not received any compensation from the subject company in the past twelve months.
+4. I, my relatives, or Tikona Capital do not have any actual or potential conflict of interest with the subject company at the time of publication of this report, except as may be disclosed below.
+
+## Disclosures
+
+- Ownership in subject company: None unless otherwise disclosed.
+- Material conflicts of interest: None at the time of publication.
+- Investment banking or merchant banking relationship in the past twelve months: None.
+
+This certification is made in accordance with SEBI (Research Analysts) Regulations, 2014.</p></div>
+
+
+
+
+
+
+
+
+    <div class="disclaimer">
+## Analyst Certification</p><p>I, the research analyst whose name appears on this report, certify that:</p><p>1. The views expressed in this report accurately reflect my personal views about the subject company and its securities.<br>2. No part of my compensation was, is, or will be directly or indirectly related to the specific recommendations or views expressed herein.<br>3. I have not received any compensation from the subject company in the past twelve months.<br>4. I, my relatives, or Tikona Capital do not have any actual or potential conflict of interest with the subject company at the time of publication of this report, except as may be disclosed below.</p><p>## Disclosures</p><p>- Ownership in subject company: None unless otherwise disclosed.<br>- Material conflicts of interest: None at the time of publication.<br>- Investment banking or merchant banking relationship in the past twelve months: None.</p><p>This certification is made in accordance with SEBI (Research Analysts) Regulations, 2014.    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">Tikona Capital | SEBI Registration No.: INH000069807</div>
+    <div class="footer-center">Motilal Oswal Financial Services Ltd — Equity Research</div>
+    <div class="footer-right">2026-04-28 | Page 19 of 20</div>
+  </div>
+</div>
+<!-- INTERIOR PAGE: disclaimer -->
+<div class="page">
+  <div class="mini-header">
+    <div class="mini-firm">Tikona Capital</div>
+    <div class="mini-company">Motilal Oswal Financial Services Ltd — Disclaimer</div>
+    <div class="mini-stats">
+      <div class="mini-stat"><span class="mini-stat-label">CMP</span><span class="mini-stat-value">₹822.90</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">TP</span><span class="mini-stat-value accent">₹1,127</span></div>
+      <div class="mini-stat"><span class="mini-stat-label">Upside</span><span class="mini-stat-value green-v">+37%</span></div>
+<div class="mini-stat"><span class="mini-stat-label">Mkt Cap</span><span class="mini-stat-value">₹49,079 Cr</span></div>      <div class="mini-stat"><span class="mini-stat-label">Rating</span><span class="mini-stat-value buy">BUY</span></div>
+    </div>
+  </div>
+
+  <div style="padding:10px 18px 48px;">
+    <div class="section-header">
+      <span class="section-number">20</span>
+      <span class="section-title">Disclaimer</span>
+    </div>
+
+
+
+      <div class="analysis-block"><p>## Disclaimer
+
+This research report is prepared by Tikona Capital (SEBI Research Analyst Registration No. INH000069807) for the exclusive use of its clients. It is intended solely for informational purposes and does not constitute an offer, solicitation, or recommendation to buy, sell, or hold any security.
+
+The views expressed are those of the analyst as of the date of publication and are based on information believed to be reliable but are not guaranteed as to accuracy or completeness. Past performance is not indicative of future results. Investments in securities are subject to market risks. Investors should consult their own financial, legal, and tax advisors before making any investment decision.
+
+Tikona Capital, its affiliates, directors, employees, or research analysts may, from time to time, hold positions in the securities mentioned, or in instruments related to such securities, and may transact in them in a manner inconsistent with the views expressed herein.
+
+This document is the intellectual property of Tikona Capital. No part of it may be reproduced, distributed, or transmitted without prior written consent. Unauthorized use is prohibited.
+
+For grievances, contact: research@tikonacapital.in.</p></div>
+
+
+
+
+
+
+
+
+    <div class="disclaimer">
+## Disclaimer</p><p>This research report is prepared by Tikona Capital (SEBI Research Analyst Registration No. INH000069807) for the exclusive use of its clients. It is intended solely for informational purposes and does not constitute an offer, solicitation, or recommendation to buy, sell, or hold any security.</p><p>The views expressed are those of the analyst as of the date of publication and are based on information believed to be reliable but are not guaranteed as to accuracy or completeness. Past performance is not indicative of future results. Investments in securities are subject to market risks. Investors should consult their own financial, legal, and tax advisors before making any investment decision.</p><p>Tikona Capital, its affiliates, directors, employees, or research analysts may, from time to time, hold positions in the securities mentioned, or in instruments related to such securities, and may transact in them in a manner inconsistent with the views expressed herein.</p><p>This document is the intellectual property of Tikona Capital. No part of it may be reproduced, distributed, or transmitted without prior written consent. Unauthorized use is prohibited.</p><p>For grievances, contact: research@tikonacapital.in.    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">Tikona Capital | SEBI Registration No.: INH000069807</div>
+    <div class="footer-center">Motilal Oswal Financial Services Ltd — Equity Research</div>
+    <div class="footer-right">2026-04-28 | Page 20 of 20</div>
+  </div>
+</div>
+</body>
+</html>

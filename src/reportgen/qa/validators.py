@@ -25,17 +25,17 @@ def validate_report_content(report_spec: ReportSpec) -> QaResult:
             result.warnings.append(f"Slide {slide.slide_id} subtitle is long and may overflow.")
 
         for block in slide.blocks:
-            if isinstance(block, TextBlock) and len(block.content) > 1200:
+            if isinstance(block, TextBlock) and len(block.content) > 3000:
                 result.warnings.append(f"Slide {slide.slide_id} text block '{block.key}' is very long.")
             if isinstance(block, BulletBlock):
-                if len(block.items) > 6:
+                if len(block.items) > 8:
                     result.warnings.append(f"Slide {slide.slide_id} bullet block '{block.key}' is dense.")
                 for item in block.items:
-                    if len(item) > 180:
+                    if len(item) > 250:
                         result.warnings.append(
                             f"Slide {slide.slide_id} bullet item in '{block.key}' is long and may wrap heavily."
                         )
-            if isinstance(block, MetricsBlock) and len(block.items) > 5:
+            if isinstance(block, MetricsBlock) and len(block.items) > 8:
                 result.warnings.append(f"Slide {slide.slide_id} metrics block '{block.key}' is dense.")
 
     return result

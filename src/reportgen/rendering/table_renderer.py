@@ -9,8 +9,8 @@ from reportgen.rendering.overflow import cap_table_rows
 from reportgen.rendering.theme import BrandTheme
 from reportgen.schemas.tables import TableBlock
 
-MAX_TABLE_ROWS = 14
-CELL_MARGIN_IN = 0.04  # tighter than python-pptx default of 0.1
+MAX_TABLE_ROWS = 12
+CELL_MARGIN_IN = 0.05  # slightly more than previous 0.04 for clarity
 TABLE_BODY_FONT_SHRINK_THRESHOLD = 6  # cols beyond this trigger 1pt shrink
 
 # Patterns to detect sign-sensitive values (percentages, growth)
@@ -81,9 +81,9 @@ def render_table_block(
     row_count = len(rows) + 1
     col_count = len(block.columns)
 
-    body_font_pt = theme.body_font.size_pt
+    body_font_pt = max(theme.body_font.size_pt, 14)
     if col_count > TABLE_BODY_FONT_SHRINK_THRESHOLD:
-        body_font_pt = max(9, body_font_pt - 2)
+        body_font_pt = max(11, body_font_pt - 2)
 
     shape = slide.shapes.add_table(
         row_count,

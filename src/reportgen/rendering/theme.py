@@ -123,7 +123,7 @@ DEFAULT_THEME = BrandTheme(
     chart_palette=["#1F4690", "#FFA500", "#3A5BA0", "#1B7F3A", "#B3261E", "#FFE5B4"],
     title_font=FontToken(family="Calibri", size_pt=26, bold=True, color_hex="#1F4690"),
     subtitle_font=FontToken(family="Calibri", size_pt=13, bold=False, color_hex="#5A6573"),
-    body_font=FontToken(family="Calibri", size_pt=12, bold=False, color_hex="#111111"),
+    body_font=FontToken(family="Calibri", size_pt=14, bold=False, color_hex="#111111"),
     metric_font=FontToken(family="Calibri", size_pt=14, bold=True, color_hex="#1F4690"),
     footer_font=FontToken(family="Calibri", size_pt=9, bold=False, color_hex="#FFFFFF"),
     header_font=FontToken(family="Calibri", size_pt=11, bold=True, color_hex="#FFFFFF"),

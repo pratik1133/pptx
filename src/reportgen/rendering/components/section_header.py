@@ -82,15 +82,4 @@ def render_section_header(
     run.font.bold = True
     run.font.color.rgb = _hex_to_rgb(runtime, theme.palette.primary)
 
-    # ── Orange divider line below ──
-    line_top = box.top + box.height + 0.03
-    line = slide.shapes.add_shape(
-        runtime.MSO_AUTO_SHAPE_TYPE.RECTANGLE,
-        runtime.Inches(box.left),
-        runtime.Inches(line_top),
-        runtime.Inches(box.width),
-        runtime.Inches(0.025),
-    )
-    line.fill.solid()
-    line.fill.fore_color.rgb = _hex_to_rgb(runtime, theme.palette.primary)
-    line.line.fill.background()
+

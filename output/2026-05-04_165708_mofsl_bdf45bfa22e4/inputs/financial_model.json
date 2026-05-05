@@ -1,0 +1,181 @@
+{
+  "model_name": "MOFSL Base Model",
+  "model_version": "v2.0",
+  "currency": "INR",
+  "fiscal_year_end": "March",
+  "metrics": {
+    "revenue_fy26e": 10402,
+    "ebitda_fy26e": 5439,
+    "pat_fy26e": 3066,
+    "eps_fy26e": 51.2,
+    "bvps_fy26e": 229.8,
+    "roe_fy26e_pct": 22,
+    "roce_fy26e_pct": 18,
+    "pe_fy26e_x": 16.1,
+    "pb_fy26e_x": 3.6,
+    "ev_ebitda_fy26e_x": 12.7,
+    "arr_pct_of_revenue": 65,
+    "fee_based_pct_of_revenue": 45,
+    "brokerage_pct_of_revenue": 30,
+    "total_aum_lakh_cr": 1.77,
+    "total_aum_yoy_pct": 46,
+    "amc_aum_lakh_cr": 1.89,
+    "pwm_aum_lakh_cr": 1.96,
+    "net_worth_cr": 12871,
+    "credit_rating": "AA+ (Stable) ICRA",
+    "probability_weighted_target": 1109
+  },
+  "series": [
+    {
+      "name": "Revenue",
+      "unit": "INR Cr",
+      "periods": ["FY22A", "FY23A", "FY24A", "FY25A", "FY26E", "FY27E", "FY28E"],
+      "values": [4298, 4178, 7106, 8340, 10402, 12973, 16181]
+    },
+    {
+      "name": "EBITDA",
+      "unit": "INR Cr",
+      "periods": ["FY22A", "FY23A", "FY24A", "FY25A", "FY26E", "FY27E", "FY28E"],
+      "values": [2120, 1877, 4082, 4546, 5439, 6784, 8462]
+    },
+    {
+      "name": "PAT",
+      "unit": "INR Cr",
+      "periods": ["FY22A", "FY23A", "FY24A", "FY25A", "FY26E", "FY27E", "FY28E"],
+      "values": [1310, 932, 2441, 2502, 3066, 3983, 5128]
+    },
+    {
+      "name": "EPS",
+      "unit": "INR",
+      "periods": ["FY22A", "FY23A", "FY24A", "FY25A", "FY26E", "FY27E", "FY28E"],
+      "values": [22.0, 15.7, 41.0, 41.7, 51.2, 66.5, 85.6]
+    }
+  ],
+  "quarterly_series": [
+    {
+      "name": "Quarterly PAT",
+      "unit": "INR Cr",
+      "periods": ["Q2FY25", "Q3FY25", "Q4FY25", "Q1FY26", "Q2FY26"],
+      "values": [1242, 715, 545, 425, 401]
+    }
+  ],
+  "ratios": [
+    { "name": "EBITDA Margin",  "unit": "%", "periods": ["FY22A","FY23A","FY24A","FY25A","FY26E","FY27E","FY28E"], "values": [49.3, 44.9, 57.4, 54.5, 52.3, 52.3, 52.3] },
+    { "name": "PAT Margin",     "unit": "%", "periods": ["FY22A","FY23A","FY24A","FY25A","FY26E","FY27E","FY28E"], "values": [30.5, 22.3, 34.4, 30.0, 29.5, 30.7, 31.7] },
+    { "name": "RoE",            "unit": "%", "periods": ["FY22A","FY23A","FY24A","FY25A","FY26E","FY27E","FY28E"], "values": [23, 15, 28, 23, 22, 23, 24] },
+    { "name": "RoCE",           "unit": "%", "periods": ["FY22A","FY23A","FY24A","FY25A","FY26E","FY27E","FY28E"], "values": [19, 13, 21, 19, 18, 18, 19] },
+    { "name": "RoIC",           "unit": "%", "periods": ["FY22A","FY23A","FY24A","FY25A","FY26E","FY27E","FY28E"], "values": [92, 78, 119, 87, 35, 24, 24] },
+    { "name": "P/E",            "unit": "x", "periods": ["FY22A","FY23A","FY24A","FY25A","FY26E","FY27E","FY28E"], "values": [37.5, 52.3, 20.1, 19.7, 16.1, 12.4, 9.6] },
+    { "name": "P/B",            "unit": "x", "periods": ["FY22A","FY23A","FY24A","FY25A","FY26E","FY27E","FY28E"], "values": [8.7, 7.8, 5.6, 4.5, 3.6, 2.9, 2.3] },
+    { "name": "EV/EBITDA",      "unit": "x", "periods": ["FY22A","FY23A","FY24A","FY25A","FY26E","FY27E","FY28E"], "values": [9.0, 10.3, 9.5, 11.4, 12.7, 10.5, 8.8] }
+  ],
+  "segments": [
+    { "name": "Capital Markets (Broking + IB)", "revenue_share_pct": 30, "description": "Equity, derivatives, commodity, currency trading + institutional services and investment banking. Brokerage now contributes only 30% of total revenue, down from historical highs.", "aum_or_book_label": "Brokerage Rev YoY", "aum_or_book_value": "-24%" },
+    { "name": "Asset Management", "description": "Mutual funds and PMS. 91% of AUM outperforming benchmarks over 3 years.", "aum_or_book_label": "AMC AUM", "aum_or_book_value": "INR 1.89L Cr (+33% YoY)" },
+    { "name": "Private Wealth Management", "description": "HNI/UHNI advisory. Family count up 41% YoY.", "aum_or_book_label": "PWM AUM", "aum_or_book_value": "INR 1.96L Cr (+31% YoY)" },
+    { "name": "Housing Finance", "description": "Retail mortgage lending — affordable and mid-segment.", "aum_or_book_label": "Loan Book", "aum_or_book_value": "INR 6,630 Cr (+25% YoY)" },
+    { "name": "Alternative Investments", "description": "Private credit, real estate, alternatives.", "aum_or_book_label": "Carry Income", "aum_or_book_value": "INR 58 Cr recurring" }
+  ],
+  "valuation_bands": [
+    { "method": "Bull Case",  "low": 1400, "base": 1400, "high": 1400, "weight_pct": 30, "notes": "28x P/E on FY27E EPS of INR 50; ARR > 70%, AMC +40% YoY." },
+    { "method": "Base Case",  "low": 1127, "base": 1127, "high": 1127, "weight_pct": 50, "notes": "24x P/E on FY27E EPS of INR 47; ARR stable at 65%, steady AUM." },
+    { "method": "Bear Case",  "low": 630,  "base": 630,  "high": 630,  "weight_pct": 20, "notes": "18x P/E on depressed FY27E EPS of INR 35; sustained regulatory headwinds." }
+  ],
+  "scenarios": [
+    { "name": "Bull",  "revenue_cagr_pct": 27.5, "ebitda_margin_pct": 55, "target_price": 1400, "probability_pct": 30, "notes": "ARR > 70%, AMC AUM +40% YoY, regulatory clarity." },
+    { "name": "Base",  "revenue_cagr_pct": 16,   "ebitda_margin_pct": 51, "target_price": 1127, "probability_pct": 50, "notes": "ARR steady at 65%, AUM compounding, stable regulation." },
+    { "name": "Bear",  "revenue_cagr_pct": 6,    "ebitda_margin_pct": 45, "target_price": 630,  "probability_pct": 20, "notes": "Sustained F&O headwinds, fintech share loss." }
+  ],
+  "saarthi": {
+    "total_score": 72,
+    "max_score": 100,
+    "rating": "BUY (70-84 range)",
+    "dimensions": [
+      { "code": "S",  "name": "Scalability of Core Engine",     "score": 12, "max_score": 15, "assessment": "ARR at 61% of net revenues; fee-based at 45%. H1FY26 operating PAT INR 1,088 Cr (+11% YoY) on net revenue INR 2,888 Cr (+15%). Asset-light fee model scales without proportional cost growth. F&O constraints limit broking scalability near-term.", "key_evidence": "AMC AUM +33% YoY to INR 1.89L Cr with INR 11,610 Cr net flows." },
+      { "code": "A1", "name": "Addressable Market & Adjacency", "score": 9,  "max_score": 10, "assessment": "16.57L HNWIs by 2027; India 4th-largest private wealth market by 2028 (+58.4% UHNWIs). Sector profits to nearly double by FY30. MF penetration at 5–6%. Massive TAM with adjacency expansion across capital markets, wealth, housing, alternatives.", "key_evidence": "India private credit hit USD 9.0 Bn in H1 2025 (+53% YoY)." },
+      { "code": "A2", "name": "Asymmetric Pricing Power",       "score": 10, "max_score": 15, "assessment": "91% of AUM outperforming benchmarks over 3 years gives pricing power in PMS/wealth. Brokerage revenue down 24% from regulatory changes — fee compression in cyclical segment. Discount brokers and fintech limit pricing in commoditized broking.", "key_evidence": "Diversified mix offset 24% brokerage decline, validating partial pricing-power hedge." },
+      { "code": "R",  "name": "Reinvestment Quality",           "score": 13, "max_score": 15, "assessment": "MCap INR 49,079 Cr (+24.8% YoY); P/E 24.2; P/B 3.82. Strong RoCE; disciplined allocation into high-return fee businesses. Reinvestment in tech, talent, distribution, research generates sustainable advantage.", "key_evidence": "PWM AUM +31% YoY to INR 1.96L Cr; family count +41%; PAT +14% (9M)." },
+      { "code": "T",  "name": "Track Record Through Adversity", "score": 8,  "max_score": 10, "assessment": "Q2FY25 PAT INR 1,242 Cr (+123% YoY), 46% revenue growth, 48% RoE — recovery and execution. Q2FY26 PAT -67.6% YoY, revenue -34.9% YoY shows residual cyclicality from F&O regulation. Continuity across cycles maintained.", "key_evidence": "Despite repeated SEBI interventions, AUM and ARR base continue to compound — institutional resilience." },
+      { "code": "H",  "name": "Human Capital & Institutional DNA", "score": 9, "max_score": 10, "assessment": "Raamdeo Agrawal: QGLP creator, 'Buy Right, Sit Tight' framework. Navin Agarwal (since 2000): business strategy and capital allocation. Ajay Menon (27+ yrs): operations, compliance, risk, technology. Founding duo across nearly four decades — rare DNA in Indian financial services.", "key_evidence": "Rashtriya Samman Patra recipient (top tax-payer FY95–FY99) signals early ethical commercial success." },
+      { "code": "I",  "name": "Inflection Point Identification", "score": 11, "max_score": 15, "assessment": "Consensus TP INR 1,126.67 (max INR 1,200) vs CMP INR 822.90 — 37% upside; market not yet pricing ARR re-rating. Credit rating upgraded to AA+ (Stable) by ICRA. ARR > 70% would trigger re-rating from broking to asset-management multiples within 6–18 months.", "key_evidence": "ARR at 65% of net revenues (up from 61%); management guiding higher — measurable inflection." }
+    ]
+  },
+  "management_team": [
+    { "name": "Raamdeo Agrawal", "role": "Chairman, MOFSL & Chairman, AMC", "bio": "Co-founder (1987). Creator of the QGLP investment process and 'Buy Right, Sit Tight' framework. Built one of India's most respected investment research franchises. Widely cited investment thinker." },
+    { "name": "Motilal Oswal",   "role": "Founder, Chairman & MD",          "bio": "Co-founder (1987). Led the firm's transformation from broking house into a comprehensive financial services platform. Recipient of Rashtriya Samman Patra for being among the highest taxpayers FY95–FY99." },
+    { "name": "Navin Agarwal",   "role": "Executive Board — Strategy & Capital Allocation", "bio": "Joined 2000. Drives business strategy and capital allocation across the Group, building market-leading positions through disciplined deployment." },
+    { "name": "Ajay Menon",      "role": "Executive — Operations, Compliance, Risk & Technology", "bio": "Joined 1998. 27+ years in Indian capital markets. Cornerstone of operational excellence and technology initiatives across the Group." }
+  ],
+  "forensic": {
+    "category": "Monitor Closely",
+    "overall_assessment": "Recurring regulatory matters are operational rather than fraudulent. Despite SEBI interventions, structural lapses suggest deeper governance attention needed in risk management. Pattern warrants monitoring but does not impair the business model.",
+    "violations": [
+      { "title": "SEBI — Margin Reporting Violations",       "description": "INR 7 lakh penalty for margin reporting, collection violations, and other regulatory lapses found during inspection.", "severity": "Low" },
+      { "title": "SEBI — Client Fund Misutilization (2022)", "description": "INR 25 lakh fine for misutilization of client funds and inaccurate margin reporting.", "severity": "Medium" },
+      { "title": "NSEL — Misselling Accusations",            "description": "Accused alongside other top brokers of misselling NSEL contracts, KYC manipulation, client code modification, and illegal transactions per SFIO/EOW findings.", "severity": "High (Historical)" },
+      { "title": "SEBI — Not Fit and Proper (Commodities)",  "description": "Declared 'not fit and proper' as commodity derivative broker in Feb 2019 based on SFIO/EOW recommendations.", "severity": "High (Historical)" },
+      { "title": "Unauthorized Terminal Operations",         "description": "13 NSE and 9 BSE terminals operating from undeclared locations including an unreported branch in Delhi.", "severity": "Medium" }
+    ]
+  },
+  "key_highlights": [
+    { "title": "ARR Transformation",            "body": "ARR at 65% of net revenues (up from 61%); fee-based at 45%. Annuity income reduces transaction-cycle volatility." },
+    { "title": "Profitability Momentum",        "body": "Q2FY25 PAT INR 1,242 Cr (+123% YoY); H1FY26 operating PAT INR 1,088 Cr (+11% YoY); Asset & PWM businesses leading at +32% PAT growth." },
+    { "title": "AUM Scale and Outperformance",  "body": "Total AUM INR 1.77L Cr (+46% YoY). AMC AUM INR 1.89L Cr (+33%) with INR 11,610 Cr net flows. 91% of AUM outperforming benchmarks over 3 years." },
+    { "title": "Private Wealth Expansion",      "body": "PWM AUM INR 1.96L Cr (+31% YoY); family count +41% YoY; PAT +14% (9M). Distribution book +34% YoY to INR 42,775 Cr." },
+    { "title": "Valuation Opportunity",         "body": "CMP INR 822.90 vs consensus TP INR 1,126.67 (max INR 1,200) — 37% upside. Probability-weighted target INR 1,109." },
+    { "title": "Credit Upgrade",                "body": "Long-term credit rating upgraded to AA+ (Stable) by ICRA. Net worth INR 12,871 Cr (+16% YoY)." }
+  ],
+  "competitive_advantages": [
+    "Research franchise covering 300+ companies — institutional moat",
+    "QGLP investment philosophy with 'Buy Right, Sit Tight' framework",
+    "65% ARR contribution — structural revenue-quality improvement vs broking peers",
+    "91% of AUM outperforming benchmarks over 3 years",
+    "550+ cities and 2,500+ business locations — deep distribution",
+    "Integrated platform: broking → PMS → wealth → IB cross-sell",
+    "AA+ (Stable) credit rating — balance sheet strength",
+    "Founder-led vision with institutional depth across four decades",
+    "Alternative investment capability with recurring carry income",
+    "Technology investment in digital advisory and client servicing"
+  ],
+  "industry_tailwinds": [
+    "Mutual fund penetration at 5-6% — massive latent opportunity",
+    "Financial savings shifting from gold/real estate to financial assets",
+    "BSE-listed companies grew from 135 (1995) to 5,328 (Feb 2025)",
+    "Private wealth set to be 4th-largest globally by 2028",
+    "NBFCs growing at 16% annually with improving asset quality",
+    "Demographic dividend — large working-age population entering peak earning",
+    "Digital payments maturing — new distribution channels"
+  ],
+  "industry_risks": [
+    "Regulatory uncertainty on capital adequacy, risk, consumer protection",
+    "Market volatility compressing transaction-based revenues",
+    "Fintech disruption — 14,000+ startups offering lower-cost alternatives",
+    "Global risk aversion driving FII outflows and capital-market slowdowns",
+    "Reliance on foreign capital creates external sector vulnerability"
+  ],
+  "trading_strategy": {
+    "entry_range": "INR 800-850",
+    "entry_rationale": "15-20% discount to analyst consensus target — margin of safety.",
+    "position_size": "3-5% of portfolio (institutional)",
+    "review_frequency": "Quarterly",
+    "review_metrics": [
+      "ARR contribution above 60% of net revenues",
+      "AMC AUM growth above 25% YoY with net flows > INR 10,000 Cr",
+      "PWM AUM growth above 25% YoY with family count expansion",
+      "Cost-to-income ratio declining",
+      "SEBI compliance with no major enforcement actions"
+    ],
+    "upside_exit": [
+      "Sell 50% at INR 1,100-1,150 (30-40% gains)",
+      "Sell remaining at INR 1,200+ if multiples expand beyond 25x P/E"
+    ],
+    "downside_exit": "Stop-loss at INR 750 (-8% from CMP) on technical break with high volume",
+    "thesis_breaking_exits": [
+      "ARR contribution drops below 55% for two consecutive quarters",
+      "Major SEBI enforcement action with direct business impact",
+      "AMC AUM declining for two consecutive quarters",
+      "Management guidance signaling structural headwinds beyond FY26",
+      "Competitive market-share loss in core wealth or AMC segments"
+    ]
+  }
+}

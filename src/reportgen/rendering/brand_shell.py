@@ -63,6 +63,7 @@ def _add_text_in_rect(
     frame.margin_right = runtime.Inches(0.05)
     frame.margin_top = runtime.Inches(0.02)
     frame.margin_bottom = runtime.Inches(0.02)
+    frame.word_wrap = True
     paragraph = frame.paragraphs[0]
     paragraph.alignment = align
     run = paragraph.add_run()
@@ -91,9 +92,17 @@ def _format_date_ddmmyyyy(report_date: str) -> str:
 
 
 def _format_market_cap(market_cap) -> str:
-    """Format market cap for display (e.g., ₹49,079 Cr)."""
+    """Format market cap for display (e.g., ₹49,079 Cr).
+
+    Accepts either:
+    - Raw INR value (e.g., 490790000000) → divides by 1 crore
+    - Already in crores (e.g., 49079) → uses directly
+    """
     try:
         val = float(market_cap)
+        # If > 10 lakh (1,000,000), it's likely raw INR — convert to crores
+        if val >= 1_000_000:
+            val = val / 1_00_00_000  # divide by 1 crore
         if val >= 100:
             return f"₹{val:,.0f} Cr"
         return f"₹{val:,.1f} Cr"
@@ -140,16 +149,16 @@ def apply_interior_shell(
 
     # Logo
     logo_path = Path(theme.logo_path) if theme.logo_path else None
+    logo_exists = bool(logo_path and logo_path.exists())
     logo_inset = shell.side_margin_in
-    if logo_path and logo_path.exists():
+    if logo_exists:
         try:
-            chip_pad_x = 0.08
-            chip_pad_y = 0.06
-            chip_height = shell.logo_height_in + 2 * chip_pad_y
-            chip_width = 1.7 + 2 * chip_pad_x
-            chip_top = (shell.header_height_in - chip_height) / 2
+            chip_pad_x = 0.16
+            chip_height = shell.header_height_in
+            chip_width = 1.7 + 2 * chip_pad_x  # initial width
+            chip_top = 0
             chip = slide.shapes.add_shape(
-                runtime.MSO_AUTO_SHAPE_TYPE.ROUNDED_RECTANGLE,
+                runtime.MSO_AUTO_SHAPE_TYPE.RECTANGLE,
                 runtime.Inches(logo_inset - chip_pad_x),
                 runtime.Inches(chip_top),
                 runtime.Inches(chip_width),
@@ -157,40 +166,43 @@ def apply_interior_shell(
             )
             chip.fill.solid()
             chip.fill.fore_color.rgb = _hex_to_rgb(runtime, theme.palette.background)
+            # Remove line/border entirely to make it blend well
             chip.line.fill.background()
-            slide.shapes.add_picture(
+            
+            logo_top = (shell.header_height_in - shell.logo_height_in) / 2
+            pic = slide.shapes.add_picture(
                 str(logo_path),
                 runtime.Inches(logo_inset),
-                runtime.Inches((shell.header_height_in - shell.logo_height_in) / 2),
+                runtime.Inches(logo_top),
                 height=runtime.Inches(shell.logo_height_in),
             )
+            # Adjust the background rectangle width to perfectly wrap the logo
+            chip.width = pic.width + int(runtime.Inches(2 * chip_pad_x))
         except Exception:
             pass
 
     # ── Left: Firm name (accent color, bold) ──
-    firm_label_left = shell.side_margin_in
-    if logo_path and logo_path.exists():
-        firm_label_left = shell.side_margin_in + 1.9
-    _add_text_in_rect(
-        slide,
-        runtime,
-        firm_label_left,
-        0,
-        2.0,
-        shell.header_height_in,
-        theme.firm_name,
-        theme.header_font.family,
-        9,
-        True,
-        theme.palette.accent,
-        runtime.PP_ALIGN.LEFT,
-    )
+    if not logo_exists:
+        _add_text_in_rect(
+            slide,
+            runtime,
+            shell.side_margin_in,
+            0,
+            2.0,
+            shell.header_height_in,
+            theme.firm_name,
+            theme.header_font.family,
+            9,
+            True,
+            theme.palette.accent,
+            runtime.PP_ALIGN.LEFT,
+        )
 
     # ── Center: Company Name — Section Title ──
     center_text = company_name
     if section_title:
         center_text = f"{company_name} — {section_title}"
-    center_left = firm_label_left + 2.1
+    center_left = shell.side_margin_in + (1.9 if logo_exists else 2.1)
     center_width = canvas_w - center_left - 5.5
     if center_width > 0:
         _add_text_in_rect(
@@ -287,24 +299,16 @@ def apply_interior_shell(
         theme.palette.accent,
     )
 
-    # ── Section title with number badge ──
-    divider_after_title = shell.title_top_in + shell.title_height_in + 0.05
-    _add_filled_rect(
-        slide,
-        runtime,
-        shell.side_margin_in,
-        divider_after_title,
-        canvas_w - 2 * shell.side_margin_in,
-        shell.divider_thickness_pt / 72.0,
-        theme.palette.accent,
-    )
-
     # ── Footer ──
     footer_top = canvas_h - shell.footer_height_in
     _add_filled_rect(slide, runtime, 0, footer_top, canvas_w, shell.footer_height_in, theme.palette.primary)
 
     # Footer left: SEBI info
     formatted_date = _format_date_ddmmyyyy(report_date)
+    footer_line = theme.footer_line
+    if logo_exists and footer_line.casefold().startswith(theme.firm_name.casefold()):
+        footer_line = footer_line[len(theme.firm_name):].lstrip(" |")
+
     _add_text_in_rect(
         slide,
         runtime,
@@ -312,7 +316,7 @@ def apply_interior_shell(
         footer_top,
         canvas_w * 0.3,
         shell.footer_height_in,
-        theme.footer_line,
+        footer_line,
         theme.footer_font.family,
         theme.footer_font.size_pt,
         theme.footer_font.bold,

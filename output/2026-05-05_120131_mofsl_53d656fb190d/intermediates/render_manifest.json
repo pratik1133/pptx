@@ -1,0 +1,823 @@
+{
+  "records": [
+    {
+      "slide_id": "s2",
+      "block_key": "trend_chart",
+      "source_key": "period_labels",
+      "resolved_value": "FY22A, FY23A, FY24A, FY25A, FY26E, FY27E, FY28E",
+      "kind": "chart_category"
+    },
+    {
+      "slide_id": "s2",
+      "block_key": "trend_chart",
+      "source_key": "series.Revenue@FY22A",
+      "resolved_value": "4298",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s2",
+      "block_key": "trend_chart",
+      "source_key": "series.Revenue@FY23A",
+      "resolved_value": "4178",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s2",
+      "block_key": "trend_chart",
+      "source_key": "series.Revenue@FY24A",
+      "resolved_value": "7106",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s2",
+      "block_key": "trend_chart",
+      "source_key": "series.Revenue@FY25A",
+      "resolved_value": "8340",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s2",
+      "block_key": "trend_chart",
+      "source_key": "series.Revenue@FY26E",
+      "resolved_value": "10402",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s2",
+      "block_key": "trend_chart",
+      "source_key": "series.Revenue@FY27E",
+      "resolved_value": "12973",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s2",
+      "block_key": "trend_chart",
+      "source_key": "series.Revenue@FY28E",
+      "resolved_value": "16181",
+      "kind": "chart_series"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "management_table",
+      "source_key": "management_team[0].name",
+      "resolved_value": "Raamdeo Agrawal",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "management_table",
+      "source_key": "management_team[0].role",
+      "resolved_value": "Chairman, MOFSL & Chairman, AMC",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "management_table",
+      "source_key": "management_team[0].bio",
+      "resolved_value": "Co-founder (1987). Creator of the QGLP investment process and 'Buy Right, Sit Tight' framework. Built one of India's most respected investment research franchises. Widely cited investment thinker.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "management_table",
+      "source_key": "management_team[1].name",
+      "resolved_value": "Motilal Oswal",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "management_table",
+      "source_key": "management_team[1].role",
+      "resolved_value": "Founder, Chairman & MD",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "management_table",
+      "source_key": "management_team[1].bio",
+      "resolved_value": "Co-founder (1987). Led the firm's transformation from broking house into a comprehensive financial services platform. Recipient of Rashtriya Samman Patra for being among the highest taxpayers FY95\u2013FY99.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "management_table",
+      "source_key": "management_team[2].name",
+      "resolved_value": "Navin Agarwal",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "management_table",
+      "source_key": "management_team[2].role",
+      "resolved_value": "Executive Board \u2014 Strategy & Capital Allocation",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "management_table",
+      "source_key": "management_team[2].bio",
+      "resolved_value": "Joined 2000. Drives business strategy and capital allocation across the Group, building market-leading positions through disciplined deployment.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "management_table",
+      "source_key": "management_team[3].name",
+      "resolved_value": "Ajay Menon",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "management_table",
+      "source_key": "management_team[3].role",
+      "resolved_value": "Executive \u2014 Operations, Compliance, Risk & Technology",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s10",
+      "block_key": "management_table",
+      "source_key": "management_team[3].bio",
+      "resolved_value": "Joined 1998. 27+ years in Indian capital markets. Cornerstone of operational excellence and technology initiatives across the Group.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s11",
+      "block_key": "forensic_table",
+      "source_key": "forensic_violations[0].title",
+      "resolved_value": "SEBI \u2014 Margin Reporting Violations",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s11",
+      "block_key": "forensic_table",
+      "source_key": "forensic_violations[0].description",
+      "resolved_value": "INR 7 lakh penalty for margin reporting, collection violations, and other regulatory lapses found during inspection.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s11",
+      "block_key": "forensic_table",
+      "source_key": "forensic_violations[0].severity",
+      "resolved_value": "Low",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s11",
+      "block_key": "forensic_table",
+      "source_key": "forensic_violations[1].title",
+      "resolved_value": "SEBI \u2014 Client Fund Misutilization (2022)",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s11",
+      "block_key": "forensic_table",
+      "source_key": "forensic_violations[1].description",
+      "resolved_value": "INR 25 lakh fine for misutilization of client funds and inaccurate margin reporting.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s11",
+      "block_key": "forensic_table",
+      "source_key": "forensic_violations[1].severity",
+      "resolved_value": "Medium",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s11",
+      "block_key": "forensic_table",
+      "source_key": "forensic_violations[2].title",
+      "resolved_value": "NSEL \u2014 Misselling Accusations",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s11",
+      "block_key": "forensic_table",
+      "source_key": "forensic_violations[2].description",
+      "resolved_value": "Accused alongside other top brokers of misselling NSEL contracts, KYC manipulation, client code modification, and illegal transactions per SFIO/EOW findings.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s11",
+      "block_key": "forensic_table",
+      "source_key": "forensic_violations[2].severity",
+      "resolved_value": "High (Historical)",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s11",
+      "block_key": "forensic_table",
+      "source_key": "forensic_violations[3].title",
+      "resolved_value": "SEBI \u2014 Not Fit and Proper (Commodities)",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s11",
+      "block_key": "forensic_table",
+      "source_key": "forensic_violations[3].description",
+      "resolved_value": "Declared 'not fit and proper' as commodity derivative broker in Feb 2019 based on SFIO/EOW recommendations.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s11",
+      "block_key": "forensic_table",
+      "source_key": "forensic_violations[3].severity",
+      "resolved_value": "High (Historical)",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s11",
+      "block_key": "forensic_table",
+      "source_key": "forensic_violations[4].title",
+      "resolved_value": "Unauthorized Terminal Operations",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s11",
+      "block_key": "forensic_table",
+      "source_key": "forensic_violations[4].description",
+      "resolved_value": "13 NSE and 9 BSE terminals operating from undeclared locations including an unreported branch in Delhi.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s11",
+      "block_key": "forensic_table",
+      "source_key": "forensic_violations[4].severity",
+      "resolved_value": "Medium",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[0].ratio",
+      "resolved_value": "EBITDA Margin",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[0].FY22A",
+      "resolved_value": "49.3%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[0].FY23A",
+      "resolved_value": "44.9%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[0].FY24A",
+      "resolved_value": "57.4%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[0].FY25A",
+      "resolved_value": "54.5%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[0].FY26E",
+      "resolved_value": "52.3%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[0].FY27E",
+      "resolved_value": "52.3%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[0].FY28E",
+      "resolved_value": "52.3%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[1].ratio",
+      "resolved_value": "PAT Margin",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[1].FY22A",
+      "resolved_value": "30.5%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[1].FY23A",
+      "resolved_value": "22.3%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[1].FY24A",
+      "resolved_value": "34.4%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[1].FY25A",
+      "resolved_value": "30.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[1].FY26E",
+      "resolved_value": "29.5%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[1].FY27E",
+      "resolved_value": "30.7%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[1].FY28E",
+      "resolved_value": "31.7%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[2].ratio",
+      "resolved_value": "RoE",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[2].FY22A",
+      "resolved_value": "23.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[2].FY23A",
+      "resolved_value": "15.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[2].FY24A",
+      "resolved_value": "28.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[2].FY25A",
+      "resolved_value": "23.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[2].FY26E",
+      "resolved_value": "22.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[2].FY27E",
+      "resolved_value": "23.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[2].FY28E",
+      "resolved_value": "24.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[3].ratio",
+      "resolved_value": "RoCE",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[3].FY22A",
+      "resolved_value": "19.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[3].FY23A",
+      "resolved_value": "13.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[3].FY24A",
+      "resolved_value": "21.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[3].FY25A",
+      "resolved_value": "19.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[3].FY26E",
+      "resolved_value": "18.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[3].FY27E",
+      "resolved_value": "18.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[3].FY28E",
+      "resolved_value": "19.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[4].ratio",
+      "resolved_value": "RoIC",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[4].FY22A",
+      "resolved_value": "92.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[4].FY23A",
+      "resolved_value": "78.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[4].FY24A",
+      "resolved_value": "119.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[4].FY25A",
+      "resolved_value": "87.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[4].FY26E",
+      "resolved_value": "35.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[4].FY27E",
+      "resolved_value": "24.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[4].FY28E",
+      "resolved_value": "24.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[5].ratio",
+      "resolved_value": "P/E",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[5].FY22A",
+      "resolved_value": "37.5x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[5].FY23A",
+      "resolved_value": "52.3x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[5].FY24A",
+      "resolved_value": "20.1x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[5].FY25A",
+      "resolved_value": "19.7x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[5].FY26E",
+      "resolved_value": "16.1x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[5].FY27E",
+      "resolved_value": "12.4x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[5].FY28E",
+      "resolved_value": "9.6x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[6].ratio",
+      "resolved_value": "P/B",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[6].FY22A",
+      "resolved_value": "8.7x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[6].FY23A",
+      "resolved_value": "7.8x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[6].FY24A",
+      "resolved_value": "5.6x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[6].FY25A",
+      "resolved_value": "4.5x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[6].FY26E",
+      "resolved_value": "3.6x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[6].FY27E",
+      "resolved_value": "2.9x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[6].FY28E",
+      "resolved_value": "2.3x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[7].ratio",
+      "resolved_value": "EV/EBITDA",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[7].FY22A",
+      "resolved_value": "9.0x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[7].FY23A",
+      "resolved_value": "10.3x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[7].FY24A",
+      "resolved_value": "9.5x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[7].FY25A",
+      "resolved_value": "11.4x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[7].FY26E",
+      "resolved_value": "12.7x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[7].FY27E",
+      "resolved_value": "10.5x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s14",
+      "block_key": "ratio_table",
+      "source_key": "ratio_summary[7].FY28E",
+      "resolved_value": "8.8x",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s17",
+      "block_key": "scenario_table",
+      "source_key": "scenarios[0].name",
+      "resolved_value": "Bull",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s17",
+      "block_key": "scenario_table",
+      "source_key": "scenarios[0].revenue_cagr",
+      "resolved_value": "27.5%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s17",
+      "block_key": "scenario_table",
+      "source_key": "scenarios[0].ebitda_margin",
+      "resolved_value": "55.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s17",
+      "block_key": "scenario_table",
+      "source_key": "scenarios[0].target_price",
+      "resolved_value": "1,400.0",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s17",
+      "block_key": "scenario_table",
+      "source_key": "scenarios[0].probability",
+      "resolved_value": "30.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s17",
+      "block_key": "scenario_table",
+      "source_key": "scenarios[0].notes",
+      "resolved_value": "ARR > 70%, AMC AUM +40% YoY, regulatory clarity.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s17",
+      "block_key": "scenario_table",
+      "source_key": "scenarios[1].name",
+      "resolved_value": "Base",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s17",
+      "block_key": "scenario_table",
+      "source_key": "scenarios[1].revenue_cagr",
+      "resolved_value": "16.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s17",
+      "block_key": "scenario_table",
+      "source_key": "scenarios[1].ebitda_margin",
+      "resolved_value": "51.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s17",
+      "block_key": "scenario_table",
+      "source_key": "scenarios[1].target_price",
+      "resolved_value": "1,127.0",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s17",
+      "block_key": "scenario_table",
+      "source_key": "scenarios[1].probability",
+      "resolved_value": "50.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s17",
+      "block_key": "scenario_table",
+      "source_key": "scenarios[1].notes",
+      "resolved_value": "ARR steady at 65%, AUM compounding, stable regulation.",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s17",
+      "block_key": "scenario_table",
+      "source_key": "scenarios[2].name",
+      "resolved_value": "Bear",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s17",
+      "block_key": "scenario_table",
+      "source_key": "scenarios[2].revenue_cagr",
+      "resolved_value": "6.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s17",
+      "block_key": "scenario_table",
+      "source_key": "scenarios[2].ebitda_margin",
+      "resolved_value": "45.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s17",
+      "block_key": "scenario_table",
+      "source_key": "scenarios[2].target_price",
+      "resolved_value": "630.0",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s17",
+      "block_key": "scenario_table",
+      "source_key": "scenarios[2].probability",
+      "resolved_value": "20.0%",
+      "kind": "table_cell"
+    },
+    {
+      "slide_id": "s17",
+      "block_key": "scenario_table",
+      "source_key": "scenarios[2].notes",
+      "resolved_value": "Sustained F&O headwinds, fintech share loss.",
+      "kind": "table_cell"
+    }
+  ]
+}

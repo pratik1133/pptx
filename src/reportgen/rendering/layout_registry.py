@@ -59,7 +59,7 @@ LAYOUT_REGISTRY: dict[SlideLayout, LayoutDefinition] = {
     "cover_slide": LayoutDefinition(
         layout="cover_slide",
         display_name="Cover Slide",
-        allowed_block_types={"text", "metrics"},
+        allowed_block_types={"text", "metrics", "bullets"},
         required_blocks=[BlockRequirement(block_type="metrics", min_count=1, max_count=1)],
         placeholders=[
             _ph("title", 0.6, 1.5, 12.0, 1.4),
@@ -341,6 +341,16 @@ LAYOUT_REGISTRY: dict[SlideLayout, LayoutDefinition] = {
             _title(),
             _ph("text", SIDE, CONTENT_TOP, CONTENT_W, 0.6),
             _ph("bullets", SIDE, CONTENT_TOP + 0.75, CONTENT_W, CONTENT_H - 0.75),
+        ],
+    ),
+    "scenario_analysis": LayoutDefinition(
+        layout="scenario_analysis",
+        display_name="Scenario Analysis",
+        allowed_block_types={"text", "table"},
+        required_blocks=[BlockRequirement(block_type="table", min_count=1, max_count=1)],
+        placeholders=[
+            _title(),
+            _ph("table", SIDE, CONTENT_TOP, CONTENT_W, CONTENT_H),
         ],
     ),
 }

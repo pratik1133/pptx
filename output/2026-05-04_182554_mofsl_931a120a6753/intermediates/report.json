@@ -1,0 +1,731 @@
+{
+  "schema_version": "1.1.0",
+  "report_id": "db5d0f19-ab81-4e71-904f-fe15cf7a5a41",
+  "run_id": "3bb4b154-91b6-4fbb-81ec-5f1bcc4aa828",
+  "company": {
+    "name": "Motilal Oswal Financial Services Ltd",
+    "ticker": "MOFSL",
+    "exchange": "NSE",
+    "sector": "Financial Services",
+    "industry": "Capital Markets",
+    "isin": "INE338I01027",
+    "country": "India",
+    "description": "Motilal Oswal Financial Services, founded in 1987 by Motilal Oswal and Raamdeo Agrawal, has evolved from a research-driven equity broking house into one of India's most comprehensive financial services platforms. The company spans Capital Markets, Asset & Wealth Management, Housing Finance, and Alternative Investments, serving over 1,600,000 customers across 550+ cities through 2,500+ business locations. Research coverage of 300+ companies remains the firm's enduring competitive moat.",
+    "peer_list": []
+  },
+  "metadata": {
+    "rating": "BUY",
+    "currency": "INR",
+    "cmp": "822.9",
+    "target_price": "1127",
+    "upside_pct": "37",
+    "market_cap": "490790000000",
+    "analyst": "Pratik Gupta",
+    "report_date": "2026-04-28",
+    "report_type": "Initiation"
+  },
+  "inputs": {
+    "financial_model_ref": "C:\\pptx\\data\\samples\\financial_models\\motilal_model.json",
+    "approved_content_ref": "C:\\pptx\\data\\samples\\approved_reports\\motilal.md"
+  },
+  "slides": [
+    {
+      "slide_id": "s1",
+      "layout": "cover_slide",
+      "title": "Motilal Oswal Financial Services Ltd - Initiation Report",
+      "subtitle": "MOFSL - BUY",
+      "blocks": [
+        {
+          "type": "metrics",
+          "key": "headline",
+          "items": [
+            {
+              "label": "Rating",
+              "value": "BUY",
+              "source": "metadata.rating"
+            },
+            {
+              "label": "CMP",
+              "value": "₹822.9",
+              "source": "metadata.cmp"
+            },
+            {
+              "label": "Target Price",
+              "value": "₹1,127.0",
+              "source": "metadata.target_price"
+            },
+            {
+              "label": "Upside",
+              "value": "37.0%",
+              "source": "metadata.upside_pct"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s2",
+      "layout": "investment_thesis",
+      "title": "Investment Thesis",
+      "subtitle": "Transformation from a cyclical broker to a high-quality annuity-driven financial platform",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "thesis_summary",
+          "content": "We initiate coverage on Motilal Oswal Financial Services with a BUY rating. The company is undergoing a fundamental transformation from a cyclical broking business to a high-quality, annuity-driven financial services platform. This structural shift in revenue mix significantly improves earnings quality and visibility, yet remains underappreciated by the market. The current valuation offers an attractive entry point as the company continues to scale its asset management and wealth businesses while maintaining strong profitability metrics."
+        },
+        {
+          "type": "bullets",
+          "key": "thesis_points",
+          "items": [
+            "Revenue quality transformation: The shift toward annuity-based revenues substantially reduces earnings volatility and improves business quality",
+            "Strong AUM momentum: Both asset management and private wealth segments are growing rapidly with impressive benchmark outperformance",
+            "Balance sheet strength: Credit rating upgrade to AA+ reflects financial stability and enhanced reinvestment capacity",
+            "Operational efficiency: Significant operating leverage potential as the business scales on largely fixed cost base",
+            "Industry tailwinds: Structurally advantaged by India's expanding HNWI population and increasing financialization",
+            "Attractive valuation: Current market price offers substantial discount to probability-weighted target despite quality improvements"
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s3",
+      "layout": "full_width_chart",
+      "title": "Revenue Transformation Underway",
+      "subtitle": "Annuity-based revenue now dominates the mix, fundamentally improving earnings quality",
+      "blocks": [
+        {
+          "type": "chart",
+          "key": "arr_chart",
+          "chart_type": "donut",
+          "title": "Revenue Mix FY25",
+          "category_source": "period_labels",
+          "series": [
+            {
+              "label": "segments.revenue_share",
+              "source_key": "segments.revenue_share"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s4",
+      "layout": "industry_overview",
+      "title": "Indian Financial Services: Structural Growth Runway",
+      "subtitle": "Wealth management and asset management positioned for multi-year expansion",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "industry_summary",
+          "content": "India's financial services sector represents a core enabler of the country's growth story, with particularly strong prospects in wealth and asset management. The sector is undergoing profound transformation driven by rising incomes, expanding investor participation, and increasing financialization of savings. Financial services companies with established brands, distribution networks, and product capabilities are positioned to capture disproportionate value as the industry expands. This structural tailwind provides a multi-year growth runway for well-positioned players like Motilal Oswal."
+        },
+        {
+          "type": "bullets",
+          "key": "industry_points",
+          "items": [
+            "India projected to become the fourth-largest private wealth market globally by 2028 with significant HNWI expansion",
+            "Financial services sector profits expected to nearly double by FY30, with NBFCs growing at substantial rates annually",
+            "Mutual fund penetration remains modest, representing substantial headroom for growth",
+            "Private credit market expanding rapidly, setting new records with significant year-over-year growth",
+            "Regulatory landscape evolving to favor established, compliant players with robust governance frameworks",
+            "Digital transformation enabling broader market access and improving operational efficiencies across the sector"
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s5",
+      "layout": "company_snapshot",
+      "title": "Company Overview",
+      "subtitle": "Comprehensive financial services platform with diversified revenue streams",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "company_description",
+          "content": "Motilal Oswal Financial Services has evolved from its origins as a research-driven equity broking house into a diversified financial services platform. The company now spans capital markets, asset and wealth management, housing finance, and alternative investments. Its research-led approach covers over 300 companies, creating a differentiated competitive moat. The company serves more than 1.6 million customers across 550+ cities through 2,500+ business locations. The business has strategically pivoted toward annuity-based revenue streams while maintaining its heritage strengths in research and broking."
+        },
+        {
+          "type": "metrics",
+          "key": "key_metrics",
+          "items": [
+            {
+              "label": "Annual Recurring Revenue",
+              "value": "65.0",
+              "source": "financial_metrics.arr_pct_of_revenue"
+            },
+            {
+              "label": "Total AUM",
+              "value": "1.8",
+              "source": "financial_metrics.total_aum_lakh_cr"
+            },
+            {
+              "label": "AUM Growth (YoY)",
+              "value": "46.0",
+              "source": "financial_metrics.total_aum_yoy_pct"
+            },
+            {
+              "label": "ROE FY26E",
+              "value": "22.0",
+              "source": "financial_metrics.roe_fy26e_pct"
+            },
+            {
+              "label": "Credit Rating",
+              "value": "AA+ (Stable) ICRA",
+              "source": "financial_metrics.credit_rating"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s6",
+      "layout": "text_plus_chart",
+      "title": "Financial Performance Trajectory",
+      "subtitle": "Strong growth momentum with improving profitability metrics",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "financial_narrative",
+          "content": "Motilal Oswal has demonstrated robust financial performance with accelerating momentum in recent periods. The company has delivered impressive growth across key financial metrics, with revenue expansion accompanied by improving profitability. The shift toward annuity-based revenues has enhanced earnings quality while reducing cyclicality. Recent quarterly results underscore the strength of this transformation, with substantial year-over-year gains in both top and bottom lines. The company's ability to maintain strong returns on equity highlights its efficient capital allocation and operating leverage benefits as scale increases."
+        },
+        {
+          "type": "chart",
+          "key": "revenue_trend",
+          "chart_type": "bar",
+          "title": "Revenue and PAT Trend",
+          "category_source": "period_labels",
+          "series": [
+            {
+              "label": "Revenue",
+              "source_key": "series.Revenue"
+            },
+            {
+              "label": "PAT",
+              "source_key": "series.PAT"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s7",
+      "layout": "segment_mix",
+      "title": "Business Segment Analysis",
+      "subtitle": "Diversified revenue streams with growing contribution from asset and wealth management",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "segment_overview",
+          "content": "Motilal Oswal operates through multiple complementary business segments, with a strategic focus on growing its annuity-based businesses."
+        },
+        {
+          "type": "chart",
+          "key": "segment_chart",
+          "chart_type": "donut",
+          "title": "Revenue Contribution by Segment",
+          "category_source": "period_labels",
+          "series": [
+            {
+              "label": "segments.revenue_share",
+              "source_key": "segments.revenue_share"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "key": "segment_table",
+          "title": "Segment Performance Analysis",
+          "source_key": "segments",
+          "columns": [
+            {
+              "key": "name",
+              "label": "Segment"
+            },
+            {
+              "key": "revenue_share",
+              "label": "Revenue %"
+            },
+            {
+              "key": "ebitda_share",
+              "label": "EBITDA %"
+            },
+            {
+              "key": "growth",
+              "label": "YoY Growth"
+            },
+            {
+              "key": "aum_label",
+              "label": "AUM Metric"
+            },
+            {
+              "key": "aum_value",
+              "label": "Value"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s8",
+      "layout": "key_highlights",
+      "title": "Key Investment Highlights",
+      "subtitle": "Multiple growth drivers supporting long-term value creation",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "highlight_intro",
+          "content": "Motilal Oswal offers multiple vectors for sustainable growth and value creation."
+        },
+        {
+          "type": "bullets",
+          "key": "highlight_points",
+          "items": [
+            "Annuity Revenue Transformation: ARR contribution now represents a substantial portion of total net revenues, fundamentally improving earnings quality and reducing cyclicality",
+            "Asset Management Excellence: AMC AUM showing strong growth with impressive benchmark outperformance, supporting premium fee retention and client loyalty",
+            "Private Wealth Scale: PWM business demonstrating robust expansion in both AUM and family count, capturing India's wealth creation wave",
+            "Financial Strength: Credit rating upgrade reflects balance sheet quality and increased reinvestment capacity for future growth initiatives",
+            "Operational Efficiency: Significant operating leverage potential as business scales on largely fixed cost infrastructure",
+            "Research Leadership: Coverage of over 300 companies creates differentiated insights and sustains competitive advantage across business lines"
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s9",
+      "layout": "text_plus_bullets",
+      "title": "Asset & Wealth Management Deep Dive",
+      "subtitle": "Twin growth engines with strong AUM momentum and client acquisition",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "awm_narrative",
+          "content": "The asset and wealth management businesses represent Motilal Oswal's crown jewels, delivering strong annuity-based revenues with high growth potential. Both businesses are scaling rapidly with impressive AUM expansion and client acquisition metrics. The asset management business benefits from strong investment performance, with the majority of AUM outperforming benchmarks over medium and long-term horizons. This performance supports fee retention and net inflows. The private wealth business continues to expand its family count while deepening wallet share with existing clients, resulting in accelerating AUM growth. These twin engines provide a stable, growing revenue base that enhances overall business quality."
+        },
+        {
+          "type": "bullets",
+          "key": "awm_bullets",
+          "items": [
+            "Asset Management: AMC AUM expanding rapidly with strong performance track record across fund categories",
+            "Benchmark Outperformance: Vast majority of AMC AUM outperforming benchmarks over three-year periods, supporting fee retention",
+            "Private Wealth: PWM AUM growing substantially with accelerating family count acquisition",
+            "Client Expansion: Family count growth outpacing AUM growth, indicating strong new client acquisition alongside deepening existing relationships",
+            "Product Innovation: Expanding alternative investment offerings capturing additional wallet share from HNI and UHNI segments",
+            "Distribution Strength: Leveraging existing distribution network while expanding digital capabilities for efficient client acquisition"
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s10",
+      "layout": "management_profile",
+      "title": "Management Team Assessment",
+      "subtitle": "Experienced leadership with founder-led culture and deep industry expertise",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "management_overview",
+          "content": "Motilal Oswal's leadership combines founder continuity with professional management depth across business verticals."
+        },
+        {
+          "type": "table",
+          "key": "management_table",
+          "title": "Key Management Personnel",
+          "source_key": "management_team",
+          "columns": [
+            {
+              "key": "name",
+              "label": "Name"
+            },
+            {
+              "key": "role",
+              "label": "Designation"
+            },
+            {
+              "key": "bio",
+              "label": "Background & Experience"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s11",
+      "layout": "forensic_assessment",
+      "title": "Governance Assessment - Monitor Closely",
+      "subtitle": "Regulatory compliance requires ongoing monitoring",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "forensic_overview",
+          "content": "As a regulated financial services entity, MOFSL faces periodic regulatory scrutiny. We categorize the company in our 'Monitor Closely' framework, requiring ongoing assessment of regulatory compliance and governance practices."
+        },
+        {
+          "type": "table",
+          "key": "forensic_table",
+          "title": "Regulatory and Governance Considerations",
+          "source_key": "forensic_violations",
+          "columns": [
+            {
+              "key": "title",
+              "label": "Issue"
+            },
+            {
+              "key": "description",
+              "label": "Details"
+            },
+            {
+              "key": "severity",
+              "label": "Assessment"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s12",
+      "layout": "saarthi_scorecard",
+      "title": "SAARTHI Score: 72/100",
+      "subtitle": "Strong overall investment quality with opportunities for improvement",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "saarthi_overview",
+          "content": "Our proprietary SAARTHI framework evaluates seven critical dimensions of investment quality. MOFSL scores well across most parameters with particular strength in Reinvestment Quality."
+        },
+        {
+          "type": "metrics",
+          "key": "saarthi_metrics",
+          "items": [
+            {
+              "label": "Overall Score",
+              "value": "1,109.0",
+              "source": "financial_metrics.probability_weighted_target"
+            },
+            {
+              "label": "Highest Component",
+              "value": "51.2",
+              "source": "financial_metrics.eps_fy26e"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "key": "saarthi_table",
+          "title": "Dimension-wise Assessment",
+          "source_key": "saarthi_dimensions",
+          "columns": [
+            {
+              "key": "code",
+              "label": "Factor"
+            },
+            {
+              "key": "name",
+              "label": "Dimension"
+            },
+            {
+              "key": "score",
+              "label": "Score"
+            },
+            {
+              "key": "assessment",
+              "label": "Assessment"
+            },
+            {
+              "key": "evidence",
+              "label": "Supporting Evidence"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s13",
+      "layout": "quarterly_summary",
+      "title": "Quarterly Performance Analysis",
+      "subtitle": "Recent quarters demonstrate business momentum with some regulatory impact",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "quarterly_overview",
+          "content": "Quarterly performance reveals both the company's growth potential and residual regulatory sensitivity."
+        },
+        {
+          "type": "table",
+          "key": "quarterly_table",
+          "title": "Quarterly Financial Summary",
+          "source_key": "quarterly_series.Quarterly PAT",
+          "columns": [
+            {
+              "key": "period",
+              "label": "Quarter"
+            },
+            {
+              "key": "value",
+              "label": "PAT (₹ Cr)"
+            },
+            {
+              "key": "yoy_growth",
+              "label": "YoY Growth %"
+            },
+            {
+              "key": "qoq_growth",
+              "label": "QoQ Growth %"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s14",
+      "layout": "ratio_summary",
+      "title": "Key Financial Ratios",
+      "subtitle": "Profitability and return metrics demonstrate operational strength",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "ratio_overview",
+          "content": "Motilal Oswal demonstrates strong profitability and return metrics across business cycles."
+        },
+        {
+          "type": "table",
+          "key": "ratio_table",
+          "title": "Financial Ratio Trends",
+          "source_key": "ratio_summary",
+          "columns": [
+            {
+              "key": "ratio",
+              "label": "Ratio"
+            },
+            {
+              "key": "unit",
+              "label": "Unit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s15",
+      "layout": "scenario_analysis",
+      "title": "Scenario Analysis - Bull / Base / Bear Case with Assumptions",
+      "subtitle": "Probability-weighted approach to valuation across regulatory and market scenarios",
+      "blocks": [
+        {
+          "type": "table",
+          "key": "scenario_table",
+          "title": "Scenario Analysis",
+          "source_key": "scenarios",
+          "columns": [
+            {
+              "key": "name",
+              "label": "Scenario"
+            },
+            {
+              "key": "revenue_cagr",
+              "label": "Revenue CAGR"
+            },
+            {
+              "key": "ebitda_margin",
+              "label": "EBITDA Margin"
+            },
+            {
+              "key": "target_price",
+              "label": "Target Price"
+            },
+            {
+              "key": "probability",
+              "label": "Probability"
+            },
+            {
+              "key": "notes",
+              "label": "Key Assumptions"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s16",
+      "layout": "valuation_table",
+      "title": "Valuation Framework",
+      "subtitle": "Multi-method approach with sensitivity analysis",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "valuation_approach",
+          "content": "We employ multiple valuation methodologies to arrive at our target price."
+        },
+        {
+          "type": "metrics",
+          "key": "valuation_metrics",
+          "items": [
+            {
+              "label": "CMP",
+              "value": "₹822.9",
+              "source": "metadata.cmp"
+            },
+            {
+              "label": "Target Price",
+              "value": "₹1,127.0",
+              "source": "metadata.target_price"
+            },
+            {
+              "label": "Upside",
+              "value": "37.0%",
+              "source": "metadata.upside_pct"
+            },
+            {
+              "label": "FY26E P/E",
+              "value": "16.1",
+              "source": "financial_metrics.pe_fy26e_x"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "key": "valuation_method_table",
+          "title": "Valuation Methods Summary",
+          "source_key": "valuation_bands",
+          "columns": [
+            {
+              "key": "method",
+              "label": "Method"
+            },
+            {
+              "key": "low",
+              "label": "Low Case"
+            },
+            {
+              "key": "base",
+              "label": "Base Case"
+            },
+            {
+              "key": "high",
+              "label": "Bull Case"
+            },
+            {
+              "key": "weight",
+              "label": "Weight"
+            },
+            {
+              "key": "notes",
+              "label": "Notes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s17",
+      "layout": "text_plus_bullets",
+      "title": "Peer Positioning",
+      "subtitle": "Competitive landscape analysis across brokerage and asset management segments",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "peer_overview",
+          "content": "MOFSL is transitioning from pure brokerage to asset management multiples as revenue mix shifts. This transformation differentiates the company from pure-play brokers while positioning it alongside higher-quality asset managers. The company's integrated model combining capital markets, asset management, and wealth management creates a unique competitive position with cross-selling advantages and broader client coverage compared to specialized peers. This integrated approach allows MOFSL to capture more wallet share across client segments."
+        },
+        {
+          "type": "bullets",
+          "key": "peer_bullets",
+          "items": [
+            "Competitive advantage: Research-led approach differentiates MOFSL from transaction-oriented discount brokers",
+            "Operational scale: Branch network provides distribution reach exceeding most peers in the wealth segment",
+            "Product diversity: Broader product suite across asset classes compared to specialized competitors",
+            "Valuation trajectory: Moving from broker multiples toward asset management valuations as annuity revenues increase",
+            "Client retention: Higher retention rates than industry average due to integrated service offering",
+            "Growth profile: AUM growth outpacing industry average across both AMC and PWM segments"
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s18",
+      "layout": "risks_and_catalysts",
+      "title": "Key Risks and Monitoring Points",
+      "subtitle": "Factors that could materially impact the investment thesis",
+      "blocks": [
+        {
+          "type": "bullets",
+          "key": "risk_points",
+          "items": [
+            "Regulatory headwinds: Potential SEBI changes to F&O trading norms could compress cyclical broking revenues",
+            "Residual cyclicality: Despite increasing annuity revenue, the business retains exposure to market cycles as demonstrated by recent quarterly volatility",
+            "Competitive intensity: Discount brokers and fintech platforms could pressure yields across business segments",
+            "Governance concerns: Recurring SEBI compliance matters require ongoing monitoring",
+            "Mark-to-market volatility: Proprietary investment book creates earnings volatility during market corrections",
+            "Housing finance risk: Potential asset quality deterioration in stressed credit cycles could impact the housing finance vertical",
+            "Fee compression: Industry-wide pressure on management fees could impact AMC and PWM margins",
+            "Execution risk: Rapid scaling of wealth management capabilities could strain service quality and client retention"
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s19",
+      "layout": "trading_strategy",
+      "title": "Trading Strategy and Key Triggers",
+      "subtitle": "Entry points, monitoring metrics, and exit considerations",
+      "blocks": [
+        {
+          "type": "metrics",
+          "key": "strategy_metrics",
+          "items": [
+            {
+              "label": "CMP",
+              "value": "₹822.9",
+              "source": "metadata.cmp"
+            },
+            {
+              "label": "Target",
+              "value": "₹1,127.0",
+              "source": "metadata.target_price"
+            },
+            {
+              "label": "Upside",
+              "value": "37.0%",
+              "source": "metadata.upside_pct"
+            },
+            {
+              "label": "Rating",
+              "value": "BUY",
+              "source": "metadata.rating"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "key": "strategy_narrative",
+          "content": "We recommend initiating positions at current levels with a multi-year investment horizon. The transformation from broking to an annuity-driven business model represents a fundamental re-rating opportunity that may materialize gradually as ARR contribution increases. Investors should focus on quarterly AUM growth and net flows rather than absolute profit growth, which may exhibit residual cyclicality. The stock offers asymmetric risk-reward at current valuations, with multiple potential catalysts that could accelerate the re-rating process."
+        },
+        {
+          "type": "bullets",
+          "key": "strategy_points",
+          "items": [
+            "Entry Approach: Accumulate at current levels with additional allocation during market weakness",
+            "Position Sizing: Core allocation within financial services portfolio given quality improvements",
+            "Key Monitoring Metrics: ARR contribution percentage, AMC/PWM AUM growth, net fund flows, benchmark outperformance",
+            "Catalyst Timeline: Q3FY26 and Q4FY26 results likely to demonstrate ARR progression",
+            "Review Triggers: Quarterly ARR contribution, competitive position in wealth management, regulatory developments",
+            "Exit Considerations: Re-evaluate if ARR contribution stalls below target levels or if regulatory headwinds materially impair broking revenues"
+          ]
+        }
+      ]
+    },
+    {
+      "slide_id": "s20",
+      "layout": "disclaimer",
+      "title": "Disclaimer",
+      "subtitle": "Important regulatory information",
+      "blocks": [
+        {
+          "type": "text",
+          "key": "disclaimer_text",
+          "content": "This document has been prepared by Tikona Capital (TC) and is meant for sole use by the recipient and not for circulation. This document is not to be reported or copied or made available to others. It should not be considered to be taken as an offer to sell or a solicitation to buy any security. The information contained herein is from sources believed reliable. We do not represent that it is accurate or complete and it should not be relied upon as such. TC, its directors, officers or employees shall not in any way be responsible for the contents stated herein. TC or its associates may from time to time solicit or perform investment banking or other services for any company mentioned in this document. The views expressed in this research report accurately reflect the personal views of the analyst(s) about the subject securities or issues, and no part of the compensation of the research analyst(s) was, is, or will be directly or indirectly related to the specific recommendations and views expressed by research analyst(s) in this report. The research analysts, strategists, or research associates principally responsible for the preparation of TC research have received compensation based upon various factors, including quality of research, investor client feedback, stock picking, competitive factors, firm revenues. The investment manager, TCM, may make investment decisions that are inconsistent with the recommendations or views expressed in this research. The distribution of this document may be restricted in certain jurisdictions as per applicable laws and persons who come into possession of this document should inform themselves about and observe any such restrictions. This report is subject to regulatory disclosure requirements as mandated by SEBI."
+        }
+      ]
+    }
+  ]
+}

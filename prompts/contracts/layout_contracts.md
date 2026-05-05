@@ -44,6 +44,14 @@ Each layout below states its purpose, required blocks, and writing guidance.
 ## full_table
 - **Purpose**: standalone table — works for revenue summary, segments, scenarios.
 - **Required blocks**: 1 `table` block.
+- **Scenario note**: use `scenario_analysis` for bear / base / bull case slides.
+
+## scenario_analysis
+- **Purpose**: three-column bear / base / bull case slide with assumption panels and mini metric tables.
+- **Required blocks**: 1 `table` block.
+- **Source**: `scenarios`.
+- **Columns**: use `name`, `revenue_cagr`, `ebitda_margin`, `target_price`, `probability`, and `notes`.
+- **Title**: use "Scenario Analysis - Bull / Base / Bear Case with Assumptions".
 
 ## quarterly_summary
 - **Purpose**: quarter-over-quarter view.

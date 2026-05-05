@@ -1,0 +1,77 @@
+{
+  "run_id": "5d2df8df23b8",
+  "created_at": "2026-05-04T11:34:32.919998Z",
+  "company_ticker": "MOFSL",
+  "status": "complete",
+  "artifacts": [
+    {
+      "label": "company",
+      "path": "inputs\\company.json",
+      "sha256": "3792e2d84340ebd30ab1523a8dd5927b3f54d503dcf28a134f7fdec08e1c0504",
+      "size_bytes": 750
+    },
+    {
+      "label": "metadata",
+      "path": "inputs\\metadata.json",
+      "sha256": "757a8ee303257b7814148f7ab276603c8055e06bcf4512c3241a7c2b8c20b9c6",
+      "size_bytes": 236
+    },
+    {
+      "label": "financial_model",
+      "path": "inputs\\financial_model.json",
+      "sha256": "ff52992f4fca4f4c992b3c1dc29767d315e72bd1ac3f7937927cc4429b0f91df",
+      "size_bytes": 15347
+    },
+    {
+      "label": "approved_report",
+      "path": "inputs\\approved_report.md",
+      "sha256": "5c0c75763afc79294ce3ee5b6de28d49fd0e09d6ed0bac655fe53ab274d354e9",
+      "size_bytes": 2685
+    },
+    {
+      "label": "slide_plan",
+      "path": "intermediates\\slide_plan.json",
+      "sha256": "fd36f48b79daa683f80caff1373dbea64163bd735af869c7b384e2b2d1d12c15",
+      "size_bytes": 24607
+    },
+    {
+      "label": "report_spec",
+      "path": "intermediates\\report.json",
+      "sha256": "59cd4f4f3609bfa412d31b015513b8dc897549d6ac7063c8c515ad63370e1482",
+      "size_bytes": 25398
+    },
+    {
+      "label": "pptx",
+      "path": "artifacts\\report.pptx",
+      "sha256": "aeae516744b983ace35e12a675efc193cd0199d25f8f639c57cfad6d3a0c89bf",
+      "size_bytes": 323922
+    },
+    {
+      "label": "render_manifest",
+      "path": "intermediates\\render_manifest.json",
+      "sha256": "2b07bfb4dfed4afa24cdc49dd6796a1ee0a3ce39729e3017f65fa2dbb9fdcfa0",
+      "size_bytes": 35935
+    },
+    {
+      "label": "pdf",
+      "path": "artifacts\\report.pdf",
+      "sha256": "7b098882cf254a53409da984e83898b8b1b29dd2d01afd00be289febb14041a6",
+      "size_bytes": 699237
+    },
+    {
+      "label": "run_log",
+      "path": "logs\\run.log",
+      "sha256": "5ee156af534e8bdf20f6845f42550727fd982cefa8d2a957eeee2748e2f34817",
+      "size_bytes": 1140
+    }
+  ],
+  "notes": [
+    "Slide s1 bullet item in 'highlights' is long and may wrap heavily.",
+    "Slide s1 metrics block 'headline_metrics' is dense.",
+    "Slide s6 bullet item in 'highlights_items' is long and may wrap heavily.",
+    "Slide s6 bullet item in 'highlights_items' is long and may wrap heavily.",
+    "Slide s6 bullet item in 'highlights_items' is long and may wrap heavily.",
+    "Slide s6 bullet item in 'highlights_items' is long and may wrap heavily.",
+    "Slide s20 text block 'disclaimer_text' is very long."
+  ]
+}

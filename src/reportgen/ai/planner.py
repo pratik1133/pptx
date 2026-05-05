@@ -70,6 +70,122 @@ def _next_id(slides: list[SlidePlanSlide]) -> str:
     return f"s{len(slides) + 1}"
 
 
+def _finalize_mock_order(slides: list[SlidePlanSlide]) -> list[SlidePlanSlide]:
+    """Apply the house deck sequence requested for research PPTX output.
+
+    Fixed slide order:
+      1.  Teaser Page (cover_slide)
+      2.  Story in Charts (text_plus_chart)
+      3.  Investment Thesis
+      4.  Industry Overview (Tailwinds / Risks)
+      5.  Company Overview (company_snapshot)
+      6a. Key Investment Idea / Investment Thesis in Detail (key_highlights)
+      6b. Business Model (full_table — segment)
+      6c. Demand Drivers (text_plus_bullets — catalyst)
+      6d. Competitive Landscape (text_plus_bullets — competitive)
+      7a. Management Analysis (management_profile)
+      7b. Corporate Governance (forensic_assessment)
+      8.  Earnings Forecast (full_table — annual)
+      9a. Financials — Quarterly Performance (quarterly_summary)
+      9b. Financials — Key Ratios (ratio_summary)
+      10. Valuations (valuation_table / valuation_summary)
+      11. SAARTHI Framework (saarthi_scorecard)
+      12. Scenario Analysis
+      13. Key Risks & Thesis Invalidation Triggers (risks_and_catalysts)
+      14. Entry, Review, Exit Strategy (text_plus_bullets — trading)
+      15. Disclaimer
+    """
+
+    # ── sort weights ──────────────────────────────────────────────────
+    order: dict[str, int] = {
+        "cover_slide": 100,           # 1. Teaser Page
+        # text_plus_chart → 200      # 2. Story in Charts
+        "investment_thesis": 300,     # 3. Investment Thesis
+        "industry_overview": 400,     # 4. Industry Overview
+        "company_snapshot": 500,      # 5. Company Overview
+        "key_highlights": 600,        # 6a. Key Investment Idea
+        # full_table segment → 610   # 6b. Business Model
+        # text_plus_bullets catalyst → 620  # 6c. Demand Drivers
+        # text_plus_bullets competitive → 630  # 6d. Competitive Landscape
+        "management_profile": 700,    # 7a. Management Analysis
+        "forensic_assessment": 710,   # 7b. Corporate Governance
+        # full_table annual → 800    # 8. Earnings Forecast
+        "quarterly_summary": 900,     # 9a. Financials — Quarterly
+        "ratio_summary": 910,         # 9b. Financials — Key Ratios
+        "valuation_table": 1000,      # 10. Valuations
+        "valuation_summary": 1000,    # 10. Valuations (alt layout)
+        "saarthi_scorecard": 1100,    # 11. SAARTHI Framework
+        "scenario_analysis": 1200,    # 12. Scenario Analysis
+        "risks_and_catalysts": 1300,  # 13. Key Risks
+        # text_plus_bullets trading → 1400  # 14. Entry / Review / Exit
+        "disclaimer": 1500,           # 15. Disclaimer
+    }
+
+    # ── display-title overrides ───────────────────────────────────────
+    title_overrides: dict[str, str] = {
+        "cover_slide": "Teaser Page",
+        "investment_thesis": "Investment Thesis",
+        "industry_overview": "Industry Overview — Tailwinds / Risks",
+        "company_snapshot": "Company Overview",
+        "key_highlights": "Key Investment Idea — Investment Thesis in Detail",
+        "management_profile": "Management Analysis & Corporate Governance",
+        "forensic_assessment": "Corporate Governance",
+        "quarterly_summary": "Financials — Quarterly Performance",
+        "ratio_summary": "Financials — Key Ratios",
+        "valuation_table": "Valuations",
+        "valuation_summary": "Valuations",
+        "saarthi_scorecard": "SAARTHI Framework",
+        "scenario_analysis": "Scenario Analysis",
+        "risks_and_catalysts": "Key Risks & Thesis Invalidation Triggers",
+        "disclaimer": "Disclaimer",
+    }
+
+    # ── helpers ────────────────────────────────────────────────────────
+    def _title_lower(slide: SlidePlanSlide) -> str:
+        return slide.title.casefold()
+
+    def slide_order(slide: SlidePlanSlide) -> int:
+        tl = _title_lower(slide)
+        # Contextual generic layouts
+        if slide.layout == "text_plus_chart":
+            return 200   # Story in Charts
+        if slide.layout == "full_table" and "segment" in tl:
+            return 610   # Business Model
+        if slide.layout == "full_table" and "annual" in tl:
+            return 800   # Earnings Forecast
+        if slide.layout == "text_plus_bullets" and "catalyst" in tl:
+            return 620   # Demand Drivers
+        if slide.layout == "text_plus_bullets" and "competitive" in tl:
+            return 630   # Competitive Landscape
+        if slide.layout == "text_plus_bullets" and ("trading" in tl or ("entry" in tl and "exit" in tl)):
+            return 1400  # Entry, Review, Exit Strategy
+        return order.get(slide.layout, 9000)
+
+    def title_for(slide: SlidePlanSlide) -> str:
+        tl = _title_lower(slide)
+        if slide.layout == "text_plus_chart":
+            return "Story in Charts"
+        if slide.layout == "full_table" and "segment" in tl:
+            return "Business Model"
+        if slide.layout == "full_table" and "annual" in tl:
+            return "Earnings Forecast"
+        if slide.layout == "text_plus_bullets" and "catalyst" in tl:
+            return "Demand Drivers"
+        if slide.layout == "text_plus_bullets" and "competitive" in tl:
+            return "Competitive Landscape"
+        if slide.layout == "text_plus_bullets" and ("trading" in tl or ("entry" in tl and "exit" in tl)):
+            return "Entry, Review, Exit Strategy"
+        return title_overrides.get(slide.layout, slide.title)
+
+    # ── filter, sort, re-index ────────────────────────────────────────
+    filtered = [slide for slide in slides if slide.layout != "analyst_certification"]
+    ordered = sorted(filtered, key=slide_order)
+    return [
+        slide.model_copy(update={"slide_id": f"s{index}", "title": title_for(slide)})
+        for index, slide in enumerate(ordered, start=1)
+    ]
+
+
 def build_mock_slide_plan(bundle: NormalizedInputBundle) -> SlidePlan:
     refs = bundle.data_references
     fm = bundle.source.financial_model
@@ -82,21 +198,46 @@ def build_mock_slide_plan(bundle: NormalizedInputBundle) -> SlidePlan:
 
     slides: list[SlidePlanSlide] = []
 
+    # Extract a thesis tagline from the first section
+    thesis_tagline = ""
+    if first_section and first_section.body:
+        # Take the first sentence as tagline, stripped of numbers
+        first_sentence = first_section.body.split(".")[0].strip()
+        thesis_tagline = _strip_numbers(first_sentence)[:180]
+
+    # Build cover metrics — 6 items for a 2×3 grid
+    cover_metrics = [
+        PlanningMetricItem(label="Rating", source_key="metadata.rating"),
+        PlanningMetricItem(label="CMP", source_key="metadata.cmp"),
+        PlanningMetricItem(label="Target Price", source_key="metadata.target_price"),
+        PlanningMetricItem(label="Upside", source_key="metadata.upside_pct"),
+        PlanningMetricItem(label="Market Cap", source_key="metadata.market_cap"),
+    ]
+    # Add EPS if available
+    if refs.series_source_keys:
+        cover_metrics.append(PlanningMetricItem(label="EPS (FY25)", source_key="metadata.cmp"))
+
+    # Build cover thesis summary text (allow much more text to fill the box)
+    thesis_summary = _strip_numbers(first_section.body[:800]) if first_section else ""
+
+    # Build bullet highlights from first 3 sections, with much longer bullets
+    cover_bullets = _safe_lines(
+        "\n".join(s.body for s in sections[:3]), limit=4, max_len=250
+    )
+
     slides.append(
         SlidePlanSlide(
             slide_id=_next_id(slides),
             layout="cover_slide",
             title=bundle.primary_title,
-            subtitle=f"{bundle.source.company.name} | {bundle.normalized_rating}",
+            subtitle=thesis_tagline or f"{bundle.source.company.name} — {bundle.normalized_rating}",
             blocks=[
+                PlanningTextBlock(key="thesis_summary", content=thesis_summary),
+                PlanningBulletBlock(key="highlights", items=cover_bullets),
                 PlanningMetricsBlock(
                     key="headline_metrics",
-                    items=[
-                        PlanningMetricItem(label="Rating", source_key="metadata.rating"),
-                        PlanningMetricItem(label="CMP", source_key="metadata.cmp"),
-                        PlanningMetricItem(label="TP", source_key="metadata.target_price"),
-                    ],
-                )
+                    items=cover_metrics,
+                ),
             ],
         )
     )
@@ -193,6 +334,25 @@ def build_mock_slide_plan(bundle: NormalizedInputBundle) -> SlidePlan:
                         content="Six themes underpinning the investment view.",
                     ),
                     PlanningBulletBlock(key="highlights_items", items=highlight_items),
+                ],
+            )
+        )
+
+    if refs.has_competitive_advantages:
+        slides.append(
+            SlidePlanSlide(
+                slide_id=_next_id(slides),
+                layout="text_plus_bullets",
+                title="Competitive Landscape",
+                blocks=[
+                    PlanningTextBlock(
+                        key="competitive_text",
+                        content="Competitive advantage rests on research depth, integrated distribution, and fee-led platform breadth.",
+                    ),
+                    PlanningBulletBlock(
+                        key="competitive_points",
+                        items=[_strip_numbers(item)[:180] for item in fm.competitive_advantages[:6]],
+                    ),
                 ],
             )
         )
@@ -340,8 +500,8 @@ def build_mock_slide_plan(bundle: NormalizedInputBundle) -> SlidePlan:
         slides.append(
             SlidePlanSlide(
                 slide_id=_next_id(slides),
-                layout="full_table",
-                title="Scenario Analysis",
+                layout="scenario_analysis",
+                title="Scenario Analysis - Bull / Base / Bear Case with Assumptions",
                 blocks=[
                     PlanningTableBlock(
                         key="scenario_table",
@@ -487,7 +647,7 @@ def build_mock_slide_plan(bundle: NormalizedInputBundle) -> SlidePlan:
     return SlidePlan(
         company_ticker=bundle.normalized_ticker,
         generated_at=datetime.now(timezone.utc),
-        slides=slides,
+        slides=_finalize_mock_order(slides),
     )
 
 

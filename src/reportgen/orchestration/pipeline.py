@@ -173,6 +173,11 @@ def run_html_pipeline(
     html_path = html_renderer.render_to_path(report_spec, run_root / "artifacts" / "report.html")
     store.add_artifact(manifest, "html", html_path)
 
+    # Render PPTX
+    pptx_renderer = PresentationRenderer()
+    pptx_path = pptx_renderer.render_to_path(report_spec, run_root / "artifacts" / "report.pptx")
+    store.add_artifact(manifest, "pptx", pptx_path)
+
     # Content checks
     content_checks = validate_report_content(report_spec)
     manifest.notes.extend(content_checks.warnings)
@@ -202,4 +207,4 @@ def run_html_pipeline(
     store.add_artifact(manifest, "run_log", log_path)
     store.write_manifest(manifest)
 
-    return PipelineRunResult(run_root=run_root, manifest=manifest, pdf_path=pdf_path, html_path=html_path)
+    return PipelineRunResult(run_root=run_root, manifest=manifest, pdf_path=pdf_path, pptx_path=pptx_path, html_path=html_path)
