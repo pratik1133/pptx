@@ -65,7 +65,7 @@ def _add_rect(
     line: str | None = None,
     radius: bool = False,
 ) -> Any:
-    shape_type = runtime.MSO_AUTO_SHAPE_TYPE.ROUNDED_RECTANGLE if radius else runtime.MSO_AUTO_SHAPE_TYPE.RECTANGLE
+    shape_type = runtime.MSO_AUTO_SHAPE_TYPE.RECTANGLE
     shape = slide.shapes.add_shape(
         shape_type,
         runtime.Inches(left),
@@ -229,6 +229,28 @@ def _ratio_row(model: FinancialModelSnapshot, name: str, periods: list[str]) -> 
     return (name, [_ratio_value(model, name, p) for p in periods])
 
 
+def _growth_row(model: FinancialModelSnapshot, name: str, base_series_name: str, periods: list[str]) -> tuple[str, list[str]] | None:
+    if any(r.name.lower() == name.lower() for r in model.ratios):
+        return (name, [_ratio_value(model, name, p) for p in periods])
+    
+    series = _series_by_name(model, base_series_name)
+    if not series:
+        return None
+        
+    values = []
+    for p in periods:
+        if p in series.periods:
+            idx = series.periods.index(p)
+            if idx > 0 and series.values[idx] is not None and series.values[idx-1] is not None and float(series.values[idx-1]) != 0:
+                growth = ((float(series.values[idx]) - float(series.values[idx-1])) / float(series.values[idx-1])) * 100
+                values.append(f"{growth:.1f}%")
+            else:
+                values.append("-")
+        else:
+            values.append("-")
+    return (name, values)
+
+
 def _cover_text(slide_spec: SlideSpec) -> tuple[str, list[str]]:
     thesis = ""
     bullets: list[str] = []
@@ -286,7 +308,7 @@ def _render_brand_header(
             chip_height = logo_height + 2 * chip_pad_y
             chip_width = 1.7 + 2 * chip_pad_x
             chip = slide.shapes.add_shape(
-                runtime.MSO_AUTO_SHAPE_TYPE.ROUNDED_RECTANGLE,
+                runtime.MSO_AUTO_SHAPE_TYPE.RECTANGLE,
                 runtime.Inches(0.22 - chip_pad_x),
                 runtime.Inches(0.12 - chip_pad_y),
                 runtime.Inches(chip_width),
@@ -330,7 +352,7 @@ def _render_brand_header(
     _add_text(slide, runtime, 0.22, 0.55, 5.15, 0.45, report_spec.company.name, font=theme.title_font.family, size=24, color="#FFFFFF", bold=True)
     rating = (meta.rating or "").upper()
     if rating:
-        _add_rect(slide, runtime, 5.40, 0.62, 0.62, 0.28, theme.palette.accent, radius=True)
+        _add_rect(slide, runtime, 5.40, 0.62, 0.62, 0.28, theme.palette.accent)
         _add_text(slide, runtime, 5.42, 0.64, 0.58, 0.22, rating, font=theme.header_font.family, size=8, color=theme.palette.primary, bold=True, align=runtime.PP_ALIGN.CENTER)
 
     exchange = f"NSE: {report_spec.company.ticker}"
@@ -350,7 +372,6 @@ def _render_brand_header(
         ("MARKET CAP", market_cap, ""),
         ("MARKET CAP CATEGORY", _market_cap_category(meta.market_cap), f"{report_spec.company.sector} company"),
         ("SAARTHI SCORE", saarthi, model.saarthi.rating if model and model.saarthi and model.saarthi.rating else ""),
-        ("PROB. WEIGHTED TP", _money(model.metrics.get("probability_weighted_target")) if model else "-", ""),
     ]
     stat_w = (canvas_w - 0.44) / len(stats)
     for index, (label, value, sub) in enumerate(stats):
@@ -361,8 +382,6 @@ def _render_brand_header(
             _add_text(slide, runtime, left, 1.48, stat_w - 0.05, 0.14, _clip(sub, 35), font=theme.header_font.family, size=6, color="#C8D2E3")
         if index < len(stats) - 1:
             _add_rect(slide, runtime, left + stat_w - 0.04, 1.12, 0.006, 0.40, theme.palette.secondary)
-
-    _add_text(slide, runtime, canvas_w - 3.2, 1.72, 2.95, 0.14, f"Report Reference: Q2 FY2025-26 | {_format_date_ddmmyyyy(str(meta.report_date))}", font=theme.header_font.family, size=6.5, color="#E8EEF8", align=runtime.PP_ALIGN.RIGHT)
 
     tagline = slide_spec.subtitle or ""
     if not tagline:
@@ -454,9 +473,12 @@ def _render_financial_summary(
     periods = _display_periods(model)
     candidate_rows = [
         _series_row(model, "Revenue", periods),
+        _growth_row(model, "Revenue Growth", "Revenue", periods),
         _series_row(model, "EBITDA", periods),
+        _growth_row(model, "EBITDA Growth", "EBITDA", periods),
         _ratio_row(model, "EBITDA Margin", periods),
         _series_row(model, "PAT", periods),
+        _growth_row(model, "PAT Growth", "PAT", periods),
         _ratio_row(model, "PAT Margin", periods),
         _series_row(model, "EPS", periods),
         _ratio_row(model, "P/E", periods),
@@ -464,7 +486,7 @@ def _render_financial_summary(
         _ratio_row(model, "EV/EBITDA", periods),
         _ratio_row(model, "ROE", periods),
     ]
-    rows = [row for row in candidate_rows if row is not None][:9]
+    rows = [row for row in candidate_rows if row is not None][:13]
     if not rows:
         rows = [("Revenue", ["-"] * len(periods))]
     shape = slide.shapes.add_table(
@@ -553,26 +575,15 @@ def _render_side_panel(
     panel(
         top,
         1.02,
-        "Key Valuation Metrics",
+        "Valuation Scenarios",
         [
-            ("CMP", _money(report_spec.metadata.cmp)),
-            ("Target Price", _money(report_spec.metadata.target_price)),
-            ("Upside", _percent(report_spec.metadata.upside_pct, signed=True)),
+            ("Bull Case TP", _money(model.valuation_bands[0].base if len(model.valuation_bands) > 0 else None)),
             ("Base Case TP", _money(model.valuation_bands[1].base if len(model.valuation_bands) > 1 else None)),
+            ("Bear Case TP", _money(model.valuation_bands[2].base if len(model.valuation_bands) > 2 else None)),
         ],
     )
     panel(
         top + 1.10,
-        0.68,
-        "Analyst Consensus",
-        [
-            ("Consensus TP", _money(report_spec.metadata.target_price)),
-            ("Bull Case TP", _money(model.valuation_bands[-1].base if model.valuation_bands else None)),
-            ("Upside to Cons.", _percent(report_spec.metadata.upside_pct, signed=True)),
-        ],
-    )
-    panel(
-        top + 1.86,
         0.80,
         "Key Operating Stats",
         [
@@ -582,22 +593,12 @@ def _render_side_panel(
         ],
         fill="#F7F9FC",
     )
-    panel(
-        top + 2.74,
-        0.65,
-        "Quality Snapshot",
-        [
-            ("SAARTHI", f"{model.saarthi.total_score}/{model.saarthi.max_score}" if model.saarthi else "-"),
-            ("Rating", model.saarthi.rating if model.saarthi and model.saarthi.rating else "-"),
-            ("Governance", model.forensic.category if model.forensic else "-"),
-        ],
-        fill="#F7F9FC",
-        value_color=theme.palette.accent,
-    )
-    _add_rect(slide, runtime, left, top + 3.47, width, 0.78, theme.palette.secondary, radius=True)
-    _add_text(slide, runtime, left + 0.10, top + 3.53, width - 0.20, 0.16, "THESIS WATCH", font=theme.header_font.family, size=7.5, color=theme.palette.accent, bold=True)
-    _add_text(slide, runtime, left + 0.10, top + 3.72, width - 0.20, 0.26, _percent(report_spec.metadata.upside_pct, signed=True), font=theme.metric_font.family, size=20, color=theme.palette.accent, bold=True)
-    _add_text(slide, runtime, left + 0.10, top + 4.00, width - 0.20, 0.18, "Monitor growth, margins, valuation comfort, and thesis risks.", font=theme.body_font.family, size=6.5, color="#FFFFFF")
+    
+    arr_value = _metric(model, "arr_pct_of_revenue", "65")
+    _add_rect(slide, runtime, left, top + 1.98, width, 0.78, theme.palette.secondary, radius=True)
+    _add_text(slide, runtime, left + 0.10, top + 2.04, width - 0.20, 0.16, "ARR INFLECTION WATCH", font=theme.header_font.family, size=7.5, color=theme.palette.accent, bold=True)
+    _add_text(slide, runtime, left + 0.10, top + 2.23, width - 0.20, 0.26, f"{arr_value}%", font=theme.metric_font.family, size=20, color=theme.palette.accent, bold=True)
+    _add_text(slide, runtime, left + 0.10, top + 2.51, width - 0.20, 0.18, "ARR of total net revenues. Re-rating trigger: 70%+ ARR.", font=theme.body_font.family, size=6.5, color="#FFFFFF")
 
 
 def _render_footer(slide: Any, report_spec: ReportSpec, theme: BrandTheme, runtime: Any) -> None:
@@ -606,7 +607,9 @@ def _render_footer(slide: Any, report_spec: ReportSpec, theme: BrandTheme, runti
     footer_top = canvas_h - 0.18
     _add_rect(slide, runtime, 0, footer_top, canvas_w, 0.18, "#F7F9FC", line="#D8DEE8")
     _add_text(slide, runtime, 0.22, footer_top + 0.02, 3.0, 0.12, "SEBI Reg. No.: INH000069807", font=theme.footer_font.family, size=6.5, color=theme.palette.muted_text)
-    _add_text(slide, runtime, canvas_w * 0.32, footer_top + 0.02, canvas_w * 0.36, 0.12, f"{report_spec.company.name} - Equity Research", font=theme.footer_font.family, size=6.5, color=theme.palette.primary, bold=True, align=runtime.PP_ALIGN.CENTER)
+    _add_text(slide, runtime, canvas_w * 0.25, footer_top + 0.02, canvas_w * 0.30, 0.12, f"{report_spec.company.name} - Equity Research", font=theme.footer_font.family, size=6.5, color=theme.palette.primary, bold=True, align=runtime.PP_ALIGN.CENTER)
+    report_ref = f"Report Reference: Q2 FY2025-26 | {_format_date_ddmmyyyy(str(report_spec.metadata.report_date))}"
+    _add_text(slide, runtime, canvas_w * 0.56, footer_top + 0.02, canvas_w * 0.27, 0.12, report_ref, font=theme.footer_font.family, size=6.2, color=theme.palette.muted_text, align=runtime.PP_ALIGN.RIGHT)
     _add_text(slide, runtime, canvas_w - 1.05, footer_top + 0.02, 0.85, 0.12, "Page 1 of 15", font=theme.footer_font.family, size=6.5, color=theme.palette.muted_text, align=runtime.PP_ALIGN.RIGHT)
 
 
