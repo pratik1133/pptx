@@ -12,7 +12,7 @@ from reportgen.rendering.components.section_header import render_section_header
 from reportgen.rendering.data_resolver import RenderDataResolver
 from reportgen.rendering.geometry import Box
 from reportgen.rendering.theme import BrandTheme
-from reportgen.schemas.financials import FinancialModelSnapshot
+from reportgen.schemas.financials import FinancialModelSnapshot, FinancialSeries, RatioEntry
 from reportgen.schemas.report import ReportSpec
 from reportgen.schemas.slides import SlideSpec
 
@@ -31,17 +31,31 @@ def _as_float(value: Any) -> float:
 
 
 def _series(model: FinancialModelSnapshot, name: str) -> tuple[list[str], list[float]]:
-    for series in model.series:
-        if series.name.lower() == name.lower():
-            return list(series.periods), [_as_float(v) for v in series.values]
+    series = _series_entry(model, name)
+    if series:
+        return list(series.periods), [_as_float(v) for v in series.values]
     return [], []
 
 
 def _ratio(model: FinancialModelSnapshot, name: str) -> tuple[list[str], list[float]]:
+    ratio = _ratio_entry(model, name)
+    if ratio:
+        return list(ratio.periods), [_as_float(v) for v in ratio.values]
+    return [], []
+
+
+def _series_entry(model: FinancialModelSnapshot, name: str) -> FinancialSeries | None:
+    for series in model.series:
+        if series.name.lower() == name.lower():
+            return series
+    return None
+
+
+def _ratio_entry(model: FinancialModelSnapshot, name: str) -> RatioEntry | None:
     for ratio in model.ratios:
         if ratio.name.lower() == name.lower():
-            return list(ratio.periods), [_as_float(v) for v in ratio.values]
-    return [], []
+            return ratio
+    return None
 
 
 def _metric(model: FinancialModelSnapshot, key: str) -> float:
@@ -52,6 +66,18 @@ def _k_label(value: float) -> str:
     if abs(value) >= 1000:
         return f"{value / 1000:.1f}K"
     return f"{value:.0f}"
+
+
+def _period_range(periods: list[str]) -> str:
+    if not periods:
+        return ""
+    if len(periods) == 1:
+        return periods[0]
+    return f"{periods[0]} to {periods[-1]}"
+
+
+def _source_note(report_spec: ReportSpec) -> str:
+    return f"Source: {report_spec.company.ticker or report_spec.company.name}, Tikona Capital estimates"
 
 
 def _panel_image(
@@ -150,7 +176,7 @@ def render_story_charts_slide(
     render_section_header(
         slide,
         Box(left=0.5, top=0.6, width=12.333, height=0.55),
-        "Story in Charts - MOFSL's Financial & Operational Journey",
+        slide_spec.title or f"Story in Charts - {report_spec.company.name}",
         page_number,
         theme,
         runtime,
@@ -164,105 +190,164 @@ def render_story_charts_slide(
     periods, revenue = _series(model, "Revenue")
     _, pat = _series(model, "PAT")
     _, eps = _series(model, "EPS")
+    _, ebitda = _series(model, "EBITDA")
     _, ebitda_margin = _ratio(model, "EBITDA Margin")
     _, roe = _ratio(model, "RoE")
 
     hist_forecast_colors = [primary if i < 4 else accent for i in range(len(periods))]
 
     images: list[BytesIO] = []
-    images.append(
-        _panel_image(
-            theme,
-            "Revenue (INR Cr) - FY22 to FY28E",
-            lambda ax: _bars_with_labels(ax, periods, revenue, hist_forecast_colors),
-            footnote="Revenue trajectory shows operating scale-up across forecast years | Source: MOFSL, Tikona Capital",
+    revenue_unit = (_series_entry(model, "Revenue").unit if _series_entry(model, "Revenue") else model.currency)
+    pat_unit = (_series_entry(model, "PAT").unit if _series_entry(model, "PAT") else model.currency)
+    ebitda_unit = (_series_entry(model, "EBITDA").unit if _series_entry(model, "EBITDA") else model.currency)
+
+    if periods and revenue:
+        images.append(
+            _panel_image(
+                theme,
+                f"Revenue ({revenue_unit}) - {_period_range(periods)}",
+                lambda ax: _bars_with_labels(ax, periods, revenue, hist_forecast_colors),
+                footnote=f"Revenue trajectory across model periods | {_source_note(report_spec)}",
+            )
         )
-    )
-    images.append(
-        _panel_image(
-            theme,
-            "PAT (INR Cr) - FY22 to FY28E",
-            lambda ax: (
-                _bars_with_labels(ax, periods, pat, hist_forecast_colors),
-                ax.plot(range(len(pat)), pat, color=green, linewidth=1.4, marker="o", markersize=2.8),
-            ),
-            footnote="PAT compounding reflects brokerage headwinds absorbed by fee-led businesses | Tikona Capital Est.",
+    if periods and pat:
+        images.append(
+            _panel_image(
+                theme,
+                f"PAT ({pat_unit}) - {_period_range(periods)}",
+                lambda ax: (
+                    _bars_with_labels(ax, periods, pat, hist_forecast_colors),
+                    ax.plot(range(len(pat)), pat, color=green, linewidth=1.4, marker="o", markersize=2.8),
+                ),
+                footnote=f"Profit trajectory across model periods | {_source_note(report_spec)}",
+            )
         )
-    )
-    images.append(
-        _panel_image(
-            theme,
-            "EBITDA Margin (%) - FY22 to FY28E",
-            lambda ax: _bars_with_labels(ax, periods, ebitda_margin, hist_forecast_colors, percent=True),
-            footnote="EBITDA margins remain structurally high as ARR grows | Tikona Capital",
+    if periods and ebitda_margin:
+        images.append(
+            _panel_image(
+                theme,
+                f"EBITDA Margin (%) - {_period_range(periods)}",
+                lambda ax: _bars_with_labels(ax, periods, ebitda_margin, hist_forecast_colors, percent=True),
+                footnote=f"Margin profile from model ratios | {_source_note(report_spec)}",
+            )
         )
-    )
 
     latest_aum = _metric(model, "total_aum_lakh_cr")
     yoy = _metric(model, "total_aum_yoy_pct") / 100 if _metric(model, "total_aum_yoy_pct") else 0.0
-    prior_aum = latest_aum / (1 + yoy) if yoy else latest_aum * 0.75
-    aum_periods = ["FY22", "FY23", "FY24", "FY25", "H1FY26", "FY27E"]
-    aum_values = [prior_aum * 0.38, prior_aum * 0.48, prior_aum * 0.70, prior_aum, latest_aum, latest_aum * 1.22]
-    images.append(
-        _panel_image(
-            theme,
-            "Total AUM Growth (INR Lakh Cr) - Trajectory",
-            lambda ax: (
-                _bars_with_labels(ax, aum_periods, aum_values, [primary, primary, primary, primary, accent, accent]),
-                ax.plot(range(len(aum_values)), aum_values, color=green, linewidth=1.4, marker="o", markersize=2.8),
-            ),
-            footnote="AUM trajectory uses model latest AUM and reported YoY growth to anchor the journey",
+    if latest_aum:
+        prior_aum = latest_aum / (1 + yoy) if yoy else latest_aum * 0.75
+        aum_periods = ["Prior", "Latest", "Forward"]
+        aum_values = [prior_aum, latest_aum, latest_aum * 1.22]
+        images.append(
+            _panel_image(
+                theme,
+                "Total AUM Growth (INR Lakh Cr)",
+                lambda ax: (
+                    _bars_with_labels(ax, aum_periods, aum_values, [primary, accent, accent]),
+                    ax.plot(range(len(aum_values)), aum_values, color=green, linewidth=1.4, marker="o", markersize=2.8),
+                ),
+                footnote="AUM panel shown only when AUM metrics are available in the model",
+            )
         )
-    )
 
     arr = _metric(model, "arr_pct_of_revenue")
     fee = _metric(model, "fee_based_pct_of_revenue")
     brokerage = _metric(model, "brokerage_pct_of_revenue")
-    legacy_other = max(0, 100 - fee - brokerage)
-    now_other = max(0, 100 - arr - brokerage)
+    if arr and fee and brokerage:
+        legacy_other = max(0, 100 - fee - brokerage)
+        now_other = max(0, 100 - arr - brokerage)
 
-    def draw_mix(ax) -> None:
-        labels = ["Before", "Now"]
-        bottoms = [0, 0]
-        for values, color, label in [
-            ([brokerage, brokerage], primary, "Broking"),
-            ([fee, arr], accent, "ARR / Fee"),
-            ([legacy_other, now_other], teal, "Other"),
-        ]:
-            ax.bar(labels, values, bottom=bottoms, color=color, width=0.52, label=label)
-            bottoms = [b + v for b, v in zip(bottoms, values, strict=True)]
-        ax.set_ylim(0, 100)
-        ax.legend(frameon=False, fontsize=5.4, loc="lower center", ncol=3, bbox_to_anchor=(0.5, -0.28))
-        for x, total in enumerate(bottoms):
-            ax.annotate(f"{total:.0f}%", (x, total), xytext=(0, 3), textcoords="offset points", ha="center", fontsize=5.4)
+        def draw_mix(ax) -> None:
+            labels = ["Fee Mix", "ARR Mix"]
+            bottoms = [0, 0]
+            for values, color, label in [
+                ([brokerage, brokerage], primary, "Brokerage"),
+                ([fee, arr], accent, "Fee / ARR"),
+                ([legacy_other, now_other], teal, "Other"),
+            ]:
+                ax.bar(labels, values, bottom=bottoms, color=color, width=0.52, label=label)
+                bottoms = [b + v for b, v in zip(bottoms, values, strict=True)]
+            ax.set_ylim(0, 100)
+            ax.legend(frameon=False, fontsize=5.4, loc="lower center", ncol=3, bbox_to_anchor=(0.5, -0.28))
+            for x, total in enumerate(bottoms):
+                ax.annotate(f"{total:.0f}%", (x, total), xytext=(0, 3), textcoords="offset points", ha="center", fontsize=5.4)
 
-    images.append(
-        _panel_image(
-            theme,
-            "Revenue Mix - ARR vs Broking vs Other",
-            draw_mix,
-            footnote="ARR shift highlights structural revenue-quality improvement",
+        images.append(
+            _panel_image(
+                theme,
+                "Revenue Mix - Fee / ARR / Brokerage",
+                draw_mix,
+                footnote="Revenue-quality panel shown only when fee, ARR, and brokerage metrics exist",
+            )
         )
-    )
+    elif model.segments:
+        segment_labels = [segment.name[:18] for segment in model.segments if segment.revenue_share_pct is not None]
+        segment_values = [_as_float(segment.revenue_share_pct) for segment in model.segments if segment.revenue_share_pct is not None]
+        if segment_labels and segment_values:
+            images.append(
+                _panel_image(
+                    theme,
+                    "Revenue Mix by Segment (%)",
+                    lambda ax: _bars_with_labels(
+                        ax,
+                        segment_labels,
+                        segment_values,
+                        [primary, accent, teal, green, theme.palette.secondary, theme.palette.red][: len(segment_values)],
+                        percent=True,
+                    ),
+                    footnote=f"Segment revenue share from structured model | {_source_note(report_spec)}",
+                    height=2.20,
+                )
+            )
 
     def draw_roe_eps(ax) -> None:
         _bars_with_labels(ax, periods, roe, hist_forecast_colors, percent=True)
-        ax2 = ax.twinx()
-        ax2.plot(range(len(eps)), eps, color=green, linewidth=1.6, marker="o", markersize=2.8)
-        ax2.tick_params(axis="y", labelsize=5.8, colors=green)
-        ax2.spines["top"].set_visible(False)
-        ax2.spines["right"].set_color("#CDD6E5")
-        for x, value in enumerate(eps):
-            ax2.annotate(f"{value:.0f}", (x, value), xytext=(0, 5), textcoords="offset points", ha="center", fontsize=5.0, color=green)
+        if eps:
+            ax2 = ax.twinx()
+            ax2.plot(range(len(eps)), eps, color=green, linewidth=1.6, marker="o", markersize=2.8)
+            ax2.tick_params(axis="y", labelsize=5.8, colors=green)
+            ax2.spines["top"].set_visible(False)
+            ax2.spines["right"].set_color("#CDD6E5")
+            for x, value in enumerate(eps):
+                ax2.annotate(f"{value:.0f}", (x, value), xytext=(0, 5), textcoords="offset points", ha="center", fontsize=5.0, color=green)
 
-    images.append(
-        _panel_image(
-            theme,
-            "RoE (%) & EPS (INR) - Multi-Year Trajectory",
-            draw_roe_eps,
-            footnote="Return profile and EPS trajectory remain central to re-rating",
+    if periods and roe:
+        title = "RoE (%) & EPS - Multi-Year Trajectory" if eps else f"RoE (%) - {_period_range(periods)}"
+        images.append(
+            _panel_image(
+                theme,
+                title,
+                draw_roe_eps,
+                footnote=f"Return profile from model ratios | {_source_note(report_spec)}",
+            )
         )
-    )
+    elif periods and ebitda:
+        images.append(
+            _panel_image(
+                theme,
+                f"EBITDA ({ebitda_unit}) - {_period_range(periods)}",
+                lambda ax: _bars_with_labels(ax, periods, ebitda, hist_forecast_colors),
+                footnote=f"Operating profit trajectory | {_source_note(report_spec)}",
+            )
+        )
+
+    if model.scenarios and len(images) < 6:
+        scenario_labels = [scenario.name for scenario in model.scenarios if scenario.target_price is not None]
+        scenario_values = [_as_float(scenario.target_price) for scenario in model.scenarios if scenario.target_price is not None]
+        if scenario_labels and scenario_values:
+            images.append(
+                _panel_image(
+                    theme,
+                    f"Scenario Target Prices ({model.currency})",
+                    lambda ax: _bars_with_labels(
+                        ax,
+                        scenario_labels,
+                        scenario_values,
+                        [theme.palette.red, primary, green, accent][: len(scenario_values)],
+                    ),
+                    footnote=f"Scenario targets from valuation model | {_source_note(report_spec)}",
+                )
+            )
 
     left = 0.32
     top = 1.32

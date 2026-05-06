@@ -182,6 +182,53 @@ def _metric(model: FinancialModelSnapshot, key: str, default: str = "-") -> str:
     return str(value)
 
 
+def _market_cap_category(value: Any) -> str:
+    number = _num(value)
+    if number is None:
+        return "-"
+    crore = number / 1_00_00_000 if number >= 1_000_000 else number
+    if crore >= 100_000:
+        return "Large Cap"
+    if crore >= 20_000:
+        return "Mid Cap"
+    return "Small Cap"
+
+
+def _latest_series_value(model: FinancialModelSnapshot, name: str) -> str:
+    series = _series_by_name(model, name)
+    if not series or not series.values:
+        return "-"
+    return format_for_unit(series.values[-1], series.unit)
+
+
+def _latest_ratio_value(model: FinancialModelSnapshot, name: str) -> str:
+    for ratio in model.ratios:
+        if ratio.name.lower() == name.lower() and ratio.values:
+            return format_for_unit(ratio.values[-1], ratio.unit)
+    return "-"
+
+
+def _display_periods(model: FinancialModelSnapshot) -> list[str]:
+    if model.series:
+        return list(model.series[0].periods[-4:])
+    if model.ratios:
+        return list(model.ratios[0].periods[-4:])
+    return ["P1", "P2", "P3", "P4"]
+
+
+def _series_row(model: FinancialModelSnapshot, name: str, periods: list[str]) -> tuple[str, list[str]] | None:
+    series = _series_by_name(model, name)
+    if not series:
+        return None
+    return (name, [_series_value(model, name, p) for p in periods])
+
+
+def _ratio_row(model: FinancialModelSnapshot, name: str, periods: list[str]) -> tuple[str, list[str]] | None:
+    if not any(r.name.lower() == name.lower() for r in model.ratios):
+        return None
+    return (name, [_ratio_value(model, name, p) for p in periods])
+
+
 def _cover_text(slide_spec: SlideSpec) -> tuple[str, list[str]]:
     thesis = ""
     bullets: list[str] = []
@@ -191,6 +238,28 @@ def _cover_text(slide_spec: SlideSpec) -> tuple[str, list[str]]:
         if isinstance(block, BulletBlock):
             bullets = list(block.items)
     return thesis, bullets
+
+
+def _fallback_thesis(report_spec: ReportSpec) -> str:
+    for layout in ("investment_thesis", "key_highlights"):
+        for slide in report_spec.slides:
+            if slide.layout != layout:
+                continue
+            for block in slide.blocks:
+                if isinstance(block, TextBlock) and block.content.strip():
+                    return block.content
+    return ""
+
+
+def _fallback_bullets(report_spec: ReportSpec) -> list[str]:
+    for layout in ("investment_thesis", "key_highlights"):
+        for slide in report_spec.slides:
+            if slide.layout != layout:
+                continue
+            for block in slide.blocks:
+                if isinstance(block, BulletBlock) and block.items:
+                    return list(block.items)
+    return []
 
 
 def _render_brand_header(
@@ -250,7 +319,7 @@ def _render_brand_header(
         0.10,
         2.55,
         0.22,
-        f"{(meta.report_type or 'Initiating').upper()} COVERAGE - Q2 FY25-26",
+        f"{(meta.report_type or 'Initiating').upper()} COVERAGE",
         font=theme.header_font.family,
         size=8,
         color="#FFFFFF",
@@ -279,7 +348,7 @@ def _render_brand_header(
         ("CMP", _money(meta.cmp, precision=2), f"As of {_format_date_ddmmyyyy(str(meta.report_date))}"),
         ("TARGET PRICE", _money(meta.target_price), "12M upside case"),
         ("MARKET CAP", market_cap, ""),
-        ("MARKET CAP CATEGORY", "Mid Cap", "Financial Services leader"),
+        ("MARKET CAP CATEGORY", _market_cap_category(meta.market_cap), f"{report_spec.company.sector} company"),
         ("SAARTHI SCORE", saarthi, model.saarthi.rating if model and model.saarthi and model.saarthi.rating else ""),
         ("PROB. WEIGHTED TP", _money(model.metrics.get("probability_weighted_target")) if model else "-", ""),
     ]
@@ -324,11 +393,16 @@ def _render_highlight_card(
 def _render_left_column(
     slide: Any,
     slide_spec: SlideSpec,
+    report_spec: ReportSpec,
     model: FinancialModelSnapshot | None,
     theme: BrandTheme,
     runtime: Any,
 ) -> None:
     thesis, bullets = _cover_text(slide_spec)
+    if not thesis:
+        thesis = _fallback_thesis(report_spec)
+    if not bullets:
+        bullets = _fallback_bullets(report_spec)
     highlights = [(item.split(":", 1)[0], item.split(":", 1)[1].strip() if ":" in item else item) for item in bullets]
     if model and model.key_highlights:
         highlights = [(h.title, h.body) for h in model.key_highlights]
@@ -377,18 +451,22 @@ def _render_financial_summary(
     top = 2.58
     width = 3.48
     _add_text(slide, runtime, left, top, width, 0.18, "FINANCIAL SUMMARY (INR CRORE)", font=theme.header_font.family, size=8, color=theme.palette.primary, bold=True)
-    periods = ["FY24A", "FY25A", "FY26E", "FY27E"]
-    rows = [
-        ("Revenue", [_series_value(model, "Revenue", p) for p in periods]),
-        ("EBITDA", [_series_value(model, "EBITDA", p) for p in periods]),
-        ("EBITDA Mgn", [_ratio_value(model, "EBITDA Margin", p) for p in periods]),
-        ("PAT", [_series_value(model, "PAT", p) for p in periods]),
-        ("PAT Mgn", [_ratio_value(model, "PAT Margin", p) for p in periods]),
-        ("EPS", [_series_value(model, "EPS", p) for p in periods]),
-        ("P/E", [_ratio_value(model, "P/E", p) for p in periods]),
-        ("P/B", [_ratio_value(model, "P/B", p) for p in periods]),
-        ("EV/EBITDA", [_ratio_value(model, "EV/EBITDA", p) for p in periods]),
+    periods = _display_periods(model)
+    candidate_rows = [
+        _series_row(model, "Revenue", periods),
+        _series_row(model, "EBITDA", periods),
+        _ratio_row(model, "EBITDA Margin", periods),
+        _series_row(model, "PAT", periods),
+        _ratio_row(model, "PAT Margin", periods),
+        _series_row(model, "EPS", periods),
+        _ratio_row(model, "P/E", periods),
+        _ratio_row(model, "P/B", periods),
+        _ratio_row(model, "EV/EBITDA", periods),
+        _ratio_row(model, "ROE", periods),
     ]
+    rows = [row for row in candidate_rows if row is not None][:9]
+    if not rows:
+        rows = [("Revenue", ["-"] * len(periods))]
     shape = slide.shapes.add_table(
         len(rows) + 1,
         len(periods) + 1,
@@ -408,16 +486,16 @@ def _render_financial_summary(
         fill = "#FFFFFF" if row_index % 2 == 0 else theme.palette.light_grey
         _set_cell(table.cell(row_index, 0), runtime, label, font=theme.body_font.family, size=7, color=theme.palette.text, fill=fill, bold=True)
         for col, value in enumerate(values, start=1):
-            color = theme.palette.green if col >= 3 and label in {"EPS", "P/E", "P/B", "EV/EBITDA"} else theme.palette.text
+            color = theme.palette.green if col >= 3 and label in {"EPS", "P/E", "P/B", "EV/EBITDA", "ROE"} else theme.palette.text
             _set_cell(table.cell(row_index, col), runtime, value.replace(" Cr", ""), font=theme.body_font.family, size=7, color=color, fill=fill, bold=col >= 3, align=runtime.PP_ALIGN.CENTER)
 
-    _add_text(slide, runtime, left, top + 2.95, width, 0.18, "H1 FY26 SNAPSHOT", font=theme.header_font.family, size=8, color=theme.palette.primary, bold=True)
+    _add_text(slide, runtime, left, top + 2.95, width, 0.18, "LATEST MODEL SNAPSHOT", font=theme.header_font.family, size=8, color=theme.palette.primary, bold=True)
     snapshot_rows = [
-        ("Consol. Net Revenue", "\u20b92,888 Cr"),
-        ("Operating PAT", "\u20b91,088 Cr (+11% YoY)"),
-        ("ARR % of Net Revenue", f"{_metric(model, 'arr_pct_of_revenue')}%"),
-        ("Fee-Based % of Revenue", f"{_metric(model, 'fee_based_pct_of_revenue')}%"),
-        ("EPS FY25 Annual", f"\u20b9{_metric(model, 'eps_fy26e')}"),
+        ("Latest Revenue", _latest_series_value(model, "Revenue")),
+        ("Latest EBITDA", _latest_series_value(model, "EBITDA")),
+        ("Latest PAT", _latest_series_value(model, "PAT")),
+        ("Latest ROE", _latest_ratio_value(model, "ROE")),
+        ("Latest Margin", _latest_ratio_value(model, "EBITDA Margin")),
     ]
     _render_key_value_table(slide, runtime, left, top + 3.16, width, 1.02, snapshot_rows, theme, title_fill=theme.palette.light_grey)
 
@@ -477,10 +555,10 @@ def _render_side_panel(
         1.02,
         "Key Valuation Metrics",
         [
-            ("P/E (TTM)", "24.20x"),
-            ("P/B Ratio", "3.82x"),
-            ("EPS (FY25A)", f"\u20b9{_series_value(model, 'EPS', 'FY25A').replace('\u20b9', '')}"),
-            ("EPS (FY27E)", f"\u20b9{_series_value(model, 'EPS', 'FY27E').replace('\u20b9', '')}"),
+            ("CMP", _money(report_spec.metadata.cmp)),
+            ("Target Price", _money(report_spec.metadata.target_price)),
+            ("Upside", _percent(report_spec.metadata.upside_pct, signed=True)),
+            ("Base Case TP", _money(model.valuation_bands[1].base if len(model.valuation_bands) > 1 else None)),
         ],
     )
     panel(
@@ -489,7 +567,7 @@ def _render_side_panel(
         "Analyst Consensus",
         [
             ("Consensus TP", _money(report_spec.metadata.target_price)),
-            ("Max Target", "\u20b91,200"),
+            ("Bull Case TP", _money(model.valuation_bands[-1].base if model.valuation_bands else None)),
             ("Upside to Cons.", _percent(report_spec.metadata.upside_pct, signed=True)),
         ],
     )
@@ -498,28 +576,28 @@ def _render_side_panel(
         0.80,
         "Key Operating Stats",
         [
-            ("Total AUM", f"\u20b9{_metric(model, 'total_aum_lakh_cr')}L Cr"),
-            ("AMC AUM", f"\u20b9{_metric(model, 'amc_aum_lakh_cr')}L Cr"),
-            ("Pvt Wealth AUM", f"\u20b9{_metric(model, 'pwm_aum_lakh_cr')}L Cr"),
+            ("Revenue", _latest_series_value(model, "Revenue")),
+            ("EBITDA", _latest_series_value(model, "EBITDA")),
+            ("PAT", _latest_series_value(model, "PAT")),
         ],
         fill="#F7F9FC",
     )
     panel(
         top + 2.74,
         0.65,
-        "Credit Rating",
+        "Quality Snapshot",
         [
-            ("ICRA Rating", "AA+"),
-            ("Outlook", "Stable"),
-            ("Net Worth", f"\u20b9{_metric(model, 'net_worth_cr')} Cr"),
+            ("SAARTHI", f"{model.saarthi.total_score}/{model.saarthi.max_score}" if model.saarthi else "-"),
+            ("Rating", model.saarthi.rating if model.saarthi and model.saarthi.rating else "-"),
+            ("Governance", model.forensic.category if model.forensic else "-"),
         ],
         fill="#F7F9FC",
         value_color=theme.palette.accent,
     )
     _add_rect(slide, runtime, left, top + 3.47, width, 0.78, theme.palette.secondary, radius=True)
-    _add_text(slide, runtime, left + 0.10, top + 3.53, width - 0.20, 0.16, "ARR INFLECTION WATCH", font=theme.header_font.family, size=7.5, color=theme.palette.accent, bold=True)
-    _add_text(slide, runtime, left + 0.10, top + 3.72, width - 0.20, 0.26, f"{_metric(model, 'arr_pct_of_revenue')}%", font=theme.metric_font.family, size=20, color=theme.palette.accent, bold=True)
-    _add_text(slide, runtime, left + 0.10, top + 4.00, width - 0.20, 0.18, "ARR of total net revenues. Re-rating trigger: 70%+ ARR.", font=theme.body_font.family, size=6.5, color="#FFFFFF")
+    _add_text(slide, runtime, left + 0.10, top + 3.53, width - 0.20, 0.16, "THESIS WATCH", font=theme.header_font.family, size=7.5, color=theme.palette.accent, bold=True)
+    _add_text(slide, runtime, left + 0.10, top + 3.72, width - 0.20, 0.26, _percent(report_spec.metadata.upside_pct, signed=True), font=theme.metric_font.family, size=20, color=theme.palette.accent, bold=True)
+    _add_text(slide, runtime, left + 0.10, top + 4.00, width - 0.20, 0.18, "Monitor growth, margins, valuation comfort, and thesis risks.", font=theme.body_font.family, size=6.5, color="#FFFFFF")
 
 
 def _render_footer(slide: Any, report_spec: ReportSpec, theme: BrandTheme, runtime: Any) -> None:
@@ -546,7 +624,7 @@ def render_cover_slide(
         model = None
 
     _render_brand_header(slide, report_spec, slide_spec, theme, runtime, model)
-    _render_left_column(slide, slide_spec, model, theme, runtime)
+    _render_left_column(slide, slide_spec, report_spec, model, theme, runtime)
     _render_financial_summary(slide, model, theme, runtime)
     _render_side_panel(slide, model, report_spec, theme, runtime)
     _render_footer(slide, report_spec, theme, runtime)

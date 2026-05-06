@@ -187,7 +187,7 @@ class PresentationRenderer:
                         pass
             return
 
-        if slide_spec.layout == "text_plus_bullets" and "entry" in slide_spec.title.casefold() and "exit" in slide_spec.title.casefold():
+        if self._uses_strategy_renderer(slide_spec):
             render_strategy_slide(slide, slide_spec, report_spec, self.theme, runtime, page_number=page_number)
             return
 
@@ -195,7 +195,7 @@ class PresentationRenderer:
             render_earnings_forecast_slide(slide, slide_spec, report_spec, self.theme, runtime, page_number=page_number)
             return
 
-        if slide_spec.layout == "full_table" and "business model" in slide_spec.title.casefold():
+        if self._uses_business_segments_renderer(slide_spec):
             render_business_segments_slide(slide, slide_spec, report_spec, self.theme, runtime, page_number=page_number)
             return
 
@@ -319,6 +319,27 @@ class PresentationRenderer:
             if placeholder.name == name:
                 return placeholder.box
         return None
+
+    def _uses_strategy_renderer(self, slide_spec: SlideSpec) -> bool:
+        title = slide_spec.title.casefold()
+        return slide_spec.layout == "trading_strategy" or (
+            slide_spec.layout == "text_plus_bullets"
+            and "entry" in title
+            and "exit" in title
+        )
+
+    def _uses_business_segments_renderer(self, slide_spec: SlideSpec) -> bool:
+        title = slide_spec.title.casefold()
+        if slide_spec.layout == "segment_mix":
+            return True
+        if slide_spec.layout != "full_table":
+            return False
+        if "business model" in title or "segment" in title:
+            return True
+        return any(
+            isinstance(block, TableBlock) and block.source_key == "segments"
+            for block in slide_spec.blocks
+        )
 
 
 def load_report_spec(path: Path) -> ReportSpec:

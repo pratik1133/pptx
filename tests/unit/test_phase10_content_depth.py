@@ -5,6 +5,9 @@ from reportgen.ingestion.loaders import load_normalized_input_bundle
 from reportgen.planning.report_builder import build_report_spec
 from reportgen.rendering.engine import PresentationRenderer
 from reportgen.rendering.layout_registry import LAYOUT_REGISTRY
+from reportgen.schemas.blocks import BulletBlock, TextBlock
+from reportgen.schemas.slides import SlideSpec
+from reportgen.schemas.tables import TableBlock, TableColumn
 
 
 PHASE10_LAYOUTS = {
@@ -60,3 +63,47 @@ def test_motilal_renders_to_pptx(tmp_path):
     out = PresentationRenderer().render_to_path(spec, tmp_path / "motilal.pptx")
     assert out.exists()
     assert out.stat().st_size > 0
+
+
+def test_custom_renderer_dispatch_accepts_live_planner_layouts():
+    renderer = PresentationRenderer()
+
+    strategy_slide = SlideSpec(
+        slide_id="s1",
+        layout="trading_strategy",
+        title="Entry, Review & Exit Strategy",
+        blocks=[
+            TextBlock(key="strategy_text", content="Entry and review discipline."),
+            BulletBlock(key="review_points", items=["Review quarterly"]),
+        ],
+    )
+    segment_slide = SlideSpec(
+        slide_id="s2",
+        layout="segment_mix",
+        title="Business Segment Overview",
+        blocks=[
+            TableBlock(
+                key="segment_table",
+                title="Segment Details",
+                source_key="segments",
+                columns=[TableColumn(key="name", label="Segment")],
+            )
+        ],
+    )
+    full_table_segment_slide = SlideSpec(
+        slide_id="s3",
+        layout="full_table",
+        title="Business Segment Analysis",
+        blocks=[
+            TableBlock(
+                key="segment_table",
+                title="Segment Details",
+                source_key="segments",
+                columns=[TableColumn(key="name", label="Segment")],
+            )
+        ],
+    )
+
+    assert renderer._uses_strategy_renderer(strategy_slide)
+    assert renderer._uses_business_segments_renderer(segment_slide)
+    assert renderer._uses_business_segments_renderer(full_table_segment_slide)
